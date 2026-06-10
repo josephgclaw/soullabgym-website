@@ -118,15 +118,15 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- WHAT WE STAND FOR (PILLARS) - PROPERLY FIXED WITH INLINE STYLES -->
-  <section style="background-color: #0E0E0E;" class="py-20">
+  <!-- WHAT WE STAND FOR (PILLARS) - REDESIGNED -->
+  <section class="!!bg-slg-dark py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 style="color: #ffffff;" class="font-display text-5xl sm:text-6xl uppercase text-center mb-4">What We Stand For</h2>
-      <p style="color: #ffffff;" class="text-lg text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white text-center mb-4">What We Stand For</h2>
+      <p class="text-white/80 text-lg text-center max-w-2xl mx-auto mb-16">
         Three pillars guide everything we do at Soul Lab Gym.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
         {[
           {
             num: '01',
@@ -144,10 +144,10 @@ import Footer from '../components/Footer.astro';
             desc: 'You\'re not alone. We celebrate your wins, support your growth, and hold you accountable to becoming your best self.',
           },
         ].map(pillar => (
-          <div style="background-color: #0E0E0E; border: 1px solid rgba(255, 255, 255, 0.1);" class="p-10 transition-colors group">
-            <div style="color: #EC4899;" class="font-display text-8xl leading-none mb-6">{pillar.num}</div>
-            <h3 style="color: #ffffff;" class="font-bold text-xl mb-3">{pillar.title}</h3>
-            <p style="color: #ffffff;" class="leading-relaxed text-sm">{pillar.desc}</p>
+          <div class="!!bg-slg-dark p-10 hover:bg-white/5 transition-colors group">
+            <div class="font-display text-8xl text-pink-500 leading-none mb-6">{pillar.num}</div>
+            <h3 class="text-white font-bold text-xl mb-3">{pillar.title}</h3>
+            <p class="text-white/80 leading-relaxed text-sm">{pillar.desc}</p>
           </div>
         ))}
       </div>
@@ -155,14 +155,14 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- 7-DAY TRIAL SECTION -->
-  <section style="background-color: #0E0E0E;" class="py-20">
+  <section class="!!bg-slg-dark py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 style="color: #ffffff;" class="font-display text-5xl sm:text-6xl uppercase leading-tight mb-6">
+          <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-tight mb-6">
             Start Your 7-Day Free Trial
           </h2>
-          <p style="color: #ffffff;" class="text-lg leading-relaxed mb-8">
+          <p class="text-white text-lg leading-relaxed mb-8">
             No commitment. No credit card. Just real Muay Thai, real coaching, and real results.
           </p>
 
@@ -174,8 +174,8 @@ import Footer from '../components/Footer.astro';
               'Expert coaches who actually care about your progress',
             ].map(benefit => (
               <div class="flex gap-3">
-                <span style="color: #EC4899;" class="font-bold">→</span>
-                <span style="color: rgba(255, 255, 255, 0.75);">{benefit}</span>
+                <span class="text-pink-500 font-bold">→</span>
+                <span class="text-white/75">{benefit}</span>
               </div>
             ))}
           </div>
