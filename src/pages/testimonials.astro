@@ -3,43 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-const testimonials = [
-  {
-    name: 'Sarah M.',
-    category: 'Adult Member',
-    rating: 5,
-    text: 'I walked in terrified. Within weeks, I felt stronger in body and mind. The community here is real — people actually care about each other\'s progress.',
-  },
-  {
-    name: 'James K.',
-    category: 'Fight Prep',
-    rating: 5,
-    text: 'Joseph\'s coaching got me fight-ready. Technical depth, mental toughness, accountability. No shortcuts, just results.',
-  },
-  {
-    name: 'Michelle L.',
-    category: 'Parent',
-    rating: 5,
-    text: 'My son went from shy to confident. He asks to go to Stand Strong every holiday. The coaches treat the kids like human beings, not problems.',
-  },
-  {
-    name: 'David T.',
-    category: 'Beginner',
-    rating: 5,
-    text: 'Never trained before. Nervous as hell. First class was welcoming, fun, and I actually felt capable. Coming back this week.',
-  },
-  {
-    name: 'Emma R.',
-    category: 'Kids Program',
-    rating: 5,
-    text: 'Stand Strong changed how my daughter sees herself. She went from "I can\'t" to "I can handle this." Worth every moment.',
-  },
-  {
-    name: 'Marcus P.',
-    category: 'Recovery Member',
-    rating: 5,
-    text: 'The sauna and ice bath combo is insane. Recovery is real here. Combine that with the coaching and you\'ve got something special.',
-  },
+// Google reviews data (for text extraction if needed)
+const googleReviews = [
+  { name: 'Shannon Mein', category: 'Experienced Trainer' },
+  { name: 'Robert & Eva\'s World', category: 'Long-time Members' },
+  { name: 'Jacob Brown', category: 'Parent' },
+  { name: 'Tee', category: 'Parent - Beginners' },
+  { name: 'Lisa Graham', category: 'Member' },
+  { name: 'Jillian', category: 'Beginner' },
+  { name: 'Rebecca Henrich', category: 'Parent' },
+  { name: 'Nathan Epps', category: 'Visiting Trainer' },
+  { name: 'Seraiah Walsh', category: 'Parent' },
+  { name: 'Gagree Sailor', category: 'Parent - Kids Program' },
 ];
 ---
 
@@ -80,43 +55,23 @@ const testimonials = [
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
-        <!-- Photo collage (left) -->
-        <div class="grid grid-cols-2 gap-4 h-fit">
-          <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-            <img src="/photos/adult-mixed-class-2.jpg" alt="Adult training" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-          </div>
-          <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-            <img src="/photos/kids-guard-pose-group.jpg" alt="Kids confidence" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-          </div>
-          <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-            <img src="/photos/coach-pads.jpg" alt="Expert coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-          </div>
-          <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-            <img src="/photos/team-photo.jpg" alt="Community" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-          </div>
-        </div>
-
-        <!-- Testimonials grid (right) -->
-        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map(testimonial => (
-            <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-6 transition-all hover:shadow-lg">
-              <!-- Stars -->
-              <div class="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map(() => (
-                  <span class="text-pink-500 text-lg">★</span>
-                ))}
-              </div>
-
-              <!-- Quote -->
-              <p class="text-gray-700 font-medium leading-relaxed mb-6 italic">
-                "{testimonial.text}"
-              </p>
-
-              <!-- Name & Category -->
-              <div>
-                <p class="font-bold text-gray-900">{testimonial.name}</p>
-                <p class="text-sm text-pink-700 font-semibold">{testimonial.category}</p>
-              </div>
+        <!-- Professional testimonial cards grid -->
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- Real Google Review Cards -->
+          {[
+            '/testimonial-cards/testimonial-01-shannon-mein.png',
+            '/testimonial-cards/testimonial-02-robert-&-eva\'s-world.png',
+            '/testimonial-cards/testimonial-03-jacob-brown.png',
+            '/testimonial-cards/testimonial-04-tee.png',
+            '/testimonial-cards/testimonial-05-lisa-graham.png',
+            '/testimonial-cards/testimonial-06-jillian.png',
+            '/testimonial-cards/testimonial-07-rebecca-henrich.png',
+            '/testimonial-cards/testimonial-08-nathan-epps.png',
+            '/testimonial-cards/testimonial-09-seraiah-walsh.png',
+            '/testimonial-cards/testimonial-10-gagree-sailor.png',
+          ].map(card => (
+            <div class="group cursor-pointer hover:shadow-xl transition-all">
+              <img src={card} alt="Google review" class="w-full rounded-xl shadow-md group-hover:shadow-xl transition-shadow" />
             </div>
           ))}
         </div>
