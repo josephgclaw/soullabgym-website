@@ -111,7 +111,7 @@ const allPhotos = [
       <div class="flex flex-wrap justify-center gap-3 mb-14">
         {['All', 'Featured', 'Training', 'Kids', 'Achievement', 'Community', 'Gym', 'Brand', 'Info'].map(cat => (
           <button
-            class="filter-btn px-6 py-2 rounded-full font-bold text-sm transition-all border-2"
+            class="filter-btn px-6 py-2 rounded font-bold text-sm transition-all border-2"
             data-filter={cat}
             data-active={cat === 'All' ? 'true' : 'false'}
             style={{
