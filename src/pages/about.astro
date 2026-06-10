@@ -11,22 +11,22 @@ import Footer from '../components/Footer.astro';
   <Nav />
 
   <!-- PAGE HEADER -->
-  <section style="background-color: #0E0E0E !important;" class="py-16">
+  <section class="py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div style="background-color: #EC4899 !important; color: #ffffff !important;" class="inline-block text-xs font-bold uppercase px-3 py-1 rounded-full mb-6">About Us</div>
-      <h1 style="color: #ffffff !important;" class="text-5xl sm:text-6xl font-display uppercase mb-6">
+      <div class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors" class="inline-block text-xs font-bold uppercase px-3 py-1 mb-6">About Us</div>
+      <h1 class="text-5xl sm:text-6xl font-display uppercase text-white mb-6">
         Soul Lab Gym
       </h1>
-      <p style="color: #ffffff !important;" class="text-lg leading-relaxed max-w-2xl">
+      <p class="text-slg-text-light text-lg leading-relaxed max-w-2xl">
         Townsville's home for authentic Muay Thai training. We're serious about technique, serious about community, and serious about getting results.
       </p>
     </div>
   </section>
 
   <!-- HEAD COACH -->
-  <section style="background-color: #F8F5F0 !important;" class="py-16">
+  <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 style="color: #1A1A1A !important;" class="text-3xl sm:text-4xl font-display uppercase text-center mb-12">Meet the Coach</h2>
+      <h2 class="text-3xl sm:text-4xl font-display uppercase text-center text-slg-text-dark mb-12">Meet the Coach</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
         <!-- Photo -->
         <div class="overflow-hidden aspect-square">
@@ -35,18 +35,18 @@ import Footer from '../components/Footer.astro';
 
         <!-- Bio -->
         <div>
-          <div style="background-color: #F8F5F0 !important; border-color: #EC4899; color: #EC4899 !important;" class="inline-block border text-xs font-bold uppercase tracking-widest px-4 py-2 rounded mb-4">
+          <div class="inline-block border text-xs font-bold uppercase tracking-widest px-4 py-2 rounded mb-4">
             Head Coach
           </div>
-          <h3 style="color: #1A1A1A !important;" class="text-3xl font-display font-bold mb-2">Joseph Gabiola</h3>
-          <div style="color: #EC4899 !important;" class="font-semibold mb-6">WMO State Champion</div>
-          <p style="color: #1A1A1A !important;" class="text-lg leading-relaxed mb-6">
+          <h3 class="text-3xl font-display text-slg-text-dark mb-2">Joseph Gabiola</h3>
+          <div class="text-slg-pink font-semibold mb-6">WMO State Champion</div>
+          <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
             Joseph is a WMO State Champion with decades of fighting experience and a proven track record developing athletes from beginner to competitive level. He founded Soul Lab Gym on one principle: authentic coaching, delivered with care.
           </p>
-          <p style="color: #1A1A1A !important;" class="text-lg leading-relaxed mb-6">
+          <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
             Beyond the ring, Joseph is passionate about building confidence in kids through martial arts — teaching that real strength comes from discipline, respect, and understanding your own power. His anti-bullying programs have helped hundreds of Townsville families, and his gym is home to fighters, kids, and community members from all walks of life.
           </p>
-          <p style="color: #1A1A1A !important;" class="text-lg leading-relaxed">
+          <p class="text-slg-text-dark text-lg leading-relaxed">
             When Joseph coaches, he's not just teaching Muay Thai. He's building people who carry themselves with quiet confidence and treat others with respect.
           </p>
         </div>
@@ -55,34 +55,31 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- PHOTO GALLERY -->
-  <section style="background-color: #F8F5F0 !important;" class="py-16">
+  <section class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 style="color: #1A1A1A !important;" class="text-3xl sm:text-4xl font-display uppercase text-center mb-10">The Gym</h2>
+      <h2 class="text-3xl sm:text-4xl font-display uppercase text-center text-slg-text-dark mb-10">The Gym</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <img src="/photos/gym-wide-shot.jpg" alt="Gym wide shot" class="w-full h-64 object-cover" />
-        <img src="/photos/pad-work-sparring.jpg" alt="Pad work" class="w-full h-64 object-cover" />
-        <img src="/photos/coach-pads.jpg" alt="Coach with pads" class="w-full h-64 object-cover" />
-        <img src="/photos/kids-with-coach.jpg" alt="Kids with coach" class="w-full h-64 object-cover" />
-        <img src="/photos/team-photo.jpg" alt="Team photo" class="w-full h-64 object-cover" />
-        <img src="/photos/kids-guard-pose-group.jpg" alt="Kids guard pose" class="w-full h-64 object-cover" />
+        <img src="/photos/gym-wide-shot.jpg" alt="Gym wide shot" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <img src="/photos/pad-work-sparring.jpg" alt="Pad work" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <img src="/photos/coach-pads.jpg" alt="Coach with pads" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <img src="/photos/kids-with-coach.jpg" alt="Kids with coach" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <img src="/photos/team-photo.jpg" alt="Team photo" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <img src="/photos/kids-guard-pose-group.jpg" alt="Kids guard pose" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section style="background-color: #EC4899 !important;" class="py-16">
+  <section class="py-16">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 style="color: #ffffff !important;" class="text-3xl sm:text-4xl font-display uppercase mb-6">Ready to Start?</h2>
-      <p style="color: rgba(255, 255, 255, 0.9) !important;" class="text-lg mb-8 max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-display uppercase text-white mb-6">Ready to Start?</h2>
+      <p class="text-lg mb-8 max-w-2xl mx-auto">
         Join us for a free trial — plus a free gear pack when you sign up. No commitment, no credit card.
       </p>
       <a
         href="/contact"
-        style="background-color: #0E0E0E !important; color: #ffffff !important; display: inline-block; padding: 1rem 2rem; font-weight: bold; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0.25rem; transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);"
-        onmouseover="this.style.backgroundColor='#1A1A1A !important';"
-        onmouseout="this.style.backgroundColor='#0E0E0E !important';"
-      >
-        Claim Your Free Trial
+        class="inline-block bg-slg-dark hover:bg-slg-text-dark text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors">
+        Claim Free Trial + Gear Pack
       </a>
     </div>
   </section>

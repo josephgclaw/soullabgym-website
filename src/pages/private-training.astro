@@ -17,21 +17,21 @@ import Footer from '../components/Footer.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left: Text -->
           <div>
-            <div class="inline-block bg-slg-bone border border-slg-pink text-slg-pink text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded mb-6">
+            <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
               One-on-One Coaching
             </div>
-            <h1 class="text-5xl sm:text-6xl font-display font-display uppercase mb-6">
+            <h1 class="text-5xl sm:text-6xl font-display uppercase text-slg-text-dark mb-6">
               Private Training Tailored to You
             </h1>
-            <p class="text-xl text-[#1A1A1A] !important leading-relaxed mb-6">
+            <p class="text-xl text-slg-text-dark leading-relaxed mb-6">
               Whether you're preparing for a fight, recovering from injury, building a solid foundation, or want focused technique work — private sessions give you the coach's full attention and a plan that's 100% yours.
             </p>
-            <p class="text-[#1A1A1A] !important text-lg mb-8">
+            <p class="text-slg-text-dark text-lg mb-8">
               Train with Joseph (WMO State Champion) or one of our senior Soul Lab coaches. Flexible scheduling. Real results.
             </p>
             <a
               href="#booking"
-              class="inline-block bg-slg-pink" hover:bg-slg-pink text-white font-bold text-base px-8 py-4 rounded transition-all shadow-lg"
+              class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors""
             >
               Book Your Session Now
             </a>
@@ -39,16 +39,16 @@ import Footer from '../components/Footer.astro';
 
           <!-- Right: Photo grid -->
           <div class="grid grid-cols-2 gap-4">
-            <div class="bg-slg-bone border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+            <div class="overflow-hidden aspect-square group">
               <img src="/photos/coach-pads.jpg" alt="Personalized coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
-            <div class="bg-slg-bone border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+            <div class="overflow-hidden aspect-square group">
               <img src="/photos/joseph-kids-hero.jpg" alt="Joseph coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
-            <div class="bg-slg-bone border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+            <div class="overflow-hidden aspect-square group">
               <img src="/photos/training-women-pad-work.jpg" alt="Technique work" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
-            <div class="bg-slg-bone border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+            <div class="overflow-hidden aspect-square group">
               <img src="/photos/pad-work-sparring.jpg" alt="Advanced training" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
           </div>
@@ -59,8 +59,8 @@ import Footer from '../components/Footer.astro';
     <!-- WHAT YOU GET -->
     <section class="py-20 bg-slg-bone">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-display uppercase font-display uppercase text-center mb-4">What You Get</h2>
-        <p class="text-[#1A1A1A] !important text-lg text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl font-display uppercase text-slg-text-dark text-center mb-4">What You Get</h2>
+        <p class="text-slg-text-dark text-lg text-center max-w-2xl mx-auto mb-16">
           Every private session is built around your specific goals, experience level, and schedule.
         </p>
 
@@ -79,28 +79,28 @@ import Footer from '../components/Footer.astro';
             {
               title: 'Faster Progress',
               desc: 'One-on-one attention means faster technique improvement and real accountability.',
-              icon: '📈',
+              icon: '03',
             },
             {
               title: 'Expert Coaching',
               desc: 'Train with Joseph or a senior Soul Lab coach. Real fight experience. Real teaching ability.',
-              icon: '👨‍🏫',
+              icon: '04',
             },
             {
               title: 'Head Start for Beginners',
               desc: 'Build a solid foundation before joining group classes. Feel confident from day one.',
-              icon: '💪',
+              icon: '05',
             },
             {
               title: 'Injury-Safe Training',
               desc: 'Modified programming that keeps you moving safely if you\'re coming back from injury.',
-              icon: '✅',
+              icon: '06',
             },
           ].map(item => (
             <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink rounded-none p-8 transition-all hover:shadow-lg">
-              <div class="text-5xl mb-4">{item.icon}</div>
-              <h3 class="text-xl font-bold font-display uppercase mb-3">{item.title}</h3>
-              <p class="text-[#1A1A1A] !important leading-relaxed">{item.desc}</p>
+              <div class="font-display text-5xl text-slg-pink leading-none mb-4">{item.icon}</div>
+              <h3 class="text-xl font-display uppercase text-slg-text-dark mb-3">{item.title}</h3>
+              <p class="text-slg-text-dark leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -110,8 +110,8 @@ import Footer from '../components/Footer.astro';
     <!-- WHO IT'S FOR -->
     <section class="py-20 bg-slg-bone">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-display uppercase font-display uppercase text-center mb-4">Perfect For:</h2>
-        <p class="text-[#1A1A1A] !important text-lg text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-4xl font-display uppercase text-slg-text-dark text-center mb-4">Perfect For:</h2>
+        <p class="text-slg-text-dark text-lg text-center max-w-2xl mx-auto mb-16">
           Whether you're starting from scratch or training for competition, we have a program for you.
         </p>
 
@@ -155,12 +155,12 @@ import Footer from '../components/Footer.astro';
             },
           ].map(category => (
             <div class="bg-slg-bone border-2 border-slg-pink/30 rounded-none p-10 hover:shadow-lg transition-shadow">
-              <h3 class="text-2xl font-bold font-display uppercase mb-6">{category.title}</h3>
+              <h3 class="text-2xl font-display uppercase text-slg-text-dark mb-6">{category.title}</h3>
               <ul class="space-y-4">
                 {category.points.map(point => (
                   <li class="flex gap-3">
                     <span class="text-slg-pink font-bold flex-shrink-0 mt-0.5">✓</span>
-                    <span class="text-[#1A1A1A] !important leading-relaxed">{point}</span>
+                    <span class="text-slg-text-dark leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -207,22 +207,22 @@ import Footer from '../components/Footer.astro';
               }`}
             >
               {plan.popular && (
-                <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
+                <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-4">
                   Most Popular
                 </div>
               )}
               <h3 class="text-2xl font-bold font-display uppercase mb-2">{plan.title}</h3>
               <div class="mb-4">
                 <div class="text-4xl font-black text-slg-pink">{plan.price}</div>
-                <p class="text-sm text-[#1A1A1A] !important mt-2">{plan.duration}</p>
+                <p class="text-sm text-slg-text-dark mt-2">{plan.duration}</p>
               </div>
-              <p class="text-[#1A1A1A] !important mb-8 leading-relaxed">{plan.desc}</p>
+              <p class="text-slg-text-dark mb-8 leading-relaxed">{plan.desc}</p>
             </div>
           ))}
         </div>
 
         <div class="text-center mt-12">
-          <p class="text-[#1A1A1A] !important mb-6">
+          <p class="text-slg-text-dark mb-6">
             All prices include one-on-one coaching with a Soul Lab coach. Want to train with Joseph specifically? Message us about availability.
           </p>
         </div>
@@ -233,7 +233,7 @@ import Footer from '../components/Footer.astro';
     <section id="booking" class="py-20 bg-slg-bone">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-4xl font-display uppercase font-display uppercase text-center mb-4">Ready to Start?</h2>
-        <p class="text-[#1A1A1A] !important text-lg text-center max-w-2xl mx-auto mb-12">
+        <p class="text-slg-text-dark text-lg text-center max-w-2xl mx-auto mb-12">
           Book your first private session below. If you have questions first, get in touch.
         </p>
 
@@ -241,7 +241,7 @@ import Footer from '../components/Footer.astro';
           <!-- Booking Form Placeholder -->
           <div class="bg-slg-bone border-2 border-gray-200 rounded-none p-10 h-full">
             <h3 class="text-xl font-bold font-display uppercase mb-6">Book Online</h3>
-            <div class="bg-gray-100 rounded-xl p-8 text-center text-[#1A1A1A] !important min-h-96 flex items-center justify-center">
+            <div class="bg-gray-100 rounded-xl p-8 text-center text-slg-text-dark min-h-96 flex items-center justify-center">
               <div>
                 <p class="font-semibold mb-2">Zipleads Booking Form</p>
                 <p class="text-sm">Coming soon — you'll be able to book and pay here</p>
@@ -254,24 +254,24 @@ import Footer from '../components/Footer.astro';
             <h3 class="text-xl font-bold font-display uppercase mb-6">Questions First?</h3>
             <div class="space-y-6">
               <div>
-                <p class="text-xs text-[#1A1A1A] !important uppercase tracking-wider font-semibold mb-2">Phone</p>
+                <p class="text-xs text-slg-text-dark uppercase tracking-wider font-semibold mb-2">Phone</p>
                 <a href="tel:0432558304" class="text-lg font-display uppercase font-semibold hover:text-slg-pink transition-colors">
                   0432 558 304
                 </a>
               </div>
               <div>
-                <p class="text-xs text-[#1A1A1A] !important uppercase tracking-wider font-semibold mb-2">Email</p>
+                <p class="text-xs text-slg-text-dark uppercase tracking-wider font-semibold mb-2">Email</p>
                 <a href="mailto:info@soullabgym.com" class="text-lg font-display uppercase font-semibold hover:text-slg-pink transition-colors">
                   info@soullabgym.com
                 </a>
               </div>
               <div class="border-t border-gray-200 pt-6">
-                <p class="text-[#1A1A1A] !important mb-4">
+                <p class="text-slg-text-dark mb-4">
                   Tell us about your goals and we'll recommend the best session type for you.
                 </p>
                 <a
                   href="/contact"
-                  class="inline-block bg-slg-pink" hover:bg-slg-pink text-white font-semibold px-6 py-3 rounded transition-all"
+                  class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors""
                 >
                   Get in Touch
                 </a>
@@ -316,7 +316,7 @@ import Footer from '../components/Footer.astro';
           ].map((faq, i) => (
             <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink rounded-none p-8 transition-all">
               <h3 class="text-lg font-bold font-display uppercase mb-4">{faq.q}</h3>
-              <p class="text-[#1A1A1A] !important leading-relaxed">{faq.a}</p>
+              <p class="text-slg-text-dark leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
