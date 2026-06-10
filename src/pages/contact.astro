@@ -10,166 +10,88 @@ import Footer from '../components/Footer.astro';
 >
   <Nav />
 
-  <div class="pt-16">
-    <!-- HERO WITH PHOTOS -->
-    <section class="relative py-20 bg-gradient-to-b from-pink-50 to-white overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <!-- Text -->
-          <div>
-            <h1 class="text-5xl sm:text-6xl font-display text-gray-900 mb-6">
-              Get In <span class="text-pink-500">Touch</span>
-            </h1>
-            <p class="text-gray-700 text-xl leading-relaxed mb-6">
-              We're here to help. Whether you have questions about our programs, want to book a trial, or just want to say hi — get in contact and we'll get back to you within 24 hours.
-            </p>
-            <p class="text-gray-600 text-lg">
-              Walk in anytime during class hours. No appointment needed. Just bring the energy.
-            </p>
-          </div>
-          
-          <!-- Photos grid -->
-          <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white border-2 border-slg-pink/30 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-              <img src="/photos/gym-wide-shot.jpg" alt="Soul Lab Gym facility" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-            </div>
-            <div class="bg-white border-2 border-pink-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-              <img src="/photos/joseph-kids-hero.jpg" alt="Joseph coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-            </div>
-            <div class="bg-white border-2 border-slg-pink/30 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-              <img src="/photos/team-photo.jpg" alt="Soul Lab team" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-            </div>
-            <div class="bg-white border-2 border-pink-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
-              <img src="/photos/adult-lined-up-class.jpg" alt="Class in action" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- PAGE HEADER -->
+  <section style="background-color: #0E0E0E !important;" class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div style="background-color: #EC4899 !important; color: #ffffff !important;" class="inline-block text-xs font-bold uppercase px-3 py-1 rounded-full mb-6">Contact Us</div>
+      <h1 style="color: #ffffff !important;" class="text-5xl sm:text-6xl font-display uppercase mb-6">
+        Get In Touch
+      </h1>
+      <p style="color: #ffffff !important;" class="text-lg leading-relaxed max-w-2xl">
+        We're here to help. Questions about our programs, booking a trial, or just want to say hi? Contact us.
+      </p>
+    </div>
+  </section>
 
-    <!-- CONTACT DETAILS + FREE TRIAL -->
-    <section class="py-16 bg-gradient-to-b from-slg-bone to-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <!-- Contact Info -->
-          <div class="bg-white border-2 border-slg-pink/30 rounded-xl p-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Contact Details</h2>
-            <div class="flex flex-col gap-6">
-              <a
-                href="tel:0432558304"
-                class="flex items-center gap-4 p-4 bg-gradient-to-b from-slg-bone to-white border-2 border-slg-pink/30 hover:border-slg-pink rounded-lg transition-colors group"
-              >
-                <div>
-                  <div class="text-xs text-gray-600 uppercase tracking-wider mb-1">Phone</div>
-                  <div class="text-gray-900 font-semibold group-hover:text-slg-pink transition-colors">0432 558 304</div>
-                </div>
-              </a>
-              <a
-                href="mailto:info@soullabgym.com"
-                class="flex items-center gap-4 p-4 bg-gradient-to-b from-slg-bone to-white border-2 border-slg-pink/30 hover:border-slg-pink rounded-lg transition-colors group"
-              >
-                <div>
-                  <div class="text-xs text-gray-600 uppercase tracking-wider mb-1">Email</div>
-                  <div class="text-gray-900 font-semibold group-hover:text-slg-pink transition-colors">info@soullabgym.com</div>
-                </div>
-              </a>
-              <div class="flex items-center gap-4 p-4 bg-gradient-to-b from-slg-bone to-white border-2 border-slg-pink/30 rounded-lg">
-                <div>
-                  <div class="text-xs text-gray-600 uppercase tracking-wider mb-1">Address</div>
-                  <div class="text-gray-900 font-semibold">2/70 Ingham Road</div>
-                  <div class="text-gray-700 text-sm">West End, Townsville QLD</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Free Trial Card -->
-          <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-slg-pink/30 rounded-xl p-8">
-            <div class="inline-block bg-slg-bone text-slg-pink text-xs font-bold uppercase tracking-wider px-3 py-1 rounded mb-6">
-              Free Trial
-            </div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">Never trained before?</h2>
-            <p class="text-gray-700 leading-relaxed mb-8">
-              Come try a class on us. No commitment, no pressure — just real Muay Thai, real people.
-            </p>
-            <div class="flex flex-col gap-4 mb-8">
-              <div class="flex items-start gap-3">
-                <span class="text-pink-500 font-bold mt-0.5">✓</span>
-                <span><strong class="text-gray-900">For adults:</strong> Includes a free pair of gloves</span>
-              </div>
-              <div class="flex items-start gap-3">
-                <span class="text-pink-500 font-bold mt-0.5">✓</span>
-                <span><strong class="text-gray-900">For kids:</strong> Includes gloves and a singlet</span>
-              </div>
-            </div>
-            <a
-              href="https://slg.gymdesk.com/signup"
-              class="inline-block bg-slg-pink" hover:bg-slg-pink text-white font-bold text-base px-8 py-4 rounded transition-all shadow-lg w-full text-center"
-            >
-              Claim Your Free Trial
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- VISIT + PHOTO GALLERY -->
-    <section class="py-16 bg-slg-bone">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-display uppercase text-gray-900 mb-3">Visit Us</h2>
-          <p class="text-gray-600 text-lg">We're located at 2/70 Ingham Road, West End — easy to find, plenty of parking.</p>
-          <p class="text-gray-700 mt-2">Just show up in comfortable workout gear and we'll sort the rest.</p>
-        </div>
-        
-        <!-- Location Card -->
-        <div class="max-w-2xl mx-auto mb-12">
-          <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-slg-pink/30 rounded-xl p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-6">Soul Lab Gym</h3>
-            <div class="space-y-4">
-              <div>
-                <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-1">Address</p>
-                <p class="text-gray-900 font-semibold">2/70 Ingham Road, West End, Townsville QLD</p>
-              </div>
-              <div>
-                <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-1">Phone</p>
-                <a href="tel:0432558304" class="text-gray-900 font-semibold hover:text-slg-pink transition-colors">0432 558 304</a>
-              </div>
-              <div>
-                <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-1">Email</p>
-                <a href="mailto:info@soullabgym.com" class="text-gray-900 font-semibold hover:text-slg-pink transition-colors">info@soullabgym.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Photo Gallery -->
+  <!-- CONTACT DETAILS -->
+  <section style="background-color: #F8F5F0 !important;" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Info -->
         <div>
-          <h3 class="text-2xl font-black text-gray-900 mb-8 text-center">What It's Like Here</h3>
-          <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:border-slg-pink transition-colors">
-              <img src="/photos/training-women-pad-work.jpg" alt="Training in action" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+          <h2 style="color: #1A1A1A !important;" class="text-3xl font-display uppercase mb-8">Soul Lab Gym</h2>
+          
+          <div class="space-y-8">
+            <div>
+              <h3 style="color: #EC4899 !important;" class="font-bold text-lg mb-2">Location</h3>
+              <p style="color: #1A1A1A !important;" class="text-lg">
+                2/70 Ingham Road<br />
+                West End, QLD 4810<br />
+                Australia
+              </p>
             </div>
-            <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:border-slg-pink transition-colors">
-              <img src="/photos/coach-pads.jpg" alt="Expert coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+
+            <div>
+              <h3 style="color: #EC4899 !important;" class="font-bold text-lg mb-2">Phone</h3>
+              <p style="color: #1A1A1A !important;" class="text-lg">
+                <a href="tel:0432558304" class="hover:underline">0432 558 304</a>
+              </p>
             </div>
-            <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:border-slg-pink transition-colors">
-              <img src="/photos/kids-guard-pose-group.jpg" alt="Kids training" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+
+            <div>
+              <h3 style="color: #EC4899 !important;" class="font-bold text-lg mb-2">Email</h3>
+              <p style="color: #1A1A1A !important;" class="text-lg">
+                <a href="mailto:info@soullabgym.com" class="hover:underline">info@soullabgym.com</a>
+              </p>
             </div>
-            <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:border-slg-pink transition-colors">
-              <img src="/photos/adult-mixed-class-2.jpg" alt="Adult class" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-            </div>
-            <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:border-slg-pink transition-colors">
-              <img src="/photos/team-post-fight-medals.jpg" alt="Community celebration" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
-            </div>
-            <div class="bg-white border-2 border-gray-200 rounded-lg overflow-hidden aspect-square group hover:border-slg-pink transition-colors">
-              <img src="/photos/soul-lab-logo-pink.jpg" alt="Soul Lab brand" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+
+            <div>
+              <h3 style="color: #EC4899 !important;" class="font-bold text-lg mb-2">Hours</h3>
+              <p style="color: #1A1A1A !important;" class="text-lg">
+                Monday–Friday: 4 PM – 9 PM<br />
+                Saturday: 10 AM – 5 PM<br />
+                Sunday: Closed
+              </p>
             </div>
           </div>
         </div>
+
+        <!-- Photos -->
+        <div class="grid grid-cols-2 gap-4">
+          <img src="/photos/gym-wide-shot.jpg" alt="Gym" class="w-full h-48 object-cover" />
+          <img src="/photos/joseph-kids-hero.jpg" alt="Joseph coaching" class="w-full h-48 object-cover" />
+          <img src="/photos/team-photo.jpg" alt="Team" class="w-full h-48 object-cover" />
+          <img src="/photos/kids-with-coach.jpg" alt="Kids with coach" class="w-full h-48 object-cover" />
+        </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <!-- FREE TRIAL CTA -->
+  <section style="background-color: #EC4899 !important;" class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 style="color: #ffffff !important;" class="text-3xl sm:text-4xl font-display uppercase mb-6">Ready to Train?</h2>
+      <p style="color: rgba(255, 255, 255, 0.9) !important;" class="text-lg mb-8 max-w-2xl mx-auto">
+        Start your free 7-day trial today. No commitment. No credit card.
+      </p>
+      <a
+        href="https://slg.gymdesk.com/signup"
+        style="background-color: #0E0E0E !important; color: #ffffff !important; display: inline-block; padding: 1rem 2rem; font-weight: bold; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0.25rem;"
+      >
+        Claim Free Trial
+      </a>
+    </div>
+  </section>
 
   <Footer />
 </Layout>
