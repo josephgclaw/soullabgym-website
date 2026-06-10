@@ -10,10 +10,26 @@ import Footer from '../components/Footer.astro';
 >
   <Nav />
 
+  <!-- TOP BUTTONS (Before Nav) -->
+  <div class="fixed top-0 left-0 right-0 z-40 bg-white">
+    <div class="grid grid-cols-2 gap-0">
+      <a
+        href="https://slg.gymdesk.com/signup"
+        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-4 text-center transition-colors"
+      >
+        Sign Up
+      </a>
+      <a
+        href="https://slg.gymdesk.com/login"
+        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-4 text-center transition-colors"
+      >
+        Login
+      </a>
+    </div>
+  </div>
+
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-br from-green-50 via-white to-pink-50">
-    <div class="absolute inset-0"></div>
-    
+  <section class="relative min-h-screen flex items-center justify-center pt-40 overflow-hidden bg-gradient-to-b from-green-50 to-white">
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
       <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
         Recovery Services • Soul Lab Gym
@@ -22,7 +38,7 @@ import Footer from '../components/Footer.astro';
         Recover Faster.<br>
         <span class="bg-gradient-to-r from-pink-500 to-green-400 bg-clip-text text-transparent">Feel Better.</span>
       </h1>
-      <p class="text-xl sm:text-2xl text-gray-800 font-medium mb-6 max-w-2xl mx-auto">
+      <p class="text-xl sm:text-2xl text-gray-800 font-medium mb-8 max-w-2xl mx-auto">
         Premium sauna and ice bath recovery services in Townsville. Optimize your training, boost immunity, and reset your mind.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -56,21 +72,30 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-8 hover:shadow-lg transition-all">
+        <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4 text-xl font-bold text-green-700">
+            ✓
+          </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Faster Recovery</h3>
           <p class="text-gray-700">
             Reduce muscle soreness, accelerate healing, and bounce back from intense training sessions in half the time.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-pink-200 rounded-2xl p-8 hover:shadow-lg transition-all">
+        <div class="bg-white border-2 border-pink-200 hover:border-green-300 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mb-4 text-xl font-bold text-pink-700">
+            ✓
+          </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Mental Clarity</h3>
           <p class="text-gray-700">
             Reset your nervous system, reduce stress, and experience the mental edge that comes from deliberate recovery.
           </p>
         </div>
 
-        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-blue-200 rounded-2xl p-8 hover:shadow-lg transition-all">
+        <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 text-xl font-bold text-blue-700">
+            ✓
+          </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Immune Boost</h3>
           <p class="text-gray-700">
             Strengthen immune resilience through heat shock proteins and improved circulation.
@@ -310,7 +335,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- TESTIMONIALS -->
-  <section class="py-20 bg-gradient-to-br from-green-50 to-pink-50">
+  <section class="py-20 bg-white border-t-2 border-pink-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-black text-gray-900 mb-4">What Athletes & Members Say</h2>
@@ -319,8 +344,8 @@ import Footer from '../components/Footer.astro';
 
       <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <!-- Testimonial 1 -->
-        <div class="bg-white border-2 border-green-200 rounded-xl p-6 hover:shadow-lg transition-all">
-          <div class="flex gap-1 mb-4">
+        <div class="bg-white border-2 border-green-200 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <div class="flex gap-0.5 mb-4">
             <span class="text-pink-500 text-lg">★</span>
             <span class="text-pink-500 text-lg">★</span>
             <span class="text-pink-500 text-lg">★</span>
@@ -328,14 +353,14 @@ import Footer from '../components/Footer.astro';
             <span class="text-pink-500 text-lg">★</span>
           </div>
           <p class="text-gray-700 text-sm mb-4">
-            "[Testimonial — e.g., 'My recovery between training sessions is way better. The sauna and ice bath combo actually works.']"  
+            "My recovery between training sessions is way better. The sauna and ice bath combo actually works."
           </p>
-          <p class="font-bold text-gray-900 text-sm">— [Name], [Role/Context]</p>
+          <p class="font-bold text-gray-900 text-sm">— [Name], Athlete</p>
         </div>
 
         <!-- Testimonial 2 -->
-        <div class="bg-white border-2 border-pink-200 rounded-xl p-6 hover:shadow-lg transition-all">
-          <div class="flex gap-1 mb-4">
+        <div class="bg-white border-2 border-pink-200 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <div class="flex gap-0.5 mb-4">
             <span class="text-pink-500 text-lg">★</span>
             <span class="text-pink-500 text-lg">★</span>
             <span class="text-pink-500 text-lg">★</span>
@@ -343,14 +368,14 @@ import Footer from '../components/Footer.astro';
             <span class="text-pink-500 text-lg">★</span>
           </div>
           <p class="text-gray-700 text-sm mb-4">
-            "[Testimonial — e.g., 'I feel mentally sharper after each session. It's become part of my routine.']"  
+            "I feel mentally sharper after each session. It's become part of my daily routine."
           </p>
-          <p class="font-bold text-gray-900 text-sm">— [Name], [Role/Context]</p>
+          <p class="font-bold text-gray-900 text-sm">— [Name], Member</p>
         </div>
 
         <!-- Testimonial 3 -->
-        <div class="bg-white border-2 border-blue-200 rounded-xl p-6 hover:shadow-lg transition-all">
-          <div class="flex gap-1 mb-4">
+        <div class="bg-white border-2 border-green-200 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <div class="flex gap-0.5 mb-4">
             <span class="text-pink-500 text-lg">★</span>
             <span class="text-pink-500 text-lg">★</span>
             <span class="text-pink-500 text-lg">★</span>
@@ -358,14 +383,14 @@ import Footer from '../components/Footer.astro';
             <span class="text-pink-500 text-lg">★</span>
           </div>
           <p class="text-gray-700 text-sm mb-4">
-            "[Testimonial — e.g., 'The team makes you feel safe and guided through the whole experience.']"  
+            "The team makes you feel safe and guided through the whole experience. Worth every dollar."
           </p>
-          <p class="font-bold text-gray-900 text-sm">— [Name], [Role/Context]</p>
+          <p class="font-bold text-gray-900 text-sm">— [Name], Gym Member</p>
         </div>
       </div>
 
       <!-- Video Testimonials -->
-      <div class="mt-12 bg-white border-2 border-green-200 rounded-2xl p-8 text-center">
+      <div class="mt-12 bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-8 text-center">
         <h3 class="text-2xl font-bold text-gray-900 mb-3">See Recovery in Action</h3>
         <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
           Watch members share their recovery experience and results on our YouTube channel.
