@@ -202,12 +202,12 @@ import Footer from '../components/Footer.astro';
             <div
               class={`rounded-2xl p-10 transition-all ${
                 plan.popular
-                  ? 'bg-gradient-to-br from-pink-50 to-slg-bone border-2 border-pink-700 shadow-xl scale-105'
+                  ? 'bg-slg-bone border-2 border-slg-pink shadow-xl scale-105'
                   : 'bg-slg-bone border-2 border-gray-200 hover:shadow-lg'
               }`}
             >
               {plan.popular && (
-                <div class="inline-block bg-slg-pink" text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
+                <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded mb-4">
                   Most Popular
                 </div>
               )}
