@@ -171,7 +171,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- PRICING SECTION -->
-  <section id="pricing" class="py-20 bg-white">
+  <section id="pricing" class="py-20 bg-gradient-to-b from-white to-green-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-black text-gray-900 mb-4">Pricing Plans</h2>
@@ -180,7 +180,7 @@ import Footer from '../components/Footer.astro';
 
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Single Session -->
-        <div class="border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all">
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all">
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Single Session</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-pink-600">$35</span>
@@ -200,13 +200,13 @@ import Footer from '../components/Footer.astro';
               <span>Expert guidance included</span>
             </li>
           </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 rounded-lg transition-colors">
+          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 rounded-full transition-colors">
             Book Now
           </a>
         </div>
 
         <!-- 5-Session Package -->
-        <div class="border-2 border-green-400 rounded-2xl p-8 shadow-lg relative bg-gradient-to-br from-green-50 to-white">
+        <div class="bg-white border-2 border-green-400 rounded-2xl p-8 shadow-lg relative">
           <div class="absolute -top-4 left-8 bg-gradient-to-r from-pink-500 to-green-400 text-white px-4 py-1 rounded-full text-sm font-bold">
             20% OFF
           </div>
@@ -233,13 +233,13 @@ import Footer from '../components/Footer.astro';
               <span>Expert guidance included</span>
             </li>
           </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg">
+          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-full transition-all shadow-lg">
             Get Package
           </a>
         </div>
 
         <!-- Monthly Unlimited -->
-        <div class="border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all">
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all">
           <h3 class="text-2xl font-bold text-gray-900 mb-2">Monthly Unlimited</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-pink-600">$89</span>
@@ -263,13 +263,13 @@ import Footer from '../components/Footer.astro';
               <span>Expert guidance included</span>
             </li>
           </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg">
+          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-full transition-all shadow-lg">
             Subscribe
           </a>
         </div>
       </div>
 
-      <div class="mt-8 bg-pink-50 border-2 border-pink-200 rounded-xl p-4 text-center">
+      <div class="mt-12 bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-6 text-center">
         <p class="text-sm text-gray-700">
           <strong>Soul Lab Gym Members:</strong> Get 15% off all packages. Ask at the front desk for your recovery discount code.
         </p>
@@ -409,10 +409,15 @@ import Footer from '../components/Footer.astro';
       <p class="text-xl text-white/90 mb-8">
         Book your first session today. Expert guidance included.
       </p>
-      <a href="https://slg.gymdesk.com/login" class="inline-block bg-white hover:bg-gray-100 text-pink-600 font-bold py-4 px-8 rounded-full transition-colors shadow-lg">
-        Schedule Your Session
-      </a>
-      <p class="text-white/90 text-sm mt-6">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://slg.gymdesk.com/login" class="inline-block bg-white hover:bg-gray-100 text-pink-600 font-bold py-4 px-8 rounded-full transition-colors shadow-lg">
+          Login to Book
+        </a>
+        <a href="https://slg.gymdesk.com/signup" class="inline-block border-2 border-white hover:bg-white/10 text-white font-bold py-4 px-8 rounded-full transition-colors">
+          Create Account
+        </a>
+      </div>
+      <p class="text-white/90 text-sm mt-8">
         Have questions? Call <strong>0432 558 304</strong> or email <strong>info@soullabgym.com</strong>
       </p>
     </div>
