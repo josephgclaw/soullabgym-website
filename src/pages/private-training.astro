@@ -97,7 +97,7 @@ import Footer from '../components/Footer.astro';
               icon: '✅',
             },
           ].map(item => (
-            <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink rounded-2xl p-8 transition-all hover:shadow-lg">
+            <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink rounded-none p-8 transition-all hover:shadow-lg">
               <div class="text-5xl mb-4">{item.icon}</div>
               <h3 class="text-xl font-bold font-display uppercase mb-3">{item.title}</h3>
               <p class="text-[#1A1A1A] !important leading-relaxed">{item.desc}</p>
@@ -154,7 +154,7 @@ import Footer from '../components/Footer.astro';
               ],
             },
           ].map(category => (
-            <div class="bg-slg-bone border-2 border-slg-pink/30 rounded-2xl p-10 hover:shadow-lg transition-shadow">
+            <div class="bg-slg-bone border-2 border-slg-pink/30 rounded-none p-10 hover:shadow-lg transition-shadow">
               <h3 class="text-2xl font-bold font-display uppercase mb-6">{category.title}</h3>
               <ul class="space-y-4">
                 {category.points.map(point => (
@@ -200,7 +200,7 @@ import Footer from '../components/Footer.astro';
             },
           ].map(plan => (
             <div
-              class={`rounded-2xl p-10 transition-all ${
+              class={`rounded-none p-10 transition-all ${
                 plan.popular
                   ? 'bg-slg-bone border-2 border-slg-pink shadow-xl scale-105'
                   : 'bg-slg-bone border-2 border-gray-200 hover:shadow-lg'
@@ -239,7 +239,7 @@ import Footer from '../components/Footer.astro';
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Booking Form Placeholder -->
-          <div class="bg-slg-bone border-2 border-gray-200 rounded-2xl p-10 h-full">
+          <div class="bg-slg-bone border-2 border-gray-200 rounded-none p-10 h-full">
             <h3 class="text-xl font-bold font-display uppercase mb-6">Book Online</h3>
             <div class="bg-gray-100 rounded-xl p-8 text-center text-[#1A1A1A] !important min-h-96 flex items-center justify-center">
               <div>
@@ -250,7 +250,7 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <!-- Contact & Details -->
-          <div class="bg-slg-bone border-2 border-slg-pink/30 rounded-2xl p-10">
+          <div class="bg-slg-bone border-2 border-slg-pink/30 rounded-none p-10">
             <h3 class="text-xl font-bold font-display uppercase mb-6">Questions First?</h3>
             <div class="space-y-6">
               <div>
@@ -314,7 +314,7 @@ import Footer from '../components/Footer.astro';
               a: 'Just yourself and comfortable workout gear. We have gloves, wraps, and pads here. If you want to use your own gear, bring it.',
             },
           ].map((faq, i) => (
-            <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink rounded-2xl p-8 transition-all">
+            <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink rounded-none p-8 transition-all">
               <h3 class="text-lg font-bold font-display uppercase mb-4">{faq.q}</h3>
               <p class="text-[#1A1A1A] !important leading-relaxed">{faq.a}</p>
             </div>

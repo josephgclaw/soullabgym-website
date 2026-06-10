@@ -85,7 +85,7 @@ const recoveryPhotos = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {recoveryPhotos.map((photo, idx) => (
           <div 
-            class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer border-2 border-gray-200 hover:border-slg-pink shadow-sm hover:shadow-lg transition-all"
+            class="group relative overflow-hidden rounded-none aspect-[4/3] cursor-pointer border-2 border-gray-200 hover:border-slg-pink shadow-sm hover:shadow-lg transition-all"
             onclick={`openPhotoLightbox(${idx})`}
           >
             <img 
@@ -124,17 +124,17 @@ const recoveryPhotos = [
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-slg-pink/30 rounded-2xl p-8 hover:shadow-lg transition-all">
+        <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-slg-pink/30 rounded-none p-8 hover:shadow-lg transition-all">
           <h3 class="text-xl font-bold font-display uppercase mb-3">Faster Recovery</h3>
           <p class="text-[#1A1A1A] !important">Reduce muscle soreness, accelerate healing, and bounce back from intense training sessions in half the time.</p>
         </div>
 
-        <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-pink-200 rounded-2xl p-8 hover:shadow-lg transition-all">
+        <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-pink-200 rounded-none p-8 hover:shadow-lg transition-all">
           <h3 class="text-xl font-bold font-display uppercase mb-3">Mental Clarity</h3>
           <p class="text-[#1A1A1A] !important">Reset your nervous system, reduce stress, and experience the mental edge that comes from deliberate recovery.</p>
         </div>
 
-        <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-blue-200 rounded-2xl p-8 hover:shadow-lg transition-all">
+        <div class="bg-gradient-to-br from-slg-bone to-pink-50 border-2 border-blue-200 rounded-none p-8 hover:shadow-lg transition-all">
           <h3 class="text-xl font-bold font-display uppercase mb-3">Immune Boost</h3>
           <p class="text-[#1A1A1A] !important">Strengthen immune resilience through heat shock proteins and improved circulation.</p>
         </div>
@@ -157,7 +157,7 @@ const recoveryPhotos = [
           ['Flexible Membership', 'Drop-in sessions or commitment-free packages. Choose what works for you.'],
           ['Community Focused', 'Part of the Soul Lab family. Recover alongside serious athletes and wellness enthusiasts.'],
         ].map(([title, desc]) => (
-          <div class="bg-slg-bone border border-gray-200 rounded-2xl p-6 flex gap-4">
+          <div class="bg-slg-bone border border-gray-200 rounded-none p-6 flex gap-4">
             <div class="flex-shrink-0">
               <div class="w-9 h-9 rounded bg-gradient-to-r from-pink-500 to-slg-bone flex items-center justify-center text-white text-lg">✓</div>
             </div>
@@ -181,7 +181,7 @@ const recoveryPhotos = [
 
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         <!-- Single -->
-        <div class="border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-slg-pink transition-all bg-slg-bone">
+        <div class="border-2 border-gray-200 rounded-none p-8 hover:shadow-lg hover:border-slg-pink transition-all bg-slg-bone">
           <h3 class="text-3xl font-black font-display uppercase mb-1">Single Session</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-slg-pink">$35</span>
@@ -196,7 +196,7 @@ const recoveryPhotos = [
         </div>
 
         <!-- 5-Pack -->
-        <div class="border-4 border-emerald-400 rounded-2xl p-8 relative shadow-[0_10px_40px_rgb(16,185,129,0.08)] bg-slg-bone">
+        <div class="border-4 border-emerald-400 rounded-none p-8 relative shadow-[0_10px_40px_rgb(16,185,129,0.08)] bg-slg-bone">
           <div class="absolute -top-3 left-9 bg-emerald-500 text-white font-bold px-4 py-0.5 rounded shadow text-sm">BEST VALUE</div>
           <h3 class="text-3xl font-black font-display uppercase mb-1">5-Session Package</h3>
           <div class="mb-6">
@@ -213,7 +213,7 @@ const recoveryPhotos = [
         </div>
 
         <!-- Unlimited -->
-        <div class="border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-slg-pink transition-all bg-slg-bone">
+        <div class="border-2 border-gray-200 rounded-none p-8 hover:shadow-lg hover:border-slg-pink transition-all bg-slg-bone">
           <h3 class="text-3xl font-black font-display uppercase mb-1">Monthly Unlimited</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-slg-pink">$89</span>
@@ -229,7 +229,7 @@ const recoveryPhotos = [
         </div>
       </div>
 
-      <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-5 text-center">
+      <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-none p-5 text-center">
         <p class="text-emerald-800 font-medium">
           Soul Lab Gym Members save <span class="font-black">15%</span> on all recovery packages. Ask at the desk for your code.
         </p>
@@ -268,7 +268,7 @@ const recoveryPhotos = [
       <h2 class="text-3xl font-display uppercase font-display uppercase mb-10 text-center">Frequently Asked Questions</h2>
 
       <div class="space-y-3">
-        <details class="group bg-slg-bone border-2 border-gray-100 rounded-2xl p-6 open:bg-slg-bone/30 transition-all">
+        <details class="group bg-slg-bone border-2 border-gray-100 rounded-none p-6 open:bg-slg-bone/30 transition-all">
           <summary class="font-bold text-lg flex items-center justify-between cursor-pointer font-display uppercase">
             How hot is the sauna?
             <span class="text-slg-pink group-open:rotate-180 transition">▼</span>
@@ -276,7 +276,7 @@ const recoveryPhotos = [
           <p class="mt-4 text-[#1A1A1A] !important">160–180°F (70–82°C). This range gives real physiological benefits while staying comfortable and safe for most people.</p>
         </details>
 
-        <details class="group bg-slg-bone border-2 border-gray-100 rounded-2xl p-6 open:bg-slg-bone/30 transition-all">
+        <details class="group bg-slg-bone border-2 border-gray-100 rounded-none p-6 open:bg-slg-bone/30 transition-all">
           <summary class="font-bold text-lg flex items-center justify-between cursor-pointer font-display uppercase">
             Is ice bath exposure dangerous?
             <span class="text-slg-pink group-open:rotate-180 transition">▼</span>
@@ -284,7 +284,7 @@ const recoveryPhotos = [
           <p class="mt-4 text-[#1A1A1A] !important">No. We use 50–60°F (10–15°C) water. Sessions are guided, we teach proper breathing, and we adjust based on your experience level. Cardiovascular consult recommended if you have heart concerns.</p>
         </details>
 
-        <details class="group bg-slg-bone border-2 border-gray-100 rounded-2xl p-6 open:bg-slg-bone/30 transition-all">
+        <details class="group bg-slg-bone border-2 border-gray-100 rounded-none p-6 open:bg-slg-bone/30 transition-all">
           <summary class="font-bold text-lg flex items-center justify-between cursor-pointer font-display uppercase">
             I’ve never done this before — is it beginner friendly?
             <span class="text-slg-pink group-open:rotate-180 transition">▼</span>
@@ -292,7 +292,7 @@ const recoveryPhotos = [
           <p class="mt-4 text-[#1A1A1A] !important">Absolutely. Beginners start with shorter times and we walk you through breathing and timing. No prior experience needed.</p>
         </details>
 
-        <details class="group bg-slg-bone border-2 border-gray-100 rounded-2xl p-6 open:bg-slg-bone/30 transition-all">
+        <details class="group bg-slg-bone border-2 border-gray-100 rounded-none p-6 open:bg-slg-bone/30 transition-all">
           <summary class="font-bold text-lg flex items-center justify-between cursor-pointer font-display uppercase">
             How long is a typical session?
             <span class="text-slg-pink group-open:rotate-180 transition">▼</span>
@@ -300,7 +300,7 @@ const recoveryPhotos = [
           <p class="mt-4 text-[#1A1A1A] !important">Plan 45–60 minutes total: 15–20 min sauna, 2–3 min ice bath, plus rest.</p>
         </details>
 
-        <details class="group bg-slg-bone border-2 border-gray-100 rounded-2xl p-6 open:bg-slg-bone/30 transition-all">
+        <details class="group bg-slg-bone border-2 border-gray-100 rounded-none p-6 open:bg-slg-bone/30 transition-all">
           <summary class="font-bold text-lg flex items-center justify-between cursor-pointer font-display uppercase">
             Can I use this right after a workout?
             <span class="text-slg-pink group-open:rotate-180 transition">▼</span>

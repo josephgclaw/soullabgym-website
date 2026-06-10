@@ -129,7 +129,7 @@ const allPhotos = [
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allPhotos.map((photo, idx) => (
           <div 
-            class="gallery-item group relative overflow-hidden rounded-2xl aspect-square cursor-pointer border-2 border-gray-200 hover:border-pink-400 transition-all hover:shadow-xl"
+            class="gallery-item group relative overflow-hidden rounded-none aspect-square cursor-pointer border-2 border-gray-200 hover:border-pink-400 transition-all hover:shadow-xl"
             data-category={photo.category}
             onclick={`openLightbox(${idx})`}
           >
