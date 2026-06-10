@@ -17,10 +17,10 @@ import Footer from '../components/Footer.astro';
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left: Text -->
           <div>
-            <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            <div class="inline-block bg-slg-bone border border-slg-pink text-slg-pink text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
               One-on-One Coaching
             </div>
-            <h1 class="text-5xl sm:text-6xl font-black text-gray-900 mb-6">
+            <h1 class="text-5xl sm:text-6xl font-display text-gray-900 mb-6">
               Private Training Tailored to You
             </h1>
             <p class="text-xl text-gray-700 leading-relaxed mb-6">
@@ -31,7 +31,7 @@ import Footer from '../components/Footer.astro';
             </p>
             <a
               href="#booking"
-              class="inline-block bg-pink-700 hover:bg-pink-800 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+              class="inline-block bg-slg-pink hover:bg-slg-pink text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
             >
               Book Your Session Now
             </a>
@@ -57,9 +57,9 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- WHAT YOU GET -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-slg-bone">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-black text-gray-900 text-center mb-4">What You Get</h2>
+        <h2 class="text-4xl font-display uppercase text-gray-900 text-center mb-4">What You Get</h2>
         <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-16">
           Every private session is built around your specific goals, experience level, and schedule.
         </p>
@@ -97,7 +97,7 @@ import Footer from '../components/Footer.astro';
               icon: '✅',
             },
           ].map(item => (
-            <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all hover:shadow-lg">
+            <div class="bg-white border-2 border-slg-pink/30 hover:border-slg-pink rounded-2xl p-8 transition-all hover:shadow-lg">
               <div class="text-5xl mb-4">{item.icon}</div>
               <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
               <p class="text-gray-700 leading-relaxed">{item.desc}</p>
@@ -108,9 +108,9 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- WHO IT'S FOR -->
-    <section class="py-20 bg-gradient-to-b from-green-50 to-white">
+    <section class="py-20 bg-gradient-to-b from-slg-bone to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-black text-gray-900 text-center mb-4">Perfect For:</h2>
+        <h2 class="text-4xl font-display uppercase text-gray-900 text-center mb-4">Perfect For:</h2>
         <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-16">
           Whether you're starting from scratch or training for competition, we have a program for you.
         </p>
@@ -154,12 +154,12 @@ import Footer from '../components/Footer.astro';
               ],
             },
           ].map(category => (
-            <div class="bg-white border-2 border-green-200 rounded-2xl p-10 hover:shadow-lg transition-shadow">
+            <div class="bg-white border-2 border-slg-pink/30 rounded-2xl p-10 hover:shadow-lg transition-shadow">
               <h3 class="text-2xl font-bold text-gray-900 mb-6">{category.title}</h3>
               <ul class="space-y-4">
                 {category.points.map(point => (
                   <li class="flex gap-3">
-                    <span class="text-pink-700 font-bold flex-shrink-0 mt-0.5">✓</span>
+                    <span class="text-slg-pink font-bold flex-shrink-0 mt-0.5">✓</span>
                     <span class="text-gray-700 leading-relaxed">{point}</span>
                   </li>
                 ))}
@@ -171,9 +171,9 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- PRICING SECTION -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-slg-bone">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-black text-gray-900 text-center mb-16">Pricing</h2>
+        <h2 class="text-4xl font-display uppercase text-gray-900 text-center mb-16">Pricing</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {[
@@ -202,18 +202,18 @@ import Footer from '../components/Footer.astro';
             <div
               class={`rounded-2xl p-10 transition-all ${
                 plan.popular
-                  ? 'bg-gradient-to-br from-pink-50 to-green-50 border-2 border-pink-700 shadow-xl scale-105'
-                  : 'bg-white border-2 border-gray-200 hover:shadow-lg'
+                  ? 'bg-gradient-to-br from-pink-50 to-slg-bone border-2 border-pink-700 shadow-xl scale-105'
+                  : 'bg-slg-bone border-2 border-gray-200 hover:shadow-lg'
               }`}
             >
               {plan.popular && (
-                <div class="inline-block bg-pink-700 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+                <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
                   Most Popular
                 </div>
               )}
               <h3 class="text-2xl font-bold text-gray-900 mb-2">{plan.title}</h3>
               <div class="mb-4">
-                <div class="text-4xl font-black text-pink-700">{plan.price}</div>
+                <div class="text-4xl font-black text-slg-pink">{plan.price}</div>
                 <p class="text-sm text-gray-600 mt-2">{plan.duration}</p>
               </div>
               <p class="text-gray-700 mb-8 leading-relaxed">{plan.desc}</p>
@@ -230,9 +230,9 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- BOOKING SECTION -->
-    <section id="booking" class="py-20 bg-gradient-to-br from-pink-50 to-green-50">
+    <section id="booking" class="py-20 bg-gradient-to-br from-pink-50 to-slg-bone">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-black text-gray-900 text-center mb-4">Ready to Start?</h2>
+        <h2 class="text-4xl font-display uppercase text-gray-900 text-center mb-4">Ready to Start?</h2>
         <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-12">
           Book your first private session below. If you have questions first, get in touch.
         </p>
@@ -250,18 +250,18 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <!-- Contact & Details -->
-          <div class="bg-white border-2 border-green-200 rounded-2xl p-10">
+          <div class="bg-white border-2 border-slg-pink/30 rounded-2xl p-10">
             <h3 class="text-xl font-bold text-gray-900 mb-6">Questions First?</h3>
             <div class="space-y-6">
               <div>
                 <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-2">Phone</p>
-                <a href="tel:0432558304" class="text-lg text-gray-900 font-semibold hover:text-pink-700 transition-colors">
+                <a href="tel:0432558304" class="text-lg text-gray-900 font-semibold hover:text-slg-pink transition-colors">
                   0432 558 304
                 </a>
               </div>
               <div>
                 <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-2">Email</p>
-                <a href="mailto:info@soullabgym.com" class="text-lg text-gray-900 font-semibold hover:text-pink-700 transition-colors">
+                <a href="mailto:info@soullabgym.com" class="text-lg text-gray-900 font-semibold hover:text-slg-pink transition-colors">
                   info@soullabgym.com
                 </a>
               </div>
@@ -271,7 +271,7 @@ import Footer from '../components/Footer.astro';
                 </p>
                 <a
                   href="/contact"
-                  class="inline-block bg-pink-700 hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-full transition-all"
+                  class="inline-block bg-slg-pink hover:bg-slg-pink text-white font-semibold px-6 py-3 rounded-full transition-all"
                 >
                   Get in Touch
                 </a>
@@ -283,9 +283,9 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-slg-bone">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-black text-gray-900 text-center mb-16">Frequently Asked</h2>
+        <h2 class="text-4xl font-display uppercase text-gray-900 text-center mb-16">Frequently Asked</h2>
 
         <div class="space-y-6">
           {[
@@ -314,7 +314,7 @@ import Footer from '../components/Footer.astro';
               a: 'Just yourself and comfortable workout gear. We have gloves, wraps, and pads here. If you want to use your own gear, bring it.',
             },
           ].map((faq, i) => (
-            <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all">
+            <div class="bg-white border-2 border-slg-pink/30 hover:border-slg-pink rounded-2xl p-8 transition-all">
               <h3 class="text-lg font-bold text-gray-900 mb-4">{faq.q}</h3>
               <p class="text-gray-700 leading-relaxed">{faq.a}</p>
             </div>
