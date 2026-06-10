@@ -13,6 +13,10 @@
 }
 
 body {
-  background-color: var(--slg-bone);
+  background-color: transparent;
   color: var(--slg-text-dark);
+}
+
+html {
+  background-color: transparent;
 }
