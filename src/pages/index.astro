@@ -8,41 +8,55 @@ import Footer from '../components/Footer.astro';
   title="Soul Lab Gym — Townsville's Muay Thai Home"
   description="Train with WMO state champion Joseph Gabiola. Muay Thai for families, fighters & future champions in Townsville. Start your 7-day free trial today."
 >
+  <!-- TOP BUTTONS (Before Nav) -->
+  <div class="fixed top-0 left-0 right-0 z-40 bg-white">
+    <div class="grid grid-cols-2 gap-0">
+      <a
+        href="https://slg.gymdesk.com/signup"
+        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-4 text-center transition-colors"
+      >
+        Join Now
+      </a>
+      <a
+        href="https://slg.gymdesk.com/login"
+        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-4 text-center transition-colors"
+      >
+        Members Login
+      </a>
+    </div>
+  </div>
+
   <Nav />
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+  <section class="relative min-h-screen flex items-center justify-center pt-40 overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/photos/gym-wide-shot.jpg" alt="Soul Lab Gym training" class="w-full h-full object-cover" />
+      <img src="/photos/kids-with-coach.jpg" alt="Soul Lab Gym - Kids with coach" class="w-full h-full object-cover" />
     </div>
-    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 bg-black/25"></div>
 
-    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-      <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-        Townsville's #1 Muay Thai Gym
-      </div>
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-4">
-        Townsville's Muay Thai <span class="text-pink-500">Home</span>
-      </h1>
-      <p class="text-xl sm:text-2xl text-gray-800 font-medium mb-6">
-        For Families, Fighters &amp; Future Champions
-      </p>
-      <p class="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed mb-10">
-        Train with WMO state champion Joseph Gabiola and the Soul Lab coaching crew who know how to meet you where you're starting and pull the best out of you. Every session blends technical depth with real accountability so you build the discipline, confidence, and conditioning that carry outside the gym.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#trial"
-          class="bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
-        >
-          Claim Your 7-Day Pass
-        </a>
-        <a
-          href="/timetable"
-          class="border-2 border-gray-900 hover:bg-gray-100 text-gray-900 font-bold text-base px-8 py-4 rounded-full transition-colors"
-        >
-          View Timetable
-        </a>
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="space-y-3">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black bg-pink-500 inline-block px-4 py-2">
+          TOWNSVILLE'S
+        </h1>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black bg-pink-500 inline-block px-4 py-2">
+          MUAY THAI
+        </h1>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-black bg-pink-500 inline-block px-4 py-2">
+          HOME
+        </h1>
+        <div class="pt-6">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-black bg-pink-500 inline-block px-4 py-2 mb-3">
+            FOR FAMILIES
+          </h2>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-black bg-pink-500 inline-block px-4 py-2 mb-3">
+          FIGHTERS
+        </h2>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-black bg-pink-500 inline-block px-4 py-2 mb-3">
+          & FUTURE CHAMPIONS
+        </h2>
       </div>
     </div>
   </section>
