@@ -1,0 +1,97 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Private Training — Soul Lab Gym"
+  description="One-on-one Muay Thai coaching in Townsville. Personalised private training sessions with Joseph Gabiola or a senior Soul Lab coach."
+>
+  <Nav />
+
+  <div class="pt-16">
+    <!-- PAGE HEADER -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl sm:text-6xl font-black text-gray-900 mb-4">
+          Private <span class="text-pink-500">Training</span>
+        </h1>
+        <p class="text-2xl text-gray-800 font-medium">One-on-one coaching tailored to your goals</p>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-16 bg-gradient-to-b from-green-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+          <!-- Left: Info -->
+          <div>
+            <p class="text-gray-700 text-lg leading-relaxed mb-8">
+              Whether you're preparing for a fight, recovering from injury, or want focused technique work, private sessions give you the coach's full attention. Sessions are available with Joseph or a senior Soul Lab coach.
+            </p>
+
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">What You Get</h2>
+            <ul class="flex flex-col gap-5 mb-10">
+              {[
+                'Completely personalised to your level and goals',
+                'Flexible scheduling — book around your life',
+                'Faster technique improvement',
+                'Great for beginners who want a head start before group classes',
+              ].map(item => (
+                <li class="flex items-start gap-3 text-gray-700">
+                  <span class="text-pink-500 font-bold mt-0.5 flex-shrink-0 text-lg">✓</span>
+                  <span class="leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="https://slg.gymdesk.com/login"
+              class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+            >
+              Book a Private Session
+            </a>
+          </div>
+
+          <!-- Right: Visual panel -->
+          <div class="bg-white border-2 border-green-200 rounded-xl p-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Private Sessions Are Perfect For:</h3>
+            <div class="flex flex-col gap-4">
+              {[
+                { title: 'Fight Preparation', desc: 'Camp-specific coaching for your next bout.' },
+                { title: 'Injury Recovery', desc: 'Modified training that keeps you moving safely.' },
+                { title: 'Technique Refinement', desc: 'Laser-focus on specific skills you want to sharpen.' },
+                { title: 'Complete Beginners', desc: 'Build a solid foundation before joining group classes.' },
+              ].map(item => (
+                <div class="flex items-start gap-4 p-4 bg-gradient-to-b from-green-50 to-white border-2 border-green-200 hover:border-pink-300 rounded-lg transition-colors">
+                  <div>
+                    <div class="font-semibold text-gray-900 text-sm">{item.title}</div>
+                    <div class="text-gray-700 text-sm mt-1">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING EMBED -->
+    <section id="booking" class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-black text-gray-900 mb-8 text-center">Book Your Session</h2>
+        <!-- ZIPLEADS BOOKING EMBED — Replace this comment with the ZipLeads calendar embed code when provided -->
+        <div class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center text-gray-600">
+          <p class="text-lg font-medium mb-2">Booking calendar loading...</p>
+          <p class="text-sm mt-2">ZipLeads embed coming soon</p>
+        </div>
+        <p class="text-center text-gray-600 text-sm mt-6">
+          Or call us directly: <a href="tel:0432558304" class="text-gray-900 hover:text-pink-500 transition-colors">0432 558 304</a>
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <Footer />
+</Layout>

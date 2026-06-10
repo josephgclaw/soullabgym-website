@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="About — Soul Lab Gym"
+  description="Soul Lab Gym is Townsville's home for authentic Muay Thai training. Meet head coach Joseph Gabiola, WMO State Champion."
+>
+  <Nav />
+
+  <div class="pt-16">
+    <!-- PAGE HEADER -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl sm:text-6xl font-black text-gray-900 mb-6">
+          About <span class="text-pink-500">Soul Lab Gym</span>
+        </h1>
+        <p class="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
+          Soul Lab Gym is Townsville's home for authentic Muay Thai training. We're serious about technique, serious about community, and serious about getting results — whether you're a kid stepping on the mat for the first time or a seasoned fighter preparing for your next bout.
+        </p>
+      </div>
+    </section>
+
+    <!-- HEAD COACH -->
+    <section class="py-16 bg-gradient-to-b from-green-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-12">Meet the Coach</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+          <!-- Photo placeholder -->
+          <div class="bg-white border-2 border-green-200 rounded-xl overflow-hidden aspect-square flex items-center justify-center">
+            <!-- TODO: Add coach photo -->
+            <div class="text-center text-gray-600 p-8">
+              <div class="text-3xl font-bold text-gray-900 mb-4">Fight Preparation</div>
+              <p class="text-sm">Coach photo coming soon</p>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div>
+            <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-4">
+              Head Coach
+            </div>
+            <h3 class="text-3xl font-black text-gray-900 mb-2">Joseph Gabiola</h3>
+            <div class="text-pink-500 font-semibold mb-6">WMO State Champion</div>
+            <p class="text-gray-700 text-lg leading-relaxed">
+              WMO State Champion and head coach of Soul Lab Gym. Joseph has built a coaching reputation on technical depth, real accountability, and a genuine ability to develop fighters at every level — from absolute beginners to competitive athletes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-10">The Gym</h2>
+        <!-- TODO: Photo gallery — Joe will supply gym photos -->
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Photos go here -->
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div class="bg-white border-2 border-gray-200 rounded-lg aspect-square flex items-center justify-center text-gray-600 text-sm hover:border-pink-300 transition-colors">
+              Photo {i + 1}
+            </div>
+          ))}
+        </div>
+        <p class="text-center text-gray-600 text-sm mt-6">Gym photos coming soon</p>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="py-16 bg-gradient-to-b from-green-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-black text-gray-900 text-center mb-12">What We're About</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            { title: 'Authentic Technique', desc: 'Real Muay Thai from coaches who compete and win.' },
+            { title: 'Family Friendly', desc: 'A safe, welcoming space for all ages and experience levels.' },
+            { title: 'Real Results', desc: 'Structured progression that builds champions inside and outside the gym.' },
+            { title: 'True Community', desc: 'Teammates who show up, support each other, and push each other forward.' },
+          ].map(item => (
+            <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-xl p-6 text-center transition-colors">
+              <h3 class="font-bold text-gray-900 mb-2">{item.title}</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-white">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-black text-gray-900 mb-4">Come be part of it.</h2>
+        <p class="text-gray-700 mb-8">Your first week is on us. No commitment, no pressure.</p>
+        <a
+          href="https://slg.gymdesk.com/signup"
+          class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+        >
+          Claim Your 7-Day Pass
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <Footer />
+</Layout>

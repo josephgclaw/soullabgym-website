@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const testimonials = [
+  {
+    name: 'New Member',
+    category: 'Gym Member',
+    rating: 5,
+    text: 'Was nervous walking into a fight gym again, but from the first class I knew I\'d found my place. Coaches are legit, staff are welcoming, and everyone lifts you up.',
+    verified: true,
+  },
+  {
+    name: 'Adult Beginner',
+    category: 'Gym Member',
+    rating: 5,
+    text: 'My first session was fantastic. I\'m starting my fitness journey here and felt so welcomed. Love that I can go at my own pace and still feel part of the group.',
+    verified: true,
+  },
+  {
+    name: 'Parent of Member',
+    category: 'Parent',
+    rating: 5,
+    text: 'My daughter begs to go every day. Clean, tidy facility, coaches are amazing with kids, and the confidence boost is huge.',
+    verified: true,
+  },
+];
+---
+
+<Layout
+  title="Testimonials — Soul Lab Gym"
+  description="Read real reviews from Soul Lab Gym members, parents, and Stand Strong program participants. 5.0 stars with 55+ Google reviews."
+>
+  <Nav />
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-br from-green-50 via-white to-pink-50">
+    <div class="absolute inset-0"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+        Real Reviews from Real Members
+      </div>
+
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-6">
+        What Our Community Says
+      </h1>
+
+      <!-- Rating Badge -->
+      <div class="inline-block bg-white border-2 border-gray-200 rounded-2xl px-8 py-6 mb-8 shadow-sm hover:shadow-lg transition-shadow">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <div class="text-5xl font-black text-gray-900">5.0</div>
+          <div class="text-3xl text-pink-500">★★★★★</div>
+        </div>
+        <p class="text-gray-900 text-lg font-semibold">55+ Google Reviews</p>
+        <p class="text-gray-600 text-sm mt-2">Consistently rated Townsville's top Muay Thai gym</p>
+      </div>
+
+      <p class="text-xl sm:text-2xl text-gray-800 font-medium max-w-3xl mx-auto">
+        Members from all backgrounds — from beginners to fighters — share why Soul Lab Gym stands out.
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS GRID -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {testimonials.map(testimonial => (
+          <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all hover:shadow-lg flex flex-col">
+            <!-- Header -->
+            <div class="mb-6">
+              <!-- Star Rating -->
+              <div class="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map(() => (
+                  <span class="text-pink-500 text-lg">★</span>
+                ))}
+              </div>
+
+              <!-- Name + Verified Badge -->
+              <div class="flex items-center gap-2 mb-2">
+                <h3 class="text-lg font-bold text-gray-900">{testimonial.name}</h3>
+                {testimonial.verified && (
+                  <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                )}
+              </div>
+
+              <!-- Category Badge -->
+              <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full">
+                {testimonial.category}
+              </div>
+            </div>
+
+            <!-- Review Text -->
+            <p class="text-gray-800 italic leading-relaxed flex-grow mb-6">
+              "{testimonial.text}"
+            </p>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-200"></div>
+            <div class="text-xs text-gray-600 mt-4">Verified Google Review</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="py-20 bg-gradient-to-br from-green-50 to-pink-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-black text-gray-900 mb-4">See All 55+ Reviews</h2>
+      <p class="text-lg text-gray-700 mb-8">
+        Read hundreds of verified reviews from Soul Lab Gym members on Google.
+      </p>
+      <a
+        href="https://www.google.com/search?q=soul+lab+gym+townsville+reviews"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+      >
+        View All Reviews on Google
+      </a>
+      <p class="text-sm text-gray-600 mt-6">
+        Help us grow — Leave a review on Google
+      </p>
+    </div>
+  </section>
+
+  <!-- TRUST SECTION -->
+  <section class="py-20 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="text-5xl font-black bg-gradient-to-r from-pink-500 to-green-400 bg-clip-text text-transparent mb-4">5.0</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Perfect Rating</h3>
+          <p class="text-gray-700">Consistently 5-star reviews from members</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-black bg-gradient-to-r from-pink-500 to-green-400 bg-clip-text text-transparent mb-4">55+</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Verified Reviews</h3>
+          <p class="text-gray-700">Google-verified member feedback</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-black bg-gradient-to-r from-pink-500 to-green-400 bg-clip-text text-transparent mb-4">100%</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Member Satisfaction</h3>
+          <p class="text-gray-700">All reviews 5 stars — no exceptions</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="py-16 bg-gradient-to-r from-pink-500 to-green-400">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-black text-white mb-4">Join 100+ Members</h2>
+      <p class="text-lg text-white/90 mb-8">
+        Start your training journey at Townsville's top-rated Muay Thai gym.
+      </p>
+      <a
+        href="https://slg.gymdesk.com/signup"
+        class="inline-block bg-white hover:bg-gray-100 text-pink-600 font-bold text-base px-8 py-4 rounded-full transition-colors shadow-lg"
+      >
+        Claim Your 7-Day Free Trial
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

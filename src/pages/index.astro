@@ -1,17 +1,270 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Soul Lab Gym — Townsville's Muay Thai Home"
+  description="Train with WMO state champion Joseph Gabiola. Muay Thai for families, fighters & future champions in Townsville. Start your 7-day free trial today."
+>
+  <Nav />
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/photos/gym-wide-shot.jpg" alt="Soul Lab Gym training" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-white/20"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+        Townsville's #1 Muay Thai Gym
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-4">
+        Townsville's Muay Thai <span class="text-pink-500">Home</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-800 font-medium mb-6">
+        For Families, Fighters &amp; Future Champions
+      </p>
+      <p class="text-base sm:text-lg text-gray-700 max-w-2xl mx-auto leading-relaxed mb-10">
+        Train with WMO state champion Joseph Gabiola and the Soul Lab coaching crew who know how to meet you where you're starting and pull the best out of you. Every session blends technical depth with real accountability so you build the discipline, confidence, and conditioning that carry outside the gym.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="#trial"
+          class="bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+        >
+          Claim Your 7-Day Pass
+        </a>
+        <a
+          href="/timetable"
+          class="border-2 border-gray-900 hover:bg-gray-100 text-gray-900 font-bold text-base px-8 py-4 rounded-full transition-colors"
+        >
+          View Timetable
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION CARDS -->
+  <section class="py-20 bg-gradient-to-b from-green-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-4">What We Stand For</h2>
+        <p class="text-gray-600 text-lg max-w-xl mx-auto">Three pillars that define every session at Soul Lab.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1: Coaching -->
+        <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all hover:shadow-lg group">
+          <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4 group-hover:bg-pink-100 transition-colors text-xl font-bold text-green-700">
+            ✓ Coach
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Fight-Ready Coaching</h3>
+          <p class="text-gray-600 leading-relaxed">Real competitors in your corner every session. Learn authentic Muay Thai technique, ring IQ, and strategy.</p>
+        </div>
+        <!-- Card 2: Kids -->
+        <div class="bg-white border-2 border-pink-200 hover:border-green-300 rounded-2xl p-8 transition-all hover:shadow-lg group">
+          <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mb-4 group-hover:bg-green-100 transition-colors text-xl font-bold text-pink-700">
+            ✓ Safe
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Confidence Building</h3>
+          <p class="text-gray-600 leading-relaxed">Structured curriculum focused on respect, discipline, and confidence with age-specific progress paths.</p>
+        </div>
+        <!-- Card 3: Community -->
+        <div class="bg-white border-2 border-blue-200 hover:border-pink-300 rounded-2xl p-8 transition-all hover:shadow-lg group">
+          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 group-hover:bg-pink-100 transition-colors text-xl font-bold text-blue-700">
+            ✓ Team
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Community &amp; Accountability</h3>
+          <p class="text-gray-600 leading-relaxed">Small crews, tracked attendance, weekly check-ins, and teammates who actually remember your name.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7-DAY TRIAL -->
+  <section id="trial" class="py-20 bg-gradient-to-b from-white to-pink-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+            7-Day Free Trial
+          </div>
+          <h2 class="text-4xl sm:text-5xl font-black text-gray-900 leading-tight mb-4">
+            Jump-start your training in 7 days.
+          </h2>
+          <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+            Get unlimited access to Muay Fit and Boxing Level 1 and 2 classes, plus a 1:1 technique check-in.
+          </p>
+          <ul class="flex flex-col gap-4 mb-10">
+            {[
+              'Unlimited classes for 7 consecutive days',
+              'One personal pad session with Joseph or a senior coach',
+              'Loaner gloves & shin guards + wraps discount',
+              'Fight-focused conditioning + nutrition quick start',
+            ].map(item => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <span class="text-green-500 font-bold mt-0.5 flex-shrink-0">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="/contact"
+            class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+          >
+            Claim Your 7-Day Pass Now
+          </a>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-100 to-pink-100 border-2 border-green-200 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">After 7 days, you'll feel:</h3>
+          <ul class="flex flex-col gap-5">
+            {[
+              'Confident throwing real Muay Thai combinations',
+              'Massive bump in cardio + energy outside the gym',
+              'Less stress + sharper focus at work/home',
+              'A clear plan for joining the squad long term',
+            ].map(item => (
+              <li class="flex items-start gap-4">
+                <span class="w-8 h-8 rounded-full bg-pink-500/20 border border-pink-300 text-pink-600 flex items-center justify-center flex-shrink-0 font-bold text-sm">⭐</span>
+                <span class="text-gray-700 leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="py-20 bg-white border-t-2 border-green-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-4">Our Gym in Action</h2>
+        <p class="text-gray-600 text-lg max-w-xl mx-auto">Real training, real community, real results at Soul Lab Gym</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="group relative overflow-hidden rounded-2xl h-64 sm:h-72 shadow-md hover:shadow-xl transition-shadow">
+          <img src="/photos/coach-pads.jpg" alt="Coach pad work" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <h3 class="text-white font-bold text-lg">Expert Coaching</h3>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl h-64 sm:h-72 shadow-md hover:shadow-xl transition-shadow">
+          <img src="/photos/pad-work-sparring.jpg" alt="Pad work sparring" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <h3 class="text-white font-bold text-lg">Real Training</h3>
+          </div>
+        </div>
+
+        <div class="group relative overflow-hidden rounded-2xl h-64 sm:h-72 shadow-md hover:shadow-xl transition-shadow">
+          <img src="/photos/kids-with-coach.jpg" alt="Kids with coach" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <h3 class="text-white font-bold text-lg">Kids Programs</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="group relative overflow-hidden rounded-2xl h-64 sm:h-72 shadow-md hover:shadow-xl transition-shadow">
+          <img src="/photos/team-photo.jpg" alt="Soul Lab Team" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+          <div class="absolute inset-0 flex items-end p-6">
+            <h3 class="text-white font-bold text-lg">Our Community</h3>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-400 to-pink-500 p-8 flex flex-col justify-end shadow-md hover:shadow-xl transition-shadow">
+          <h3 class="text-2xl font-black text-white mb-4">See More Photos & Videos</h3>
+          <p class="text-white/90 mb-6">Follow us on Instagram and YouTube for daily training clips, member stories, and gym updates.</p>
+          <div class="flex gap-3 flex-wrap">
+            <a href="https://www.instagram.com/soul.lab.gym/" target="_blank" rel="noopener noreferrer" class="inline-block bg-white hover:bg-gray-100 text-pink-600 font-bold py-2 px-4 rounded-full transition-colors text-sm">
+              Instagram
+            </a>
+            <a href="https://www.youtube.com/channel/UCMGyz96tdBUgD-RG6SyEDRg" target="_blank" rel="noopener noreferrer" class="inline-block bg-white hover:bg-gray-100 text-pink-600 font-bold py-2 px-4 rounded-full transition-colors text-sm">
+              YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED YOUTUBE -->
+  <section class="py-20 bg-gradient-to-b from-white to-green-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-4">Learn from Our Channel</h2>
+        <p class="text-gray-600 text-lg max-w-xl mx-auto">Technique tips, training clips, and member stories</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div class="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden group shadow-md hover:shadow-lg transition-shadow">
+          <div class="relative bg-gradient-to-br from-green-200 to-pink-200 h-64 sm:h-72 flex items-center justify-center">
+            <div class="text-6xl text-white/50">▶</div>
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Latest Training Tips</h3>
+            <p class="text-gray-600 text-sm mb-4">Check out our latest Muay Thai technique videos</p>
+            <a href="https://www.youtube.com/channel/UCMGyz96tdBUgD-RG6SyEDRg" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:text-pink-700 font-bold transition-colors">
+              Watch on YouTube →
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden group shadow-md hover:shadow-lg transition-shadow">
+          <div class="relative bg-gradient-to-br from-green-200 to-pink-200 h-64 sm:h-72 flex items-center justify-center">
+            <div class="text-6xl text-white/50">▶</div>
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Member Stories</h3>
+            <p class="text-gray-600 text-sm mb-4">Inspiring journeys from our training community</p>
+            <a href="https://www.youtube.com/channel/UCMGyz96tdBUgD-RG6SyEDRg" target="_blank" rel="noopener noreferrer" class="text-pink-600 hover:text-pink-700 font-bold transition-colors">
+              Watch on YouTube →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="https://www.youtube.com/channel/UCMGyz96tdBUgD-RG6SyEDRg" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg">
+          Subscribe to Soul Lab Gym on YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS PREVIEW -->
+  <section class="py-20 bg-white border-t-2 border-pink-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black text-gray-900 mb-4">What Our Members Say</h2>
+        <p class="text-gray-600 text-lg">5.0 stars with 55+ Google Reviews</p>
+      </div>
+      <div class="flex justify-center mb-8">
+        <div class="inline-block bg-gradient-to-r from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl px-8 py-6">
+          <div class="flex items-center justify-center gap-3">
+            <div class="text-4xl font-black text-gray-900">5.0</div>
+            <div class="text-2xl">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="/testimonials" class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg">
+          Read All Testimonials
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

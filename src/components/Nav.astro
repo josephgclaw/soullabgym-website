@@ -1,0 +1,112 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/timetable', label: 'Timetable' },
+  { href: '/stand-strong', label: 'Stand Strong - Anti Bullying' },
+  { href: '/recovery', label: 'Recovery' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/private-training', label: 'Private Training' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <img src="/logo.png" alt="Soul Lab Gym" class="h-10" />
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`text-sm font-medium transition-colors hover:text-pink-500 ${
+              currentPath === link.href ? 'text-pink-500 font-bold' : 'text-gray-700'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+        <div class="flex items-center gap-2 border-l border-gray-300 pl-6">
+          <a
+            href="https://slg.gymdesk.com/login"
+            class="text-sm font-medium text-gray-700 hover:text-pink-500 transition-colors"
+          >
+            Login
+          </a>
+          <a
+            href="https://slg.gymdesk.com/signup"
+            class="bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-semibold text-sm px-4 py-2 rounded-full transition-all"
+          >
+            Sign Up
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded text-gray-700 hover:text-pink-500 focus:outline-none"
+        aria-label="Toggle menu"
+      >
+        <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <div class="px-4 py-4 flex flex-col gap-4">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`text-sm font-medium transition-colors hover:text-pink-500 ${
+            currentPath === link.href ? 'text-pink-500 font-bold' : 'text-gray-700'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="border-t border-gray-200 pt-4 flex flex-col gap-3">
+        <a
+          href="https://slg.gymdesk.com/login"
+          class="text-sm font-medium text-gray-700 hover:text-pink-500 transition-colors text-center py-2"
+        >
+          Login
+        </a>
+        <a
+          href="https://slg.gymdesk.com/signup"
+          class="bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-semibold text-sm px-4 py-2 rounded-full transition-all text-center"
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const hamburger = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden', isOpen);
+    hamburger?.classList.toggle('hidden', !isOpen);
+    closeIcon?.classList.toggle('hidden', isOpen);
+  });
+</script>

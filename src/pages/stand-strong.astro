@@ -1,0 +1,365 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Stand Strong by Soul Lab — Free Anti-Bullying Programs for Townsville Kids"
+  description="Free 2-day Stand Strong holiday programs for kids ages 6-14. Build confidence and real tools for handling bullying. Led by Joseph Gabiola."
+>
+  <Nav />
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <!-- Hero Background Image -->
+    <div class="absolute inset-0">
+      <img src="/photos/kids-guard-pose-group.jpg" alt="Stand Strong kids training" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-white/30"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+        Free Programs • Soul Lab Gym
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-4">
+        Give your child <span class="text-pink-500">real tools.</span><br>
+        Build <span class="text-pink-500">real confidence.</span>
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-800 font-medium mb-6 max-w-2xl mx-auto">
+        Free 2-day Stand Strong programs for Townsville kids during every school holiday period.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://slg.gymdesk.com/signup"
+          class="bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+        >
+          Claim a Free Spot
+        </a>
+        <a
+          href="#program"
+          class="border-2 border-gray-900 hover:bg-gray-100 text-gray-900 font-bold text-base px-8 py-4 rounded-full transition-colors"
+        >
+          See What They Learn
+        </a>
+      </div>
+      <p class="text-gray-700 text-sm mt-8">4 blocks per year • All kids welcome • Ages 6–14</p>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="bg-white border-b border-gray-200 py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-gray-600 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-x-8 gap-y-2">
+      <div class="font-medium">Trusted by Townsville parents who wanted more than "just talk"</div>
+      <div class="flex items-center gap-x-5 text-gray-400">
+        <div>Backed by real martial arts training</div>
+        <div class="hidden sm:block h-3 w-px bg-gray-300"></div>
+        <div>Accredited anti-bullying methodology</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM SECTION -->
+  <section id="program" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <div class="text-pink-500 font-semibold tracking-wider text-xs uppercase">The Stand Strong Program</div>
+        <h2 class="text-4xl sm:text-5xl font-black text-gray-900 mt-3 leading-tight">
+          Two powerful days that actually change how kids carry themselves.
+        </h2>
+        <p class="text-xl text-gray-700 mt-4 leading-relaxed">
+          Not lectures. Real training. Using proven martial arts principles and accredited anti-bullying frameworks, delivered by qualified coaches.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Day 1 -->
+        <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all hover:shadow-lg">
+          <div class="text-pink-500 mb-3 text-xs tracking-widest font-semibold uppercase">Day 1</div>
+          <h3 class="font-bold text-2xl text-gray-900 mb-6">Grounding & Presence</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex gap-x-3">
+              <span class="text-pink-500 font-bold">•</span>
+              <span>Posture, breathing & body awareness</span>
+            </li>
+            <li class="flex gap-x-3">
+              <span class="text-pink-500 font-bold">•</span>
+              <span>Reading situations and setting boundaries</span>
+            </li>
+            <li class="flex gap-x-3">
+              <span class="text-pink-500 font-bold">•</span>
+              <span>The mindset of "I am not easy prey" – done with care</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="bg-white border-2 border-pink-200 hover:border-green-300 rounded-2xl p-8 transition-all hover:shadow-lg">
+          <div class="text-pink-500 mb-3 text-xs tracking-widest font-semibold uppercase">Day 2</div>
+          <h3 class="font-bold text-2xl text-gray-900 mb-6">Tools You Can Actually Use</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex gap-x-3">
+              <span class="text-pink-500 font-bold">•</span>
+              <span>Verbal de-escalation & confident voice work</span>
+            </li>
+            <li class="flex gap-x-3">
+              <span class="text-pink-500 font-bold">•</span>
+              <span>Movement for safety & escape (age-appropriate)</span>
+            </li>
+            <li class="flex gap-x-3">
+              <span class="text-pink-500 font-bold">•</span>
+              <span>Dealing with social media & group pressure</span>
+            </li>
+          </ul>
+          <div class="mt-6 pt-5 border-t text-xs text-pink-600 font-medium">
+            End of day 2: Small graduation + parent debrief
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-8 flex flex-col">
+          <div class="flex-grow">
+            <div class="uppercase tracking-wider text-xs text-gray-600">The Result</div>
+            <h3 class="text-3xl leading-tight font-bold mt-3 text-gray-900">Kids who feel stronger in their own skin.</h3>
+            <p class="text-gray-700 mt-4 text-sm">
+              Parents consistently tell us their child stands taller, speaks up sooner, and handles difficult moments with more calm.
+            </p>
+          </div>
+          <div class="mt-6 text-xs bg-pink-100/50 inline-block px-4 py-2 rounded-2xl text-gray-700">
+            Parents attend a 20-min briefing on day 2
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="py-20 bg-green-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="text-pink-500 font-semibold tracking-wider text-xs uppercase">No Fluff. Real Tools.</div>
+          <h2 class="text-4xl font-black text-gray-900 mt-3 leading-tight">Built on what actually works.</h2>
+          <p class="text-gray-700 mt-4 text-lg leading-relaxed">
+            This isn't generic "be kind" messaging. Stand Strong Townsville draws from accredited anti-bullying education combined with two decades of high-level martial arts coaching at Soul Lab Gym.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="text-pink-500 font-mono text-sm font-bold w-6">01</div>
+            <div class="text-gray-700">Accredited anti-bullying frameworks (including training lineage connected to Jeff Horne)</div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="text-pink-500 font-mono text-sm font-bold w-6">02</div>
+            <div class="text-gray-700">Martial arts principles that kids can feel in their body — posture, voice, calm under pressure</div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="text-pink-500 font-mono text-sm font-bold w-6">03</div>
+            <div class="text-gray-700">Small groups so every child gets seen and coached properly</div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="text-pink-500 font-mono text-sm font-bold w-6">04</div>
+            <div class="text-gray-700">Clear follow-on pathway into ongoing training at the gym (if they want it)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOSEPH SECTION -->
+  <section id="joseph" class="py-20 bg-white border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-5 gap-8 lg:gap-12">
+        <div class="md:col-span-2">
+          <div class="text-pink-500 font-semibold tracking-wider text-xs uppercase">The Coach</div>
+          <h2 class="text-3xl font-black text-gray-900 mt-3">Joseph Gabiola</h2>
+          <p class="text-gray-700 mt-2 font-medium">Head Coach & Founder, Soul Lab Gym</p>
+
+          <div class="mt-8 space-y-4">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <div class="text-sm text-gray-700">WMO State Champion with 17 professional wins (Muay Thai, K1, Boxing)</div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5.951-1.488 5.951 1.488a1 1 0 001.169-1.409l-7-14z"></path>
+              </svg>
+              <div class="text-sm text-gray-700">Accredited in anti-bullying education, trained under the Amayda framework</div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+              </svg>
+              <div class="text-sm text-gray-700">Built Soul Lab Gym on the principle that strength training builds resilient kids</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-3 bg-white border-2 border-pink-200 rounded-2xl p-8">
+          <blockquote class="text-lg text-gray-700 leading-relaxed">
+            "I don't believe in teaching kids to be aggressive. I believe in teaching them to be so grounded, calm, and aware that most problems never escalate — and if they do, they have genuine options. That's what martial arts gave me. That's what I want to give the next generation in Townsville."
+          </blockquote>
+          <p class="font-bold text-gray-900 mt-6">— Joseph Gabiola</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT DATES -->
+  <section class="py-16 bg-white border-t border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <div class="text-pink-500 font-semibold tracking-wider text-xs uppercase">4 times a year</div>
+          <h3 class="text-3xl font-black text-gray-900 mt-2">Next Stand Strong blocks</h3>
+          <p class="text-gray-700 mt-3">School holiday programs running during each holiday break. Interest list opens 4 weeks before each block.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-3 bg-gradient-to-br from-green-50 to-pink-50 p-6 rounded-2xl border-2 border-green-200">
+          <div class="text-center py-4 bg-white rounded-xl border border-gray-200">
+            <div class="font-bold text-gray-900">[INSERT NEXT BLOCK DATES]</div>
+            <div class="text-sm text-pink-600 font-medium mt-1">2-day Stand Strong Program</div>
+          </div>
+          <div class="text-center py-4 bg-white rounded-xl border border-gray-200">
+            <div class="font-bold text-gray-900">[INSERT BLOCK 2 DATES]</div>
+            <div class="text-sm text-pink-600 font-medium mt-1">2-day Stand Strong Program</div>
+          </div>
+          <div class="text-center py-4 bg-white rounded-xl border border-gray-200">
+            <div class="font-bold text-gray-900">[INSERT BLOCK 3 DATES]</div>
+            <div class="text-sm text-pink-600 font-medium mt-1">2-day Stand Strong Program</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-pink-50 border-2 border-pink-200 rounded-xl p-4 text-sm text-gray-700">
+        <strong>Private option available:</strong> Families who want help sooner can book individual or small-group sessions outside the holiday blocks.
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-black text-gray-900 mb-4">What Parents & Kids Say</h2>
+        <p class="text-xl text-gray-700">Real results from Townsville families who've done Stand Strong.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+        <!-- Testimonial 1 -->
+        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-8">
+          <div class="flex gap-1 mb-4">
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+          </div>
+          <p class="text-gray-700 italic mb-4">
+            "[Parent testimonial quote — e.g., 'My daughter was being bullied and anxious about school. After the two-day program, she stood taller and spoke up more confidently. We've since enrolled her in the weekly gym classes.]"  
+          </p>
+          <p class="font-bold text-gray-900">— [Parent Name], Townsville</p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-pink-200 rounded-2xl p-8">
+          <div class="flex gap-1 mb-4">
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+            <span class="text-pink-500 text-2xl">★</span>
+          </div>
+          <p class="text-gray-700 italic mb-4">
+            "[Kid testimonial quote — e.g., 'I learned how to handle being bullied without getting angry. The breathing stuff really works!']"  
+          </p>
+          <p class="font-bold text-gray-900">— [Kid Name], Age [X]</p>
+        </div>
+      </div>
+
+      <!-- Video Testimonials CTA -->
+      <div class="bg-green-50 border-2 border-green-200 rounded-2xl p-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">See Real Video Testimonials</h3>
+        <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
+          Watch parents and kids share their Stand Strong experience on our YouTube channel.
+        </p>
+        <a href="https://www.youtube.com/@soullabgym" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg">
+          Watch on YouTube
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRIDGE TO GYM -->
+  <section id="gym" class="py-20 bg-green-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="text-pink-500 font-semibold tracking-wider text-xs uppercase">Part of Something Bigger</div>
+          <h3 class="text-3xl font-black text-gray-900 mt-3">Stand Strong is delivered by Soul Lab Gym.</h3>
+          <p class="text-gray-700 mt-4 leading-relaxed">
+            Many families who complete the holiday blocks choose to continue their child's training with us during the school term. The weekly program builds on exactly what they learned.
+          </p>
+          <a href="/" class="inline-flex items-center gap-2 mt-6 text-pink-600 font-bold hover:text-pink-700">
+            Back to Soul Lab Gym
+          </a>
+        </div>
+
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8">
+          <h4 class="font-bold text-gray-900 text-sm mb-4 uppercase tracking-wider">Contact Us</h4>
+          <div class="space-y-3 text-sm">
+            <div>
+              <span class="text-gray-600">Location</span>
+              <div class="font-medium text-gray-900">2/70 Ingham Road, West End, Townsville</div>
+            </div>
+            <div>
+              <span class="text-gray-600">Phone</span>
+              <div class="font-medium text-gray-900">0432 558 304</div>
+            </div>
+            <div>
+              <span class="text-gray-600">Email</span>
+              <div class="font-medium text-gray-900">info@soullabgym.com</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-4 border-t text-xs text-pink-600 font-bold">
+            Free trial passes available for kids who want to keep training.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER CTA -->
+  <section id="register" class="py-20 bg-gradient-to-r from-pink-500 to-green-400">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-black text-white mb-4">Ready to give your child real tools?</h2>
+      <p class="text-white/90 text-lg mb-8 leading-relaxed">
+        Fill out the form below to register your interest in the next Stand Strong holiday program block.
+      </p>
+      <div class="bg-white rounded-2xl p-8">
+        <form class="space-y-4">
+          <input type="text" placeholder="Child's name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent" required />
+          <input type="email" placeholder="Parent email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent" required />
+          <input type="tel" placeholder="Phone number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent" />
+          <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent" required>
+            <option value="">Child's age</option>
+            <option value="6-8">6-8 years</option>
+            <option value="9-11">9-11 years</option>
+            <option value="12-14">12-14 years</option>
+          </select>
+          <button type="submit" class="w-full bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg">
+            Register Interest
+          </button>
+        </form>
+        <p class="mt-4 text-xs text-gray-500">
+          We'll send you details about the next program block + how to secure your child's spot.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

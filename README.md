@@ -1,43 +1,155 @@
-# Astro Starter Kit: Minimal
+# Soul Lab Gym Website
 
-```sh
-npm create astro@latest -- --template minimal
+Townsville's Muay Thai Home for Families, Fighters & Future Champions.
+
+Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com).
+
+---
+
+## Getting Started
+
+### Run locally
+
+```bash
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Visit: http://localhost:4321
 
-## 🚀 Project Structure
+### Build for production
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Output goes to the `dist/` folder.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Preview production build
 
-Any static assets, like images, can be placed in the `public/` directory.
+```bash
+npm run preview
+```
 
-## 🧞 Commands
+---
 
-All commands are run from the root of the project, from a terminal:
+## Deploy to VPS
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+# Set your server details
+export VPS_IP="your.server.ip"
+export VPS_USER="root"  # or your deploy user
 
-## 👀 Want to learn more?
+./deploy.sh
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The script will:
+1. Run `npm run build`
+2. `rsync` the `dist/` folder to `/var/www/soullabgym` on your VPS
+
+---
+
+## Adding Embed Codes
+
+### Gymdesk (Live Timetable)
+
+Open `src/pages/timetable.astro` and find:
+
+```html
+<!-- GYMDESK EMBED — Replace this comment with the Gymdesk schedule embed code when provided -->
+```
+
+Replace the placeholder `<div>` block with the Gymdesk embed code.
+
+---
+
+### ZipLeads (Private Training Booking)
+
+Open `src/pages/private-training.astro` and find:
+
+```html
+<!-- ZIPLEADS BOOKING EMBED — Replace this comment with the ZipLeads calendar embed code when provided -->
+```
+
+Replace the placeholder `<div>` block with the ZipLeads embed code.
+
+---
+
+### Google Maps
+
+Open `src/pages/contact.astro` and find:
+
+```html
+<!-- TODO: Add Google Maps embed -->
+```
+
+Replace the placeholder `<div>` block with the Google Maps iframe embed.
+
+---
+
+## Adding Photos
+
+### Hero Background Image
+
+Open `src/pages/index.astro` and find:
+
+```html
+<!-- TODO: Add hero background image -->
+<div class="hero-bg absolute inset-0 bg-gradient-to-br from-gray-950 via-black to-gray-900"></div>
+```
+
+Replace the gradient div with an `<img>` or CSS background-image pointing to your hero photo. Place photos in the `public/` folder.
+
+### Coach Photo
+
+Open `src/pages/about.astro` and find:
+
+```html
+<!-- TODO: Add coach photo -->
+```
+
+Replace the placeholder div with an `<img src="/photos/joseph.jpg" alt="Joseph Gabiola" />`.
+
+### Gym Gallery
+
+Open `src/pages/about.astro` and find:
+
+```html
+<!-- TODO: Photo gallery — Joe will supply gym photos -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <!-- Photos go here -->
+```
+
+Add `<img>` tags inside the grid. Place photos in `public/photos/`.
+
+---
+
+## Project Structure
+
+```
+src/
+  components/
+    Nav.astro         — Navigation bar
+    Footer.astro      — Site footer
+  layouts/
+    Layout.astro      — Base HTML layout with SEO meta tags
+  pages/
+    index.astro       — Home page
+    timetable.astro   — Class timetable
+    private-training.astro — Private training page
+    contact.astro     — Contact page
+    about.astro       — About page
+  styles/
+    global.css        — Global styles + Tailwind import
+public/               — Static assets (images, favicon, etc.)
+deploy.sh             — Deployment script
+```
+
+---
+
+## Brand
+
+- **Colours:** Black background, Red (#DC2626), White text
+- **Font:** Inter (Google Fonts)
+- **Phone:** 0432 558 304
+- **Email:** info@soullabgym.com
+- **Address:** 2/70 Ingham Road, West End, Townsville QLD

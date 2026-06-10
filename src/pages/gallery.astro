@@ -1,0 +1,173 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const galleryImages = [
+  {
+    src: '/photos/gym-wide-shot.jpg',
+    alt: 'Wide gym shot through ropes',
+    category: 'Training',
+    title: 'Gym View',
+  },
+  {
+    src: '/photos/coach-pads.jpg',
+    alt: 'Coach pad work intense portrait',
+    category: 'Coaching',
+    title: 'Expert Coaching',
+  },
+  {
+    src: '/photos/pad-work-sparring.jpg',
+    alt: 'Women pad work sparring',
+    category: 'Training',
+    title: 'Pad Work Sparring',
+  },
+  {
+    src: '/photos/kids-guard-pose-group.jpg',
+    alt: 'Large kids class group guard pose',
+    category: 'Kids',
+    title: 'Kids Training',
+  },
+  {
+    src: '/photos/kids-with-coach.jpg',
+    alt: 'Kids group with coach thumbs up',
+    category: 'Kids',
+    title: 'Coaching Kids',
+  },
+  {
+    src: '/photos/team-photo.jpg',
+    alt: 'Soul Lab team photo',
+    category: 'Community',
+    title: 'Team',
+  },
+];
+---
+
+<Layout
+  title="Photo Gallery — Soul Lab Gym"
+  description="Photo gallery of Soul Lab Gym training, coaching, kids programs, and team. See our state-of-the-art facility and community in action."
+>
+  <Nav />
+
+  <!-- HERO -->
+  <section class="relative min-h-[400px] flex items-center justify-center pt-16 overflow-hidden bg-gradient-to-br from-green-50 via-white to-pink-50">
+    <div class="absolute inset-0"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-16">
+      <h1 class="text-5xl sm:text-6xl font-black text-gray-900 leading-tight mb-4">
+        Photo Gallery
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-800 font-medium max-w-2xl mx-auto">
+        Real training, real results, real community at Soul Lab Gym
+      </p>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {galleryImages.map(image => (
+          <div 
+            class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer border-2 border-gray-200 hover:border-pink-300 transition-all hover:shadow-lg"
+            onclick="document.getElementById('modal-' + this.getAttribute('data-id')).classList.remove('hidden')"
+            data-id={image.title}
+          >
+            <img 
+              src={image.src} 
+              alt={image.alt} 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+            />
+            <div class="absolute inset-0 bg-white/20 group-hover:bg-white/10 transition-colors"></div>
+            
+            <!-- Overlay Text -->
+            <div class="absolute inset-0 flex flex-col items-end justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+              <h3 class="text-gray-900 font-bold text-lg text-right">{image.title}</h3>
+              <p class="text-pink-600 text-sm font-semibold">{image.category}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODALS -->
+  {galleryImages.map(image => (
+    <div 
+      id={'modal-' + image.title}
+      class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+      onclick="if(event.target === this) this.classList.add('hidden')"
+    >
+      <div class="relative max-w-4xl max-h-[90vh] flex flex-col">
+        <img 
+          src={image.src} 
+          alt={image.alt}
+          class="w-full h-full max-h-[80vh] object-contain rounded-2xl"
+        />
+        <div class="absolute top-4 right-4 bg-black/80 text-white p-2 rounded-full cursor-pointer hover:bg-black transition-colors" onclick="document.getElementById('modal-' + this.parentElement.parentElement.id.split('-')[1]).classList.add('hidden')">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+        <div class="text-center mt-4">
+          <h3 class="text-white font-bold text-lg">{image.title}</h3>
+          <p class="text-pink-400 text-sm font-semibold">{image.category}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+
+  <!-- CTA SECTION -->
+  <section class="py-20 bg-gradient-to-br from-green-50 to-pink-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-black text-gray-900 mb-4">Follow Our Journey</h2>
+      <p class="text-lg text-gray-700 mb-8">
+        For daily photos, training videos, and community moments, follow us on social media.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+        <a
+          href="https://www.instagram.com/soul.lab.gym/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+        >
+          Follow on Instagram
+        </a>
+        <a
+          href="https://www.youtube.com/@soullabgym"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+        >
+          Subscribe on YouTube
+        </a>
+        <a
+          href="https://www.facebook.com/soullabgym"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
+        >
+          Like on Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Lightbox animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .lightbox-modal {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+</style>
