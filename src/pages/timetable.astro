@@ -60,9 +60,23 @@ import Footer from '../components/Footer.astro';
         <div class="mt-4">
           <h2 class="text-2xl font-black text-gray-900 mb-6 text-center">Live Schedule</h2>
           <div class="bg-white border-2 border-green-200 rounded-2xl p-8">
-            <div class="gymdesk-schedule" attr-gym="DLVb1" attr-visible_schedule="all" attr-default_schedule="all"></div>
+            <div id="gymdesk-widget" class="gymdesk-schedule" attr-gym="DLVb1" attr-visible_schedule="all" attr-default_schedule="all"></div>
           </div>
         </div>
+
+        <script>
+          // Initialize Gymdesk widget after page loads
+          document.addEventListener('DOMContentLoaded', function() {
+            if (window.GymDeskWidgets) {
+              window.GymDeskWidgets.initAll();
+            }
+          });
+          
+          // Also try to init when script loads
+          if (window.GymDeskWidgets) {
+            window.GymDeskWidgets.initAll();
+          }
+        </script>
       </div>
     </section>
 
