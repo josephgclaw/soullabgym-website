@@ -20,10 +20,10 @@ import Footer from '../components/Footer.astro';
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
       <div class="space-y-4 mb-8">
         <!-- Main headline with pink background -->
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white uppercase leading-tight bg-slg-pink px-6 py-3 inline-block">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white uppercase leading-tight bg-slg-red px-6 py-3 inline-block">
           Townsville's
         </h1>
-        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white uppercase leading-tight bg-slg-pink px-6 py-3 inline-block">
+        <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white uppercase leading-tight bg-slg-red px-6 py-3 inline-block">
           Muay Thai Home
         </h1>
 
@@ -45,7 +45,7 @@ import Footer from '../components/Footer.astro';
       <div class="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/contact"
-          class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
+          class="inline-block bg-slg-red hover:bg-slg-red-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
         >
           Claim Free 7-Day Trial
         </a>
@@ -59,16 +59,16 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- CREDIBILITY BAR (NEW) -->
-  <section style="background-color: #0E0E0E !important;" class="py-5">
+  <!-- CREDIBILITY BAR -->
+  <section class="bg-slg-dark py-5">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-white text-xs font-semibold uppercase tracking-widest">
+      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-slg-text-light text-xs font-semibold uppercase tracking-widest">
         <span>WMO State Champion</span>
-        <span class="text-slg-pink text-lg">—</span>
+        <span class="text-slg-red text-lg">—</span>
         <span>55+ Reviews · 5.0★</span>
-        <span class="text-slg-pink text-lg">—</span>
+        <span class="text-slg-red text-lg">—</span>
         <span>Townsville's Premier Gym</span>
-        <span class="text-slg-pink text-lg">—</span>
+        <span class="text-slg-red text-lg">—</span>
         <span>Kids · Adults · Fighters</span>
       </div>
     </div>
@@ -93,15 +93,13 @@ import Footer from '../components/Footer.astro';
           </p>
           <a
             href="/about"
-            style="background-color: #EC4899 !important; color: #ffffff !important; display: inline-block; padding: 1rem 2rem; font-weight: bold; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0.25rem; transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);"
-            onmouseover="this.style.backgroundColor='#D4318A !important';"
-            onmouseout="this.style.backgroundColor='#EC4899 !important';"
+            class="inline-block bg-slg-red hover:bg-slg-red-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
           >
             Learn Our Full Story
           </a>
         </div>
 
-        <div style="background-color: #0E0E0E !important;" class="p-10 border-l-4 border-slg-pink rounded-lg">
+        <div class="bg-slg-dark p-10 border-l-4 border-slg-red">
           <h3 class="text-2xl font-display uppercase text-white mb-6">Core Values</h3>
           <ul class="space-y-4">
             {[
@@ -110,8 +108,8 @@ import Footer from '../components/Footer.astro';
               { title: 'Real Results', desc: 'Structured progression that builds champions inside and outside the gym' },
             ].map(value => (
               <li class="pb-4 border-b border-white/10 last:border-0">
-                <h4 style="color: #EC4899 !important;" class="font-bold mb-1">{value.title}</h4>
-                <p style="color: rgba(255, 255, 255, 0.7) !important;" class="text-sm">{value.desc}</p>
+                <h4 class="text-slg-gold font-bold mb-1">{value.title}</h4>
+                <p class="text-slg-text-light/70 text-sm">{value.desc}</p>
               </li>
             ))}
           </ul>
@@ -121,10 +119,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- WHAT WE STAND FOR (PILLARS) - REDESIGNED -->
-  <section style="background-color: #0E0E0E !important;" class="py-20">
+  <section class="bg-slg-dark py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 style="color: #ffffff !important;" class="font-display text-5xl sm:text-6xl uppercase text-center mb-4">What We Stand For</h2>
-      <p style="color: #ffffff !important;" class="text-lg text-center max-w-2xl mx-auto mb-16">
+      <h2 class="font-display text-5xl sm:text-6xl uppercase text-center text-white mb-4">What We Stand For</h2>
+      <p class="text-slg-text-light text-lg text-center max-w-2xl mx-auto mb-16">
         Three pillars guide everything we do at Soul Lab Gym.
       </p>
 
@@ -146,10 +144,10 @@ import Footer from '../components/Footer.astro';
             desc: 'You\'re not alone. We celebrate your wins, support your growth, and hold you accountable to becoming your best self.',
           },
         ].map(pillar => (
-          <div style="background-color: #0E0E0E !important;" class="p-10 hover:bg-white/5 transition-colors group">
-            <div style="color: #EC4899 !important;" class="font-display text-8xl leading-none mb-6">{pillar.num}</div>
-            <h3 style="color: #ffffff !important;" class="font-bold text-xl mb-3">{pillar.title}</h3>
-            <p style="color: #ffffff !important;" class="leading-relaxed text-sm">{pillar.desc}</p>
+          <div class="bg-slg-dark p-10 hover:bg-white/5 transition-colors group">
+            <div class="font-display text-8xl leading-none mb-6 text-slg-red">{pillar.num}</div>
+            <h3 class="font-bold text-xl mb-3 text-white">{pillar.title}</h3>
+            <p class="leading-relaxed text-sm text-slg-text-light/80">{pillar.desc}</p>
           </div>
         ))}
       </div>
@@ -157,14 +155,14 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- 7-DAY TRIAL SECTION -->
-  <section style="background-color: #0E0E0E !important;" class="py-20">
+  <section class="bg-slg-dark py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 style="color: #ffffff !important;" class="font-display text-5xl sm:text-6xl uppercase leading-tight mb-6">
+          <h2 class="font-display text-5xl sm:text-6xl uppercase leading-tight text-white mb-6">
             Start Your 7-Day Free Trial
           </h2>
-          <p style="color: #ffffff !important;" class="text-lg leading-relaxed mb-8">
+          <p class="text-slg-text-light text-lg leading-relaxed mb-8">
             No commitment. No credit card. Just real Muay Thai, real coaching, and real results.
           </p>
 
@@ -176,8 +174,8 @@ import Footer from '../components/Footer.astro';
               'Expert coaches who actually care about your progress',
             ].map(benefit => (
               <div class="flex gap-3">
-                <span style="color: #EC4899 !important;" class="font-bold">→</span>
-                <span style="color: rgba(255, 255, 255, 0.75) !important;">{benefit}</span>
+                <span class="text-slg-gold font-bold">→</span>
+                <span class="text-slg-text-light/80">{benefit}</span>
               </div>
             ))}
           </div>
@@ -199,7 +197,7 @@ import Footer from '../components/Footer.astro';
               { step: '3', title: 'You Feel It', desc: 'After 7 days you\'ll feel stronger, more confident, and part of something real.' },
             ].map(item => (
               <div class="flex gap-4">
-                <div class="font-display text-4xl text-slg-pink">{item.step}</div>
+                <div class="font-display text-4xl text-slg-gold">{item.step}</div>
                 <div>
                   <p class="font-bold text-white mb-1">{item.title}</p>
                   <p class="text-white/75 text-sm">{item.desc}</p>
@@ -213,43 +211,41 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- TESTIMONIALS - PULL QUOTES -->
-  <section style="background-color: #0E0E0E !important;" class="py-20">
+  <section class="bg-slg-dark py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div style="background-color: #EC4899 !important; color: #ffffff !important;" class="inline-block text-xs font-bold uppercase px-3 py-1 rounded-full mb-6">Real Members</div>
-      <h2 style="color: #ffffff !important;" class="font-display text-5xl sm:text-6xl uppercase mb-16">What They're Saying</h2>
+      <div class="inline-block bg-slg-red text-white text-xs font-bold uppercase px-3 py-1 mb-6">Real Members</div>
+      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white mb-16">What They're Saying</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div style="background-color: #0E0E0E !important; padding: 2rem;">
-          <div style="color: #EC4899 !important; font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; font-family: 'Bebas Neue', sans-serif;">"</div>
-          <p style="color: #ffffff !important; font-size: 1.25rem; font-weight: 500; font-style: italic; margin-bottom: 1.5rem; line-height: 1.625;">
+        <div class="bg-slg-dark p-8 border border-white/10">
+          <div class="font-display text-6xl leading-none mb-6 text-slg-red">"</div>
+          <p class="text-slg-text-light text-lg font-medium italic mb-6 leading-relaxed">
             These guys are amazing!!! Such a family welcoming vibe, from the moment we first walked in. My kids were made to feel so comfortable & treated so kindly even though they'd never stepped foot into a gym before. You can tell this place is built from the heart - good vibes, respect & love!!
           </p>
-          <p style="color: #ffffff !important; font-weight: bold;">Tee</p>
+          <p class="text-white font-bold">Tee</p>
         </div>
 
-        <div style="background-color: #0E0E0E !important; padding: 2rem;">
-          <div style="color: #EC4899 !important; font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; font-family: 'Bebas Neue', sans-serif;">"</div>
-          <p style="color: #ffffff !important; font-size: 1.25rem; font-weight: 500; font-style: italic; margin-bottom: 1.5rem; line-height: 1.625;">
+        <div class="bg-slg-dark p-8 border border-white/10">
+          <div class="font-display text-6xl leading-none mb-6 text-slg-red">"</div>
+          <p class="text-slg-text-light text-lg font-medium italic mb-6 leading-relaxed">
             We have been members at soullab gym for a few weeks now. And I've noticed a huge change in my kids. I can't thank Joseph and the team at soul lab enough for everything they do
           </p>
-          <p style="color: #ffffff !important; font-weight: bold;">Mel J.</p>
+          <p class="text-white font-bold">Mel J.</p>
         </div>
 
-        <div style="background-color: #0E0E0E !important; padding: 2rem;">
-          <div style="color: #EC4899 !important; font-size: 3.5rem; line-height: 1; margin-bottom: 1.5rem; font-family: 'Bebas Neue', sans-serif;">"</div>
-          <p style="color: #ffffff !important; font-size: 1.25rem; font-weight: 500; font-style: italic; margin-bottom: 1.5rem; line-height: 1.625;">
+        <div class="bg-slg-dark p-8 border border-white/10">
+          <div class="font-display text-6xl leading-none mb-6 text-slg-red">"</div>
+          <p class="text-slg-text-light text-lg font-medium italic mb-6 leading-relaxed">
             Hands down the best experience for legitimate, authentic, intense Muay Thai training that you will struggle to find anywhere else in Townsville. Great facility, great training, Joe is a trainer that will push you to become the best version
           </p>
-          <p style="color: #ffffff !important; font-weight: bold;">Sam B.</p>
+          <p class="text-white font-bold">Sam B.</p>
         </div>
       </div>
 
       <div class="text-center">
         <a
           href="/testimonials"
-          style="border: 2px solid #EC4899 !important; color: #EC4899 !important; padding: 1rem 2rem; display: inline-block; font-weight: bold; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0.25rem; transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); background-color: transparent !important;"
-          onmouseover="this.style.backgroundColor='#EC4899 !important'; this.style.color='#ffffff !important';"
-          onmouseout="this.style.backgroundColor='transparent !important'; this.style.color='#EC4899 !important';"
+          class="inline-block border-2 border-slg-red hover:bg-slg-red text-slg-red hover:text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
         >
           Read All 55+ Reviews
         </a>
@@ -258,19 +254,17 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- FINAL CTA -->
-  <section style="background-color: #EC4899 !important;" class="py-20">
+  <section class="bg-slg-red py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 style="color: #ffffff !important;" class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl uppercase leading-tight mb-6">
+      <h2 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl uppercase text-white leading-tight mb-6">
         Start Your 7 Days
       </h2>
-      <p style="color: rgba(255, 255, 255, 0.8) !important;" class="text-lg mb-12 max-w-2xl mx-auto">
+      <p class="text-white/80 text-lg mb-12 max-w-2xl mx-auto">
         No commitment. No credit card. Just real Muay Thai, real coaching, real results.
       </p>
       <a
         href="/contact"
-        style="background-color: #0E0E0E !important; color: #ffffff !important; padding: 1.25rem 2.5rem; display: inline-block; font-weight: bold; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0.25rem; transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);"
-        onmouseover="this.style.backgroundColor='#1A1A1A !important';"
-        onmouseout="this.style.backgroundColor='#0E0E0E !important';"
+        class="inline-block bg-slg-dark hover:bg-slg-text-dark text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
       >
         Claim Your Free Trial
       </a>

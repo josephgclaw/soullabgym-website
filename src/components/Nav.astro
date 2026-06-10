@@ -19,8 +19,8 @@ const currentPath = Astro.url.pathname;
 
 <>
   <!-- Announcement Bar -->
-  <div class="bg-slg-pink py-2 text-center text-xs text-white font-semibold uppercase tracking-widest">
-    🥊 7-Day Free Trial — No commitment. <a href="/contact" class="underline underline-offset-2 hover:text-white/80">Claim yours →</a>
+  <div class="bg-slg-red py-1.5 text-center text-xs text-white font-semibold uppercase tracking-widest">
+    7-Day Free Trial — No commitment. <a href="/contact" class="underline underline-offset-2 hover:text-white/80">Claim yours →</a>
   </div>
 
   <nav class="relative z-50 bg-slg-dark/80 backdrop-blur-sm border-b border-white/10">
@@ -38,8 +38,8 @@ const currentPath = Astro.url.pathname;
               href={link.href}
               class={`text-sm font-medium transition-colors ${
                 currentPath === link.href 
-                  ? 'text-slg-pink font-bold' 
-                  : 'text-white hover:text-slg-pink'
+                  ? 'text-slg-red font-bold' 
+                  : 'text-white hover:text-slg-red'
               }`}
             >
               {link.label}
@@ -51,14 +51,14 @@ const currentPath = Astro.url.pathname;
             <button class="text-sm font-medium text-white hover:text-slg-pink transition-colors flex items-center gap-1.5">
               Programs
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div class="absolute left-0 mt-2 w-48 bg-slg-bone border border-slg-pink/20 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+            <div class="absolute left-0 mt-2 w-48 bg-slg-bone border border-slg-red/20 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
               {programLinks.map(link => (
                 <a
                   href={link.href}
-                  class="block px-4 py-3 text-sm text-slg-text-dark hover:bg-white/10 hover:text-slg-pink transition-colors first:rounded-t last:rounded-b"
+                  class="block px-4 py-3 text-sm text-slg-text-dark hover:bg-slg-red/5 hover:text-slg-red transition-colors first:rounded-t last:rounded-b"
                 >
                   {link.label}
                 </a>
@@ -70,13 +70,13 @@ const currentPath = Astro.url.pathname;
           <div class="flex items-center gap-4 border-l border-white/10 pl-8">
             <a
               href="https://slg.gymdesk.com/login"
-              class="text-sm font-medium text-white hover:text-slg-pink transition-colors"
+              class="text-sm font-medium text-white hover:text-slg-red transition-colors"
             >
               Login
             </a>
             <a
               href="https://slg.gymdesk.com/signup"
-              class="bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-2 rounded-full transition-colors"
+              class="bg-slg-red hover:bg-slg-red-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-2 transition-colors"
             >
               Start Free Trial
             </a>
@@ -107,36 +107,36 @@ const currentPath = Astro.url.pathname;
             href={link.href}
             class={`text-sm font-medium transition-colors ${
               currentPath === link.href 
-                ? 'text-slg-pink font-bold' 
-                : 'text-slg-text-dark hover:text-slg-pink'
+                ? 'text-slg-red font-bold' 
+                : 'text-slg-text-dark hover:text-slg-red'
             }`}
           >
             {link.label}
           </a>
         ))}
 
-        <div class="border-t border-slg-pink/20 pt-4">
+        <div class="border-t border-slg-red/20 pt-4">
           <p class="text-xs font-semibold text-slg-text-dark/60 uppercase tracking-widest mb-3">Programs</p>
           {programLinks.map(link => (
             <a
               href={link.href}
-              class="block text-sm text-slg-text-dark hover:text-slg-pink transition-colors py-2"
+              class="block text-sm text-slg-text-dark hover:text-slg-red transition-colors py-2"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <div class="border-t border-slg-pink/20 pt-4 flex flex-col gap-3">
+        <div class="border-t border-slg-red/20 pt-4 flex flex-col gap-3">
           <a
             href="https://slg.gymdesk.com/login"
-            class="text-sm font-medium text-slg-text-dark hover:text-slg-pink transition-colors text-center py-2"
+            class="text-sm font-medium text-slg-text-dark hover:text-slg-red transition-colors text-center py-2"
           >
             Login
           </a>
           <a
             href="https://slg.gymdesk.com/signup"
-            class="bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-3 rounded-full transition-colors text-center"
+            class="bg-slg-red hover:bg-slg-red-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-3 transition-colors text-center"
           >
             Start Free Trial
           </a>
