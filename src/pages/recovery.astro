@@ -2,44 +2,55 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const recoveryPhotos = [
+  // Original 10
+  { src: '/photos/recovery/Sauna-1 Exterior Full View.jpg', alt: 'Exterior view of the sauna building', title: 'Sauna Exterior' },
+  { src: '/photos/recovery/Sauna-2 Interior with Rocks.jpg', alt: 'Interior of the sauna showing traditional volcanic rocks', title: 'Sauna Interior' },
+  { src: '/photos/recovery/Sauna-3 Heater Detail.jpg', alt: 'Close-up of the sauna heater', title: 'Sauna Heater' },
+  { src: '/photos/recovery/Sauna-4 Rocks & Equipment.jpg', alt: 'Sauna rocks and heating equipment', title: 'Sauna Details' },
+  { src: '/photos/recovery/Sauna-5 Interior Full.jpg', alt: 'Wide view of the spacious sauna interior', title: 'Spacious Sauna' },
+  { src: '/photos/recovery/Ice Bath -1 Full View.jpg', alt: 'Full view of the large wooden ice bath tub', title: 'Ice Bath Tub' },
+  { src: '/photos/recovery/Ice Bath -2 Close Up Bubbles.jpg', alt: 'Close-up of ice bath water with bubbles', title: 'Ice Bath Close-up' },
+  { src: '/photos/recovery/Ice Bath -3 with Buddha Statue.jpg', alt: 'Ice bath with peaceful Buddha statue beside it', title: 'Peaceful Ice Bath' },
+  { src: '/photos/recovery/Ice Bath -4 Exterior View.jpg', alt: 'Ice bath viewed from outside the recovery studio', title: 'Ice Bath Exterior' },
+  { src: '/photos/recovery/Sauna + Ice Bath Facility Overview.jpg', alt: 'Overview of the entire sauna and ice bath recovery facility', title: 'Full Recovery Set' },
+
+  // New 4 photos (just received)
+  { src: '/photos/recovery/ice-bath-buddha-calm.jpg', alt: 'Ice bath tub with Buddha statue on the left in calm pose', title: 'Ice Bath + Buddha Calm' },
+  { src: '/photos/recovery/ice-bath-buddha-side.jpg', alt: 'Side angle of the ice bath with Buddha statue', title: 'Ice Bath + Buddha Angled' },
+  { src: '/photos/recovery/recovery-shelf-green-hat.jpg', alt: 'Recovery studio accessories shelf including traditional green sauna hat, Ganesha statue and other decor', title: 'Recovery Studio Details' },
+  { src: '/photos/recovery/ice-bath-buddha-outdoor.jpg', alt: 'Ice bath with Buddha statue in front of the open studio door looking outside', title: 'Ice Bath View to Outside' },
+];
 ---
 
 <Layout
   title="Soul Lab Recovery — Sauna & Ice Bath Services in Townsville"
-  description="Premium sauna and ice bath recovery services. Single sessions, 5-session packages, or unlimited monthly membership. Available for gym members and the public."
+  description="Premium sauna and ice bath recovery services in Townsville. Single sessions, 5-session packages, or unlimited monthly membership."
 >
   <Nav />
 
-  <!-- TOP BUTTONS (Before Nav) -->
-  <div class="fixed top-0 left-0 right-0 z-40 bg-white">
-    <div class="grid grid-cols-2 gap-0">
-      <a
-        href="https://slg.gymdesk.com/signup"
-        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-4 text-center transition-colors"
-      >
-        Sign Up
-      </a>
-      <a
-        href="https://slg.gymdesk.com/login"
-        class="bg-pink-600 hover:bg-pink-700 text-white font-bold py-4 px-4 text-center transition-colors"
-      >
-        Login
-      </a>
-    </div>
-  </div>
-
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center pt-40 overflow-hidden bg-gradient-to-b from-green-50 to-white">
+  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <img 
+        src="/photos/recovery/Sauna + Ice Bath Facility Overview.jpg" 
+        alt="Full recovery facility overview" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/50"></div>
+    </div>
+    
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-      <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+      <div class="inline-block bg-white/90 backdrop-blur-sm border border-pink-300 text-pink-600 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
         Recovery Services • Soul Lab Gym
       </div>
-      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight mb-4">
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white drop-shadow mb-4">
         Recover Faster.<br>
-        <span class="bg-gradient-to-r from-pink-500 to-green-400 bg-clip-text text-transparent">Feel Better.</span>
+        <span class="bg-gradient-to-r from-pink-400 to-green-400 bg-clip-text text-transparent">Feel Better.</span>
       </h1>
-      <p class="text-xl sm:text-2xl text-gray-800 font-medium mb-8 max-w-2xl mx-auto">
-        Premium sauna and ice bath recovery services in Townsville. Optimize your training, boost immunity, and reset your mind.
+      <p class="text-xl sm:text-2xl text-white font-medium mb-8 max-w-2xl mx-auto drop-shadow">
+        Premium sauna and ice bath recovery services in Townsville.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
@@ -49,20 +60,61 @@ import Footer from '../components/Footer.astro';
           Book Your First Session
         </a>
         <a
-          href="#benefits"
-          class="border-2 border-gray-900 hover:bg-gray-100 text-gray-900 font-bold text-base px-8 py-4 rounded-full transition-colors"
+          href="#pricing"
+          class="bg-white/95 hover:bg-white text-gray-900 font-bold text-base px-8 py-4 rounded-full transition-all border border-white/30 shadow"
         >
-          Learn More
+          View Pricing
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT SECTION -->
+  <!-- OUR RECOVERY STUDIO - All 14 photos -->
+  <section id="facility" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-3">
+          Our Recovery Studio
+        </div>
+        <h2 class="text-4xl font-black text-gray-900 mb-4">Purpose-Built for Real Results</h2>
+        <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+          Clean, private, and fully equipped. Everything you need for serious recovery — sauna heat, ice-cold contrast, and calm.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {recoveryPhotos.map((photo, idx) => (
+          <div 
+            class="group relative overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer border-2 border-gray-200 hover:border-pink-300 shadow-sm hover:shadow-lg transition-all"
+            onclick={`openPhotoLightbox(${idx})`}
+          >
+            <img 
+              src={photo.src} 
+              alt={photo.alt} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4">
+              <p class="text-white font-semibold text-lg drop-shadow">{photo.title}</p>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="bg-white/90 px-3 py-1 rounded-full text-xs font-bold text-gray-900 shadow">View larger</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-8 text-sm text-gray-600">
+        Click any photo for a closer look.
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section id="about" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mb-12">
-        <h2 class="text-4xl font-black text-gray-900 mb-6">What is Sauna & Ice Bath Recovery?</h2>
+        <h2 class="text-4xl font-black text-gray-900 mb-6">Why Recovery Matters</h2>
         <p class="text-lg text-gray-700 leading-relaxed mb-4">
           Sauna and ice bath therapy are time-tested recovery modalities used by elite athletes, fighters, and wellness-focused individuals. The contrast between heat and cold triggers powerful adaptations in your nervous system, circulation, and recovery capacity.
         </p>
@@ -72,106 +124,55 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 hover:shadow-lg transition-all">
-          <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4 text-xl font-bold text-green-700">
-            ✓
-          </div>
+        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-8 hover:shadow-lg transition-all">
           <h3 class="text-xl font-bold text-gray-900 mb-3">Faster Recovery</h3>
-          <p class="text-gray-700">
-            Reduce muscle soreness, accelerate healing, and bounce back from intense training sessions in half the time.
-          </p>
+          <p class="text-gray-700">Reduce muscle soreness, accelerate healing, and bounce back from intense training sessions in half the time.</p>
         </div>
 
-        <div class="bg-white border-2 border-pink-200 hover:border-green-300 rounded-2xl p-8 hover:shadow-lg transition-all">
-          <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mb-4 text-xl font-bold text-pink-700">
-            ✓
-          </div>
+        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-pink-200 rounded-2xl p-8 hover:shadow-lg transition-all">
           <h3 class="text-xl font-bold text-gray-900 mb-3">Mental Clarity</h3>
-          <p class="text-gray-700">
-            Reset your nervous system, reduce stress, and experience the mental edge that comes from deliberate recovery.
-          </p>
+          <p class="text-gray-700">Reset your nervous system, reduce stress, and experience the mental edge that comes from deliberate recovery.</p>
         </div>
 
-        <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 hover:shadow-lg transition-all">
-          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-4 text-xl font-bold text-blue-700">
-            ✓
-          </div>
+        <div class="bg-gradient-to-br from-green-50 to-pink-50 border-2 border-blue-200 rounded-2xl p-8 hover:shadow-lg transition-all">
           <h3 class="text-xl font-bold text-gray-900 mb-3">Immune Boost</h3>
-          <p class="text-gray-700">
-            Strengthen immune resilience through heat shock proteins and improved circulation.
-          </p>
+          <p class="text-gray-700">Strengthen immune resilience through heat shock proteins and improved circulation.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS SECTION -->
-  <section id="benefits" class="py-20 bg-white border-t border-b border-gray-200">
+  <!-- BENEFITS -->
+  <section id="benefits" class="py-16 bg-gray-50 border-t border-b">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-black text-gray-900 mb-12 text-center">Why Athletes & Wellness Enthusiasts Choose Soul Lab Recovery</h2>
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-3xl font-black text-gray-900 mb-3">Why Athletes & Wellness Enthusiasts Choose Soul Lab Recovery</h2>
+        <p class="text-lg text-gray-700">Professional equipment. Real guidance. Flexible access.</p>
+      </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-to-r from-pink-500 to-green-400 text-white">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
+      <div class="grid md:grid-cols-2 gap-5">
+        {[
+          ['Professional-Grade Equipment', 'Commercial-quality sauna and ice bath facilities designed for serious recovery.'],
+          ['Expert Guidance', 'Our team understands the science and will help you get the most from each session.'],
+          ['Flexible Membership', 'Drop-in sessions or commitment-free packages. Choose what works for you.'],
+          ['Community Focused', 'Part of the Soul Lab family. Recover alongside serious athletes and wellness enthusiasts.'],
+        ].map(([title, desc]) => (
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 flex gap-4">
+            <div class="flex-shrink-0">
+              <div class="w-9 h-9 rounded-full bg-gradient-to-r from-pink-500 to-green-400 flex items-center justify-center text-white text-lg">✓</div>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg text-gray-900 mb-1">{title}</h4>
+              <p class="text-gray-700 text-sm leading-relaxed">{desc}</p>
             </div>
           </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900">Professional-Grade Equipment</h3>
-            <p class="mt-2 text-gray-700">Commercial-quality sauna and ice bath facilities designed for serious recovery.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-to-r from-pink-500 to-green-400 text-white">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900">Expert Guidance</h3>
-            <p class="mt-2 text-gray-700">Our team understands the science and will help you get the most from each session.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-to-r from-pink-500 to-green-400 text-white">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900">Flexible Membership</h3>
-            <p class="mt-2 text-gray-700">Drop-in sessions or commitment-free packages. Choose what works for you.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-4">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-gradient-to-r from-pink-500 to-green-400 text-white">
-              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900">Community Focused</h3>
-            <p class="mt-2 text-gray-700">Part of the Soul Lab family. Recover alongside serious athletes and wellness enthusiasts.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- PRICING SECTION -->
-  <section id="pricing" class="py-20 bg-gradient-to-b from-white to-green-50">
+  <!-- PRICING -->
+  <section id="pricing" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-12">
         <h2 class="text-4xl font-black text-gray-900 mb-4">Pricing Plans</h2>
@@ -179,249 +180,189 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <!-- Single Session -->
-        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Single Session</h3>
+        <!-- Single -->
+        <div class="border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all bg-white">
+          <h3 class="text-3xl font-black text-gray-900 mb-1">Single Session</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-pink-600">$35</span>
-            <span class="text-gray-700 ml-2">per session</span>
+            <span class="text-gray-700 ml-1">/ session</span>
           </div>
-          <ul class="space-y-3 mb-8 text-sm text-gray-700">
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Sauna + Ice Bath combo</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>30-minute session</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Expert guidance included</span>
-            </li>
+          <ul class="space-y-3 mb-8 text-gray-700 text-[15px]">
+            <li class="flex items-start gap-2"><span class="text-pink-500 font-bold mt-0.5">✓</span> Sauna + Ice Bath combo</li>
+            <li class="flex items-start gap-2"><span class="text-pink-500 font-bold mt-0.5">✓</span> 30-minute session</li>
+            <li class="flex items-start gap-2"><span class="text-pink-500 font-bold mt-0.5">✓</span> Expert guidance included</li>
           </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-3 rounded-full transition-colors">
-            Book Now
-          </a>
+          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gray-900 hover:bg-black text-white font-bold py-3 rounded-full transition-colors">Book Now</a>
         </div>
 
-        <!-- 5-Session Package -->
-        <div class="bg-white border-2 border-green-400 rounded-2xl p-8 shadow-lg relative">
-          <div class="absolute -top-4 left-8 bg-gradient-to-r from-pink-500 to-green-400 text-white px-4 py-1 rounded-full text-sm font-bold">
-            20% OFF
-          </div>
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">5-Session Package</h3>
+        <!-- 5-Pack -->
+        <div class="border-4 border-emerald-400 rounded-2xl p-8 relative shadow-[0_10px_40px_rgb(16,185,129,0.08)] bg-white">
+          <div class="absolute -top-3 left-9 bg-emerald-500 text-white font-bold px-4 py-0.5 rounded-full shadow text-sm">BEST VALUE</div>
+          <h3 class="text-3xl font-black text-gray-900 mb-1">5-Session Package</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-pink-600">$150</span>
-            <span class="text-gray-700 ml-2">$30 per session</span>
+            <span class="text-gray-600 ml-1 text-base">($30 per session)</span>
           </div>
-          <ul class="space-y-3 mb-8 text-sm text-gray-700">
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>5 x 30-minute sessions</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Save $25 vs single sessions</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Valid for 3 months</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Expert guidance included</span>
-            </li>
+          <ul class="space-y-3 mb-8 text-gray-700 text-[15px]">
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> 5 × 30-minute sessions</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Save $25 vs single sessions</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Valid for 3 months</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Expert guidance included</li>
           </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-full transition-all shadow-lg">
-            Get Package
-          </a>
+          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-emerald-500 to-green-400 hover:from-emerald-600 hover:to-green-500 text-white font-bold py-3 rounded-full transition-all">Get Package</a>
         </div>
 
-        <!-- Monthly Unlimited -->
-        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all">
-          <h3 class="text-2xl font-bold text-gray-900 mb-2">Monthly Unlimited</h3>
+        <!-- Unlimited -->
+        <div class="border-2 border-gray-200 rounded-2xl p-8 hover:shadow-lg hover:border-pink-300 transition-all bg-white">
+          <h3 class="text-3xl font-black text-gray-900 mb-1">Monthly Unlimited</h3>
           <div class="mb-6">
             <span class="text-4xl font-black text-pink-600">$89</span>
-            <span class="text-gray-700 ml-2">per month</span>
+            <span class="text-gray-700 ml-1">/ month</span>
           </div>
-          <ul class="space-y-3 mb-8 text-sm text-gray-700">
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Unlimited monthly access</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>30-minute sessions</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Best value for regulars</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-pink-500 font-bold">✓</span>
-              <span>Expert guidance included</span>
-            </li>
+          <ul class="space-y-3 mb-8 text-gray-700 text-[15px]">
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Unlimited sessions</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Perfect for regulars</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> 30-minute sessions</li>
+            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Expert guidance included</li>
           </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-full transition-all shadow-lg">
-            Subscribe
-          </a>
+          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 rounded-full transition-all">Subscribe</a>
         </div>
       </div>
 
-      <div class="mt-12 bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-6 text-center">
-        <p class="text-sm text-gray-700">
-          <strong>Soul Lab Gym Members:</strong> Get 15% off all packages. Ask at the front desk for your recovery discount code.
+      <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-5 text-center">
+        <p class="text-emerald-800 font-medium">
+          Soul Lab Gym Members save <span class="font-black">15%</span> on all recovery packages. Ask at the desk for your code.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
+  <!-- VIDEO PLACEHOLDER -->
+  <section id="watch" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <div class="inline px-4 py-1 text-xs font-bold tracking-wider text-pink-600 bg-pink-50 border border-pink-200 rounded-full">See It In Action</div>
+        <h2 class="text-4xl font-black text-gray-900 mt-3">Watch a Real Recovery Session</h2>
+        <p class="max-w-xl mx-auto mt-3 text-gray-600">Short clip showing the flow — heat, cold, reset.</p>
+      </div>
+      
+      <div class="relative w-full max-w-4xl mx-auto aspect-video overflow-hidden rounded-3xl shadow-xl border border-gray-200">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="Recovery Session at Soul Lab Gym - Sauna & Ice Bath" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-3">
+        Temporary placeholder. <strong>Send me your real YouTube video link(s)</strong> for the recovery footage and I’ll replace it immediately.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="py-20 bg-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-black text-gray-900 mb-12 text-center">Frequently Asked Questions</h2>
+      <h2 class="text-3xl font-black text-gray-900 mb-10 text-center">Frequently Asked Questions</h2>
 
-      <div class="space-y-4">
-        <details class="bg-white border-2 border-gray-200 rounded-lg p-6 cursor-pointer group hover:border-pink-300 transition-colors">
-          <summary class="flex items-center justify-between font-bold text-gray-900 text-lg">
+      <div class="space-y-3">
+        <details class="group bg-white border-2 border-gray-100 rounded-2xl p-6 open:bg-pink-50/30 transition-all">
+          <summary class="font-bold text-lg flex items-center justify-between cursor-pointer text-gray-900">
             How hot is the sauna?
-            <span class="text-pink-500 group-open:rotate-180 transition-transform">▼</span>
+            <span class="text-pink-600 group-open:rotate-180 transition">▼</span>
           </summary>
-          <p class="mt-4 text-gray-700">Our sauna maintains a temperature of 160-180°F (70-82°C), which is ideal for health benefits while remaining comfortable for most people. You can adjust your experience by spending more or less time inside.</p>
+          <p class="mt-4 text-gray-700">160–180°F (70–82°C). This range gives real physiological benefits while staying comfortable and safe for most people.</p>
         </details>
 
-        <details class="bg-white border-2 border-gray-200 rounded-lg p-6 cursor-pointer group hover:border-pink-300 transition-colors">
-          <summary class="flex items-center justify-between font-bold text-gray-900 text-lg">
+        <details class="group bg-white border-2 border-gray-100 rounded-2xl p-6 open:bg-pink-50/30 transition-all">
+          <summary class="font-bold text-lg flex items-center justify-between cursor-pointer text-gray-900">
             Is ice bath exposure dangerous?
-            <span class="text-pink-500 group-open:rotate-180 transition-transform">▼</span>
+            <span class="text-pink-600 group-open:rotate-180 transition">▼</span>
           </summary>
-          <p class="mt-4 text-gray-700">No. Our ice bath temperatures (50-60°F / 10-15°C) are safe for most people when done properly. We guide you through gradual exposure and breathing techniques to make it comfortable. Always consult your doctor if you have cardiovascular concerns.</p>
+          <p class="mt-4 text-gray-700">No. We use 50–60°F (10–15°C) water. Sessions are guided, we teach proper breathing, and we adjust based on your experience level. Cardiovascular consult recommended if you have heart concerns.</p>
         </details>
 
-        <details class="bg-white border-2 border-gray-200 rounded-lg p-6 cursor-pointer group hover:border-pink-300 transition-colors">
-          <summary class="flex items-center justify-between font-bold text-gray-900 text-lg">
-            I've never done this before. Is it for beginners?
-            <span class="text-pink-500 group-open:rotate-180 transition-transform">▼</span>
+        <details class="group bg-white border-2 border-gray-100 rounded-2xl p-6 open:bg-pink-50/30 transition-all">
+          <summary class="font-bold text-lg flex items-center justify-between cursor-pointer text-gray-900">
+            I’ve never done this before — is it beginner friendly?
+            <span class="text-pink-600 group-open:rotate-180 transition">▼</span>
           </summary>
-          <p class="mt-4 text-gray-700">Absolutely. Every session is guided by our team. Beginners start with shorter durations and warmer water, and we teach proper breathing and mental techniques to make it enjoyable. No experience needed.</p>
+          <p class="mt-4 text-gray-700">Absolutely. Beginners start with shorter times and we walk you through breathing and timing. No prior experience needed.</p>
         </details>
 
-        <details class="bg-white border-2 border-gray-200 rounded-lg p-6 cursor-pointer group hover:border-pink-300 transition-colors">
-          <summary class="flex items-center justify-between font-bold text-gray-900 text-lg">
-            How long does a typical session take?
-            <span class="text-pink-500 group-open:rotate-180 transition-transform">▼</span>
+        <details class="group bg-white border-2 border-gray-100 rounded-2xl p-6 open:bg-pink-50/30 transition-all">
+          <summary class="font-bold text-lg flex items-center justify-between cursor-pointer text-gray-900">
+            How long is a typical session?
+            <span class="text-pink-600 group-open:rotate-180 transition">▼</span>
           </summary>
-          <p class="mt-4 text-gray-700">Plan for 45-60 minutes total. This includes 15-20 minutes in the sauna, 2-3 minutes in the ice bath, and 15 minutes of rest/integration afterward. We keep you moving safely between the two.</p>
+          <p class="mt-4 text-gray-700">Plan 45–60 minutes total: 15–20 min sauna, 2–3 min ice bath, plus rest.</p>
         </details>
 
-        <details class="bg-white border-2 border-gray-200 rounded-lg p-6 cursor-pointer group hover:border-pink-300 transition-colors">
-          <summary class="flex items-center justify-between font-bold text-gray-900 text-lg">
-            Can I do this after my gym workout?
-            <span class="text-pink-500 group-open:rotate-180 transition-transform">▼</span>
+        <details class="group bg-white border-2 border-gray-100 rounded-2xl p-6 open:bg-pink-50/30 transition-all">
+          <summary class="font-bold text-lg flex items-center justify-between cursor-pointer text-gray-900">
+            Can I use this right after a workout?
+            <span class="text-pink-600 group-open:rotate-180 transition">▼</span>
           </summary>
-          <p class="mt-4 text-gray-700">Yes. In fact, recovery sessions are best done 30 minutes to 2 hours post-workout. This is when your body is primed to benefit from the temperature contrast and healing adaptations.</p>
-        </details>
-
-        <details class="bg-white border-2 border-gray-200 rounded-lg p-6 cursor-pointer group hover:border-pink-300 transition-colors">
-          <summary class="flex items-center justify-between font-bold text-gray-900 text-lg">
-            Are there any health conditions that would prevent me from using it?
-            <span class="text-pink-500 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="mt-4 text-gray-700">Pregnancy, severe cardiovascular disease, and some medications require medical clearance. We'll ask about your health history during your first session. When in doubt, chat with your doctor first.</p>
+          <p class="mt-4 text-gray-700">Yes. Many people do their recovery session 10–30 minutes after training. It's one of the best times for contrast therapy.</p>
         </details>
       </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="py-20 bg-white border-t-2 border-pink-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-black text-gray-900 mb-4">What Athletes & Members Say</h2>
-        <p class="text-xl text-gray-700">Real feedback from people using Soul Lab Recovery.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        <!-- Testimonial 1 -->
-        <div class="bg-white border-2 border-green-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-          <div class="flex gap-0.5 mb-4">
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-          </div>
-          <p class="text-gray-700 text-sm mb-4">
-            "My recovery between training sessions is way better. The sauna and ice bath combo actually works."
-          </p>
-          <p class="font-bold text-gray-900 text-sm">— [Name], Athlete</p>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="bg-white border-2 border-pink-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-          <div class="flex gap-0.5 mb-4">
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-          </div>
-          <p class="text-gray-700 text-sm mb-4">
-            "I feel mentally sharper after each session. It's become part of my daily routine."
-          </p>
-          <p class="font-bold text-gray-900 text-sm">— [Name], Member</p>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="bg-white border-2 border-green-200 rounded-2xl p-6 hover:shadow-lg transition-all">
-          <div class="flex gap-0.5 mb-4">
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-            <span class="text-pink-500 text-lg">★</span>
-          </div>
-          <p class="text-gray-700 text-sm mb-4">
-            "The team makes you feel safe and guided through the whole experience. Worth every dollar."
-          </p>
-          <p class="font-bold text-gray-900 text-sm">— [Name], Gym Member</p>
-        </div>
-      </div>
-
-      <!-- Video Testimonials -->
-      <div class="mt-12 bg-gradient-to-br from-green-50 to-pink-50 border-2 border-green-200 rounded-2xl p-8 text-center">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">See Recovery in Action</h3>
-        <p class="text-gray-700 mb-6 max-w-2xl mx-auto">
-          Watch members share their recovery experience and results on our YouTube channel.
-        </p>
-        <a href="https://www.youtube.com/channel/UCMGyz96tdBUgD-RG6SyEDRg" target="_blank" rel="noopener noreferrer" class="inline-block bg-gradient-to-r from-pink-500 to-green-400 hover:from-pink-600 hover:to-green-500 text-white font-bold py-3 px-8 rounded-full transition-all shadow-lg">
-          Watch Videos on YouTube
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA SECTION -->
-  <section id="book" class="py-20 bg-gradient-to-r from-pink-500 to-green-400">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-4xl font-black text-white mb-4">Ready to Recover Better?</h2>
-      <p class="text-xl text-white/90 mb-8">
-        Book your first session today. Expert guidance included.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://slg.gymdesk.com/login" class="inline-block bg-white hover:bg-gray-100 text-pink-600 font-bold py-4 px-8 rounded-full transition-colors shadow-lg">
-          Login to Book
-        </a>
-        <a href="https://slg.gymdesk.com/signup" class="inline-block border-2 border-white hover:bg-white/10 text-white font-bold py-4 px-8 rounded-full transition-colors">
-          Create Account
-        </a>
-      </div>
-      <p class="text-white/90 text-sm mt-8">
-        Have questions? Call <strong>0432 558 304</strong> or email <strong>info@soullabgym.com</strong>
-      </p>
     </div>
   </section>
 
   <Footer />
+
+  <!-- LIGHTBOX -->
+  <div 
+    id="photo-lightbox" 
+    onclick="closeLightbox()" 
+    class="hidden fixed inset-0 z-[999] bg-black/95 flex items-center justify-center p-6 cursor-pointer"
+  >
+    <button 
+      onclick="event.stopImmediatePropagation(); closeLightbox()" 
+      class="absolute top-6 right-6 text-white text-4xl hover:text-pink-400 z-[1001] font-light"
+    >
+      ✕
+    </button>
+    
+    <div onclick="event.stopImmediatePropagation()" class="max-w-6xl w-full">
+      <img id="lightbox-img" class="max-h-[82vh] mx-auto rounded-3xl shadow-2xl border border-white/10" src="" alt="" />
+      <p id="lightbox-caption" class="text-center text-white text-2xl font-semibold mt-5 tracking-tight"></p>
+    </div>
+  </div>
 </Layout>
+
+<script>
+  const recoveryPhotos = {recoveryPhotos};
+
+  function openPhotoLightbox(index) {
+    const modal = document.getElementById('photo-lightbox');
+    const img = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
+    if (!modal || !img || !caption) return;
+
+    const photo = recoveryPhotos[index];
+    img.src = photo.src;
+    img.alt = photo.alt;
+    caption.textContent = photo.title;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const modal = document.getElementById('photo-lightbox');
+    if (!modal) return;
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('photo-lightbox');
+    if (modal && !modal.classList.contains('hidden') && e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>

@@ -19,7 +19,10 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2">
-        <img src="/logo.png" alt="Soul Lab Gym" class="h-14 w-auto" loading="eager" />
+        <div class="flex items-baseline gap-1">
+          <span class="text-2xl font-black bg-gradient-to-r from-pink-500 to-green-400 bg-clip-text text-transparent">SLG</span>
+          <span class="text-xs font-bold text-gray-600 tracking-widest">GYM</span>
+        </div>
       </a>
 
       <!-- Desktop nav -->
