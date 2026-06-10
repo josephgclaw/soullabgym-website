@@ -20,3 +20,17 @@ body {
 html {
   background-color: transparent;
 }
+
+/* Force dark backgrounds on dark sections */
+section[style*="#0E0E0E"] {
+  background-color: #0E0E0E !important;
+}
+
+/* Ensure text is white on dark backgrounds */
+section[style*="#0E0E0E"] span,
+section[style*="#0E0E0E"] h2,
+section[style*="#0E0E0E"] h3,
+section[style*="#0E0E0E"] h4,
+section[style*="#0E0E0E"] p {
+  color: white !important;
+}
