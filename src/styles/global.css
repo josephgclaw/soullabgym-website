@@ -1,20 +1,18 @@
 @import "tailwindcss";
 
-@theme {
-  --color-mint: #A8E6D5;
-  --color-pink: #FFB6D9;
-  --color-mint-light: #E8F8F5;
-  --color-pink-light: #FFF0F7;
-}
-
+/* Soul Lab Gym Brand Colours */
 :root {
-  --primary-mint: #A8E6D5;
-  --primary-pink: #FFB6D9;
-  --background-light: #FAFAFA;
-  --text-dark: #333333;
+  --slg-pink: #EC4899;
+  --slg-pink-hover: #D4318A;
+  --slg-dark: #0E0E0E;
+  --slg-bone: #F8F5F0;
+  --slg-silver: #C8CCD0;
+  --slg-text-light: #F0EDE8;
+  --slg-text-dark: #1A1A1A;
+  --footer-dark: #080808;
 }
 
 body {
-  background-color: #FAFAFA;
-  color: #333333;
+  background-color: var(--slg-bone);
+  color: var(--slg-text-dark);
 }
