@@ -6,89 +6,320 @@ import Footer from '../components/Footer.astro';
 
 <Layout
   title="Private Training — Soul Lab Gym"
-  description="One-on-one Muay Thai coaching in Townsville. Personalised private training sessions with Joseph Gabiola or a senior Soul Lab coach."
+  description="One-on-one Muay Thai coaching in Townsville. Personalised private training sessions with Joseph Gabiola or senior Soul Lab coaches."
 >
   <Nav />
 
   <div class="pt-16">
-    <!-- PAGE HEADER -->
-    <section class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-5xl sm:text-6xl font-black text-gray-900 mb-4">
-          Private <span class="text-pink-500">Training</span>
-        </h1>
-        <p class="text-2xl text-gray-800 font-medium">One-on-one coaching tailored to your goals</p>
-      </div>
-    </section>
-
-    <!-- CONTENT -->
-    <section class="py-16 bg-gradient-to-b from-green-50 to-white">
+    <!-- HERO SECTION WITH PHOTOS -->
+    <section class="py-20 bg-gradient-to-b from-pink-50 to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-          <!-- Left: Info -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left: Text -->
           <div>
-            <p class="text-gray-700 text-lg leading-relaxed mb-8">
-              Whether you're preparing for a fight, recovering from injury, or want focused technique work, private sessions give you the coach's full attention. Sessions are available with Joseph or a senior Soul Lab coach.
+            <div class="inline-block bg-pink-100 border border-pink-300 text-pink-700 text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              One-on-One Coaching
+            </div>
+            <h1 class="text-5xl sm:text-6xl font-black text-gray-900 mb-6">
+              Private Training Tailored to You
+            </h1>
+            <p class="text-xl text-gray-700 leading-relaxed mb-6">
+              Whether you're preparing for a fight, recovering from injury, building a solid foundation, or want focused technique work — private sessions give you the coach's full attention and a plan that's 100% yours.
             </p>
-
-            <h2 class="text-2xl font-bold text-gray-900 mb-6">What You Get</h2>
-            <ul class="flex flex-col gap-5 mb-10">
-              {[
-                'Completely personalised to your level and goals',
-                'Flexible scheduling — book around your life',
-                'Faster technique improvement',
-                'Great for beginners who want a head start before group classes',
-              ].map(item => (
-                <li class="flex items-start gap-3 text-gray-700">
-                  <span class="text-pink-500 font-bold mt-0.5 flex-shrink-0 text-lg">✓</span>
-                  <span class="leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-
+            <p class="text-gray-600 text-lg mb-8">
+              Train with Joseph (WMO State Champion) or one of our senior Soul Lab coaches. Flexible scheduling. Real results.
+            </p>
             <a
-              href="https://slg.gymdesk.com/login"
+              href="#booking"
               class="inline-block bg-pink-700 hover:bg-pink-800 text-white font-bold text-base px-8 py-4 rounded-full transition-all shadow-lg"
             >
-              Book a Private Session
+              Book Your Session Now
             </a>
           </div>
 
-          <!-- Right: Visual panel -->
-          <div class="bg-white border-2 border-green-200 rounded-xl p-8">
-            <h3 class="text-xl font-bold text-gray-900 mb-6">Private Sessions Are Perfect For:</h3>
-            <div class="flex flex-col gap-4">
-              {[
-                { title: 'Fight Preparation', desc: 'Camp-specific coaching for your next bout.' },
-                { title: 'Injury Recovery', desc: 'Modified training that keeps you moving safely.' },
-                { title: 'Technique Refinement', desc: 'Laser-focus on specific skills you want to sharpen.' },
-                { title: 'Complete Beginners', desc: 'Build a solid foundation before joining group classes.' },
-              ].map(item => (
-                <div class="flex items-start gap-4 p-4 bg-gradient-to-b from-green-50 to-white border-2 border-green-200 hover:border-pink-300 rounded-lg transition-colors">
-                  <div>
-                    <div class="font-semibold text-gray-900 text-sm">{item.title}</div>
-                    <div class="text-gray-700 text-sm mt-1">{item.desc}</div>
-                  </div>
-                </div>
-              ))}
+          <!-- Right: Photo grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+              <img src="/photos/coach-pads.jpg" alt="Personalized coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            </div>
+            <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+              <img src="/photos/joseph-kids-hero.jpg" alt="Joseph coaching" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            </div>
+            <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+              <img src="/photos/training-women-pad-work.jpg" alt="Technique work" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+            </div>
+            <div class="bg-white border-2 border-gray-200 rounded-xl overflow-hidden aspect-square group hover:shadow-lg transition-shadow">
+              <img src="/photos/pad-work-sparring.jpg" alt="Advanced training" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- BOOKING EMBED -->
-    <section id="booking" class="py-16 bg-white">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-black text-gray-900 mb-8 text-center">Book Your Session</h2>
-        <!-- ZIPLEADS BOOKING EMBED — Replace this comment with the ZipLeads calendar embed code when provided -->
-        <div class="bg-white border-2 border-gray-200 rounded-lg p-8 text-center text-gray-600">
-          <p class="text-lg font-medium mb-2">Booking calendar loading...</p>
-          <p class="text-sm mt-2">ZipLeads embed coming soon</p>
-        </div>
-        <p class="text-center text-gray-600 text-sm mt-6">
-          Or call us directly: <a href="tel:0432558304" class="text-gray-900 hover:text-pink-500 transition-colors">0432 558 304</a>
+    <!-- WHAT YOU GET -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-black text-gray-900 text-center mb-4">What You Get</h2>
+        <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-16">
+          Every private session is built around your specific goals, experience level, and schedule.
         </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'Completely Personalised',
+              desc: 'Your session is designed for YOU — your level, your goals, your timeline. No group compromises.',
+              icon: '🎯',
+            },
+            {
+              title: 'Flexible Scheduling',
+              desc: 'Book around your life. Early mornings, evenings, weekends. We make it work for your schedule.',
+              icon: '⏰',
+            },
+            {
+              title: 'Faster Progress',
+              desc: 'One-on-one attention means faster technique improvement and real accountability.',
+              icon: '📈',
+            },
+            {
+              title: 'Expert Coaching',
+              desc: 'Train with Joseph or a senior Soul Lab coach. Real fight experience. Real teaching ability.',
+              icon: '👨‍🏫',
+            },
+            {
+              title: 'Head Start for Beginners',
+              desc: 'Build a solid foundation before joining group classes. Feel confident from day one.',
+              icon: '💪',
+            },
+            {
+              title: 'Injury-Safe Training',
+              desc: 'Modified programming that keeps you moving safely if you\'re coming back from injury.',
+              icon: '✅',
+            },
+          ].map(item => (
+            <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all hover:shadow-lg">
+              <div class="text-5xl mb-4">{item.icon}</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <p class="text-gray-700 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="py-20 bg-gradient-to-b from-green-50 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-black text-gray-900 text-center mb-4">Perfect For:</h2>
+        <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-16">
+          Whether you're starting from scratch or training for competition, we have a program for you.
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {[
+            {
+              title: 'Fight Preparation',
+              points: [
+                'Camp-specific coaching for your next bout',
+                'Opponent analysis and strategy',
+                'Mental toughness preparation',
+                'Strength & conditioning tailored to your style',
+              ],
+            },
+            {
+              title: 'Complete Beginners',
+              points: [
+                'Build solid fundamentals before group classes',
+                'Learn safely with focused attention',
+                'Gain confidence in a judgment-free space',
+                'Progress at your own pace',
+              ],
+            },
+            {
+              title: 'Technique Refinement',
+              points: [
+                'Laser-focus on specific skills you want to sharpen',
+                'Correct bad habits before they stick',
+                'Advanced technique from experienced coaches',
+                'Consistent feedback and adjustment',
+              ],
+            },
+            {
+              title: 'Injury Recovery',
+              points: [
+                'Modified training that keeps you moving safely',
+                'Sport-specific rehab to return stronger',
+                'Work around existing injuries or limitations',
+                'Prevention coaching to avoid future issues',
+              ],
+            },
+          ].map(category => (
+            <div class="bg-white border-2 border-green-200 rounded-2xl p-10 hover:shadow-lg transition-shadow">
+              <h3 class="text-2xl font-bold text-gray-900 mb-6">{category.title}</h3>
+              <ul class="space-y-4">
+                {category.points.map(point => (
+                  <li class="flex gap-3">
+                    <span class="text-pink-700 font-bold flex-shrink-0 mt-0.5">✓</span>
+                    <span class="text-gray-700 leading-relaxed">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-black text-gray-900 text-center mb-16">Pricing</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {[
+            {
+              title: 'Single Session',
+              price: '$75',
+              duration: '60 minutes',
+              desc: 'Pay as you go. Perfect for a trial or one-off session.',
+              popular: false,
+            },
+            {
+              title: '5-Session Package',
+              price: '$325',
+              duration: 'Save $50',
+              desc: 'Lock in sessions weekly. Best for consistent progress.',
+              popular: true,
+            },
+            {
+              title: 'Monthly Plan',
+              price: '$280',
+              duration: 'Unlimited',
+              desc: 'Unlimited sessions each month. Serious commitment. Serious results.',
+              popular: false,
+            },
+          ].map(plan => (
+            <div
+              class={`rounded-2xl p-10 transition-all ${
+                plan.popular
+                  ? 'bg-gradient-to-br from-pink-50 to-green-50 border-2 border-pink-700 shadow-xl scale-105'
+                  : 'bg-white border-2 border-gray-200 hover:shadow-lg'
+              }`}
+            >
+              {plan.popular && (
+                <div class="inline-block bg-pink-700 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+                  Most Popular
+                </div>
+              )}
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">{plan.title}</h3>
+              <div class="mb-4">
+                <div class="text-4xl font-black text-pink-700">{plan.price}</div>
+                <p class="text-sm text-gray-600 mt-2">{plan.duration}</p>
+              </div>
+              <p class="text-gray-700 mb-8 leading-relaxed">{plan.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="text-gray-600 mb-6">
+            All prices include one-on-one coaching with a Soul Lab coach. Want to train with Joseph specifically? Message us about availability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING SECTION -->
+    <section id="booking" class="py-20 bg-gradient-to-br from-pink-50 to-green-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-black text-gray-900 text-center mb-4">Ready to Start?</h2>
+        <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-12">
+          Book your first private session below. If you have questions first, get in touch.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Booking Form Placeholder -->
+          <div class="bg-white border-2 border-gray-200 rounded-2xl p-10 h-full">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Book Online</h3>
+            <div class="bg-gray-100 rounded-xl p-8 text-center text-gray-600 min-h-96 flex items-center justify-center">
+              <div>
+                <p class="font-semibold mb-2">Zipleads Booking Form</p>
+                <p class="text-sm">Coming soon — you'll be able to book and pay here</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Details -->
+          <div class="bg-white border-2 border-green-200 rounded-2xl p-10">
+            <h3 class="text-xl font-bold text-gray-900 mb-6">Questions First?</h3>
+            <div class="space-y-6">
+              <div>
+                <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-2">Phone</p>
+                <a href="tel:0432558304" class="text-lg text-gray-900 font-semibold hover:text-pink-700 transition-colors">
+                  0432 558 304
+                </a>
+              </div>
+              <div>
+                <p class="text-xs text-gray-600 uppercase tracking-wider font-semibold mb-2">Email</p>
+                <a href="mailto:info@soullabgym.com" class="text-lg text-gray-900 font-semibold hover:text-pink-700 transition-colors">
+                  info@soullabgym.com
+                </a>
+              </div>
+              <div class="border-t border-gray-200 pt-6">
+                <p class="text-gray-700 mb-4">
+                  Tell us about your goals and we'll recommend the best session type for you.
+                </p>
+                <a
+                  href="/contact"
+                  class="inline-block bg-pink-700 hover:bg-pink-800 text-white font-semibold px-6 py-3 rounded-full transition-all"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-black text-gray-900 text-center mb-16">Frequently Asked</h2>
+
+        <div class="space-y-6">
+          {[
+            {
+              q: 'Do I need to have trained before?',
+              a: 'Nope. We design sessions for complete beginners. Private training is actually the best way to start — you get a solid foundation before joining group classes.',
+            },
+            {
+              q: 'Can I book specific coaches?',
+              a: 'Absolutely. Want Joseph? We can arrange it based on availability. Otherwise you\'ll train with one of our senior coaches — all experienced fighters and excellent teachers.',
+            },
+            {
+              q: 'How long are sessions?',
+              a: 'Standard private sessions are 60 minutes. We can also do 30 or 45-minute sessions if that works better for your schedule.',
+            },
+            {
+              q: 'What if I need to reschedule?',
+              a: '48 hours notice and we\'ll move your session. Life happens — we get it.',
+            },
+            {
+              q: 'Can I combine private and group classes?',
+              a: 'Yes! Many people do private sessions for focused work, then join group classes for community and extra volume. We can help you structure a plan that works.',
+            },
+            {
+              q: 'Do I need to bring anything?',
+              a: 'Just yourself and comfortable workout gear. We have gloves, wraps, and pads here. If you want to use your own gear, bring it.',
+            },
+          ].map((faq, i) => (
+            <div class="bg-white border-2 border-green-200 hover:border-pink-300 rounded-2xl p-8 transition-all">
+              <h3 class="text-lg font-bold text-gray-900 mb-4">{faq.q}</h3>
+              <p class="text-gray-700 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   </div>
