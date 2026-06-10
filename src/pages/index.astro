@@ -210,31 +210,39 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
-  <!-- TESTIMONIALS PREVIEW -->
-  <section class="bg-slg-bone py-20">
+  <!-- TESTIMONIALS - PULL QUOTES -->
+  <section class="bg-slg-dark py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-5xl sm:text-6xl uppercase text-slg-text-dark text-center mb-4">Real Members. Real Results.</h2>
-      <p class="text-slg-text-dark text-lg text-center max-w-2xl mx-auto mb-16">
-        55+ reviews. 5.0 stars. Real people, real transformations.
-      </p>
+      <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase px-3 py-1 rounded-full mb-6">Real Members</div>
+      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white mb-16">What They're Saying</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-        {[
-          { name: 'Shannon Mein', category: 'Experienced Trainer', quote: 'Authentic Muay Thai training, the best facility in Townsville with genuine passion for teaching.' },
-          { name: 'Robert & Eva\'s World', category: 'Long-time Members', quote: 'Our kids trained with Joseph for years. Professional coach, amazing staff, feels like home.' },
-          { name: 'Tee', category: 'Parent', quote: 'Family welcoming vibe from day one. My kids felt comfortable and treated so kindly.' },
-        ].map(testimonial => (
-          <div class="bg-white border-2 border-slg-pink/30 rounded-lg p-6">
-            <div class="flex gap-1 mb-4">
-              {[...Array(5)].map(() => (
-                <span class="text-slg-pink">★</span>
-              ))}
-            </div>
-            <p class="text-slg-text-dark italic font-medium mb-4">"{testimonial.quote}"</p>
-            <p class="font-bold text-slg-text-dark">{testimonial.name}</p>
-            <p class="text-sm text-slg-pink font-semibold">{testimonial.category}</p>
-          </div>
-        ))}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Quote 1 -->
+        <div class="bg-slg-dark p-8">
+          <div class="font-display text-7xl text-slg-pink leading-none mb-6">"</div>
+          <p class="text-white text-xl font-medium italic mb-6 leading-relaxed">
+            These guys are amazing!!! Such a family welcoming vibe, from the moment we first walked in. My kids were made to feel so comfortable & treated so kindly even though they'd never stepped foot into a gym before. You can tell this place is built from the heart - good vibes, respect & love!!
+          </p>
+          <p class="text-slg-pink font-bold">Tee</p>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="bg-slg-dark p-8">
+          <div class="font-display text-7xl text-slg-pink leading-none mb-6">"</div>
+          <p class="text-white text-xl font-medium italic mb-6 leading-relaxed">
+            We have been members at soullab gym for a few weeks now. And I've noticed a huge change in my kids. I can't thank Joseph and the team at soul lab enough for everything they do
+          </p>
+          <p class="text-slg-pink font-bold">Mel J.</p>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="bg-slg-dark p-8">
+          <div class="font-display text-7xl text-slg-pink leading-none mb-6">"</div>
+          <p class="text-white text-xl font-medium italic mb-6 leading-relaxed">
+            Hands down the best experience for legitimate, authentic, intense Muay Thai training that you will struggle to find anywhere else in Townsville. Great facility, great training, Joe is a trainer that will push you to become the best version
+          </p>
+          <p class="text-slg-pink font-bold">Sam B.</p>
+        </div>
       </div>
 
       <div class="text-center">
@@ -242,7 +250,7 @@ import Footer from '../components/Footer.astro';
           href="/testimonials"
           class="inline-block border-2 border-slg-pink hover:bg-slg-pink text-slg-pink hover:text-white font-bold text-sm uppercase tracking-wide px-8 py-4 rounded transition-colors"
         >
-          Read All Reviews
+          Read All 55+ Reviews
         </a>
       </div>
     </div>
@@ -251,17 +259,17 @@ import Footer from '../components/Footer.astro';
   <!-- FINAL CTA -->
   <section class="bg-slg-pink py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-tight mb-6">
-        Ready to Find Your Strength?
+      <h2 class="font-display text-8xl uppercase text-white leading-tight mb-6">
+        Start Your 7 Days
       </h2>
-      <p class="text-white text-lg mb-8 max-w-2xl mx-auto">
-        Start your 7-day free trial today. No commitment. No credit card. Just real training.
+      <p class="text-white text-lg mb-12 max-w-2xl mx-auto">
+        No commitment. No credit card. Just real Muay Thai, real coaching, real results.
       </p>
       <a
         href="/contact"
-        class="inline-block bg-white hover:bg-slg-bone text-slg-pink font-bold text-sm uppercase tracking-wide px-10 py-5 rounded transition-colors shadow-lg"
+        class="inline-block bg-slg-dark hover:bg-slg-dark/80 text-white font-bold text-sm uppercase tracking-wide px-10 py-5 rounded transition-colors shadow-lg"
       >
-        Claim Your Free Trial Now
+        Claim Your Free Trial
       </a>
     </div>
   </section>
