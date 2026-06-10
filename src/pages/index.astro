@@ -27,15 +27,15 @@ import Footer from '../components/Footer.astro';
           Muay Thai Home
         </h1>
 
-        <!-- Sub-headlines with white borders instead of pink fill -->
+        <!-- Sub-headlines with solid dark fill for readability -->
         <div class="pt-6 space-y-3 flex flex-col items-center">
-          <h2 class="font-display text-4xl sm:text-5xl text-white border-2 border-white px-6 py-3 inline-block uppercase">
+          <h2 class="font-display text-4xl sm:text-5xl text-white bg-black/50 border border-white/40 px-6 py-3 inline-block uppercase">
             For Families
           </h2>
-          <h2 class="font-display text-4xl sm:text-5xl text-white border-2 border-white px-6 py-3 inline-block uppercase">
+          <h2 class="font-display text-4xl sm:text-5xl text-white bg-black/50 border border-white/40 px-6 py-3 inline-block uppercase">
             Fighters
           </h2>
-          <h2 class="font-display text-4xl sm:text-5xl text-white border-2 border-white px-6 py-3 inline-block uppercase">
+          <h2 class="font-display text-4xl sm:text-5xl text-white bg-black/50 border border-white/40 px-6 py-3 inline-block uppercase">
             & Future Champions
           </h2>
         </div>
@@ -119,10 +119,10 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- WHAT WE STAND FOR (PILLARS) - REDESIGNED -->
-  <section class="bg-slg-dark py-20">
+  <section class="bg-[#0E0E0E] py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="font-display text-5xl sm:text-6xl uppercase text-white text-center mb-4">What We Stand For</h2>
-      <p class="text-slg-text-light/60 text-lg text-center max-w-2xl mx-auto mb-16">
+      <p class="text-white/80 text-lg text-center max-w-2xl mx-auto mb-16">
         Three pillars guide everything we do at Soul Lab Gym.
       </p>
 
@@ -144,10 +144,10 @@ import Footer from '../components/Footer.astro';
             desc: 'You\'re not alone. We celebrate your wins, support your growth, and hold you accountable to becoming your best self.',
           },
         ].map(pillar => (
-          <div class="bg-slg-dark p-10 hover:bg-white/5 transition-colors group">
-            <div class="font-display text-8xl text-slg-pink leading-none mb-6">{pillar.num}</div>
+          <div class="bg-[#0E0E0E] p-10 hover:bg-white/5 transition-colors group">
+            <div class="font-display text-8xl text-pink-500 leading-none mb-6">{pillar.num}</div>
             <h3 class="text-white font-bold text-xl mb-3">{pillar.title}</h3>
-            <p class="text-slg-text-light/70 leading-relaxed text-sm">{pillar.desc}</p>
+            <p class="text-white/80 leading-relaxed text-sm">{pillar.desc}</p>
           </div>
         ))}
       </div>
@@ -155,7 +155,7 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- 7-DAY TRIAL SECTION -->
-  <section class="bg-slg-dark py-20">
+  <section class="bg-[#0E0E0E] py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -174,8 +174,8 @@ import Footer from '../components/Footer.astro';
               'Expert coaches who actually care about your progress',
             ].map(benefit => (
               <div class="flex gap-3">
-                <span class="text-slg-pink font-bold">→</span>
-                <span class="text-slg-text-light">{benefit}</span>
+                <span class="text-pink-500 font-bold">→</span>
+                <span class="text-white/75">{benefit}</span>
               </div>
             ))}
           </div>
@@ -197,10 +197,10 @@ import Footer from '../components/Footer.astro';
               { step: '3', title: 'You Feel It', desc: 'After 7 days you\'ll feel stronger, more confident, and part of something real.' },
             ].map(item => (
               <div class="flex gap-4">
-                <div class="font-display text-4xl text-slg-pink">{item.step}</div>
+                <div class="font-display text-4xl text-pink-500">{item.step}</div>
                 <div>
                   <p class="font-bold text-white mb-1">{item.title}</p>
-                  <p class="text-slg-text-light/70 text-sm">{item.desc}</p>
+                  <p class="text-white/75 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -211,37 +211,37 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- TESTIMONIALS - PULL QUOTES -->
-  <section class="bg-slg-dark py-20">
+  <section class="bg-[#0E0E0E] py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase px-3 py-1 rounded-full mb-6">Real Members</div>
+      <div class="inline-block bg-pink-500 text-white text-xs font-bold uppercase px-3 py-1 rounded-full mb-6">Real Members</div>
       <h2 class="font-display text-5xl sm:text-6xl uppercase text-white mb-16">What They're Saying</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <!-- Quote 1 -->
-        <div class="bg-slg-dark p-8">
-          <div class="font-display text-7xl text-slg-pink leading-none mb-6">"</div>
+        <div class="bg-[#0E0E0E] p-8">
+          <div class="font-display text-7xl text-pink-500 leading-none mb-6">"</div>
           <p class="text-white text-xl font-medium italic mb-6 leading-relaxed">
             These guys are amazing!!! Such a family welcoming vibe, from the moment we first walked in. My kids were made to feel so comfortable & treated so kindly even though they'd never stepped foot into a gym before. You can tell this place is built from the heart - good vibes, respect & love!!
           </p>
-          <p class="text-slg-pink font-bold">Tee</p>
+          <p class="text-white font-bold">Tee</p>
         </div>
 
         <!-- Quote 2 -->
-        <div class="bg-slg-dark p-8">
-          <div class="font-display text-7xl text-slg-pink leading-none mb-6">"</div>
+        <div class="bg-[#0E0E0E] p-8">
+          <div class="font-display text-7xl text-pink-500 leading-none mb-6">"</div>
           <p class="text-white text-xl font-medium italic mb-6 leading-relaxed">
             We have been members at soullab gym for a few weeks now. And I've noticed a huge change in my kids. I can't thank Joseph and the team at soul lab enough for everything they do
           </p>
-          <p class="text-slg-pink font-bold">Mel J.</p>
+          <p class="text-white font-bold">Mel J.</p>
         </div>
 
         <!-- Quote 3 -->
-        <div class="bg-slg-dark p-8">
-          <div class="font-display text-7xl text-slg-pink leading-none mb-6">"</div>
+        <div class="bg-[#0E0E0E] p-8">
+          <div class="font-display text-7xl text-pink-500 leading-none mb-6">"</div>
           <p class="text-white text-xl font-medium italic mb-6 leading-relaxed">
             Hands down the best experience for legitimate, authentic, intense Muay Thai training that you will struggle to find anywhere else in Townsville. Great facility, great training, Joe is a trainer that will push you to become the best version
           </p>
-          <p class="text-slg-pink font-bold">Sam B.</p>
+          <p class="text-white font-bold">Sam B.</p>
         </div>
       </div>
 
@@ -257,17 +257,17 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- FINAL CTA -->
-  <section class="bg-slg-pink py-20">
+  <section class="bg-pink-500 py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <h2 class="font-display text-8xl uppercase text-white leading-tight mb-6">
         Start Your 7 Days
       </h2>
-      <p class="text-white text-lg mb-12 max-w-2xl mx-auto">
+      <p class="text-white/80 text-lg mb-12 max-w-2xl mx-auto">
         No commitment. No credit card. Just real Muay Thai, real coaching, real results.
       </p>
       <a
         href="/contact"
-        class="inline-block bg-slg-dark hover:bg-slg-dark/80 text-white font-bold text-sm uppercase tracking-wide px-10 py-5 rounded transition-colors shadow-lg"
+        class="inline-block bg-[#0E0E0E] hover:bg-black text-white font-bold text-sm uppercase tracking-wide px-10 py-5 rounded transition-colors shadow-lg"
       >
         Claim Your Free Trial
       </a>
