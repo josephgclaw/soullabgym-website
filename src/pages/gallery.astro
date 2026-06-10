@@ -4,12 +4,12 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const allPhotos = [
-  // Hero photos
-  { src: '/photos/joseph-kids-hero.jpg', alt: 'Joseph with kids boxing', title: 'Joseph & Kids', category: 'Kids' },
+  // Hero & Main
+  { src: '/photos/joseph-kids-hero.jpg', alt: 'Joseph with kids boxing', title: 'Joseph & Kids', category: 'Featured' },
   { src: '/photos/gym-wide-shot.jpg', alt: 'Wide gym shot', title: 'Gym View', category: 'Gym' },
-  { src: '/photos/coach-pads.jpg', alt: 'Coach pad work', title: 'Coaching', category: 'Training' },
   
   // Training & Classes
+  { src: '/photos/coach-pads.jpg', alt: 'Coach pad work', title: 'Coaching', category: 'Training' },
   { src: '/photos/training-women-pad-work.jpg', alt: 'Women pad work sparring', title: 'Women Training', category: 'Training' },
   { src: '/photos/training-sparring-dramatic.jpg', alt: 'Sparring action', title: 'Sparring Action', category: 'Training' },
   { src: '/photos/training-skipping-rope.jpg', alt: 'Skipping rope training', title: 'Cardio Training', category: 'Training' },
@@ -18,35 +18,36 @@ const allPhotos = [
   { src: '/photos/training-moody-solo.jpg', alt: 'Solo fighter dramatic light', title: 'Solo Training', category: 'Training' },
   { src: '/photos/pad-work-sparring.jpg', alt: 'Pad work sparring', title: 'Advanced Training', category: 'Training' },
   
-  // Champions & Belts
-  { src: '/photos/champions-belts-1.jpg', alt: 'Champion belt 1', title: 'Champions', category: 'Achievement' },
-  { src: '/photos/champions-belts-2.jpg', alt: 'Champion belt 2', title: 'Belt Ceremony', category: 'Achievement' },
-  { src: '/photos/champions-belts-3.jpg', alt: 'Champion belt 3', title: 'Proud Moment', category: 'Achievement' },
-  { src: '/photos/champions-belts-4.jpg', alt: 'Champion belt 4', title: 'Victory', category: 'Achievement' },
+  // Champions & Achievement
+  { src: '/photos/champions-belts-1.jpg', alt: 'Champion belt moment', title: 'Belt Achievement', category: 'Achievement' },
+  { src: '/photos/champions-belts-2.jpg', alt: 'Champions with belts', title: 'Champions', category: 'Achievement' },
+  { src: '/photos/champions-belts-3.jpg', alt: 'Belt ceremony', title: 'Victory Moment', category: 'Achievement' },
+  { src: '/photos/champions-belts-4.jpg', alt: 'Champion portrait', title: 'Champion', category: 'Achievement' },
   
-  // Kids Programs - Main Group Photos
-  { src: '/photos/kids-guard-pose-group.jpg', alt: 'Kids class group guard pose', title: 'Kids Class', category: 'Kids' },
-  { src: '/photos/kids-young-girl-smile.jpg', alt: 'Young girl smiling', title: 'Happy Kids', category: 'Kids' },
+  // Kids Programs - Group Photos
+  { src: '/photos/kids-guard-pose-group.jpg', alt: 'Kids class group guard pose', title: 'Kids Class Guard Pose', category: 'Kids' },
+  { src: '/photos/kids-large-class-group.jpg', alt: 'Large kids class group', title: 'Large Class Group', category: 'Kids' },
   { src: '/photos/kids-class-group-photo.jpg', alt: 'Kids class group photo', title: 'Class Photo', category: 'Kids' },
-  { src: '/photos/kids-group-coach-thumbsup.jpg', alt: 'Kids with coach thumbs up', title: 'Coaching Kids', category: 'Kids' },
-  { src: '/photos/kids-standing-line.jpg', alt: 'Kids standing line low angle', title: 'Kids Standing', category: 'Kids' },
-  { src: '/photos/kids-boys-sitting.jpg', alt: 'Kids boys sitting attentive', title: 'Attentive Class', category: 'Kids' },
-  { src: '/photos/kids-sitting-group.jpg', alt: 'Kids sitting group', title: 'Group Moment', category: 'Kids' },
-  { src: '/photos/kids-sparring-action.jpg', alt: 'Kids sparring action', title: 'Kids Sparring', category: 'Kids' },
-  { src: '/photos/kids-with-coach.jpg', alt: 'Kids with coach', title: 'Team Training', category: 'Kids' },
-  { src: '/photos/kids-teens-belts-group.jpg', alt: 'Kids teens with belts group', title: 'Achievement', category: 'Kids' },
+  { src: '/photos/kids-group-coach-thumbsup.jpg', alt: 'Kids with coach thumbs up', title: 'Group With Coach', category: 'Kids' },
+  { src: '/photos/kids-teens-belts-group.jpg', alt: 'Kids teens with belts', title: 'Teens Achievement', category: 'Kids' },
   
   // Kids Programs - Individual Moments
-  { src: '/photos/kids-girl-hitting-pads.jpg', alt: 'Girl hitting pads with coach', title: 'Girl Power', category: 'Kids' },
-  { src: '/photos/kids-boy-raising-glove.jpg', alt: 'Young boy raising glove portrait', title: 'Young Fighter', category: 'Kids' },
-  { src: '/photos/kids-coach-thumbsup.jpg', alt: 'Coach with junior kids thumbs up', title: 'Coaching Moment', category: 'Kids' },
-  { src: '/photos/kids-girl-guard-pose.jpg', alt: 'Girl guard pose with coach', title: 'Guard Pose', category: 'Kids' },
-  { src: '/photos/kids-coach-teaching-boy.jpg', alt: 'Coach teaching young boy gloves up', title: 'Teaching Moment', category: 'Kids' },
+  { src: '/photos/kids-young-girl-smile.jpg', alt: 'Young girl smiling', title: 'Happy Kid', category: 'Kids' },
+  { src: '/photos/kids-standing-line.jpg', alt: 'Kids standing line', title: 'Standing Line', category: 'Kids' },
+  { src: '/photos/kids-boys-sitting.jpg', alt: 'Kids boys sitting', title: 'Kids Sitting', category: 'Kids' },
+  { src: '/photos/kids-sitting-group.jpg', alt: 'Kids sitting group', title: 'Group Moment', category: 'Kids' },
+  { src: '/photos/kids-sparring-action.jpg', alt: 'Kids sparring', title: 'Kids Sparring', category: 'Kids' },
+  { src: '/photos/kids-with-coach.jpg', alt: 'Kids with coach', title: 'Training With Coach', category: 'Kids' },
+  { src: '/photos/kids-girl-hitting-pads.jpg', alt: 'Girl hitting pads', title: 'Girl Power', category: 'Kids' },
+  { src: '/photos/kids-boy-raising-glove.jpg', alt: 'Boy raising glove', title: 'Young Fighter', category: 'Kids' },
+  { src: '/photos/kids-coach-thumbsup.jpg', alt: 'Coach with kids', title: 'Coach Moment', category: 'Kids' },
+  { src: '/photos/kids-girl-guard-pose.jpg', alt: 'Girl guard pose', title: 'Guard Pose', category: 'Kids' },
+  { src: '/photos/kids-coach-teaching-boy.jpg', alt: 'Coach teaching boy', title: 'Teaching Moment', category: 'Kids' },
   
   // Team & Community
   { src: '/photos/team-photo.jpg', alt: 'Soul Lab team', title: 'Team Photo', category: 'Community' },
   { src: '/photos/team-photo-2.jpg', alt: 'Team photo 2', title: 'Squad Goals', category: 'Community' },
-  { src: '/photos/team-photo-3.jpg', alt: 'Team photo 3', title: 'Community', category: 'Community' },
+  { src: '/photos/team-photo-3.jpg', alt: 'Team photo 3', title: 'Team Spirit', category: 'Community' },
   
   // Brand & Info Graphics
   { src: '/photos/soul-lab-logo-pink.jpg', alt: 'Soul Lab Gym pink logo', title: 'Soul Lab Logo', category: 'Brand' },
@@ -55,8 +56,6 @@ const allPhotos = [
   { src: '/photos/pricing-fifo.jpg', alt: 'FIFO membership pricing', title: 'FIFO Pricing', category: 'Info' },
   { src: '/photos/timetable-info.jpg', alt: 'Class timetable', title: 'Class Schedule', category: 'Info' },
 ];
-
-const categories = ['All', ...new Set(allPhotos.map(p => p.category))];
 ---
 
 <Layout
@@ -82,7 +81,7 @@ const categories = ['All', ...new Set(allPhotos.map(p => p.category))];
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Filter Buttons -->
       <div class="flex flex-wrap justify-center gap-3 mb-14">
-        {categories.map(cat => (
+        {['All', 'Featured', 'Training', 'Kids', 'Achievement', 'Community', 'Gym', 'Brand', 'Info'].map(cat => (
           <button
             class="filter-btn px-6 py-2 rounded-full font-bold text-sm transition-all border-2"
             data-filter={cat}
