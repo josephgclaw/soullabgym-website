@@ -5,80 +5,206 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="About — Soul Lab Gym"
-  description="Soul Lab Gym is Townsville's home for authentic Muay Thai training. Meet head coach Joseph Gabiola, WMO State Champion."
+  title="About — Soul Lab Gym | Meet Joseph Gabiola"
+  description="Soul Lab Gym is Townsville's home for authentic Muay Thai training. Meet head coach Joseph 'Machine Gun' Gabiola — WMO State Champion with 35+ fights."
 >
   <Nav />
 
   <!-- PAGE HEADER -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors" class="inline-block text-xs font-bold uppercase px-3 py-1 mb-6">About Us</div>
-      <h1 class="text-5xl sm:text-6xl font-display uppercase text-white mb-6">
-        Soul Lab Gym
+  <section class="relative min-h-[50vh] flex items-center justify-center pt-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/photos/about/joseph-bw-champion.jpg" alt="Joseph Gabiola" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-black/55"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+      <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-4 py-2 mb-6">
+        About Soul Lab Gym
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display uppercase text-white mb-6 leading-tight">
+        Built by a Fighter.<br>Run for Everyone.
       </h1>
-      <p class="text-slg-text-light text-lg leading-relaxed max-w-2xl">
-        Townsville's home for authentic Muay Thai training. We're serious about technique, serious about community, and serious about getting results.
+      <p class="text-lg text-slg-text-light leading-relaxed max-w-2xl mx-auto">
+        Soul Lab Gym is Townsville's home for authentic Muay Thai — founded by a fighter who travelled the world to learn, then came home to build something real.
       </p>
     </div>
   </section>
 
-  <!-- HEAD COACH -->
-  <section class="py-16">
+  <!-- MEET THE COACH -->
+  <section class="py-20 bg-slg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-display uppercase text-center text-slg-text-dark mb-12">Meet the Coach</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-4 py-2 mb-3">Meet the Coach</div>
+        <h2 class="text-4xl sm:text-5xl font-display uppercase text-slg-text-dark">Joseph Gabiola</h2>
+        <p class="text-slg-pink font-semibold mt-2">WMO State Champion · 35+ Fights · Muay Thai & K-1</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
         <!-- Photo -->
-        <div class="overflow-hidden aspect-square">
-          <img src="/photos/joseph-kids-hero.jpg" alt="Joseph Gabiola coaching" class="w-full h-full object-cover" />
+        <div class="overflow-hidden aspect-[3/4] border-2 border-slg-pink/20 shadow-lg">
+          <img src="/photos/about/joseph-belts-sunset.jpg" alt="Joseph Gabiola — WMO State Champion" class="w-full h-full object-cover" />
         </div>
 
         <!-- Bio -->
         <div>
-          <div class="inline-block border text-xs font-bold uppercase tracking-widest px-4 py-2 rounded mb-4">
-            Head Coach
+          <div class="border-l-4 border-slg-pink pl-6">
+            <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
+              Joseph "Machine Gun" Gabiola started his martial arts journey in <strong>2012</strong> and began coaching in <strong>2019</strong>. Between those years, he fought over <strong>35 professional bouts</strong> across Muay Thai, boxing, and K-1 — travelling extensively to Thailand to train with some of the best fighters and coaches in the world.
+            </p>
+            <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
+              His time in Thailand wasn't just about fighting. It was about immersing himself in the culture, meeting incredible people, and absorbing everything the art of eight limbs had to offer. That experience shaped his philosophy — and ultimately led him to focus solely on Muay Thai, leaving MMA behind to open his own gym.
+            </p>
+            <p class="text-slg-text-dark text-lg leading-relaxed">
+              Today, Soul Lab Gym is the result of that journey: a home for authentic Muay Thai in Townsville where technique, discipline, and community come first.
+            </p>
           </div>
-          <h3 class="text-3xl font-display text-slg-text-dark mb-2">Joseph Gabiola</h3>
-          <div class="text-slg-pink font-semibold mb-6">WMO State Champion</div>
-          <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
-            Joseph is a WMO State Champion with decades of fighting experience and a proven track record developing athletes from beginner to competitive level. He founded Soul Lab Gym on one principle: authentic coaching, delivered with care.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE JOURNEY -->
+  <section class="py-20 bg-slg-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl sm:text-5xl font-display uppercase text-white">The Journey</h2>
+        <p class="text-slg-text-light text-lg mt-4 max-w-2xl mx-auto">From his first class in 2012 to opening his own gym — a decade of dedication, travel, and growth.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-24">
+        <div>
+          <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-4">2012</div>
+          <h3 class="text-2xl font-bold text-white mb-3">The Beginning</h3>
+          <p class="text-slg-text-light/80 leading-relaxed">
+            Joseph walked into a gym for the first time in 2012 with no idea where the path would lead. What started as training quickly became an obsession — the discipline, the technique, the culture. He found his home in Muay Thai.
           </p>
-          <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
-            Beyond the ring, Joseph is passionate about building confidence in kids through martial arts — teaching that real strength comes from discipline, respect, and understanding your own power. His anti-bullying programs have helped hundreds of Townsville families, and his gym is home to fighters, kids, and community members from all walks of life.
+        </div>
+        <div class="overflow-hidden aspect-[4/3] border border-white/10">
+          <img src="/photos/about/joseph-courage-fight-1.jpg" alt="Joseph in his early fight career" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-24">
+        <div class="order-2 lg:order-1 overflow-hidden aspect-[4/3] border border-white/10">
+          <img src="/photos/about/joseph-flying-knee.jpg" alt="Joseph in action" class="w-full h-full object-cover" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-4">The Fight Years</div>
+          <h3 class="text-2xl font-bold text-white mb-3">35+ Fights</h3>
+          <p class="text-slg-text-light/80 leading-relaxed mb-4">
+            Over the years Joseph built a reputation as a relentless competitor, fighting across Muay Thai, boxing, and K-1. He earned his nickname "Machine Gun" through volume, pressure, and never backing down.
           </p>
-          <p class="text-slg-text-dark text-lg leading-relaxed">
-            When Joseph coaches, he's not just teaching Muay Thai. He's building people who carry themselves with quiet confidence and treat others with respect.
+          <p class="text-slg-text-light/80 leading-relaxed">
+            His style is a blend of two influences — a <strong>Muay Femur</strong> foundation (technical, high-IQ fighting inspired by fighters like Saenchai and Superlek) combined with a <strong>Muay Khao</strong> pressure game developed through extensive training with elite Thai fighters.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto mb-24">
+        <div>
+          <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-4">Thailand</div>
+          <h3 class="text-2xl font-bold text-white mb-3">Learning from the Best</h3>
+          <p class="text-slg-text-light/80 leading-relaxed mb-4">
+            Joseph travelled extensively to Thailand, training at legendary gyms and soaking up knowledge from the sport's best. He trained extensively with <strong>Kru Jack</strong>, who helped him develop a high fight IQ and technical Muay Femur style, and with <strong>Yodwicha</strong>, who sharpened his Muay Khao pressure game.
+          </p>
+          <p class="text-slg-text-light/80 leading-relaxed">
+            From training camps in Phuket — including Bangtao Muay Thai & MMA — to sessions in the heart of Thailand's fight culture, every trip added depth to his understanding of the art.
+          </p>
+        </div>
+        <div class="overflow-hidden aspect-[4/3] border border-white/10">
+          <img src="/photos/about/joseph-bangtao-training.jpg" alt="Joseph training at Bangtao Muay Thai" class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+        <div class="order-2 lg:order-1 overflow-hidden aspect-[4/3] border border-white/10">
+          <img src="/photos/about/joseph-scholarship.jpg" alt="Joseph receiving JH Explosive Scholarship" class="w-full h-full object-cover" />
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-4">Recognition</div>
+          <h3 class="text-2xl font-bold text-white mb-3">Scholarship & Beyond</h3>
+          <p class="text-slg-text-light/80 leading-relaxed mb-4">
+            Joseph's dedication was recognised with the <strong>JH/Explosive Annual Scholarship</strong> — an all-expenses-paid overseas training camp award given to fighters who show exceptional commitment and potential.
+          </p>
+          <p class="text-slg-text-light/80 leading-relaxed">
+            Every fight, every camp, every lesson learned overseas — it all fed into one vision: building a gym where real Muay Thai could be taught with depth and care. That vision became Soul Lab Gym.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PHOTO GALLERY -->
-  <section class="py-16">
+  <!-- COACHING PHILOSOPHY -->
+  <section class="py-20 bg-slg-bone">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-display uppercase text-center text-slg-text-dark mb-10">The Gym</h2>
+      <div class="text-center mb-14">
+        <h2 class="text-4xl sm:text-5xl font-display uppercase text-slg-text-dark">Coaching Philosophy</h2>
+        <p class="text-slg-text-dark text-lg mt-4 max-w-2xl mx-auto">What Joseph brings to every class, every student, every session.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-slg-dark p-8 border border-slg-pink/20">
+          <h3 class="font-display text-2xl text-slg-pink mb-3">Technique First</h3>
+          <p class="text-slg-text-light/80 text-sm leading-relaxed">
+            Joseph is a Muay Femur stylist at heart — precision, timing, and fight IQ matter as much as power. Every student learns the fundamentals deeply before moving forward.
+          </p>
+        </div>
+        <div class="bg-slg-dark p-8 border border-slg-pink/20">
+          <h3 class="font-display text-2xl text-slg-pink mb-3">Real Experience</h3>
+          <p class="text-slg-text-light/80 text-sm leading-relaxed">
+            35+ professional fights. Training with world-class fighters in Thailand. This isn't theory — Joseph teaches what he's lived in the ring.
+          </p>
+        </div>
+        <div class="bg-slg-dark p-8 border border-slg-pink/20">
+          <h3 class="font-display text-2xl text-slg-pink mb-3">Everyone Belongs</h3>
+          <p class="text-slg-text-light/80 text-sm leading-relaxed">
+            Whether you're a complete beginner, a parent looking for something for your kids, or an experienced fighter — Soul Lab is built to meet you where you are and take you where you want to go.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIGHT GALLERY -->
+  <section class="py-20 bg-slg-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl sm:text-5xl font-display uppercase text-white">Fight Gallery</h2>
+        <p class="text-slg-text-light text-lg mt-4">Moments from the career that built Soul Lab.</p>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <img src="/photos/gym-wide-shot.jpg" alt="Gym wide shot" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
-        <img src="/photos/pad-work-sparring.jpg" alt="Pad work" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
-        <img src="/photos/coach-pads.jpg" alt="Coach with pads" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
-        <img src="/photos/kids-with-coach.jpg" alt="Kids with coach" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
-        <img src="/photos/team-photo.jpg" alt="Team photo" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
-        <img src="/photos/kids-guard-pose-group.jpg" alt="Kids guard pose" class="w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <div class="overflow-hidden aspect-[4/3]">
+          <img src="/photos/about/joseph-rain-fight.jpg" alt="Joseph fighting in the rain" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="overflow-hidden aspect-[4/3]">
+          <img src="/photos/about/joseph-ringwalk.jpg" alt="Joseph ring walk with mongkol" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="overflow-hidden aspect-[4/3]">
+          <img src="/photos/about/joseph-courage-fight-2.jpg" alt="Joseph in the pocket" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="overflow-hidden aspect-[4/3]">
+          <img src="/photos/about/joseph-courage-fight-3.jpg" alt="Joseph landing strikes" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="overflow-hidden aspect-[4/3]">
+          <img src="/photos/about/joseph-postfight-team.jpg" alt="Joseph with team post-fight" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="overflow-hidden aspect-[4/3]">
+          <img src="/photos/about/joseph-flying-knee.jpg" alt="Joseph flying knee" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16">
+  <section class="py-20 bg-slg-pink">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl sm:text-4xl font-display uppercase text-white mb-6">Ready to Start?</h2>
-      <p class="text-lg mb-8 max-w-2xl mx-auto">
-        Join us for a free trial — plus a free gear pack when you sign up. No commitment, no credit card.
+      <h2 class="text-4xl sm:text-5xl font-display uppercase text-white mb-6">Train with a Real Fighter</h2>
+      <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+        Start your journey at Townsville's premier Muay Thai home. Free trial + free gear pack on signup — no commitment, no credit card.
       </p>
       <a
         href="https://soullabgymoffer.com/offer"
-        class="inline-block bg-slg-dark hover:bg-slg-text-dark text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors">
+        class="inline-block bg-slg-dark hover:bg-slg-text-dark text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors shadow-lg">
         Claim Free Trial + Gear Pack
       </a>
     </div>
