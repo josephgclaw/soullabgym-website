@@ -5,12 +5,10 @@
   /* Brand colours */
   --color-slg-dark: #0E0E0E;
   --color-slg-bone: #F8F5F0;
-  --color-slg-pink: #C8183A;
-  --color-slg-pink-hover: #A3102D;
-  --color-slg-gold: #C9962B;
-  --color-slg-gold-hover: #A67D22;
   --color-slg-pink: #EC4899;
   --color-slg-pink-hover: #D4318A;
+  --color-slg-gold: #C9962B;
+  --color-slg-gold-hover: #A67D22;
   --color-slg-silver: #C8CCD0;
   --color-slg-text-light: #F0EDE8;
   --color-slg-text-dark: #1A1A1A;
@@ -26,12 +24,10 @@
 :root {
   --slg-dark: #0E0E0E;
   --slg-bone: #F8F5F0;
-  --slg-pink: #C8183A;
-  --slg-pink-hover: #A3102D;
-  --slg-gold: #C9962B;
-  --slg-gold-hover: #A67D22;
   --slg-pink: #EC4899;
   --slg-pink-hover: #D4318A;
+  --slg-gold: #C9962B;
+  --slg-gold-hover: #A67D22;
   --slg-text-light: #F0EDE8;
   --slg-text-dark: #1A1A1A;
   --footer-dark: #080808;

@@ -55,11 +55,11 @@ const currentPath = Astro.url.pathname;
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div class="absolute left-0 mt-2 w-48 bg-slg-bone border border-slg-pink/20 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+            <div class="absolute left-0 mt-2 w-48 bg-slg-bone border border-slg-pink/20 rounded shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
               {programLinks.map(link => (
                 <a
                   href={link.href}
-                  class="block px-4 py-3 text-sm text-slg-text-dark hover:bg-slg-pink/5 hover:text-slg-pink transition-colors first:rounded-t last:-b"
+                  class="block px-4 py-3 text-sm text-slg-text-dark hover:bg-slg-pink/5 hover:text-slg-pink transition-colors first:rounded-t last:rounded-b"
                 >
                   {link.label}
                 </a>
