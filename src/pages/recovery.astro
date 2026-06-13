@@ -4,23 +4,29 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const recoveryPhotos = [
-  // Original 10
-  { src: '/photos/recovery/Sauna-1 Exterior Full View.jpg', alt: 'Exterior view of the sauna building', title: 'Sauna Exterior' },
-  { src: '/photos/recovery/Sauna-2 Interior with Rocks.jpg', alt: 'Interior of the sauna showing traditional volcanic rocks', title: 'Sauna Interior' },
-  { src: '/photos/recovery/Sauna-3 Heater Detail.jpg', alt: 'Close-up of the sauna heater', title: 'Sauna Heater' },
-  { src: '/photos/recovery/Sauna-4 Rocks & Equipment.jpg', alt: 'Sauna rocks and heating equipment', title: 'Sauna Details' },
-  { src: '/photos/recovery/Sauna-5 Interior Full.jpg', alt: 'Wide view of the spacious sauna interior', title: 'Spacious Sauna' },
-  { src: '/photos/recovery/Ice Bath -1 Full View.jpg', alt: 'Full view of the large wooden ice bath tub', title: 'Ice Bath Tub' },
-  { src: '/photos/recovery/Ice Bath -2 Close Up Bubbles.jpg', alt: 'Close-up of ice bath water with bubbles', title: 'Ice Bath Close-up' },
-  { src: '/photos/recovery/Ice Bath -3 with Buddha Statue.jpg', alt: 'Ice bath with peaceful Buddha statue beside it', title: 'Peaceful Ice Bath' },
-  { src: '/photos/recovery/Ice Bath -4 Exterior View.jpg', alt: 'Ice bath viewed from outside the recovery studio', title: 'Ice Bath Exterior' },
-  { src: '/photos/recovery/Sauna + Ice Bath Facility Overview.jpg', alt: 'Overview of the entire sauna and ice bath recovery facility', title: 'Full Recovery Set' },
+  // Sauna
+  { src: '/photos/recovery/sauna-exterior.jpg', alt: 'Exterior view of the sauna building', title: 'Sauna Exterior' },
+  { src: '/photos/recovery/sauna-interior.jpg', alt: 'Interior of the sauna showing traditional volcanic rocks', title: 'Sauna Interior' },
+  { src: '/photos/recovery/sauna-interior-rocks.jpg', alt: 'Wide view of the spacious sauna interior', title: 'Spacious Sauna' },
+  { src: '/photos/recovery/sauna-heater-detail.jpg', alt: 'Close-up of the sauna heater', title: 'Sauna Heater' },
+  { src: '/photos/recovery/sauna-heater-rocks.jpg', alt: 'Sauna rocks and heating equipment', title: 'Sauna Details' },
+  { src: '/photos/recovery/sauna-and-icebath.jpg', alt: 'Overview of the entire sauna and ice bath recovery facility', title: 'Full Recovery Set' },
 
-  // New 4 photos (just received)
+  // Ice Bath
+  { src: '/photos/recovery/ice-bath.jpg', alt: 'Full view of the large wooden ice bath tub', title: 'Ice Bath Tub' },
+  { src: '/photos/recovery/ice-bath-close-up.jpg', alt: 'Close-up of ice bath water with bubbles', title: 'Ice Bath Close-up' },
+  { src: '/photos/recovery/ice-bath-exterior.jpg', alt: 'Ice bath viewed from outside the recovery studio', title: 'Ice Bath Exterior' },
+  { src: '/photos/recovery/ice-bath-with-buddha.jpg', alt: 'Ice bath with peaceful Buddha statue beside it', title: 'Peaceful Ice Bath' },
   { src: '/photos/recovery/ice-bath-buddha-calm.jpg', alt: 'Ice bath tub with Buddha statue on the left in calm pose', title: 'Ice Bath + Buddha Calm' },
+  { src: '/photos/recovery/ice-bath-buddha-left.jpg', alt: 'Ice bath with Buddha statue positioned left', title: 'Ice Bath + Buddha Left' },
   { src: '/photos/recovery/ice-bath-buddha-side.jpg', alt: 'Side angle of the ice bath with Buddha statue', title: 'Ice Bath + Buddha Angled' },
+  { src: '/photos/recovery/ice-bath-buddha-tilted.jpg', alt: 'Tilted angle of ice bath with Buddha statue', title: 'Ice Bath + Buddha Tilted' },
+  { src: '/photos/recovery/ice-bath-buddha-wide.jpg', alt: 'Wide angle of ice bath with Buddha statue', title: 'Ice Bath + Buddha Wide' },
+  { src: '/photos/recovery/ice-bath-buddha-outdoor.jpg', alt: 'Ice bath with Buddha statue in front of the open studio door looking outside', title: 'Ice Bath Outdoor View' },
+
+  // Studio details
   { src: '/photos/recovery/recovery-shelf-green-hat.jpg', alt: 'Recovery studio accessories shelf including traditional green sauna hat, Ganesha statue and other decor', title: 'Recovery Studio Details' },
-  { src: '/photos/recovery/ice-bath-buddha-outdoor.jpg', alt: 'Ice bath with Buddha statue in front of the open studio door looking outside', title: 'Ice Bath View to Outside' },
+  { src: '/photos/recovery/recovery-shelf-sauna-hat.jpg', alt: 'Recovery studio shelf with sauna hat and decor', title: 'Recovery Shelf' },
 ];
 ---
 
@@ -34,7 +40,7 @@ const recoveryPhotos = [
   <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
     <div class="absolute inset-0">
       <img 
-        src="/photos/recovery/Sauna + Ice Bath Facility Overview.jpg" 
+        src="/photos/recovery/sauna-and-icebath.jpg" 
         alt="Full recovery facility overview" 
         class="w-full h-full object-cover"
       />
@@ -76,7 +82,8 @@ const recoveryPhotos = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- DESKTOP GRID (hidden on mobile) -->
+      <div class="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {recoveryPhotos.map((photo, idx) => (
           <div 
             class="group relative overflow-hidden rounded-none aspect-[4/3] cursor-pointer border-2 border-gray-200 hover:border-slg-pink shadow-sm hover:shadow-lg transition-all"
@@ -85,6 +92,7 @@ const recoveryPhotos = [
             <img 
               src={photo.src} 
               alt={photo.alt} 
+              loading="lazy"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
@@ -98,9 +106,47 @@ const recoveryPhotos = [
         ))}
       </div>
 
-      <div class="text-center mt-8 text-sm text-slg-text-dark">
-        Click any photo for a closer look.
+      <!-- MOBILE CAROUSEL (hidden on md+) -->
+      <div class="md:hidden relative">
+        <div
+          id="mobile-carousel"
+          class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-4 pb-4 -mx-4 px-4"
+          style="-webkit-overflow-scrolling: touch; scrollbar-width: none;"
+        >
+          {recoveryPhotos.map((photo, idx) => (
+            <div
+              class="snap-start shrink-0 w-[85vw] max-w-sm relative overflow-hidden rounded-none aspect-[4/3] cursor-pointer border-2 border-gray-200 shadow-sm"
+              onclick={`openPhotoLightbox(${idx})`}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-4">
+                <p class="text-white font-semibold text-lg drop-shadow">{photo.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Scroll indicators / dots -->
+        <div class="flex justify-center gap-2 mt-4 flex-wrap">
+          {recoveryPhotos.map((_, idx) => (
+            <button
+              class="carousel-dot w-2.5 h-2.5 rounded-full bg-gray-300 hover:bg-slg-pink transition-colors"
+              onclick={`document.getElementById('mobile-carousel').children[${idx}].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })`}
+              aria-label={`Go to photo ${idx + 1}`}
+            ></button>
+          ))}
+        </div>
       </div>
+
+      <div class="text-center mt-8 text-sm text-slg-text-dark">
+        Tap any photo for a closer look.
+      </div
     </div>
   </section>
 
@@ -263,6 +309,38 @@ const recoveryPhotos = [
 
 <script>
   const recoveryPhotos = {recoveryPhotos};
+
+  // Mobile carousel active dot tracking
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('mobile-carousel');
+    if (!carousel) return;
+
+    const dots = carousel.parentElement.querySelectorAll('.carousel-dot');
+
+    const updateActiveDot = () => {
+      const containerCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+
+      Array.from(carousel.children).forEach((child, i) => {
+        const childCenter = child.offsetLeft + child.offsetWidth / 2;
+        const dist = Math.abs(containerCenter - childCenter);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = i;
+        }
+      });
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('bg-slg-pink', i === closestIdx);
+        dot.classList.toggle('bg-gray-300', i !== closestIdx);
+      });
+    };
+
+    carousel.addEventListener('scroll', updateActiveDot);
+    // Set initial active dot
+    setTimeout(updateActiveDot, 100);
+  });
 
   function openPhotoLightbox(index) {
     const modal = document.getElementById('photo-lightbox');
