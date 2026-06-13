@@ -25,8 +25,8 @@ const recoveryPhotos = [
 ---
 
 <Layout
-  title="Soul Lab Recovery — Sauna & Ice Bath Services in Townsville"
-  description="Premium sauna and ice bath recovery services in Townsville. Single sessions, 5-session packages, or unlimited monthly membership."
+  title="Soul Lab Recovery — Sauna & Ice Bath in Townsville"
+  description="Premium sauna and ice bath recovery facility at Soul Lab Gym, Townsville. Purpose-built for serious recovery."
 >
   <Nav />
 
@@ -54,15 +54,10 @@ const recoveryPhotos = [
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a
-          href="https://slg.gymdesk.com/login"
-          class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors">
-          Book Your First Session
-        </a>
-        <a
-          href="#pricing"
-          class="bg-slg-bone/95 hover:bg-slg-bone font-display uppercase font-bold text-base px-8 py-4 rounded transition-all border border-white/30 shadow"
+          href="#facility"
+          class="bg-slg-bone/95 hover:bg-slg-bone font-display uppercase font-bold text-base px-8 py-4 transition-all border border-white/30 shadow"
         >
-          View Pricing
+          View the Facility
         </a>
       </div>
     </div>
@@ -153,7 +148,7 @@ const recoveryPhotos = [
         {[
           ['Professional-Grade Equipment', 'Commercial-quality sauna and ice bath facilities designed for serious recovery.'],
           ['Expert Guidance', 'Our team understands the science and will help you get the most from each session.'],
-          ['Flexible Membership', 'Drop-in sessions or commitment-free packages. Choose what works for you.'],
+          ['Part of Soul Lab Gym', 'Recover in the same space where Townsville\'s best fighters train. Built for serious athletes.'],
           ['Community Focused', 'Part of the Soul Lab family. Recover alongside serious athletes and wellness enthusiasts.'],
         ].map(([title, desc]) => (
           <div class="bg-slg-bone border border-gray-200 rounded-none p-6 flex gap-4">
@@ -170,73 +165,7 @@ const recoveryPhotos = [
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section id="pricing" class="py-20 bg-slg-bone">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-display uppercase font-display uppercase mb-4">Pricing Plans</h2>
-        <p class="text-xl text-slg-text-dark">Choose the plan that fits your recovery goals.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <!-- Single -->
-        <div class="border-2 border-gray-200 rounded-none p-8 hover:shadow-lg hover:border-slg-pink transition-all bg-slg-bone">
-          <h3 class="text-3xl font-black font-display uppercase mb-1">Single Session</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-black text-slg-pink">$35</span>
-            <span class="text-slg-text-dark ml-1">/ session</span>
-          </div>
-          <ul class="space-y-3 mb-8 text-slg-text-dark text-[15px]">
-            <li class="flex items-start gap-2"><span class="text-slg-pink font-bold mt-0.5">✓</span> Sauna + Ice Bath combo</li>
-            <li class="flex items-start gap-2"><span class="text-slg-pink font-bold mt-0.5">✓</span> 30-minute session</li>
-            <li class="flex items-start gap-2"><span class="text-slg-pink font-bold mt-0.5">✓</span> Expert guidance included</li>
-          </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gray-900 hover:bg-black text-white font-bold py-3 rounded transition-colors">Book Now</a>
-        </div>
-
-        <!-- 5-Pack -->
-        <div class="border-4 border-emerald-400 rounded-none p-8 relative shadow-[0_10px_40px_rgb(16,185,129,0.08)] bg-slg-bone">
-          <div class="absolute -top-3 left-9 bg-emerald-500 text-white font-bold px-4 py-0.5 rounded shadow text-sm">BEST VALUE</div>
-          <h3 class="text-3xl font-black font-display uppercase mb-1">5-Session Package</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-black text-slg-pink">$150</span>
-            <span class="text-slg-text-dark ml-1 text-base">($30 per session)</span>
-          </div>
-          <ul class="space-y-3 mb-8 text-slg-text-dark text-[15px]">
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> 5 × 30-minute sessions</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Save $25 vs single sessions</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Valid for 3 months</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Expert guidance included</li>
-          </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-gradient-to-r from-emerald-500 to-slg-bone hover:from-emerald-600 hover:to-slg-bone0 text-white font-bold py-3 rounded transition-all">Get Package</a>
-        </div>
-
-        <!-- Unlimited -->
-        <div class="border-2 border-gray-200 rounded-none p-8 hover:shadow-lg hover:border-slg-pink transition-all bg-slg-bone">
-          <h3 class="text-3xl font-black font-display uppercase mb-1">Monthly Unlimited</h3>
-          <div class="mb-6">
-            <span class="text-4xl font-black text-slg-pink">$89</span>
-            <span class="text-slg-text-dark ml-1">/ month</span>
-          </div>
-          <ul class="space-y-3 mb-8 text-slg-text-dark text-[15px]">
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Unlimited sessions</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Perfect for regulars</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> 30-minute sessions</li>
-            <li class="flex items-start gap-2"><span class="text-emerald-500 font-bold mt-0.5">✓</span> Expert guidance included</li>
-          </ul>
-          <a href="https://slg.gymdesk.com/login" class="block text-center bg-slg-pink hover:bg-slg-pink text-white font-bold py-3 transition-all">Subscribe</a>
-        </div>
-      </div>
-
-      <div class="mt-6 bg-emerald-50 border border-emerald-200 rounded-none p-5 text-center">
-        <p class="text-emerald-800 font-medium">
-          Soul Lab Gym Members save <span class="font-black">15%</span> on all recovery packages. Ask at the desk for your code.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- VIDEO PLACEHOLDER -->
+  <!-- VIDEO SECTION -->
   <section id="watch" class="py-20 bg-slg-bone">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
