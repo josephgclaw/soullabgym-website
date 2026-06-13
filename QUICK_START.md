@@ -79,7 +79,7 @@ Once live, check:
 
 **Joseph's Info:**
 - Phone: 0432 558 304
-- Email: info@soullabgym.com
+- Email: soullabgym@gmail.com
 
 ---
 

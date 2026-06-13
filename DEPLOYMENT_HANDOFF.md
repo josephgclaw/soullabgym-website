@@ -56,7 +56,7 @@ This is a **production-ready Astro website** for Soul Lab Gym (Muay Thai gym + A
   - Facebook: facebook.com/soullabgym
   - Instagram: https://www.instagram.com/soul.lab.gym/
   - YouTube: https://www.youtube.com/channel/UCMGyz96tdBUgD-RG6SyEDRg
-- ✅ Contact info: 0432 558 304 | info@soullabgym.com
+- ✅ Contact info: 0432 558 304 | soullabgym@gmail.com
 - ✅ Location: 2/70 Ingham Road, West End, Townsville QLD
 
 ### Build Status:
@@ -174,7 +174,7 @@ soullabgym-website/
 
 **Joseph Gabiola**
 - Phone: 0432 558 304
-- Email: info@soullabgym.com
+- Email: soullabgym@gmail.com
 - Location: 2/70 Ingham Road, West End, Townsville QLD
 
 ---

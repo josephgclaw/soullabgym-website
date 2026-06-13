@@ -151,5 +151,5 @@ deploy.sh             — Deployment script
 - **Colours:** Black background, Red (#DC2626), White text
 - **Font:** Inter (Google Fonts)
 - **Phone:** 0432 558 304
-- **Email:** info@soullabgym.com
+- **Email:** soullabgym@gmail.com
 - **Address:** 2/70 Ingham Road, West End, Townsville QLD
