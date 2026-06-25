@@ -1,9 +1,10 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
       "has": [{ "type": "host", "value": "fight.soullabgym.com" }],
-      "destination": "/fight"
+      "destination": "https://soullabgym.com/fight",
+      "permanent": false
     }
   ]
 }
