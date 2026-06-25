@@ -8,6 +8,23 @@ import Footer from '../components/Footer.astro';
   title="Battle at the Lab 4 — July 31 | Soul Lab Gym Townsville"
   description="Battle at the Lab 4 — Soul Lab Gym's in-house Muay Thai tournament. Thursday July 31, 5:30 PM. Adult fighters and Junior Development Day. Register now."
 >
+  <!-- Meta Pixel: fight.soullabgym.com -->
+  <script is:inline>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2559980727754440');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2559980727754440&ev=PageView&noscript=1"
+  /></noscript>
+
   <Nav />
 
   <div class="pt-16">
@@ -550,6 +567,10 @@ import Footer from '../components/Footer.astro';
         form.classList.add('hidden');
         successMsg.classList.remove('hidden');
         window.scrollTo({ top: document.getElementById('register')!.offsetTop, behavior: 'smooth' });
+        // Fire Meta pixel Lead event
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead', { content_name: 'Fight Registration' });
+        }
       } else {
         throw new Error('Server error');
       }
