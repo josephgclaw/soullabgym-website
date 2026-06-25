@@ -25,7 +25,7 @@ import Footer from '../components/Footer.astro';
 
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
-          In-House Tournaments
+          Battle at the Lab 4 — July 31
         </div>
         <h1 class="text-6xl sm:text-8xl font-display uppercase text-white mb-6 leading-none">
           Fight Night
@@ -33,12 +33,47 @@ import Footer from '../components/Footer.astro';
         <p class="text-xl sm:text-2xl text-slg-text-light/80 max-w-2xl mx-auto mb-10 leading-relaxed">
           Compete in front of a home crowd. Real fights. Real experience. Right here at Soul Lab.
         </p>
-        <a
-          href="#register"
-          class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
-        >
-          Register Your Interest
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#register"
+            class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
+          >
+            Register Your Interest
+          </a>
+          <a
+            href="#junior"
+            class="inline-block border border-white/40 hover:border-white text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
+          >
+            Kids Sign Up →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT EVENT: BATTLE AT THE LAB 4 -->
+    <section class="py-16 bg-slg-pink">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div>
+            <div class="text-white/70 text-xs font-semibold uppercase tracking-widest mb-2">Next Event</div>
+            <h2 class="text-4xl sm:text-5xl font-display uppercase text-white leading-none">Battle at the Lab 4</h2>
+            <p class="text-white/80 mt-3 text-lg">Thursday, July 31 &bull; 5:30 PM &bull; Soul Lab Gym, Townsville</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#register"
+              class="inline-block bg-white text-slg-pink font-bold text-sm uppercase tracking-wide px-8 py-4 hover:bg-white/90 transition-colors text-center"
+            >
+              Register to Fight
+            </a>
+            <a
+              href="#junior"
+              class="inline-block border-2 border-white text-white font-bold text-sm uppercase tracking-wide px-8 py-4 hover:bg-white/10 transition-colors text-center"
+            >
+              Junior Sign-Up
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -117,6 +152,101 @@ import Footer from '../components/Footer.astro';
               <p class="text-slg-text-dark/70 leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- JUNIOR DEVELOPMENT DAY -->
+    <section id="junior" class="py-20 bg-slg-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+            New for Battle at the Lab 4
+          </div>
+          <h2 class="text-5xl font-display uppercase text-white mb-4">Junior Development Day</h2>
+          <p class="text-slg-text-light/70 text-lg max-w-2xl mx-auto">
+            We're adding a Junior Development Day on July 31st at 5:30 PM. All junior students are welcome — compete in points sparring medal matches under age-appropriate rules in full protective gear.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <div class="bg-slg-pink/10 border border-slg-pink/30 p-8 mb-8">
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-slg-pink text-2xl">✅</span>
+                <div>
+                  <h3 class="text-white font-display text-xl uppercase">No Combat Sports Registration Required</h3>
+                  <p class="text-slg-text-light/60 mt-1">This is not a fight. It's a safe, supported development experience.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <span class="text-slg-pink text-2xl">🥊</span>
+                <div>
+                  <h3 class="text-white font-display text-xl uppercase">Full Protective Gear</h3>
+                  <p class="text-slg-text-light/60 mt-1">Full rules and padding requirements apply by age group. 12–13 year olds compete in 16oz gloves provided on the day.</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="text-slg-pink font-display text-xl uppercase mb-6">Age Groups</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+              {[
+                { age: '6–8', label: 'Years' },
+                { age: '8–10', label: 'Years' },
+                { age: '10–12', label: 'Years' },
+                { age: '12–13', label: 'Years' },
+              ].map(g => (
+                <div class="border border-slg-pink/40 p-5 text-center">
+                  <div class="text-slg-pink font-display text-3xl leading-none">{g.age}</div>
+                  <div class="text-slg-text-light/50 text-xs uppercase tracking-widest mt-1">{g.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="https://fight.soullabgym.com"
+              target="_blank"
+              rel="noopener"
+              class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
+            >
+              Sign Up at fight.soullabgym.com
+            </a>
+            <p class="text-slg-text-light/40 text-sm mt-4">Questions? Speak to your coach.</p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="bg-white/5 border border-white/10 p-8">
+              <h3 class="text-white font-display text-2xl uppercase mb-4">What to Expect</h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3 text-slg-text-light/70">
+                  <span class="text-slg-pink mt-0.5">→</span>
+                  <span>Points sparring medal matches — a real competition format kids can be proud of</span>
+                </li>
+                <li class="flex items-start gap-3 text-slg-text-light/70">
+                  <span class="text-slg-pink mt-0.5">→</span>
+                  <span>Age-appropriate rules and full protective gear for every age group</span>
+                </li>
+                <li class="flex items-start gap-3 text-slg-text-light/70">
+                  <span class="text-slg-pink mt-0.5">→</span>
+                  <span>A great first competition experience in a safe, supportive environment</span>
+                </li>
+                <li class="flex items-start gap-3 text-slg-text-light/70">
+                  <span class="text-slg-pink mt-0.5">→</span>
+                  <span>Coached corners and refereed bouts — just like the adults</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-slg-pink/10 border border-slg-pink/20 p-8">
+              <div class="text-slg-pink font-display text-xl uppercase mb-3">Event Details</div>
+              <div class="space-y-2 text-slg-text-light/70">
+                <div><span class="text-white font-semibold">Date:</span> Thursday, July 31, 2025</div>
+                <div><span class="text-white font-semibold">Time:</span> 5:30 PM</div>
+                <div><span class="text-white font-semibold">Venue:</span> Soul Lab Gym, Townsville</div>
+                <div><span class="text-white font-semibold">Sign-up:</span> <a href="https://fight.soullabgym.com" class="text-slg-pink underline hover:text-white transition-colors">fight.soullabgym.com</a></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
