@@ -127,7 +127,7 @@ import Footer from '../components/Footer.astro';
                 { label: 'Real Ring', desc: 'Full size SMAI boxing ring' },
                 { label: 'Home Crowd', desc: 'Friends & family welcome' },
                 { label: 'All Levels', desc: 'Beginners to experienced' },
-                { label: 'All Disciplines', desc: 'Muay Thai, Boxing, MMA & more' },
+                { label: 'All Disciplines', desc: 'Muay Thai' },
               ].map(item => (
                 <div class="border border-slg-pink/30 p-5">
                   <div class="text-slg-pink font-display text-lg uppercase mb-1">{item.label}</div>
@@ -443,12 +443,6 @@ import Footer from '../components/Footer.astro';
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="disciplines">
               {[
                 'Muay Thai',
-                'Boxing',
-                'Kickboxing',
-                'MMA',
-                'BJJ / Grappling',
-                'Wrestling',
-                'K-1',
                 'Other',
                 'No fight experience yet',
               ].map(d => (
