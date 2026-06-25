@@ -393,6 +393,21 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
 
+          <!-- Weight -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Weight (kg) *</label>
+            <input
+              type="number"
+              name="weight"
+              required
+              min="30"
+              max="200"
+              step="0.5"
+              placeholder="e.g. 75"
+              class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
+            />
+          </div>
+
           <!-- Gym -->
           <div>
             <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Current Gym / Club</label>
@@ -550,6 +565,7 @@ import Footer from '../components/Footer.astro';
       email: formData.get('email'),
       phone: formData.get('phone'),
       age: formData.get('age'),
+      weight: formData.get('weight'),
       gym: formData.get('gym'),
       trainingExperience: formData.get('trainingExperience'),
       disciplines: disciplines.join(', '),

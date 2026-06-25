@@ -30,6 +30,7 @@ const HEADERS = [
   'Email',
   'Phone',
   'Age',
+  'Weight (kg)',
   'Gym / Club',
   'Training Experience',
   'Fight Disciplines',
@@ -51,6 +52,7 @@ function doPost(e) {
       data.email || '',
       data.phone || '',
       data.age || '',
+      data.weight || '',
       data.gym || '',
       data.trainingExperience || '',
       data.disciplines || '',
@@ -130,6 +132,7 @@ Name:               ${data.name}
 Email:              ${data.email}
 Phone:              ${data.phone}
 Age:                ${data.age}
+Weight:             ${data.weight || 'Not specified'} kg
 Gym / Club:         ${data.gym || 'Not specified'}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
