@@ -72,7 +72,7 @@ import Footer from '../components/Footer.astro';
                 Adult Fighter Sign-Up
               </a>
               <a
-                href="#junior-form"
+                href="#register"
                 class="inline-block border-2 border-slg-pink text-slg-pink hover:bg-slg-pink hover:text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors text-center"
               >
                 Junior Sign-Up
@@ -242,7 +242,7 @@ import Footer from '../components/Footer.astro';
             </div>
 
             <a
-              href="#junior-form"
+              href="#register"
               class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
             >
               Sign My Kid Up →
@@ -289,7 +289,7 @@ import Footer from '../components/Footer.astro';
                 <div><span class="text-white font-semibold">Date:</span> Thursday, July 31, 2025</div>
                 <div><span class="text-white font-semibold">Time:</span> 5:30 PM</div>
                 <div><span class="text-white font-semibold">Venue:</span> Soul Lab Gym, Townsville</div>
-                <div><span class="text-white font-semibold">Sign-up:</span> <a href="#junior-form" class="text-slg-pink underline hover:text-white transition-colors">scroll down to the form</a></div>
+                <div><span class="text-white font-semibold">Sign-up:</span> <a href="#register" class="text-slg-pink underline hover:text-white transition-colors">scroll down to the form</a></div>
               </div>
             </div>
           </div>
@@ -308,10 +308,7 @@ import Footer from '../components/Footer.astro';
             I Want to Fight
           </h2>
           <p class="text-slg-text-light/60 text-lg">
-            For fighters 16+. Fill in the form and we'll be in touch with matchmaking, rules and next steps.
-          </p>
-          <p class="text-slg-text-light/40 text-sm mt-4">
-            Signing your kid up instead? <a href="#junior-form" class="text-slg-pink underline hover:text-white transition-colors">Use the junior form below →</a>
+            Adults and juniors both register here. Parents — just fill it in with your child's details and we'll handle the rest.
           </p>
         </div>
 
@@ -371,7 +368,7 @@ import Footer from '../components/Footer.astro';
                 type="number"
                 name="age"
                 required
-                min="16"
+                min="6"
                 max="99"
                 placeholder="e.g. 24"
                 class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
@@ -470,196 +467,6 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- JUNIOR REGISTRATION FORM -->
-    <section id="junior-form" class="py-20 bg-slg-bone">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
-            Junior Development Day — Sign Up
-          </div>
-          <h2 class="text-5xl font-display uppercase text-slg-text-dark mb-4">
-            Sign My Kid Up
-          </h2>
-          <p class="text-slg-text-dark/70 text-lg">
-            For students aged 6–13. Points sparring medal matches, age-appropriate rules, full protective gear.
-          </p>
-        </div>
-
-        <!-- Success message -->
-        <div id="junior-success-msg" class="hidden bg-slg-pink/20 border border-slg-pink text-slg-text-dark p-6 mb-8 text-center">
-          <div class="text-3xl font-display uppercase mb-2">You're On The List!</div>
-          <p class="text-slg-text-dark/70">We'll be in touch soon with Junior Development Day details. Keep training.</p>
-        </div>
-
-        <!-- Error message -->
-        <div id="junior-error-msg" class="hidden bg-red-100 border border-red-500 text-red-900 p-6 mb-8 text-center">
-          <p class="font-bold mb-1">Something went wrong.</p>
-          <p class="text-red-800 text-sm">Please try again or contact us at <a href="mailto:soullabgym@gmail.com" class="text-slg-pink underline">soullabgym@gmail.com</a></p>
-        </div>
-
-        <form id="junior-form-el" class="space-y-6">
-
-          <!-- Parent details -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Parent / Guardian Name *</label>
-              <input
-                type="text"
-                name="parentName"
-                required
-                placeholder="Your full name"
-                class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Phone *</label>
-              <input
-                type="tel"
-                name="parentPhone"
-                required
-                placeholder="04xx xxx xxx"
-                class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Email *</label>
-            <input
-              type="email"
-              name="parentEmail"
-              required
-              placeholder="your@email.com"
-              class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-            />
-          </div>
-
-          <!-- Child details -->
-          <div class="border-t border-slg-text-dark/10 pt-6">
-            <p class="text-xs font-semibold uppercase tracking-widest text-slg-pink mb-4">Child's Details</p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Child's Full Name *</label>
-                <input
-                  type="text"
-                  name="childName"
-                  required
-                  placeholder="Child's full name"
-                  class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-                />
-              </div>
-              <div>
-                <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Age Group *</label>
-                <select
-                  name="ageGroup"
-                  required
-                  class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors appearance-none"
-                >
-                  <option value="" disabled selected>Select age group</option>
-                  <option value="6–8 yrs">6–8 yrs</option>
-                  <option value="8–10 yrs">8–10 yrs</option>
-                  <option value="10–12 yrs">10–12 yrs</option>
-                  <option value="12–13 yrs">12–13 yrs</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Child's Age *</label>
-              <input
-                type="number"
-                name="childAge"
-                required
-                min="6"
-                max="13"
-                placeholder="e.g. 9"
-                class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-            <div>
-              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Approx. Weight (kg) *</label>
-              <input
-                type="number"
-                name="childWeight"
-                required
-                min="15"
-                max="100"
-                step="0.5"
-                placeholder="e.g. 32"
-                class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Training Experience *</label>
-            <select
-              name="childExperience"
-              required
-              class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors appearance-none"
-            >
-              <option value="" disabled selected>How long have they been training?</option>
-              <option value="Under 3 months">Under 3 months</option>
-              <option value="3–6 months">3–6 months</option>
-              <option value="6–12 months">6–12 months</option>
-              <option value="1–2 years">1–2 years</option>
-              <option value="2+ years">2+ years</option>
-            </select>
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Current Gym</label>
-            <input
-              type="text"
-              name="childGym"
-              placeholder="e.g. Soul Lab Gym"
-              class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-            />
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-dark/60 mb-2">Notes — Medical, gear sizes, anything we should know</label>
-            <textarea
-              name="notes"
-              rows="3"
-              placeholder="Optional"
-              class="w-full bg-white border border-slg-text-dark/20 text-slg-text-dark placeholder-slg-text-dark/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
-            ></textarea>
-          </div>
-
-          <div class="flex items-start gap-3 bg-white border border-slg-pink/30 p-5">
-            <input
-              type="checkbox"
-              name="parentConsent"
-              id="parent-consent"
-              required
-              class="w-5 h-5 mt-0.5 accent-slg-pink"
-            />
-            <label for="parent-consent" class="text-sm text-slg-text-dark/80 leading-relaxed">
-              I am the parent or legal guardian and I consent to my child participating in Junior Development Day under age-appropriate rules and full protective gear. *
-            </label>
-          </div>
-
-          <div class="pt-2">
-            <button
-              type="submit"
-              id="junior-submit-btn"
-              class="w-full bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-widest py-5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Sign My Kid Up
-            </button>
-          </div>
-
-          <p class="text-slg-text-dark/40 text-xs text-center">
-            No combat sports registration required. We'll confirm matchups, gear and timing by email.
-          </p>
-        </form>
-      </div>
-    </section>
-
     <!-- WHAT TO EXPECT -->
     <section class="py-20 bg-slg-bone">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -753,54 +560,4 @@ import Footer from '../components/Footer.astro';
     }
   });
 
-  // JUNIOR DEVELOPMENT DAY FORM
-  const juniorForm = document.getElementById('junior-form-el') as HTMLFormElement;
-  const juniorSubmitBtn = document.getElementById('junior-submit-btn') as HTMLButtonElement;
-  const juniorSuccessMsg = document.getElementById('junior-success-msg') as HTMLElement;
-  const juniorErrorMsg = document.getElementById('junior-error-msg') as HTMLElement;
-
-  juniorForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    juniorSubmitBtn.disabled = true;
-    juniorSubmitBtn.textContent = 'Submitting...';
-    juniorErrorMsg.classList.add('hidden');
-
-    const fd = new FormData(juniorForm);
-
-    const payload = {
-      formType: 'junior',
-      parentName: fd.get('parentName'),
-      parentEmail: fd.get('parentEmail'),
-      parentPhone: fd.get('parentPhone'),
-      childName: fd.get('childName'),
-      childAge: fd.get('childAge'),
-      ageGroup: fd.get('ageGroup'),
-      childWeight: fd.get('childWeight'),
-      childExperience: fd.get('childExperience'),
-      childGym: fd.get('childGym'),
-      notes: fd.get('notes'),
-      parentConsent: fd.get('parentConsent') ? 'Yes' : 'No',
-      submittedAt: new Date().toLocaleString('en-AU', { timeZone: 'Australia/Brisbane' }),
-    };
-
-    try {
-      const res = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
-        juniorForm.classList.add('hidden');
-        juniorSuccessMsg.classList.remove('hidden');
-        window.scrollTo({ top: document.getElementById('junior-form')!.offsetTop, behavior: 'smooth' });
-      } else {
-        throw new Error('Server error');
-      }
-    } catch (err) {
-      juniorSubmitBtn.disabled = false;
-      juniorSubmitBtn.textContent = 'Sign My Kid Up';
-      juniorErrorMsg.classList.remove('hidden');
-    }
-  });
 </script>
