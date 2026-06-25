@@ -203,6 +203,33 @@ import Footer from '../components/Footer.astro';
               ))}
             </div>
 
+            <h3 class="text-slg-pink font-display text-xl uppercase mb-4">Rules by Age Group</h3>
+            <div class="overflow-x-auto mb-10">
+              <table class="w-full text-sm border-collapse">
+                <thead>
+                  <tr class="border-b border-slg-pink/30">
+                    <th class="text-left text-slg-text-light/50 text-xs uppercase tracking-widest font-semibold py-3 pr-4">Age</th>
+                    <th class="text-left text-slg-text-light/50 text-xs uppercase tracking-widest font-semibold py-3 pr-4">Rules</th>
+                    <th class="text-left text-slg-text-light/50 text-xs uppercase tracking-widest font-semibold py-3">Rounds</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { age: '6–8 yrs', rules: 'Strikes above waist & below shoulders only. No elbows.', rounds: '3 × 1 min' },
+                    { age: '8–10 yrs', rules: 'Strikes below shoulders only. No elbows.', rounds: '3 × 1 min' },
+                    { age: '10–12 yrs', rules: 'Strikes below shoulders. Elbows allowed.', rounds: '3 × 90 sec' },
+                    { age: '12–13 yrs', rules: 'Light head contact (16oz gloves supplied). No knees, teeps or heel contact to head/face.', rounds: '3 × 90 sec' },
+                  ].map(row => (
+                    <tr class="border-b border-white/5 hover:bg-white/[0.03] transition-colors">
+                      <td class="text-slg-pink font-semibold py-4 pr-4 whitespace-nowrap">{row.age}</td>
+                      <td class="text-slg-text-light/70 py-4 pr-4 leading-relaxed">{row.rules}</td>
+                      <td class="text-slg-text-light/60 py-4 whitespace-nowrap">{row.rounds}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
             <a
               href="https://fight.soullabgym.com"
               target="_blank"
