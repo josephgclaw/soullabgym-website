@@ -1,0 +1,386 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Fight Night — Soul Lab Gym"
+  description="Register your interest in Soul Lab Gym's in-house tournaments. Compete in front of a home crowd at Townsville's premier Muay Thai gym."
+>
+  <Nav />
+
+  <div class="pt-16">
+
+    <!-- HERO -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-slg-dark">
+      <div class="absolute inset-0">
+        <img
+          src="/photos/fight-night-event.jpg"
+          alt="Soul Lab Gym Fight Night"
+          class="w-full h-full object-cover object-center opacity-40"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-slg-dark/60 via-slg-dark/40 to-slg-dark"></div>
+      </div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+          In-House Tournaments
+        </div>
+        <h1 class="text-6xl sm:text-8xl font-display uppercase text-white mb-6 leading-none">
+          Fight Night
+        </h1>
+        <p class="text-xl sm:text-2xl text-slg-text-light/80 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Compete in front of a home crowd. Real fights. Real experience. Right here at Soul Lab.
+        </p>
+        <a
+          href="#register"
+          class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
+        >
+          Register Your Interest
+        </a>
+      </div>
+    </section>
+
+    <!-- WHAT IS FIGHT NIGHT -->
+    <section class="py-20 bg-slg-dark">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+              What It Is
+            </div>
+            <h2 class="text-5xl font-display uppercase text-white mb-6">
+              Your First Ring Experience
+            </h2>
+            <p class="text-slg-text-light/70 text-lg leading-relaxed mb-6">
+              Our in-house tournaments give Soul Lab members a real competitive experience in a safe, supported environment. You'll fight in front of friends, family, and a pumped home crowd — right here in our gym.
+            </p>
+            <p class="text-slg-text-light/70 text-lg leading-relaxed mb-8">
+              All disciplines welcome. All levels welcome. Whether it's your first bout or you're a seasoned competitor, Fight Night is where you step up and prove yourself.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              {[
+                { label: 'Real Ring', desc: 'Full size SMAI boxing ring' },
+                { label: 'Home Crowd', desc: 'Friends & family welcome' },
+                { label: 'All Levels', desc: 'Beginners to experienced' },
+                { label: 'All Disciplines', desc: 'Muay Thai, Boxing, MMA & more' },
+              ].map(item => (
+                <div class="border border-slg-pink/30 p-5">
+                  <div class="text-slg-pink font-display text-lg uppercase mb-1">{item.label}</div>
+                  <div class="text-slg-text-light/60 text-sm">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div class="overflow-hidden">
+            <img
+              src="/photos/fight-night-event.jpg"
+              alt="Fight Night at Soul Lab Gym"
+              class="w-full h-[500px] object-cover object-center"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="py-20 bg-slg-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-5xl font-display uppercase text-slg-text-dark text-center mb-4">Who Should Fight?</h2>
+        <p class="text-slg-text-dark/70 text-lg text-center max-w-2xl mx-auto mb-16">
+          We match fighters by experience, weight, and discipline. Everyone gets a fair fight.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              num: '01',
+              title: 'First-Timers',
+              desc: 'Never competed before? Fight Night is the perfect low-pressure intro. Coached corner, supportive crowd, matched opponent.',
+            },
+            {
+              num: '02',
+              title: 'Club Regulars',
+              desc: 'Been training for a while and want to test yourself? This is your chance to see what you\'re actually made of under pressure.',
+            },
+            {
+              num: '03',
+              title: 'Experienced Fighters',
+              desc: 'Looking for sharp, competitive rounds between sanctioned bouts? In-house tournaments keep your edge without the full fight camp.',
+            },
+          ].map(item => (
+            <div class="bg-slg-bone border-2 border-slg-pink/30 hover:border-slg-pink p-10 transition-all hover:shadow-lg">
+              <div class="font-display text-6xl text-slg-pink leading-none mb-5">{item.num}</div>
+              <h3 class="text-2xl font-display uppercase text-slg-text-dark mb-4">{item.title}</h3>
+              <p class="text-slg-text-dark/70 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section id="register" class="py-20 bg-slg-dark">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+            Register Now
+          </div>
+          <h2 class="text-5xl font-display uppercase text-white mb-4">
+            I Want to Fight
+          </h2>
+          <p class="text-slg-text-light/60 text-lg">
+            Fill in the form below and we'll be in touch with fight night details, matchmaking, and next steps.
+          </p>
+        </div>
+
+        <!-- Success message (hidden by default) -->
+        <div id="success-msg" class="hidden bg-slg-pink/20 border border-slg-pink text-slg-text-light p-6 mb-8 text-center">
+          <div class="text-3xl font-display uppercase mb-2">You're On The List!</div>
+          <p class="text-slg-text-light/70">We'll be in touch soon with fight night details. Get training.</p>
+        </div>
+
+        <!-- Error message (hidden by default) -->
+        <div id="error-msg" class="hidden bg-red-900/30 border border-red-500 text-slg-text-light p-6 mb-8 text-center">
+          <p class="font-bold mb-1">Something went wrong.</p>
+          <p class="text-slg-text-light/70 text-sm">Please try again or contact us at <a href="mailto:soullabgym@gmail.com" class="text-slg-pink underline">soullabgym@gmail.com</a></p>
+        </div>
+
+        <form id="fight-form" class="space-y-6">
+
+          <!-- Name + Email -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Full Name *</label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Your full name"
+                class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Email *</label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="your@email.com"
+                class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+          </div>
+
+          <!-- Phone + Age -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Phone Number *</label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="04xx xxx xxx"
+                class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Age *</label>
+              <input
+                type="number"
+                name="age"
+                required
+                min="16"
+                max="99"
+                placeholder="e.g. 24"
+                class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+          </div>
+
+          <!-- Gym -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Current Gym / Club</label>
+            <input
+              type="text"
+              name="gym"
+              placeholder="e.g. Soul Lab Gym, Townsville"
+              class="w-full bg-white/5 border border-white/20 text-slg-text-light placeholder-white/30 px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors"
+            />
+          </div>
+
+          <!-- Training Experience -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Training Experience *</label>
+            <select
+              name="trainingExperience"
+              required
+              class="w-full bg-slg-dark border border-white/20 text-slg-text-light px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors appearance-none"
+            >
+              <option value="" disabled selected>How long have you been training?</option>
+              <option value="Under 6 months">Under 6 months</option>
+              <option value="6–12 months">6–12 months</option>
+              <option value="1–2 years">1–2 years</option>
+              <option value="2–4 years">2–4 years</option>
+              <option value="4+ years">4+ years</option>
+            </select>
+          </div>
+
+          <!-- Fight Disciplines -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-4">Fight Experience — Disciplines *</label>
+            <p class="text-slg-text-light/40 text-sm mb-4">Select all that apply. If you're a first-timer, tick "No fight experience yet".</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="disciplines">
+              {[
+                'Muay Thai',
+                'Boxing',
+                'Kickboxing',
+                'MMA',
+                'BJJ / Grappling',
+                'Wrestling',
+                'K-1',
+                'Other',
+                'No fight experience yet',
+              ].map(d => (
+                <label class="flex items-center gap-3 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    name="disciplines"
+                    value={d}
+                    class="w-4 h-4 accent-slg-pink border-white/30 bg-white/5"
+                  />
+                  <span class="text-slg-text-light/70 text-sm group-hover:text-slg-text-light transition-colors">{d}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <!-- Number of fights -->
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-widest text-slg-text-light/60 mb-2">Approximate Number of Fights</label>
+            <select
+              name="numFights"
+              class="w-full bg-slg-dark border border-white/20 text-slg-text-light px-4 py-3 focus:outline-none focus:border-slg-pink transition-colors appearance-none"
+            >
+              <option value="" selected>Select an option</option>
+              <option value="0 — First fight">0 — First fight</option>
+              <option value="1–5 fights">1–5 fights</option>
+              <option value="6–15 fights">6–15 fights</option>
+              <option value="16–30 fights">16–30 fights</option>
+              <option value="30+ fights">30+ fights</option>
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-4">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="w-full bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-widest py-5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Register My Interest
+            </button>
+          </div>
+
+          <p class="text-slg-text-light/30 text-xs text-center">
+            No commitment required. We'll reach out with dates, matchmaking details, and how to confirm your spot.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="py-20 bg-slg-bone">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-5xl font-display uppercase text-slg-text-dark text-center mb-4">What Happens Next</h2>
+        <p class="text-slg-text-dark/70 text-lg text-center max-w-xl mx-auto mb-16">
+          After you register, here's how it works.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {[
+            { step: '01', title: 'We Review', desc: 'We look at your experience, weight, and discipline to find you the right matchup.' },
+            { step: '02', title: 'We Contact You', desc: 'We\'ll reach out with fight night dates, your potential matchup, and rules.' },
+            { step: '03', title: 'You Prepare', desc: 'Train hard. We\'ll have fight camp support available if you need it.' },
+            { step: '04', title: 'Fight Night', desc: 'Compete in front of the Soul Lab community. All fights are coached and refereed.' },
+          ].map(item => (
+            <div class="text-center">
+              <div class="font-display text-7xl text-slg-pink leading-none mb-4">{item.step}</div>
+              <h3 class="text-xl font-display uppercase text-slg-text-dark mb-3">{item.title}</h3>
+              <p class="text-slg-text-dark/70 leading-relaxed text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BOTTOM -->
+    <section class="py-16 bg-slg-dark text-center">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-4xl font-display uppercase text-white mb-4">Ready to Step Up?</h2>
+        <p class="text-slg-text-light/60 mb-8">Register your interest above. We'll handle the rest.</p>
+        <a href="#register" class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors">
+          Register Now
+        </a>
+      </div>
+    </section>
+
+  </div>
+
+  <Footer />
+</Layout>
+
+<script>
+  const SCRIPT_URL = 'REPLACE_WITH_APPS_SCRIPT_URL';
+
+  const form = document.getElementById('fight-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const successMsg = document.getElementById('success-msg') as HTMLElement;
+  const errorMsg = document.getElementById('error-msg') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    errorMsg.classList.add('hidden');
+
+    const formData = new FormData(form);
+
+    // Collect checkboxes (multiple values)
+    const disciplines = formData.getAll('disciplines');
+
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      age: formData.get('age'),
+      gym: formData.get('gym'),
+      trainingExperience: formData.get('trainingExperience'),
+      disciplines: disciplines.join(', '),
+      numFights: formData.get('numFights'),
+      submittedAt: new Date().toLocaleString('en-AU', { timeZone: 'Australia/Brisbane' }),
+    };
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        form.classList.add('hidden');
+        successMsg.classList.remove('hidden');
+        window.scrollTo({ top: document.getElementById('register')!.offsetTop, behavior: 'smooth' });
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Register My Interest';
+      errorMsg.classList.remove('hidden');
+    }
+  });
+</script>
