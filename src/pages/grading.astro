@@ -1,0 +1,488 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Belt Grading System — Soul Lab Gym Townsville"
+  description="Soul Lab Gym's Muay Thai belt grading system for kids and adults. Learn about belt progression, advancement criteria, and sign up for the next grading."
+>
+  <Nav />
+
+  <div class="pt-16">
+
+    <!-- HERO -->
+    <section class="py-20 bg-slg-dark relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0 bg-gradient-to-br from-slg-pink/30 to-transparent"></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+          Kids Program
+        </div>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-display uppercase text-white mb-6 leading-tight">
+          Belt Grading<br /><span class="text-slg-pink">System</span>
+        </h1>
+        <p class="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
+          A structured pathway from beginner to mastery. Every rank earned at Soul Lab reflects real growth — in technique, discipline, and character.
+        </p>
+        <div class="mt-10">
+          <a href="#next-grading" class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors">
+            Sign Up for Next Grading
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BELT PROGRESSION -->
+    <section class="py-20 bg-slg-bone">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-display uppercase text-slg-text-dark mb-4">Belt Progression</h2>
+          <p class="text-slg-text-dark/70 max-w-xl mx-auto">Each age group has its own pathway. Students progress through 4 ranks within each belt before advancing to the next level.</p>
+        </div>
+
+        <div class="space-y-6">
+
+          <!-- Ages 4-7 -->
+          <div class="border-l-4 border-yellow-400 bg-white shadow-sm overflow-hidden">
+            <div class="px-6 py-4 bg-yellow-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-yellow-700">Ages 4–7</span>
+                <h3 class="text-xl font-display uppercase text-slg-text-dark mt-1">White → Yellow</h3>
+              </div>
+              <span class="text-sm text-slg-text-dark/60 italic">Foundation · Basic Skills · Enjoyment · Safety</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slg-text-dark text-white">
+                    <th class="px-4 py-3 text-left font-bold uppercase tracking-wide">Belt</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 1</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 2</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 3</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-gray-100">
+                    <td class="px-4 py-3 font-bold text-slg-text-dark">White</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Beginner entry</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Foundational skills</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Improvement shown</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Ready for Yellow 1</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-yellow-600">Yellow</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Yellow 1</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Yellow 2</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Yellow 3</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Yellow 4 ✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Ages 7-10 -->
+          <div class="border-l-4 border-blue-500 bg-white shadow-sm overflow-hidden">
+            <div class="px-6 py-4 bg-blue-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-700">Ages 7–10</span>
+                <h3 class="text-xl font-display uppercase text-slg-text-dark mt-1">Orange → Blue</h3>
+              </div>
+              <span class="text-sm text-slg-text-dark/60 italic">Skill Building · Consistency · Increasing Difficulty</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slg-text-dark text-white">
+                    <th class="px-4 py-3 text-left font-bold uppercase tracking-wide">Belt</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 1</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 2</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 3</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-gray-100">
+                    <td class="px-4 py-3 font-bold text-orange-500">Orange</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Orange 1</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Orange 2</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Orange 3</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Ready for Blue</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-blue-500">Blue</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Blue 1</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Blue 2</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Blue 3</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Blue 4 ✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Ages 10-13 -->
+          <div class="border-l-4 border-green-500 bg-white shadow-sm overflow-hidden">
+            <div class="px-6 py-4 bg-green-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-green-700">Ages 10–13</span>
+                <h3 class="text-xl font-display uppercase text-slg-text-dark mt-1">Green</h3>
+              </div>
+              <span class="text-sm text-slg-text-dark/60 italic">Mastery · Technique Refinement · Leadership</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slg-text-dark text-white">
+                    <th class="px-4 py-3 text-left font-bold uppercase tracking-wide">Belt</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 1</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 2</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 3</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-green-600">Green</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Green 1</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Green 2</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Green 3</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Green 4 ✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Ages 13-16 -->
+          <div class="border-l-4 border-red-500 bg-white shadow-sm overflow-hidden">
+            <div class="px-6 py-4 bg-red-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-700">Ages 13–16</span>
+                <h3 class="text-xl font-display uppercase text-slg-text-dark mt-1">Red</h3>
+              </div>
+              <span class="text-sm text-slg-text-dark/60 italic">Advanced Techniques · Mentoring · Discipline</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slg-text-dark text-white">
+                    <th class="px-4 py-3 text-left font-bold uppercase tracking-wide">Belt</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 1</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 2</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 3</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 4</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-red-600">Red</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Red 1</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Red 2</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Red 3</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Red 4 → Adult ✓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Adults -->
+          <div class="border-l-4 border-slg-text-dark bg-white shadow-sm overflow-hidden">
+            <div class="px-6 py-4 bg-gray-50 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div>
+                <span class="text-xs font-bold uppercase tracking-widest text-slg-text-dark">Adults</span>
+                <h3 class="text-xl font-display uppercase text-slg-text-dark mt-1">Black</h3>
+              </div>
+              <span class="text-sm text-slg-text-dark/60 italic">Mastery · Leadership · Continuous Improvement</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="bg-slg-text-dark text-white">
+                    <th class="px-4 py-3 text-left font-bold uppercase tracking-wide">Belt</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 1</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 2</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 3</th>
+                    <th class="px-4 py-3 text-center font-bold uppercase tracking-wide">Rank 4+</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-3 font-bold text-slg-text-dark">Black</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Black 1</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Black 2</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Black 3</td>
+                    <td class="px-4 py-3 text-center text-slg-text-dark/70">Black 4+ Mastery</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ADVANCEMENT CRITERIA -->
+    <section class="py-20 bg-slg-dark">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-display uppercase text-white mb-4">How You Advance</h2>
+          <p class="text-white/60 max-w-xl mx-auto">Grading isn't just about technique — it's about showing up, improving, and being the kind of student who makes the team better.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Rank Advancement -->
+          <div class="border border-white/10 p-8">
+            <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-6">Within Same Belt</div>
+            <h3 class="text-2xl font-display uppercase text-white mb-6">Rank Advancement</h3>
+            <ul class="space-y-4">
+              {[
+                'Consistent attendance',
+                'Demonstrates proper technique',
+                'Shows improvement and effort',
+                'Meets age-appropriate skill checkpoints',
+                'Positive attitude and teamwork',
+                'Instructor sign-off',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-slg-pink mt-0.5 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                  <span class="text-white/80">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Belt Advancement -->
+          <div class="border border-slg-pink/40 p-8">
+            <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-6">Next Belt Level</div>
+            <h3 class="text-2xl font-display uppercase text-white mb-6">Belt Advancement</h3>
+            <ul class="space-y-4">
+              {[
+                'Completion of all 4 ranks in current belt',
+                'Mastery of belt-specific techniques',
+                'Demonstrated readiness for next difficulty level',
+                'Meets age progression guidelines',
+                'Formal belt testing',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-slg-pink mt-0.5 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                  </span>
+                  <span class="text-white/80">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT GRADING + SIGNUP -->
+    <section id="next-grading" class="py-20 bg-slg-bone">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Next grading info -->
+        <div class="text-center mb-14">
+          <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+            Coming Up
+          </div>
+          <h2 class="text-4xl font-display uppercase text-slg-text-dark mb-4">Next Grading</h2>
+          <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto mt-8">
+            <div class="border border-slg-pink/40 p-4 text-center">
+              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Date</div>
+              <div class="font-display text-slg-text-dark text-lg uppercase">TBA</div>
+            </div>
+            <div class="border border-slg-pink/40 p-4 text-center">
+              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Time</div>
+              <div class="font-display text-slg-text-dark text-lg uppercase">TBA</div>
+            </div>
+            <div class="border border-slg-pink/40 p-4 text-center">
+              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Venue</div>
+              <div class="font-display text-slg-text-dark text-lg uppercase">Soul Lab</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="bg-white shadow-sm p-8 sm:p-10">
+          <h3 class="text-2xl font-display uppercase text-slg-text-dark mb-2">Register Your Interest</h3>
+          <p class="text-slg-text-dark/60 text-sm mb-8">Sign up below and we'll confirm your spot when the next grading date is locked in.</p>
+
+          <form id="grading-form" class="space-y-6">
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Student Name <span class="text-slg-pink">*</span></label>
+              <input
+                type="text"
+                name="studentName"
+                required
+                placeholder="Full name"
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Phone <span class="text-slg-pink">*</span></label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="Mobile number"
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Email <span class="text-slg-pink">*</span></label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Email address"
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Current Rank <span class="text-slg-pink">*</span></label>
+              <select
+                name="currentRank"
+                required
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark focus:outline-none focus:border-slg-pink transition-colors bg-white"
+              >
+                <option value="" disabled selected>Select current rank</option>
+                <optgroup label="White (Ages 4–7)">
+                  <option value="White - Beginner">White – Beginner</option>
+                  <option value="White 1">White 1</option>
+                  <option value="White 2">White 2</option>
+                  <option value="White 3">White 3</option>
+                  <option value="White 4">White 4</option>
+                </optgroup>
+                <optgroup label="Yellow (Ages 4–7)">
+                  <option value="Yellow 1">Yellow 1</option>
+                  <option value="Yellow 2">Yellow 2</option>
+                  <option value="Yellow 3">Yellow 3</option>
+                  <option value="Yellow 4">Yellow 4</option>
+                </optgroup>
+                <optgroup label="Orange (Ages 7–10)">
+                  <option value="Orange 1">Orange 1</option>
+                  <option value="Orange 2">Orange 2</option>
+                  <option value="Orange 3">Orange 3</option>
+                  <option value="Orange 4">Orange 4</option>
+                </optgroup>
+                <optgroup label="Blue (Ages 7–10)">
+                  <option value="Blue 1">Blue 1</option>
+                  <option value="Blue 2">Blue 2</option>
+                  <option value="Blue 3">Blue 3</option>
+                  <option value="Blue 4">Blue 4</option>
+                </optgroup>
+                <optgroup label="Green (Ages 10–13)">
+                  <option value="Green 1">Green 1</option>
+                  <option value="Green 2">Green 2</option>
+                  <option value="Green 3">Green 3</option>
+                  <option value="Green 4">Green 4</option>
+                </optgroup>
+                <optgroup label="Red (Ages 13–16)">
+                  <option value="Red 1">Red 1</option>
+                  <option value="Red 2">Red 2</option>
+                  <option value="Red 3">Red 3</option>
+                  <option value="Red 4">Red 4</option>
+                </optgroup>
+                <optgroup label="Black (Adults)">
+                  <option value="Black 1">Black 1</option>
+                  <option value="Black 2">Black 2</option>
+                  <option value="Black 3">Black 3</option>
+                  <option value="Black 4+">Black 4+</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Success -->
+            <div id="grading-success" class="hidden bg-green-50 border border-green-200 text-green-800 px-6 py-4 text-sm">
+              ✅ You're registered! We'll be in touch as soon as the next grading date is confirmed.
+            </div>
+
+            <!-- Error -->
+            <div id="grading-error" class="hidden bg-red-50 border border-red-200 text-red-800 px-6 py-4 text-sm">
+              Something went wrong. Please try again or contact us directly.
+            </div>
+
+            <button
+              type="submit"
+              id="grading-submit"
+              class="w-full bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide py-4 transition-colors disabled:opacity-60"
+            >
+              Register My Interest
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <Footer />
+
+</Layout>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzKHm1F7cR3KRADN38l9Aas3wAoe32suKGvAy_-H68bABCuxkyQ-pXMhDUoYbs_4EQ/exec';
+
+  const form = document.getElementById('grading-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('grading-submit') as HTMLButtonElement;
+  const successMsg = document.getElementById('grading-success') as HTMLElement;
+  const errorMsg = document.getElementById('grading-error') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    errorMsg.classList.add('hidden');
+
+    const formData = new FormData(form);
+
+    const payload = {
+      formType: 'grading',
+      studentName: formData.get('studentName'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      currentRank: formData.get('currentRank'),
+      submittedAt: new Date().toLocaleString('en-AU', { timeZone: 'Australia/Brisbane' }),
+    };
+
+    try {
+      const res = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        form.classList.add('hidden');
+        successMsg.classList.remove('hidden');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Register My Interest';
+      errorMsg.classList.remove('hidden');
+    }
+  });
+</script>
