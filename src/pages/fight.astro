@@ -105,29 +105,29 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- WHAT IS FIGHT NIGHT -->
+    <!-- ADULT DEVELOPMENT FIGHTS -->
     <section class="py-20 bg-slg-dark">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
-              What It Is
+              Adult Competition
             </div>
             <h2 class="text-5xl font-display uppercase text-white mb-6">
-              Your First Ring Experience
+              Development Fight Format
             </h2>
             <p class="text-slg-text-light/70 text-lg leading-relaxed mb-6">
-              Battle at the Lab is open to all gyms — kids, juniors, and adults. Come and compete in a real Muay Thai fight in a safe, supported environment in front of friends, family, and a fired-up crowd.
+              Three rounds. Scored on points. The ref controls the action, awarding clean strikes throughout the bout. Winner decided on points at the end. Not by stoppage. Not by KO.
             </p>
             <p class="text-slg-text-light/70 text-lg leading-relaxed mb-8">
-              All disciplines welcome. All levels welcome. Whether it's your first bout or you're a seasoned competitor, Fight Night is where you step up and prove yourself.
+              It's real competition. Real ring. Real crowd. The format is built for fighters who are developing. First bout or tenth, it fits.
             </p>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-4 mb-8">
               {[
-                { label: 'Real Ring', desc: 'Full size SMAI boxing ring' },
-                { label: 'Home Crowd', desc: 'Friends & family welcome' },
-                { label: 'All Levels', desc: 'Beginners to experienced' },
-                { label: 'All Disciplines', desc: 'Muay Thai' },
+                { label: '3 x 2 Min', desc: 'Points-based rounds' },
+                { label: 'Full Muay Thai', desc: 'Punches, kicks, knees, elbows, clinch' },
+                { label: 'Full Gear', desc: 'Head, elbow, shin guards + gloves' },
+                { label: 'All Gyms', desc: 'Open to every club in Townsville' },
               ].map(item => (
                 <div class="border border-slg-pink/30 p-5">
                   <div class="text-slg-pink font-display text-lg uppercase mb-1">{item.label}</div>
@@ -135,12 +135,17 @@ import Footer from '../components/Footer.astro';
                 </div>
               ))}
             </div>
+            <div class="bg-white/5 border border-white/10 p-6">
+              <p class="text-slg-text-light/60 text-sm leading-relaxed">
+                <span class="text-white font-semibold">No sanctioned fight record.</span> This format is for development. It won't affect your record or Queensland Combat Sports standing. We match fighters by weight and experience. You won't get thrown in the deep end.
+              </p>
+            </div>
           </div>
 
           <div class="overflow-hidden">
             <img
               src="/photos/fight-night-event.jpg"
-              alt="Fight Night at Soul Lab Gym"
+              alt="Adult development fights at Soul Lab Gym"
               class="w-full h-[500px] object-cover object-center"
             />
           </div>
