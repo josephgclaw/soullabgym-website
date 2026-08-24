@@ -35,6 +35,185 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- NEXT GRADING + SIGNUP -->
+    <section id="next-grading" class="py-20 bg-slg-bone">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Next grading info -->
+        <div class="text-center mb-14">
+          <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
+            Coming Up
+          </div>
+          <h2 class="text-4xl font-display uppercase text-slg-text-dark mb-4">Next Grading</h2>
+          <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto mt-8">
+            <div class="border border-slg-pink/40 p-4 text-center">
+              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Date</div>
+              <div class="font-display text-slg-text-dark text-lg uppercase">TBA</div>
+            </div>
+            <div class="border border-slg-pink/40 p-4 text-center">
+              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Time</div>
+              <div class="font-display text-slg-text-dark text-lg uppercase">TBA</div>
+            </div>
+            <div class="border border-slg-pink/40 p-4 text-center">
+              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Venue</div>
+              <div class="font-display text-slg-text-dark text-lg uppercase">Soul Lab</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="bg-slg-text-dark text-white p-8 mb-8 text-center">
+          <div class="text-xs uppercase tracking-widest text-white/60 mb-2">Grading Fee</div>
+          <div class="font-display text-5xl uppercase mb-2">$45</div>
+          <p class="text-white/70 text-sm">Includes your official Soul Lab grading t-shirt</p>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="bg-white shadow-sm p-8 sm:p-10">
+          <h3 class="text-2xl font-display uppercase text-slg-text-dark mb-2">Register &amp; Pay</h3>
+          <p class="text-slg-text-dark/60 text-sm mb-8">Fill in your details below, then you'll be taken to secure card payment to lock in your spot.</p>
+
+          <form id="grading-form" class="space-y-6">
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Student Name <span class="text-slg-pink">*</span></label>
+              <input
+                type="text"
+                name="studentName"
+                required
+                placeholder="Full name"
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Phone <span class="text-slg-pink">*</span></label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="Mobile number"
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Email <span class="text-slg-pink">*</span></label>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Email address"
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
+              />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Current Rank <span class="text-slg-pink">*</span></label>
+              <select
+                name="currentRank"
+                required
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark focus:outline-none focus:border-slg-pink transition-colors bg-white"
+              >
+                <option value="" disabled selected>Select current rank</option>
+                <optgroup label="White (Ages 4–7)">
+                  <option value="White - Beginner">White – Beginner</option>
+                  <option value="White 1">White 1</option>
+                  <option value="White 2">White 2</option>
+                  <option value="White 3">White 3</option>
+                  <option value="White 4">White 4</option>
+                </optgroup>
+                <optgroup label="Yellow (Ages 4–7)">
+                  <option value="Yellow 1">Yellow 1</option>
+                  <option value="Yellow 2">Yellow 2</option>
+                  <option value="Yellow 3">Yellow 3</option>
+                  <option value="Yellow 4">Yellow 4</option>
+                </optgroup>
+                <optgroup label="Orange (Ages 7–10)">
+                  <option value="Orange 1">Orange 1</option>
+                  <option value="Orange 2">Orange 2</option>
+                  <option value="Orange 3">Orange 3</option>
+                  <option value="Orange 4">Orange 4</option>
+                </optgroup>
+                <optgroup label="Blue (Ages 7–10)">
+                  <option value="Blue 1">Blue 1</option>
+                  <option value="Blue 2">Blue 2</option>
+                  <option value="Blue 3">Blue 3</option>
+                  <option value="Blue 4">Blue 4</option>
+                </optgroup>
+                <optgroup label="Green (Ages 10–13)">
+                  <option value="Green 1">Green 1</option>
+                  <option value="Green 2">Green 2</option>
+                  <option value="Green 3">Green 3</option>
+                  <option value="Green 4">Green 4</option>
+                </optgroup>
+                <optgroup label="Red (Ages 13–16)">
+                  <option value="Red 1">Red 1</option>
+                  <option value="Red 2">Red 2</option>
+                  <option value="Red 3">Red 3</option>
+                  <option value="Red 4">Red 4</option>
+                </optgroup>
+                <optgroup label="Black (Adults)">
+                  <option value="Black 1">Black 1</option>
+                  <option value="Black 2">Black 2</option>
+                  <option value="Black 3">Black 3</option>
+                  <option value="Black 4+">Black 4+</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">T-Shirt Size <span class="text-slg-pink">*</span></label>
+              <select
+                name="tshirtSize"
+                required
+                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark focus:outline-none focus:border-slg-pink transition-colors bg-white"
+              >
+                <option value="" disabled selected>Select t-shirt size</option>
+                <optgroup label="Kids">
+                  <option value="Kids 4">Kids 4</option>
+                  <option value="Kids 6">Kids 6</option>
+                  <option value="Kids 8">Kids 8</option>
+                  <option value="Kids 10">Kids 10</option>
+                  <option value="Kids 12">Kids 12</option>
+                  <option value="Kids 14">Kids 14</option>
+                </optgroup>
+                <optgroup label="Adults">
+                  <option value="Adult S">Adult S</option>
+                  <option value="Adult M">Adult M</option>
+                  <option value="Adult L">Adult L</option>
+                  <option value="Adult XL">Adult XL</option>
+                  <option value="Adult 2XL">Adult 2XL</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <!-- Success -->
+            <div id="grading-success" class="hidden bg-green-50 border border-green-200 text-green-800 px-6 py-4 text-sm">
+              ✅ Details saved! Taking you to secure payment... If nothing happens, <a id="grading-pay-link" href="https://square.link/u/N6rcRU2p" class="underline font-bold">tap here to pay</a>.
+            </div>
+
+            <!-- Error -->
+            <div id="grading-error" class="hidden bg-red-50 border border-red-200 text-red-800 px-6 py-4 text-sm">
+              Something went wrong. Please try again or contact us directly.
+            </div>
+
+            <button
+              type="submit"
+              id="grading-submit"
+              class="w-full bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide py-4 transition-colors disabled:opacity-60"
+            >
+              Register &amp; Pay $45
+            </button>
+
+            <p class="text-slg-text-dark/50 text-xs text-center">Secure payment powered by Square. Card, Apple Pay &amp; Google Pay accepted.</p>
+
+          </form>
+        </div>
+
+      </div>
+    </section>
+
     <!-- BELT PROGRESSION -->
     <section class="py-20 bg-slg-bone">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -288,185 +467,6 @@ import Footer from '../components/Footer.astro';
           </div>
 
         </div>
-      </div>
-    </section>
-
-    <!-- NEXT GRADING + SIGNUP -->
-    <section id="next-grading" class="py-20 bg-slg-bone">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <!-- Next grading info -->
-        <div class="text-center mb-14">
-          <div class="inline-block bg-slg-pink text-white text-xs font-semibold uppercase tracking-widest px-4 py-2 mb-6">
-            Coming Up
-          </div>
-          <h2 class="text-4xl font-display uppercase text-slg-text-dark mb-4">Next Grading</h2>
-          <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto mt-8">
-            <div class="border border-slg-pink/40 p-4 text-center">
-              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Date</div>
-              <div class="font-display text-slg-text-dark text-lg uppercase">TBA</div>
-            </div>
-            <div class="border border-slg-pink/40 p-4 text-center">
-              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Time</div>
-              <div class="font-display text-slg-text-dark text-lg uppercase">TBA</div>
-            </div>
-            <div class="border border-slg-pink/40 p-4 text-center">
-              <div class="text-slg-text-dark/50 text-xs uppercase tracking-widest mb-1">Venue</div>
-              <div class="font-display text-slg-text-dark text-lg uppercase">Soul Lab</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Price -->
-        <div class="bg-slg-text-dark text-white p-8 mb-8 text-center">
-          <div class="text-xs uppercase tracking-widest text-white/60 mb-2">Grading Fee</div>
-          <div class="font-display text-5xl uppercase mb-2">$45</div>
-          <p class="text-white/70 text-sm">Includes your official Soul Lab grading t-shirt</p>
-        </div>
-
-        <!-- Signup Form -->
-        <div class="bg-white shadow-sm p-8 sm:p-10">
-          <h3 class="text-2xl font-display uppercase text-slg-text-dark mb-2">Register &amp; Pay</h3>
-          <p class="text-slg-text-dark/60 text-sm mb-8">Fill in your details below, then you'll be taken to secure card payment to lock in your spot.</p>
-
-          <form id="grading-form" class="space-y-6">
-
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Student Name <span class="text-slg-pink">*</span></label>
-              <input
-                type="text"
-                name="studentName"
-                required
-                placeholder="Full name"
-                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Phone <span class="text-slg-pink">*</span></label>
-              <input
-                type="tel"
-                name="phone"
-                required
-                placeholder="Mobile number"
-                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Email <span class="text-slg-pink">*</span></label>
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Email address"
-                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark placeholder-gray-400 focus:outline-none focus:border-slg-pink transition-colors"
-              />
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">Current Rank <span class="text-slg-pink">*</span></label>
-              <select
-                name="currentRank"
-                required
-                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark focus:outline-none focus:border-slg-pink transition-colors bg-white"
-              >
-                <option value="" disabled selected>Select current rank</option>
-                <optgroup label="White (Ages 4–7)">
-                  <option value="White - Beginner">White – Beginner</option>
-                  <option value="White 1">White 1</option>
-                  <option value="White 2">White 2</option>
-                  <option value="White 3">White 3</option>
-                  <option value="White 4">White 4</option>
-                </optgroup>
-                <optgroup label="Yellow (Ages 4–7)">
-                  <option value="Yellow 1">Yellow 1</option>
-                  <option value="Yellow 2">Yellow 2</option>
-                  <option value="Yellow 3">Yellow 3</option>
-                  <option value="Yellow 4">Yellow 4</option>
-                </optgroup>
-                <optgroup label="Orange (Ages 7–10)">
-                  <option value="Orange 1">Orange 1</option>
-                  <option value="Orange 2">Orange 2</option>
-                  <option value="Orange 3">Orange 3</option>
-                  <option value="Orange 4">Orange 4</option>
-                </optgroup>
-                <optgroup label="Blue (Ages 7–10)">
-                  <option value="Blue 1">Blue 1</option>
-                  <option value="Blue 2">Blue 2</option>
-                  <option value="Blue 3">Blue 3</option>
-                  <option value="Blue 4">Blue 4</option>
-                </optgroup>
-                <optgroup label="Green (Ages 10–13)">
-                  <option value="Green 1">Green 1</option>
-                  <option value="Green 2">Green 2</option>
-                  <option value="Green 3">Green 3</option>
-                  <option value="Green 4">Green 4</option>
-                </optgroup>
-                <optgroup label="Red (Ages 13–16)">
-                  <option value="Red 1">Red 1</option>
-                  <option value="Red 2">Red 2</option>
-                  <option value="Red 3">Red 3</option>
-                  <option value="Red 4">Red 4</option>
-                </optgroup>
-                <optgroup label="Black (Adults)">
-                  <option value="Black 1">Black 1</option>
-                  <option value="Black 2">Black 2</option>
-                  <option value="Black 3">Black 3</option>
-                  <option value="Black 4+">Black 4+</option>
-                </optgroup>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-widest text-slg-text-dark mb-2">T-Shirt Size <span class="text-slg-pink">*</span></label>
-              <select
-                name="tshirtSize"
-                required
-                class="w-full border border-gray-200 px-4 py-3 text-slg-text-dark focus:outline-none focus:border-slg-pink transition-colors bg-white"
-              >
-                <option value="" disabled selected>Select t-shirt size</option>
-                <optgroup label="Kids">
-                  <option value="Kids 4">Kids 4</option>
-                  <option value="Kids 6">Kids 6</option>
-                  <option value="Kids 8">Kids 8</option>
-                  <option value="Kids 10">Kids 10</option>
-                  <option value="Kids 12">Kids 12</option>
-                  <option value="Kids 14">Kids 14</option>
-                </optgroup>
-                <optgroup label="Adults">
-                  <option value="Adult S">Adult S</option>
-                  <option value="Adult M">Adult M</option>
-                  <option value="Adult L">Adult L</option>
-                  <option value="Adult XL">Adult XL</option>
-                  <option value="Adult 2XL">Adult 2XL</option>
-                </optgroup>
-              </select>
-            </div>
-
-            <!-- Success -->
-            <div id="grading-success" class="hidden bg-green-50 border border-green-200 text-green-800 px-6 py-4 text-sm">
-              ✅ Details saved! Taking you to secure payment... If nothing happens, <a id="grading-pay-link" href="https://square.link/u/N6rcRU2p" class="underline font-bold">tap here to pay</a>.
-            </div>
-
-            <!-- Error -->
-            <div id="grading-error" class="hidden bg-red-50 border border-red-200 text-red-800 px-6 py-4 text-sm">
-              Something went wrong. Please try again or contact us directly.
-            </div>
-
-            <button
-              type="submit"
-              id="grading-submit"
-              class="w-full bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide py-4 transition-colors disabled:opacity-60"
-            >
-              Register &amp; Pay $45
-            </button>
-
-            <p class="text-slg-text-dark/50 text-xs text-center">Secure payment powered by Square. Card, Apple Pay &amp; Google Pay accepted.</p>
-
-          </form>
-        </div>
-
       </div>
     </section>
 
