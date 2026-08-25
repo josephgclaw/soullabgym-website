@@ -2,11 +2,8 @@
  * Soul Lab Gym — Registration Handler (Fight Night + Grading)
  * Google Apps Script Web App
  *
- * UPDATE INSTRUCTIONS (replaces fight-night-form.js):
- * 1. Go to https://script.google.com and open the existing "fight night" project
- * 2. Replace ALL code with this file
- * 3. Deploy → Manage deployments → Edit (pencil) → Version: New version → Deploy
- *    (Editing the existing deployment keeps the same URL, so the website keeps working)
+ * v3: adds duplicate protection (same name within 10 min ignored)
+ *     and a read endpoint for automated paid/unpaid checks.
  *
  * Handles two form types:
  * - Fight night registrations → "Soul Lab Gym — Fight Night Registrations" spreadsheet
@@ -15,6 +12,7 @@
  */
 
 const NOTIFICATION_EMAIL = 'soullabgym@gmail.com';
+const READ_KEY = 'slg-opus-2026'; // secret for GET access to registration data
 
 // Fight night sheet config (unchanged)
 const FIGHT_SHEET_NAME = 'Registrations';
@@ -57,7 +55,54 @@ function doPost(e) {
   }
 }
 
+/**
+ * Read endpoint: /exec?key=...&type=grading (or type=fight)
+ * Returns all registration rows as JSON. Used for automated
+ * paid vs unpaid cross-checks against Square.
+ */
+function doGet(e) {
+  const params = e && e.parameter ? e.parameter : {};
+  if (params.key !== READ_KEY) {
+    return ContentService.createTextOutput(
+      JSON.stringify({ ok: false, error: 'unauthorized' })
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+
+  const isFight = params.type === 'fight';
+  const sheet = getOrCreateSheet(
+    isFight ? FIGHT_SPREADSHEET_TITLE : GRADING_SPREADSHEET_TITLE,
+    isFight ? FIGHT_SHEET_NAME : GRADING_SHEET_NAME,
+    isFight ? FIGHT_HEADERS : GRADING_HEADERS,
+    isFight ? 'fightSpreadsheetId' : 'gradingSpreadsheetId'
+  );
+
+  const values = sheet.getDataRange().getValues();
+  const headers = values.shift() || [];
+  const rows = values.map(function (row) {
+    const obj = {};
+    headers.forEach(function (h, i) {
+      obj[h] = String(row[i]);
+    });
+    return obj;
+  });
+
+  return ContentService.createTextOutput(
+    JSON.stringify({ ok: true, count: rows.length, rows: rows })
+  ).setMimeType(ContentService.MimeType.JSON);
+}
+
+/** Returns true if this submission is a duplicate within 10 minutes. */
+function isDuplicate(kind, name) {
+  const key = kind + ':' + String(name || '').toLowerCase().replace(/\s+/g, ' ').trim();
+  const cache = CacheService.getScriptCache();
+  if (cache.get(key)) return true;
+  cache.put(key, '1', 600); // 10 minutes
+  return false;
+}
+
 function handleGrading(data) {
+  if (isDuplicate('grading', data.studentName)) return jsonOk();
+
   const sheet = getOrCreateSheet(
     GRADING_SPREADSHEET_TITLE,
     GRADING_SHEET_NAME,
@@ -81,7 +126,7 @@ function handleGrading(data) {
       'Phone: ' + (data.phone || '-') + '\n' +
       'Email: ' + (data.email || '-') + '\n' +
       'Submitted: ' + (data.submittedAt || '-') + '\n\n' +
-      'Check Square for payment + shirt size.\n' +
+      'This means REGISTERED. Check Square for their $45 payment + shirt size.\n' +
       'Sheet: ' + sheet.getParent().getUrl(),
   });
 
@@ -89,6 +134,8 @@ function handleGrading(data) {
 }
 
 function handleFightNight(data) {
+  if (isDuplicate('fight', data.name)) return jsonOk();
+
   const sheet = getOrCreateSheet(
     FIGHT_SPREADSHEET_TITLE,
     FIGHT_SHEET_NAME,
