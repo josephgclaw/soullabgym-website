@@ -3,7 +3,12 @@
     {
       "source": "/",
       "has": [{ "type": "host", "value": "fight.soullabgym.com" }],
-      "destination": "https://soullabgym.com/fight",
+      "destination": "https://soullabgym.com/",
+      "permanent": false
+    },
+    {
+      "source": "/fight",
+      "destination": "/",
       "permanent": false
     }
   ]
