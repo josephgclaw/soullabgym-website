@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Schedule from '../components/Schedule.astro';
 ---
 
 <Layout
@@ -56,27 +57,11 @@ import Footer from '../components/Footer.astro';
           </div>
         </div>
 
-        <!-- GYMDESK EMBED -->
+        <!-- WEEKLY TIMETABLE -->
         <div class="mt-4">
-          <h2 class="text-2xl font-black text-slg-text-dark mb-6 text-center">Live Schedule</h2>
-          <div class="bg-slg-bone border-2 border-slg-pink/30 rounded-none p-8">
-            <div id="gymdesk-widget" class="gymdesk-schedule" attr-gym="DLVb1" attr-visible_schedule="all" attr-default_schedule="all"></div>
-          </div>
+          <h2 class="text-2xl font-black text-slg-text-dark mb-6 text-center">Weekly Timetable</h2>
+          <Schedule />
         </div>
-
-        <script>
-          // Initialize Gymdesk widget after page loads
-          document.addEventListener('DOMContentLoaded', function() {
-            if (window.GymDeskWidgets) {
-              window.GymDeskWidgets.initAll();
-            }
-          });
-          
-          // Also try to init when script loads
-          if (window.GymDeskWidgets) {
-            window.GymDeskWidgets.initAll();
-          }
-        </script>
       </div>
     </section>
 
