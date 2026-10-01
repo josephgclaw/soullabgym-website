@@ -12,6 +12,7 @@ const primaryLinks = [
 
 const programLinks = [
   { href: '/timetable', label: 'Classes & Timetable' },
+  { href: '/kids', label: 'Kids & Teens' },
   { href: '/private-training', label: 'Private Training' },
   { href: '/stand-strong', label: 'Stand Strong' },
   { href: '/recovery', label: 'Recovery' },
@@ -34,7 +35,7 @@ const inGroup = (links: { href: string }[]) => links.some((l) => isActive(l.href
 <>
   <!-- Announcement Bar -->
   <div class="bg-slg-pink py-1.5 text-center text-[11px] sm:text-xs text-white font-semibold uppercase tracking-widest">
-    <span class="hidden sm:inline">Free Trial + Free Gear Pack on Signup.</span><span class="sm:hidden">Free trial + free gear pack.</span> <a href={OFFER} class="underline underline-offset-2 hover:text-white/80 whitespace-nowrap">Claim yours →</a>
+    <span class="hidden sm:inline">Free Trial + Free Gear Pack on Signup.</span><span class="sm:hidden">Free trial + free gear pack.</span> <a href={OFFER} class="ml-1 underline underline-offset-2 hover:text-white/80 whitespace-nowrap">Claim yours →</a>
   </div>
 
   <nav class="site-nav relative z-50 bg-slg-dark border-b border-white/10" aria-label="Main">

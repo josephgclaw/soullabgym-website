@@ -2,320 +2,334 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import FeatureBlock from '../components/FeatureBlock.astro';
+import TrialCta from '../components/TrialCta.astro';
+import { currentWhatsOn } from '../data/whats-on';
+
+const OFFER = 'https://soullabgymoffer.com/offer';
+const whatsOn = currentWhatsOn();
+
+const programs = [
+  { title: 'Adults Muay Thai & Boxing', body: 'Pads, technique, sparring and conditioning, six days a week. Beginners start at Level 1 and move up at their own pace.', image: '/photos/training-women-pad-work.jpg', pos: 'center 30%', href: '/timetable', cta: 'See the timetable' },
+  { title: 'Kids 4–10', body: 'Junior (4–6) and Senior (7–10) classes that build confidence, focus and respect — with belt gradings every term.', image: '/photos/kids-girl-hitting-pads.jpg', pos: 'center', href: '/kids', cta: 'Kids classes' },
+  { title: 'Teens 11–15', body: 'Real Muay Thai for teenagers: structure, fitness and a crew that has their back. Fighters pathway for those who want it.', image: '/photos/kids-teens-belts-group.jpg', pos: 'center 35%', href: '/kids#teens', cta: 'Teens classes' },
+  { title: 'Fight Team', body: 'Invite-only fighters sessions, clinch, sparring and fight camps. Our fighters compete across Queensland and headline Battle at the Lab.', image: '/photos/fight-high-kick-under-lights.jpg', pos: 'center', href: '#fighters', cta: 'Competitive type?' },
+  { title: 'Private Training', body: 'One-on-one with Joseph or a senior coach. Faster progress, your schedule, your goals. From $50 a session.', image: '/photos/coach-pads.jpg', pos: 'center', href: '/private-training', cta: 'Book private training' },
+  { title: 'Recovery', body: 'Sauna and ice bath, purpose-built for recovery after hard sessions. Open to members and the public.', image: '/photos/recovery/sauna-and-icebath.jpg', pos: 'center', href: '/recovery', cta: 'Recovery centre' },
+];
+
+const reviews = [
+  { name: 'Tee', text: "These guys are amazing! Such a family welcoming vibe from the moment we first walked in. My kids were made to feel so comfortable and treated so kindly even though they'd never stepped foot in a gym before. You can tell this place is built from the heart." },
+  { name: 'Mel J.', text: "We have been members at Soul Lab for a few weeks now and I've noticed a huge change in my kids. I can't thank Joseph and the team enough for everything they do." },
+  { name: 'Sam B.', text: 'Hands down the best experience for legitimate, authentic, intense Muay Thai training that you will struggle to find anywhere else in Townsville. Great facility, great training. Joe will push you to become the best version of yourself.' },
+];
 ---
 
 <Layout
-  title="Soul Lab Gym — Townsville's Muay Thai Home"
-  description="Train with WMO state champion Joseph Gabiola. Muay Thai for families, fighters & future champions in Townsville."
+  title="Soul Lab Gym — Muay Thai & Boxing in Townsville"
+  description="Muay Thai and boxing for kids, teens and adults in West End, Townsville. Train with WMO state champion Joseph Gabiola. Free trial + gear pack for new members."
 >
   <Nav />
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+  <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/photos/joseph-gym-wall-colour.jpg" alt="Soul Lab Gym Muay Thai Townsville" class="w-full h-full object-cover object-top" />
+      <img src="/photos/joseph-gym-wall-colour.jpg" alt="Soul Lab Gym Muay Thai Townsville" class="w-full h-full object-cover object-top" fetchpriority="high" />
     </div>
-    <div class="absolute inset-0 bg-black/45"></div>
+    <div class="absolute inset-0 bg-black/50"></div>
+    <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slg-dark to-transparent"></div>
 
     <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
-      <div class="space-y-4 mb-8">
-        <!-- Main headline with pink background -->
+      <div class="space-y-4 mb-6">
         <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white uppercase leading-tight bg-slg-pink px-6 py-3 inline-block">
           Townsville's
         </h1>
         <h1 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl text-white uppercase leading-tight bg-slg-pink px-6 py-3 inline-block">
           Muay Thai Home
         </h1>
-
-        <!-- Sub-headlines with white outline only -->
-        <div class="pt-6 space-y-3 flex flex-col items-center">
-          <h2 class="font-display text-3xl sm:text-4xl text-white border-2 border-white px-6 py-3 inline-block uppercase">
-            For Families
-          </h2>
-          <h2 class="font-display text-3xl sm:text-4xl text-white border-2 border-white px-6 py-3 inline-block uppercase">
-            Fighters
-          </h2>
-          <h2 class="font-display text-3xl sm:text-4xl text-white border-2 border-white px-6 py-3 inline-block uppercase">
-            & Future Champions
-          </h2>
+        <div class="pt-5 space-y-3 flex flex-col items-center">
+          <h2 class="font-display text-3xl sm:text-4xl text-white border-2 border-white px-6 py-3 inline-block uppercase">For Families</h2>
+          <h2 class="font-display text-3xl sm:text-4xl text-white border-2 border-white px-6 py-3 inline-block uppercase">Fighters</h2>
+          <h2 class="font-display text-3xl sm:text-4xl text-white border-2 border-white px-6 py-3 inline-block uppercase">& Future Champions</h2>
         </div>
       </div>
 
-      <!-- CTA in hero -->
-      <div class="pt-8 flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="https://soullabgymoffer.com/offer"
-          class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
-        >
-          Claim Free Trial + Gear Pack
-        </a>
-        <a
-          href="/timetable"
-          class="inline-block border-2 border-white hover:bg-white/10 text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
-        >
-          Class Timetable
-        </a>
-        <a
-          href="/prices"
-          class="inline-block border-2 border-white hover:bg-white/10 text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
-        >
-          Membership Prices
-        </a>
+      <p class="text-white/85 text-base sm:text-lg max-w-2xl mx-auto mb-8 leading-relaxed">
+        Muay Thai and boxing for kids, teens and adults in West End, Townsville. Six days a week, coached by a state champion. New members start with a free trial and a free gear pack.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={OFFER} class="btn-pink">Claim Free Trial + Gear Pack</a>
+        <a href="/timetable" class="btn-ghost">Class Timetable</a>
+        <a href="/prices" class="btn-ghost">Membership Prices</a>
       </div>
     </div>
   </section>
 
+  <!-- WHAT'S ON -->
+  {whatsOn.length > 0 && (
+    <section class="bg-slg-dark border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {whatsOn.map((item, i) => (
+            <a href={item.href} class="whats-on" data-reveal style={`transition-delay:${i * 70}ms`}>
+              <span class="whats-on-label">{item.label}</span>
+              <span class="whats-on-title">{item.title}</span>
+              <span class="whats-on-when">{item.when}</span>
+              {item.cta && <span class="whats-on-cta">{item.cta} →</span>}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- CREDIBILITY BAR -->
-  <section class="bg-slg-dark py-5">
+  <section class="bg-slg-dark border-y border-white/10 py-5">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-slg-text-light text-xs font-semibold uppercase tracking-widest">
+      <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-slg-text-light text-xs font-semibold uppercase tracking-widest">
         <span>WMO State Champion</span>
-        <span class="text-slg-pink text-lg">—</span>
-        <span>55+ Reviews · 5.0★</span>
-        <span class="text-slg-pink text-lg">—</span>
-        <span>Townsville's Premier Gym</span>
-        <span class="text-slg-pink text-lg">—</span>
-        <span>Kids · Adults · Fighters</span>
+        <span class="text-slg-pink hidden sm:inline">—</span>
+        <span><span class="text-slg-pink">★★★★★</span> 5.0 · 55+ Google reviews</span>
+        <span class="text-slg-pink hidden sm:inline">—</span>
+        <span>West End, Townsville</span>
+        <span class="text-slg-pink hidden sm:inline">—</span>
+        <span>Kids · Teens · Adults · Fighters</span>
       </div>
     </div>
   </section>
 
   <!-- QUICK ACCESS: TIMETABLE + PRICES -->
-  <section class="bg-slg-bone py-14 border-b border-slg-pink/15">
+  <section class="bg-slg-bone py-14">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <a href="/timetable" class="group relative block bg-slg-dark text-white p-8 sm:p-10 border-2 border-slg-dark hover:border-slg-pink transition-colors overflow-hidden">
+        <a href="/timetable" class="group relative block bg-slg-dark text-white p-8 sm:p-10 rounded-2xl overflow-hidden ring-1 ring-white/10 hover:ring-slg-pink transition-shadow" data-reveal>
           <div class="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-300">
             <img src="/photos/adult-large-class-group.jpg" alt="" class="w-full h-full object-cover object-[center_30%] group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" />
           </div>
           <div class="absolute inset-0 bg-gradient-to-r from-slg-dark via-slg-dark/85 to-slg-dark/20"></div>
           <div class="relative">
-            <p class="text-slg-pink text-xs font-bold uppercase tracking-widest mb-3">Classes every day Mon–Sat</p>
+            <p class="eyebrow mb-3">Classes Monday to Saturday</p>
             <h2 class="font-display text-5xl sm:text-6xl uppercase leading-none mb-4">Timetable</h2>
             <p class="text-white/80 text-base mb-6 max-w-sm">Kids from 3:45pm, adults from 6am. See the full week and find a class that fits.</p>
-            <span class="inline-block bg-slg-pink group-hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-3 transition-colors">View Timetable →</span>
+            <span class="btn-pink">View Timetable →</span>
           </div>
         </a>
-        <a href="/prices" class="group relative block bg-slg-dark text-white p-8 sm:p-10 border-2 border-slg-dark hover:border-slg-pink transition-colors overflow-hidden">
+        <a href="/prices" class="group relative block bg-slg-dark text-white p-8 sm:p-10 rounded-2xl overflow-hidden ring-1 ring-white/10 hover:ring-slg-pink transition-shadow" data-reveal style="transition-delay:90ms">
           <div class="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-300">
-            <img src="/photos/kids-teens-belts-group.jpg" alt="" class="w-full h-full object-cover object-[center_35%] group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" />
+            <img src="/photos/adult-fight-stance-group.jpg" alt="" class="w-full h-full object-cover object-[center_30%] group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" />
           </div>
           <div class="absolute inset-0 bg-gradient-to-r from-slg-dark via-slg-dark/85 to-slg-dark/20"></div>
           <div class="relative">
-            <p class="text-slg-pink text-xs font-bold uppercase tracking-widest mb-3">No lock-in contracts</p>
+            <p class="eyebrow mb-3">No lock-in contracts</p>
             <h2 class="font-display text-5xl sm:text-6xl uppercase leading-none mb-4">Prices</h2>
             <p class="text-white/80 text-base mb-6 max-w-sm">Simple weekly memberships for adults, kids and FIFO, plus casual visits and family discounts.</p>
-            <span class="inline-block bg-slg-pink group-hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-3 transition-colors">See Prices →</span>
+            <span class="btn-pink">See Prices →</span>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- WHO WE ARE -->
-  <section class="py-20 bg-slg-bone">
+  <!-- PROGRAMS: SOMETHING FOR EVERYONE -->
+  <section id="programs" class="bg-stars bg-slg-dark py-16 sm:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 class="font-display text-5xl sm:text-6xl uppercase text-slg-text-dark leading-tight mb-6">
-            Who We Are
-          </h2>
-          <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
-            Soul Lab Gym is Townsville's premier Muay Thai home, built on real expertise, authentic coaching, and a commitment to every person who walks through our doors.
-          </p>
-          <p class="text-slg-text-dark text-lg leading-relaxed mb-6">
-            Founded and led by <strong>Joseph Gabiola</strong>, a WMO state champion with decades of fighting experience, Soul Lab combines technical mastery with genuine care for each student's growth.
-          </p>
-          <p class="text-slg-text-dark text-lg leading-relaxed mb-8">
-            We're not just a gym. We're a community where discipline meets joy, where fighting skills become life skills, and where every person discovers their own strength.
-          </p>
-          <a
-            href="/about"
-            class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
-          >
-            Learn Our Full Story
-          </a>
-        </div>
-
-        <div class="bg-slg-dark p-10 border-l-4 border-slg-pink">
-          <h3 class="text-2xl font-display uppercase text-white mb-6">Core Values</h3>
-          <ul class="space-y-4">
-            {[
-              { title: 'Expert Coaching', desc: 'Real fighters teaching authentic Muay Thai with depth and strategy' },
-              { title: 'Family First', desc: 'A safe, welcoming space for all ages and experience levels' },
-              { title: 'Real Results', desc: 'Structured progression that builds champions inside and outside the gym' },
-            ].map(value => (
-              <li class="pb-4 border-b border-white/10 last:border-0">
-                <h4 class="text-slg-gold font-bold mb-1">{value.title}</h4>
-                <p class="text-slg-text-light/70 text-sm">{value.desc}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <p class="eyebrow mb-3">Our programs</p>
+        <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-none mb-4">Something for everyone</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">From a four-year-old's first class to a fighter's camp. Every program is coached, structured and open to beginners.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- WHAT WE STAND FOR (PILLARS) - REDESIGNED -->
-  <section class="bg-slg-dark py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-5xl sm:text-6xl uppercase text-center text-white mb-4">What We Stand For</h2>
-      <p class="text-slg-text-light text-lg text-center max-w-2xl mx-auto mb-16">
-        Three pillars guide everything we do at Soul Lab Gym.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
-        {[
-          {
-            num: '01',
-            title: 'Fight-Ready Coaching',
-            desc: 'Real competitors in your corner every session. Joseph and our senior coaches have fought and won. You\'re learning from people who live this.',
-          },
-          {
-            num: '02',
-            title: 'Confidence Building',
-            desc: 'Kids leave bolder. Adults walk taller. Standing strong in the gym means standing strong everywhere. That\'s the real training.',
-          },
-          {
-            num: '03',
-            title: 'Community & Accountability',
-            desc: 'You\'re not alone. We celebrate your wins, support your growth, and hold you accountable to becoming your best self.',
-          },
-        ].map(pillar => (
-          <div class="bg-slg-dark p-10 hover:bg-white/5 transition-colors group">
-            <div class="font-display text-8xl leading-none mb-6 text-slg-pink">{pillar.num}</div>
-            <h3 class="font-bold text-xl mb-3 text-white">{pillar.title}</h3>
-            <p class="leading-relaxed text-sm text-slg-text-light/80">{pillar.desc}</p>
-          </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {programs.map((p, i) => (
+          <a href={p.href} class="program-card" data-reveal style={`transition-delay:${(i % 3) * 80}ms`}>
+            <div class="program-img"><img src={p.image} alt={p.title} style={`object-position:${p.pos}`} loading="lazy" /></div>
+            <div class="program-body">
+              <h3 class="font-display text-3xl uppercase text-white leading-none mb-2">{p.title}</h3>
+              <p class="text-white/70 text-sm leading-relaxed mb-4">{p.body}</p>
+              <span class="program-cta">{p.cta} →</span>
+            </div>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 7-DAY TRIAL SECTION -->
-  <section class="bg-slg-dark py-20">
+  <!-- KIDS & FAMILIES -->
+  <FeatureBlock
+    eyebrow="Kids & families"
+    title="Confidence that lasts longer than the class"
+    image="/photos/kids-coach-thumbsup.jpg"
+    imageAlt="Kids class with coach at Soul Lab Gym"
+    imagePosition="center 40%"
+    href="/kids"
+    cta="Kids & teens classes"
+    secondaryHref="/stand-strong"
+    secondaryCta="Stand Strong anti-bullying program"
+    theme="light"
+  >
+    <p>Kids start at four. They learn to move, listen and stand their ground — on the mats and at school. Classes are split by age so every kid trains with their own crew.</p>
+    <p>Belt gradings every term give them something to aim for, and the family discount means siblings and parents can train too.</p>
+  </FeatureBlock>
+
+  <!-- FIGHTERS -->
+  <FeatureBlock
+    id="fighters"
+    eyebrow="Fighters"
+    title="Competitive type?"
+    image="/photos/fight-punch-exchange.jpg"
+    imageAlt="Soul Lab Gym fighter in the ring at Battle at the Lab"
+    imagePosition="center"
+    href="/contact"
+    cta="Ask about the fight team"
+    secondaryHref="/timetable"
+    secondaryCta="Fighters sessions on the timetable"
+    flip
+  >
+    <p>Soul Lab has produced state champions, and the fight team trains like it. Invite-only sessions, clinch, sparring and full fight camps, with Joseph in your corner on the night.</p>
+    <p>You don't need to be a fighter to train here. If you want a bucket-list fight or to take it as far as it goes, the pathway is there.</p>
+  </FeatureBlock>
+
+  <!-- RECOVERY -->
+  <FeatureBlock
+    eyebrow="Recovery centre"
+    title="Sauna & ice bath"
+    image="/photos/recovery/sauna-and-icebath.jpg"
+    imageAlt="Sauna and ice bath at Soul Lab Gym recovery centre"
+    href="/recovery"
+    cta="Recovery centre"
+    theme="light"
+  >
+    <p>Purpose-built recovery on site: a proper sauna and a cold plunge, so you walk out of a hard week feeling better than you walked in.</p>
+    <p>Open to members and the public.</p>
+  </FeatureBlock>
+
+  <!-- PRIVATE TRAINING -->
+  <FeatureBlock
+    eyebrow="Private training"
+    title="One-on-one with the coach"
+    image="/photos/coach-pads.jpg"
+    imageAlt="Private pad session at Soul Lab Gym"
+    href="/private-training"
+    cta="Book private training"
+    flip
+  >
+    <p>Thirty minutes of pads and technique with Joseph or a senior coach, built around your goals and your schedule. The fastest way to sharpen up, whether you're brand new or prepping for a fight.</p>
+    <p>$50 a session, or $40 each in a pack of five.</p>
+  </FeatureBlock>
+
+  <!-- MEET THE COACH -->
+  <section class="bg-slg-bone py-16 sm:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-5" data-reveal>
+          <div class="coach-img"><img src="/photos/about/joseph-smiling-portrait.jpg" alt="Joseph Gabiola, head coach at Soul Lab Gym" loading="lazy" /></div>
+        </div>
+        <div class="lg:col-span-7" data-reveal style="transition-delay:90ms">
+          <p class="eyebrow mb-3">Head coach</p>
+          <h2 class="font-display text-5xl sm:text-6xl uppercase text-slg-text-dark leading-[.95] mb-5">Joseph "Machine Gun" Gabiola</h2>
+          <p class="text-slg-text-dark/80 text-base sm:text-lg leading-relaxed mb-4 max-w-2xl">
+            WMO State Champion with 35+ fights, and the coach in every Soul Lab class. Joseph built the gym around one idea: real Muay Thai, taught properly, to everyone who walks in — four-year-olds, parents, first-timers and fighters.
+          </p>
+          <p class="text-slg-text-dark/80 text-base sm:text-lg leading-relaxed mb-8 max-w-2xl">
+            You'll know his name on day one. He'll know yours.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
+            <a href="/about" class="btn-dark">Our story</a>
+            <a href="/gallery" class="text-sm font-semibold underline underline-offset-4 text-slg-text-dark/70 hover:text-slg-text-dark">See the gallery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="bg-slg-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10" data-reveal>
         <div>
-          <h2 class="font-display text-5xl sm:text-6xl uppercase leading-tight text-white mb-6">
-            Start Your Free Trial
-          </h2>
-          <p class="text-slg-text-light text-lg leading-relaxed mb-8">
-            No commitment. No credit card. Just real Muay Thai, real coaching, and real results.
-          </p>
-
-          <div class="space-y-4 mb-10">
-            {[
-              'Complete beginners welcome',
-              'All equipment provided (gloves, wraps)',
-              'Flexible class schedule — find what fits you',
-              'Expert coaches who actually care about your progress',
-            ].map(benefit => (
-              <div class="flex gap-3">
-                <span class="text-slg-gold font-bold">→</span>
-                <span class="text-slg-text-light/80">{benefit}</span>
-              </div>
-            ))}
-          </div>
-
-          <a
-            href="https://soullabgymoffer.com/offer"
-            class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
-          >
-            Claim Free Trial + Gear Pack
-          </a>
+          <p class="eyebrow mb-3">Reviews</p>
+          <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-none">What members say</h2>
         </div>
-
-        <div class="bg-white/5 border border-white/10 p-8 ">
-          <h3 class="text-xl font-bold text-white mb-6">What Happens Next</h3>
-          <div class="space-y-6">
-            {[
-              { step: '1', title: 'You Visit', desc: 'Show up in comfortable gear. We\'ll take care of the rest.' },
-              { step: '2', title: 'You Train', desc: 'Join a class with Joseph or a senior coach. Real coaching, real community.' },
-              { step: '3', title: 'You Feel It', desc: 'After 7 days you\'ll feel stronger, more confident, and part of something real.' },
-            ].map(item => (
-              <div class="flex gap-4">
-                <div class="font-display text-4xl text-slg-gold">{item.step}</div>
-                <div>
-                  <p class="font-bold text-white mb-1">{item.title}</p>
-                  <p class="text-white/75 text-sm">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div class="text-white/80 text-sm">
+          <span class="text-slg-pink text-lg align-middle">★★★★★</span> <span class="font-semibold text-white">5.0</span> · 55+ reviews on Google
         </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {reviews.map((r, i) => (
+          <figure class="review" data-reveal style={`transition-delay:${i * 80}ms`}>
+            <div class="text-slg-pink text-sm tracking-wider mb-4">★★★★★</div>
+            <blockquote class="text-white/85 text-base leading-relaxed mb-5">“{r.text}”</blockquote>
+            <figcaption class="flex items-center justify-between text-sm">
+              <span class="font-bold text-white">{r.name}</span>
+              <span class="text-white/45">Google review</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="text-center mt-10" data-reveal>
+        <a href="/testimonials" class="btn-ghost">Read all 55+ reviews</a>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS - PULL QUOTES -->
-  <section class="bg-slg-dark py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase px-3 py-1 mb-6">Real Members</div>
-      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white mb-16">What They're Saying</h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-        <div class="bg-slg-dark p-8 border border-white/10">
-          <div class="font-display text-6xl leading-none mb-6 text-slg-pink">"</div>
-          <p class="text-slg-text-light text-lg font-medium italic mb-6 leading-relaxed">
-            These guys are amazing!!! Such a family welcoming vibe, from the moment we first walked in. My kids were made to feel so comfortable & treated so kindly even though they'd never stepped foot into a gym before. You can tell this place is built from the heart - good vibes, respect & love!!
-          </p>
-          <p class="text-white font-bold">Tee</p>
-        </div>
-
-        <div class="bg-slg-dark p-8 border border-white/10">
-          <div class="font-display text-6xl leading-none mb-6 text-slg-pink">"</div>
-          <p class="text-slg-text-light text-lg font-medium italic mb-6 leading-relaxed">
-            We have been members at soullab gym for a few weeks now. And I've noticed a huge change in my kids. I can't thank Joseph and the team at soul lab enough for everything they do
-          </p>
-          <p class="text-white font-bold">Mel J.</p>
-        </div>
-
-        <div class="bg-slg-dark p-8 border border-white/10">
-          <div class="font-display text-6xl leading-none mb-6 text-slg-pink">"</div>
-          <p class="text-slg-text-light text-lg font-medium italic mb-6 leading-relaxed">
-            Hands down the best experience for legitimate, authentic, intense Muay Thai training that you will struggle to find anywhere else in Townsville. Great facility, great training, Joe is a trainer that will push you to become the best version
-          </p>
-          <p class="text-white font-bold">Sam B.</p>
+  <!-- FIND US -->
+  <section id="find-us" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div data-reveal>
+        <p class="eyebrow mb-3">Find us</p>
+        <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-none mb-6">West End, Townsville</h2>
+        <dl class="space-y-4 text-white/80 mb-8">
+          <div class="flex gap-4"><dt class="w-20 shrink-0 text-xs font-bold uppercase tracking-widest text-white/45 pt-1">Address</dt><dd>2/70 Ingham Road<br />West End QLD 4810</dd></div>
+          <div class="flex gap-4"><dt class="w-20 shrink-0 text-xs font-bold uppercase tracking-widest text-white/45 pt-1">Phone</dt><dd><a href="tel:0432558304" class="hover:text-slg-pink">0432 558 304</a></dd></div>
+          <div class="flex gap-4"><dt class="w-20 shrink-0 text-xs font-bold uppercase tracking-widest text-white/45 pt-1">Email</dt><dd><a href="mailto:soullabgym@gmail.com" class="hover:text-slg-pink">soullabgym@gmail.com</a></dd></div>
+          <div class="flex gap-4"><dt class="w-20 shrink-0 text-xs font-bold uppercase tracking-widest text-white/45 pt-1">Classes</dt><dd>Monday to Saturday · <a href="/timetable" class="text-slg-pink font-semibold hover:underline">see the timetable</a></dd></div>
+        </dl>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://www.google.com/maps/search/?api=1&query=Soul+Lab+Gym+2%2F70+Ingham+Road+West+End+QLD+4810" target="_blank" rel="noopener" class="btn-pink">Get directions</a>
+          <a href="https://m.me/soullabgym" target="_blank" rel="noopener" class="btn-ghost">Message us on Facebook</a>
         </div>
       </div>
-
-      <div class="text-center">
-        <a
-          href="/testimonials"
-          class="inline-block border-2 border-slg-pink hover:bg-slg-pink text-slg-pink hover:text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
-        >
-          Read All 55+ Reviews
-        </a>
+      <div class="map-wrap" data-reveal style="transition-delay:90ms">
+        <iframe
+          title="Map of Soul Lab Gym, 2/70 Ingham Road, West End QLD"
+          src="https://www.google.com/maps?q=2%2F70+Ingham+Road,+West+End+QLD+4810&z=15&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="bg-slg-pink py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl uppercase text-white leading-tight mb-6">
-        Start For Free
-      </h2>
-      <p class="text-white/80 text-lg mb-12 max-w-2xl mx-auto">
-        No commitment. No credit card. Just real Muay Thai, real coaching, real results.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="https://soullabgymoffer.com/offer"
-          class="inline-block bg-slg-dark hover:bg-slg-text-dark text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
-        >
-          Claim Your Free Trial
-        </a>
-        <a
-          href="/private-training#booking"
-          class="inline-block border-2 border-white hover:bg-white/20 text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
-        >
-          Book Private Training
-        </a>
-      </div>
-    </div>
-  </section>
+  <TrialCta />
 
   <Footer />
 </Layout>
+
+<style>
+  .whats-on { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center; padding: 12px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.035); transition: border-color .15s, background .15s; }
+  .whats-on:hover { border-color: rgba(236,72,153,.6); background: rgba(236,72,153,.06); }
+  .whats-on-label { grid-row: 1 / span 2; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #fff; background: #EC4899; border-radius: 999px; padding: 5px 9px; }
+  .whats-on-title { grid-column: 2; grid-row: 1; font-weight: 700; color: #fff; font-size: 14px; line-height: 1.2; }
+  .whats-on-when { grid-column: 2; grid-row: 2; font-size: 12px; color: rgba(255,255,255,.6); }
+  .whats-on-cta { display: none; }
+  @media (min-width: 1024px) {
+    .whats-on { grid-template-columns: auto 1fr auto; }
+    .whats-on-cta { display: block; grid-column: 3; grid-row: 1 / span 2; font-size: 12px; font-weight: 700; color: #EC4899; white-space: nowrap; }
+  }
+
+  .program-card { display: flex; flex-direction: column; border-radius: 18px; overflow: hidden; background: #121013; border: 1px solid rgba(255,255,255,.09); transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .2s, box-shadow .25s; }
+  .program-card:hover { transform: translateY(-4px); border-color: rgba(236,72,153,.55); box-shadow: 0 30px 60px -30px rgba(236,72,153,.35); }
+  .program-img { aspect-ratio: 4 / 3; overflow: hidden; background: #0a0a0a; }
+  .program-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .program-card:hover .program-img img { transform: scale(1.05); }
+  .program-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex: 1; }
+  .program-cta { margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #EC4899; }
+
+  .coach-img { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.5); }
+  .coach-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+
+  .review { padding: 26px; border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)), #121013; border: 1px solid rgba(255,255,255,.09); }
+  .map-wrap { position: relative; aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden; border: 1px solid rgba(255,255,255,.1); background: #111; }
+  .map-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.2) contrast(1.05); }
+</style>

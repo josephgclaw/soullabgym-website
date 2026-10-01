@@ -1,0 +1,171 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+import TrialCta from '../components/TrialCta.astro';
+import { DAYS, SCHEDULE, formatTime } from '../data/schedule';
+import { GROUPS, FAMILY_DISCOUNT } from '../data/pricing';
+
+const OFFER = 'https://soullabgymoffer.com/offer';
+
+// Pull each kids class's days + time straight from the timetable data, so this page never drifts from it.
+function sessionsFor(name: string) {
+  const out: { day: string; time: string }[] = [];
+  DAYS.forEach((d) => SCHEDULE[d].forEach((s) => { if (s.name === name) out.push({ day: d.slice(0, 3), time: `${formatTime(s.time).time}${formatTime(s.time).period}` }); }));
+  return out;
+}
+const bands = [
+  { id: 'juniors', title: 'Junior Kids', ages: '4–6 yrs', image: '/photos/kids-girl-guard-pose.jpg', pos: 'center 20%', sessions: sessionsFor('Junior Kids'),
+    body: 'Movement, games and the first building blocks of Muay Thai. Forty-five minutes, high energy, lots of praise. Kids learn to listen, take turns and throw a proper kick.' },
+  { id: 'seniors', title: 'Senior Kids', ages: '7–10 yrs', image: '/photos/kids-junior-fighters.jpg', pos: 'center 30%', sessions: sessionsFor('Senior Kids'),
+    body: 'Real technique on pads and partners, with structure that carries over to school. Fitness, focus and respect, and the belt ladder to climb.' },
+  { id: 'teens', title: 'Teens Muay Thai', ages: '11–15 yrs', image: '/photos/kids-teens-belts-group.jpg', pos: 'center 35%', sessions: sessionsFor('Teens Muay Thai'),
+    body: "Proper Muay Thai for teenagers: pads, clinch, controlled sparring and conditioning with a crew their own age. The pathway into the fight team is here for those who want it." },
+];
+const kids = GROUPS.find((g) => g.id === 'kids')!;
+---
+
+<Layout
+  title="Kids & Teens Muay Thai — Soul Lab Gym Townsville"
+  description="Kids and teens Muay Thai classes in West End, Townsville. Junior Kids 4–6, Senior Kids 7–10 and Teens 11–15, with belt gradings every term. Free trial for new members."
+  theme="dark"
+>
+  <Nav />
+
+  <PageHero
+    titleLines={['Kids &', 'Teens']}
+    eyebrow="Ages 4 to 15 · Monday to Saturday"
+    image="/photos/joseph-kids-hero.jpg"
+    imageAlt="Head coach Joseph with a young student at Soul Lab Gym"
+    imagePosition="center 30%"
+  />
+
+  <!-- INTRO + AGE BANDS -->
+  <section class="bg-stars bg-slg-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <p class="eyebrow mb-3">Three age groups</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Every kid trains with their own crew</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
+          Classes are split by age so a four-year-old and a fourteen-year-old never share a mat. Coaches move kids between groups when they're ready, not just when they have a birthday.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        {bands.map((b, i) => (
+          <div id={b.id} class="band" data-reveal style={`transition-delay:${i * 90}ms`}>
+            <div class="band-img"><img src={b.image} alt={`${b.title} class`} style={`object-position:${b.pos}`} loading="lazy" /></div>
+            <div class="p-6 sm:p-7">
+              <p class="eyebrow mb-2">{b.ages}</p>
+              <h3 class="font-display text-4xl uppercase text-white leading-none mb-3">{b.title}</h3>
+              <p class="text-white/70 text-sm leading-relaxed mb-5">{b.body}</p>
+              <ul class="band-times">
+                {b.sessions.map((s) => <li><b>{s.day}</b>{s.time}</li>)}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-12" data-reveal>
+        <a href={OFFER} class="btn-pink">Book a free trial class</a>
+        <a href="/timetable" class="btn-ghost">Full timetable</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THEY GET -->
+  <section class="bg-slg-bone text-slg-text-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-6" data-reveal>
+        <p class="eyebrow mb-3">What parents notice</p>
+        <h2 class="font-display text-5xl sm:text-6xl uppercase leading-[.95] mb-6">Bolder kids, calmer homes</h2>
+        <div class="space-y-5">
+          {[
+            ['Confidence', 'Kids who can stand their ground on the mat stand their ground in the playground. Most parents say they see it within a month.'],
+            ['Discipline', 'Lining up, listening, waiting your turn, finishing the round. It\'s built into every class without a lecture.'],
+            ['Fitness', 'Forty-five minutes of real movement. They sleep better and they ask to come back.'],
+            ['Respect', 'Muay Thai is a culture, not just a sport. Kids learn to bow in, look after a partner and lose with grace.'],
+          ].map(([t, d]) => (
+            <div class="flex gap-4">
+              <span class="mt-2 w-2.5 h-2.5 rounded-full bg-slg-pink shrink-0"></span>
+              <div><p class="font-bold text-lg leading-tight mb-1">{t}</p><p class="text-slg-text-dark/75 text-sm leading-relaxed">{d}</p></div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="lg:col-span-6 grid grid-cols-2 gap-4" data-reveal style="transition-delay:90ms">
+        <img src="/photos/kids-boy-raising-glove.jpg" alt="Young boy raising his glove" class="rounded-2xl w-full aspect-[4/5] object-cover" loading="lazy" />
+        <img src="/photos/kids-sparring-action.jpg" alt="Kids controlled sparring" class="rounded-2xl w-full aspect-[4/5] object-cover mt-8" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- GRADING + STAND STRONG -->
+  <section class="bg-slg-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-5">
+      <a href="/grading" class="panel group" data-reveal>
+        <p class="eyebrow mb-3">Belt grading</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Something to aim for</h2>
+        <p class="text-white/70 leading-relaxed mb-6">Every kid grades each term, including the ones who started last week. The ladder runs Yellow, Orange, Blue, Green and Red, with four stripes to earn on each belt. Everyone moves one step at a time, so every belt is earned.</p>
+        <div class="belts" aria-hidden="true">
+          {['#F5C518', '#F0862B', '#2F7FE0', '#2EAD5B', '#E23B3B'].map((c) => <span style={`--b:${c}`}></span>)}
+        </div>
+        <span class="panel-cta">Grading details →</span>
+      </a>
+      <a href="/stand-strong" class="panel group" data-reveal style="transition-delay:90ms">
+        <p class="eyebrow mb-3">School holidays · Free</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Stand Strong</h2>
+        <p class="text-white/70 leading-relaxed mb-6">A free two-day anti-bullying program for Townsville kids, run every Queensland school holidays and led by Joseph, an accredited anti-bullying educator. Open to everyone, not just members.</p>
+        <div class="rounded-xl overflow-hidden aspect-[16/7] mb-6"><img src="/photos/kids-coach-thumbsup.jpg" alt="Stand Strong kids with coach" class="w-full h-full object-cover object-[center_40%]" loading="lazy" /></div>
+        <span class="panel-cta">Register interest →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- KIDS PRICES -->
+  <section class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6" data-reveal>
+        <div>
+          <p class="eyebrow mb-3">Kids memberships</p>
+          <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none">Simple weekly prices</h2>
+        </div>
+        <a href="/prices" class="text-sm font-semibold text-white/70 hover:text-white underline underline-offset-4">All prices</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4" data-reveal>
+        {kids.plans.map((p) => (
+          <div class:list={['price', { 'price-featured': p.featured }]}>
+            <p class="text-white font-bold">{p.name}</p>
+            <p class="mt-2"><span class:list={['font-display text-5xl', p.featured ? 'text-slg-pink' : 'text-white']}>{p.price}</span> <span class="text-white/55 text-xs uppercase tracking-wide">{p.per}</span></p>
+          </div>
+        ))}
+      </div>
+      <p class="text-white/55 text-sm mt-5" data-reveal>
+        Family discount: {FAMILY_DISCOUNT.map((f) => `${f.who.toLowerCase()} ${f.deal.toLowerCase()}`).join(', ')}. No lock-in contracts. Loaner gloves and wraps for trial classes.
+      </p>
+    </div>
+  </section>
+
+  <TrialCta />
+
+  <Footer />
+</Layout>
+
+<style>
+  .band { border-radius: 18px; overflow: hidden; background: #121013; border: 1px solid rgba(255,255,255,.09); transition: transform .25s cubic-bezier(.2,.7,.2,1), border-color .2s; }
+  .band:hover { transform: translateY(-3px); border-color: rgba(236,72,153,.5); }
+  .band-img { aspect-ratio: 16 / 10; overflow: hidden; background: #0a0a0a; }
+  .band-img img { width: 100%; height: 100%; object-fit: cover; }
+  .band-times { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+  .band-times li { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #f3eee8; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); border-radius: 999px; padding: 5px 11px; }
+  .band-times b { color: #EC4899; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: 11px; }
+  .panel { display: flex; flex-direction: column; padding: 30px; border-radius: 18px; background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)), #121013; border: 1px solid rgba(255,255,255,.09); transition: border-color .2s, transform .25s cubic-bezier(.2,.7,.2,1); }
+  .panel:hover { border-color: rgba(236,72,153,.55); transform: translateY(-3px); }
+  .panel-cta { margin-top: auto; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #EC4899; }
+  .belts { display: flex; gap: 8px; margin-bottom: 22px; }
+  .belts span { flex: 1; height: 10px; border-radius: 999px; background: var(--b); box-shadow: 0 0 14px color-mix(in srgb, var(--b) 60%, transparent); }
+  .price { padding: 22px 24px; border-radius: 16px; background: #121013; border: 1px solid rgba(255,255,255,.09); }
+  .price-featured { border-color: rgba(236,72,153,.6); box-shadow: 0 0 0 1px rgba(236,72,153,.25); }
+</style>

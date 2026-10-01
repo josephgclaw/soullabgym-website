@@ -1,0 +1,58 @@
+---
+/**
+ * <FeatureBlock /> — photo on one side, short pitch on the other, one button.
+ * Props: eyebrow, title, image, imageAlt, href, cta, flip (photo on the right), theme ('dark' | 'light'),
+ * secondaryHref/secondaryCta (optional quiet link). Body text goes in the default slot.
+ */
+interface Props {
+  eyebrow: string;
+  title: string;
+  image: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  href: string;
+  cta: string;
+  secondaryHref?: string;
+  secondaryCta?: string;
+  flip?: boolean;
+  theme?: 'dark' | 'light';
+  id?: string;
+}
+const {
+  eyebrow, title, image, imageAlt = '', imagePosition = 'center', href, cta,
+  secondaryHref, secondaryCta, flip = false, theme = 'dark', id,
+} = Astro.props;
+const dark = theme === 'dark';
+---
+
+<section id={id} class:list={['feature', dark ? 'bg-slg-dark text-white' : 'bg-slg-bone text-slg-text-dark', 'py-16 sm:py-20']}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class:list={['grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center']}>
+      <div class:list={['lg:col-span-6', flip ? 'lg:order-2' : '']} data-reveal>
+        <div class="feature-img">
+          <img src={image} alt={imageAlt} style={`object-position:${imagePosition}`} loading="lazy" />
+        </div>
+      </div>
+      <div class:list={['lg:col-span-6', flip ? 'lg:order-1' : '']} data-reveal style="transition-delay:90ms">
+        <p class="eyebrow mb-3">{eyebrow}</p>
+        <h2 class="font-display text-5xl sm:text-6xl uppercase leading-[.95] mb-5">{title}</h2>
+        <div class:list={['text-base sm:text-lg leading-relaxed space-y-4 mb-8 max-w-xl', dark ? 'text-white/75' : 'text-slg-text-dark/80']}>
+          <slot />
+        </div>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <a href={href} class="btn-pink">{cta}</a>
+          {secondaryHref && (
+            <a href={secondaryHref} class:list={['text-sm font-semibold underline underline-offset-4', dark ? 'text-white/70 hover:text-white' : 'text-slg-text-dark/70 hover:text-slg-text-dark']}>{secondaryCta}</a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-img { position: relative; aspect-ratio: 4 / 3; border-radius: 18px; overflow: hidden; background: #111; box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
+  .feature-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .feature:hover .feature-img img { transform: scale(1.03); }
+  .feature-img::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); pointer-events: none; }
+</style>

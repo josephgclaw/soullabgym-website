@@ -100,3 +100,20 @@ html[data-theme="dark"] body { color: var(--slg-text-light); }
 [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
 [data-reveal].is-in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { [data-reveal] { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- Shared buttons + labels (used on home, timetable, prices, kids) ---------- */
+.btn-pink, .btn-ghost, .btn-dark, .btn-light {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-align: center;
+  font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+  padding: 15px 30px; border-radius: 999px; white-space: nowrap;
+  transition: background .15s, color .15s, border-color .15s, transform .15s, box-shadow .15s;
+}
+.btn-pink { background: #EC4899; color: #fff; box-shadow: 0 10px 30px -10px rgba(236,72,153,.6); }
+.btn-pink:hover { background: #D4318A; transform: translateY(-1px); }
+.btn-ghost { border: 1px solid rgba(255,255,255,.28); color: #fff; }
+.btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+.btn-dark { background: #0E0E0E; color: #fff; }
+.btn-dark:hover { background: #000; transform: translateY(-1px); }
+.btn-light { border: 1px solid rgba(14,14,14,.3); color: #0E0E0E; }
+.btn-light:hover { border-color: #0E0E0E; background: rgba(14,14,14,.05); }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #EC4899; }
