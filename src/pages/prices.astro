@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+import TrialCta from '../components/TrialCta.astro';
+import { GROUPS, CASUAL, FAMILY_DISCOUNT, TERMS, PRICES_ARE_PLACEHOLDER } from '../data/pricing';
+
+const OFFER = 'https://soullabgymoffer.com/offer';
+---
+
+<Layout
+  title="Membership Prices — Soul Lab Gym"
+  description="Soul Lab Gym membership prices. Adults, kids and FIFO memberships, casual visits and class passes. Muay Thai in Townsville with no lock-in contracts."
+  theme="dark"
+>
+  <Nav />
+
+  <PageHero
+    titleLines={['Membership', 'Prices']}
+    eyebrow="No joining fee · No lock-in contracts"
+    image="/photos/kids-teens-belts-group.jpg"
+    imageAlt="Kids and teens with their grading belts at Soul Lab Gym"
+    imagePosition="center 35%"
+  />
+
+  <!-- MEMBERSHIPS -->
+  <section class="bg-stars bg-slg-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <p class="text-slg-pink text-xs font-bold uppercase tracking-[0.22em] mb-3">Simple weekly memberships</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Pick your plan</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
+          Start with a free trial, then choose how often you want to train. Cancel any time with two weeks notice.
+        </p>
+        {PRICES_ARE_PLACEHOLDER && (
+          <p class="mt-5 inline-flex items-center gap-2 border border-slg-pink/50 text-white/85 text-[11px] font-semibold uppercase tracking-widest px-4 py-2 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-slg-pink"></span> Prices being updated — confirm current rates with us
+          </p>
+        )}
+      </div>
+
+      <div class="space-y-14">
+        {GROUPS.map((g) => (
+          <div id={g.id} data-reveal>
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-6 px-1">
+              <h3 class="font-display text-3xl sm:text-4xl uppercase text-white leading-none">{g.title}</h3>
+              <p class="text-white/55 text-sm">{g.blurb}</p>
+            </div>
+            <div class:list={['grid grid-cols-1 gap-4 sm:gap-5', g.plans.length > 1 ? 'md:grid-cols-3' : '']}>
+              {g.plans.map((p) => (
+                <div class:list={['plan', { 'plan-featured': p.featured, 'plan-wide': g.plans.length === 1 }]}>
+                  {p.featured && <span class="plan-badge">Most popular</span>}
+                  <p class="plan-name">{p.name}</p>
+                  <div class="flex items-baseline gap-2 mt-3">
+                    <span class="plan-price font-display">{p.price}</span>
+                    <span class="plan-per">{p.per}</span>
+                  </div>
+                  {p.note && <p class="text-white/55 text-sm mt-2">{p.note}</p>}
+                  <a href={OFFER} class:list={['plan-btn', p.featured ? 'plan-btn-pink' : 'plan-btn-ghost']}>Start with a free trial</a>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CASUAL + FAMILY -->
+  <section class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+      <div data-reveal>
+        <p class="text-slg-pink text-xs font-bold uppercase tracking-[0.22em] mb-3">Not ready to commit?</p>
+        <h2 class="font-display text-3xl sm:text-4xl uppercase text-white leading-none mb-6">Casual &amp; class passes</h2>
+        <ul class="divide-y divide-white/10 border-y border-white/10">
+          {CASUAL.map((p) => (
+            <li class="flex items-baseline justify-between py-4">
+              <span class="text-white font-semibold">{p.name}</span>
+              <span class="text-right">
+                <span class="font-display text-3xl text-slg-pink">{p.price}</span>
+                <span class="text-white/55 text-xs uppercase tracking-wide ml-2">{p.per}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-white/55 text-sm mt-4 leading-relaxed">Drop in whenever suits, or grab a 10 class pass and use it at your own pace.</p>
+      </div>
+      <div data-reveal style="transition-delay:100ms">
+        <p class="text-slg-pink text-xs font-bold uppercase tracking-[0.22em] mb-3">Train together</p>
+        <h2 class="font-display text-3xl sm:text-4xl uppercase text-white leading-none mb-6">Family discount</h2>
+        <ul class="divide-y divide-white/10 border-y border-white/10">
+          {FAMILY_DISCOUNT.map((f) => (
+            <li class="flex items-baseline justify-between py-4">
+              <span class="text-white font-semibold">{f.who}</span>
+              <span class="font-display text-2xl text-slg-pink">{f.deal}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="text-white/55 text-sm mt-4 leading-relaxed">Parents, kids, siblings — every extra family member on a membership gets a discount.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TERMS -->
+  <section class="bg-slg-dark border-t border-white/10 py-14">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" data-reveal>
+      <h2 class="font-display text-2xl uppercase text-white mb-5">The fine print</h2>
+      <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-3 text-white/70 text-sm">
+        {TERMS.map((t) => (
+          <li class="flex gap-3"><span class="text-slg-pink font-bold">✓</span><span>{t}</span></li>
+        ))}
+      </ul>
+      <p class="text-white/50 text-sm mt-8">
+        Questions about memberships? <a href="/contact" class="text-slg-pink font-semibold underline underline-offset-2">Get in touch</a> or check the <a href="/timetable" class="text-slg-pink font-semibold underline underline-offset-2">class timetable</a>.
+      </p>
+    </div>
+  </section>
+
+  <TrialCta />
+
+  <Footer />
+</Layout>
+
+<style>
+  .plan {
+    position: relative; padding: 26px 26px 28px; border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)), #121013;
+    border: 1px solid rgba(255,255,255,.09);
+    transition: transform .2s cubic-bezier(.2,.7,.2,1), border-color .2s, box-shadow .2s;
+  }
+  .plan:hover { transform: translateY(-3px); border-color: rgba(255,255,255,.18); }
+  .plan-featured {
+    background: linear-gradient(180deg, rgba(236,72,153,.16), rgba(236,72,153,.04) 40%, rgba(255,255,255,.02)), #141016;
+    border-color: rgba(236,72,153,.6);
+    box-shadow: 0 0 0 1px rgba(236,72,153,.25), 0 30px 70px -40px rgba(236,72,153,.5);
+  }
+  .plan-featured:hover { border-color: #EC4899; }
+  .plan-badge { position: absolute; top: -12px; left: 22px; background: #EC4899; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; box-shadow: 0 6px 20px -6px rgba(236,72,153,.8); }
+  .plan-name { margin: 0; font-size: 15px; font-weight: 700; color: #fff; }
+  .plan-price { font-size: 60px; line-height: .9; color: #fff; letter-spacing: .01em; }
+  .plan-featured .plan-price { color: #EC4899; }
+  .plan-per { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.55); }
+  .plan-btn { display: block; margin-top: 22px; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 13px 16px; border-radius: 999px; transition: background .15s, color .15s, border-color .15s; }
+  .plan-btn-pink { background: #EC4899; color: #fff; }
+  .plan-btn-pink:hover { background: #D4318A; }
+  .plan-btn-ghost { border: 1px solid rgba(255,255,255,.22); color: #fff; }
+  .plan-btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+  @media (min-width: 768px) {
+    .plan-wide { display: grid; grid-template-columns: 1fr auto auto; align-items: center; column-gap: 40px; padding: 26px 30px; }
+    .plan-wide .plan-name { grid-column: 1; }
+    .plan-wide > .flex { grid-column: 2; margin-top: 0; }
+    .plan-wide .plan-btn { grid-column: 3; margin-top: 0; min-width: 240px; }
+    .plan-wide .plan-price { font-size: 52px; }
+  }
+</style>

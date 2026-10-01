@@ -3,106 +3,89 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import Schedule from '../components/Schedule.astro';
+import PageHero from '../components/PageHero.astro';
+import TrialCta from '../components/TrialCta.astro';
 ---
 
 <Layout
-  title="Timetable — Soul Lab Gym"
-  description="Soul Lab Gym class timetable. Muay Thai, Boxing, Kids classes in Townsville. Book your session today."
+  title="Class Timetable — Soul Lab Gym"
+  description="Soul Lab Gym class timetable. Muay Thai, boxing and kids classes in Townsville, six days a week. Find a class and book a free trial."
+  theme="dark"
 >
   <Nav />
 
-  <div class="pt-16">
-    <!-- PAGE HEADER -->
-    <section class="py-20 bg-slg-bone">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-5xl sm:text-6xl font-display text-slg-text-dark mb-6">
-          Class <span class="text-slg-pink">Timetable</span>
-        </h1>
-        <p class="text-slg-text-dark text-lg leading-relaxed max-w-2xl mx-auto">
-          Pick the classes that fit your goals. Whether you're building foundations, keeping the fight team sharp, or booking kids sessions, here's the full week at a glance.
+  <PageHero
+    titleLines={['Class', 'Timetable']}
+    eyebrow="Monday to Saturday · Townsville"
+    image="/photos/adult-large-class-group.jpg"
+    imageAlt="Adults Muay Thai class at Soul Lab Gym"
+    imagePosition="center 30%"
+  />
+
+  <!-- TIMETABLE -->
+  <section class="bg-stars bg-slg-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10" data-reveal>
+        <p class="text-slg-pink text-xs font-bold uppercase tracking-[0.22em] mb-3">Pick a day</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Find your class</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
+          Kids from 3:45pm, adults from 6am. Every class is coached, structured and open to beginners unless marked otherwise.
         </p>
       </div>
-    </section>
 
-    <!-- CLASS LEVELS -->
-    <section class="py-16 bg-slg-bone">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-display uppercase text-slg-text-dark mb-8 text-center">Class Levels</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          <!-- Level 1 -->
-          <div class="bg-slg-bone border-2 border-slg-pink/30 p-8 hover:shadow-lg transition-shadow">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="bg-slg-bone border border-slg-pink/30 text-slg-text-dark text-xs font-bold uppercase tracking-wider px-3 py-1">Level 1</span>
-            </div>
-            <h3 class="text-xl font-bold text-slg-text-dark mb-3">All Levels</h3>
-            <p class="text-slg-text-dark leading-relaxed">All levels are welcome here. Whether it's your first session or you've been training for years, our coaches scale every class to meet you where you're at. Just show up.</p>
-          </div>
-
-          <!-- Level 2 -->
-          <div class="bg-slg-bone border-2 border-slg-pink/30 p-8 hover:shadow-lg transition-shadow">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="bg-slg-bone border border-slg-pink text-slg-pink text-xs font-bold uppercase tracking-wider px-3 py-1">Level 2</span>
-            </div>
-            <h3 class="text-xl font-bold text-slg-text-dark mb-3">Intermediate</h3>
-            <p class="text-slg-text-dark leading-relaxed">Technique-driven sessions with pad rounds, partner drills, and conditioning. For students who know the basics and want to build ring IQ.</p>
-          </div>
-
-          <!-- Level 3 -->
-          <div class="bg-slg-bone border-2 border-slg-pink/30 p-8 hover:shadow-lg transition-shadow">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="bg-slg-bone border border-slg-pink text-slg-pink text-xs font-bold uppercase tracking-wider px-3 py-1">Level 3 — Invite Only</span>
-            </div>
-            <h3 class="text-xl font-bold text-slg-text-dark mb-3">Fighters / Advanced</h3>
-            <p class="text-slg-text-dark leading-relaxed">Invitation-only training blocks for fighters and advanced students. Expect sparring, clinch, and fight camp preparation.</p>
-          </div>
-        </div>
-
-        <!-- WEEKLY TIMETABLE -->
-        <div class="mt-4">
-          <h2 class="text-2xl font-black text-slg-text-dark mb-6 text-center">Weekly Timetable</h2>
-          <Schedule />
-        </div>
+      <div data-reveal style="transition-delay:120ms">
+        <Schedule />
       </div>
-    </section>
 
-    <!-- OFFER CTA -->
-    <section class="py-20 bg-slg-dark">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="border-2 border-slg-pink p-10 sm:p-14 text-center">
-          <div class="inline-block bg-slg-pink text-white text-xs font-bold uppercase tracking-widest px-3 py-1 mb-6">
-            New Member Offer
-          </div>
-          <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-tight mb-4">
-            2 Week Trial<br/>+ Free Gloves
-          </h2>
-          <div class="font-display text-7xl sm:text-8xl text-slg-pink leading-none mb-6">
-            $49
-          </div>
-          <p class="text-slg-text-light/70 text-lg max-w-xl mx-auto mb-10">
-            Attend unlimited classes for 2 weeks and walk away with a free pair of gloves. No lock-in contracts, no risk.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <div class="flex items-center gap-2 text-slg-text-light/70 text-sm">
-              <span class="text-slg-pink font-bold">✓</span> Unlimited classes for 2 weeks
-            </div>
-            <div class="flex items-center gap-2 text-slg-text-light/70 text-sm">
-              <span class="text-slg-pink font-bold">✓</span> Free pair of gloves included
-            </div>
-            <div class="flex items-center gap-2 text-slg-text-light/70 text-sm">
-              <span class="text-slg-pink font-bold">✓</span> All levels welcome
-            </div>
-          </div>
-          <a
-            href="https://soullabgymoffer.com/offer"
-            class="inline-block bg-slg-pink hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-10 py-5 transition-colors"
-          >
-            Claim This Offer →
-          </a>
-          <p class="text-slg-text-light/40 text-xs mt-6">Limited spots available. New members only.</p>
-        </div>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-12" data-reveal>
+        <a href="https://soullabgymoffer.com/offer" class="btn-pink">Claim Free Trial + Gear Pack</a>
+        <a href="/prices" class="btn-ghost">See Membership Prices</a>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
+
+  <!-- CLASS LEVELS -->
+  <section class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10" data-reveal>
+        <p class="text-slg-pink text-xs font-bold uppercase tracking-[0.22em] mb-3">How classes work</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none">Class levels</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {[
+          { tag: 'Level 1', title: 'All Levels', body: "Your first session or your five-hundredth. Coaches scale every drill to where you're at, so you just have to show up.", color: 'var(--lv-all, #4fd9ab)' },
+          { tag: 'Level 2', title: 'Intermediate', body: 'Technique-driven sessions with pad rounds, partner drills and conditioning. For students who know the basics and want ring IQ.', color: '#f5a94a' },
+          { tag: 'Level 3 · Invite only', title: 'Fighters / Advanced', body: 'Invitation-only blocks for fighters and advanced students. Sparring, clinch and fight-camp preparation.', color: '#f2554f' },
+        ].map((l, i) => (
+          <div class="level-card" data-reveal style={`transition-delay:${i * 90}ms; --lc:${l.color}`}>
+            <span class="level-tag">{l.tag}</span>
+            <h3 class="text-xl font-bold text-white mt-4 mb-2">{l.title}</h3>
+            <p class="text-white/65 text-sm leading-relaxed">{l.body}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-white/55 text-sm mt-8" data-reveal>
+        Kids classes: Junior Kids 4–6 yrs · Senior Kids 7–10 yrs · Teens 11–15 yrs. See <a href="/grading" class="text-slg-pink font-semibold underline underline-offset-2">kids grading</a> for the belt system.
+      </p>
+    </div>
+  </section>
+
+  <TrialCta />
 
   <Footer />
 </Layout>
+
+<style>
+  .btn-pink, .btn-ghost {
+    display: inline-block; text-align: center; font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    padding: 16px 32px; border-radius: 999px; transition: background .15s, color .15s, border-color .15s, transform .15s;
+  }
+  .btn-pink { background: #EC4899; color: #fff; box-shadow: 0 10px 30px -10px rgba(236,72,153,.6); }
+  .btn-pink:hover { background: #D4318A; transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid rgba(255,255,255,.25); color: #fff; }
+  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.06); }
+  .level-card { position: relative; padding: 28px; border-radius: 16px; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); overflow: hidden; transition: border-color .2s, transform .2s; }
+  .level-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--lc); }
+  .level-card:hover { border-color: rgba(255,255,255,.18); transform: translateY(-2px); }
+  .level-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--lc); border: 1px solid color-mix(in srgb, var(--lc) 50%, transparent); border-radius: 999px; padding: 4px 10px; }
+</style>

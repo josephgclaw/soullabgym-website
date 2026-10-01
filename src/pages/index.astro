@@ -50,16 +50,16 @@ import Footer from '../components/Footer.astro';
           Claim Free Trial + Gear Pack
         </a>
         <a
-          href="/private-training"
+          href="/timetable"
           class="inline-block border-2 border-white hover:bg-white/10 text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
         >
-          Private Training
+          Class Timetable
         </a>
         <a
-          href="/about"
+          href="/prices"
           class="inline-block border-2 border-white hover:bg-white/10 text-white font-bold text-sm uppercase tracking-wide px-8 py-4 transition-colors"
         >
-          Our Story
+          Membership Prices
         </a>
       </div>
     </div>
@@ -76,6 +76,38 @@ import Footer from '../components/Footer.astro';
         <span>Townsville's Premier Gym</span>
         <span class="text-slg-pink text-lg">—</span>
         <span>Kids · Adults · Fighters</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ACCESS: TIMETABLE + PRICES -->
+  <section class="bg-slg-bone py-14 border-b border-slg-pink/15">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="/timetable" class="group relative block bg-slg-dark text-white p-8 sm:p-10 border-2 border-slg-dark hover:border-slg-pink transition-colors overflow-hidden">
+          <div class="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-300">
+            <img src="/photos/adult-large-class-group.jpg" alt="" class="w-full h-full object-cover object-[center_30%] group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-r from-slg-dark via-slg-dark/85 to-slg-dark/20"></div>
+          <div class="relative">
+            <p class="text-slg-pink text-xs font-bold uppercase tracking-widest mb-3">Classes every day Mon–Sat</p>
+            <h2 class="font-display text-5xl sm:text-6xl uppercase leading-none mb-4">Timetable</h2>
+            <p class="text-white/80 text-base mb-6 max-w-sm">Kids from 3:45pm, adults from 6am. See the full week and find a class that fits.</p>
+            <span class="inline-block bg-slg-pink group-hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-3 transition-colors">View Timetable →</span>
+          </div>
+        </a>
+        <a href="/prices" class="group relative block bg-slg-dark text-white p-8 sm:p-10 border-2 border-slg-dark hover:border-slg-pink transition-colors overflow-hidden">
+          <div class="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-300">
+            <img src="/photos/kids-teens-belts-group.jpg" alt="" class="w-full h-full object-cover object-[center_35%] group-hover:scale-[1.03] transition-transform duration-500" loading="lazy" />
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-r from-slg-dark via-slg-dark/85 to-slg-dark/20"></div>
+          <div class="relative">
+            <p class="text-slg-pink text-xs font-bold uppercase tracking-widest mb-3">No lock-in contracts</p>
+            <h2 class="font-display text-5xl sm:text-6xl uppercase leading-none mb-4">Prices</h2>
+            <p class="text-white/80 text-base mb-6 max-w-sm">Simple weekly memberships for adults, kids and FIFO, plus casual visits and family discounts.</p>
+            <span class="inline-block bg-slg-pink group-hover:bg-slg-pink-hover text-white font-bold text-sm uppercase tracking-wide px-6 py-3 transition-colors">See Prices →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
