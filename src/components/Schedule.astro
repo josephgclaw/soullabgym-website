@@ -52,10 +52,11 @@ const OPEN_DAYS = DAYS.slice(0, 6);
                   <div class="sl-pills">
                     {g.items.map((s) => (
                       <span class={`sl-pill ${LEVELS[s.level].cls}`}>
-                        {s.name}{s.note && <i> · {s.note}</i>}
+                        {s.name}{s.note && <i>{s.note}</i>}
                       </span>
                     ))}
                   </div>
+                  <a class="sl-book" href="/book-trial" aria-label={`Book a trial class at ${f.time}${f.period} on ${d}`}>Book a trial<span aria-hidden="true"> →</span></a>
                 </li>
               );
             })}
@@ -172,7 +173,7 @@ const OPEN_DAYS = DAYS.slice(0, 6);
   /* ----- Day card ----- */
   .sl-stage { position: relative; }
   .sl-card {
-    position: relative; border-radius: 18px; padding: 18px 18px 22px; min-height: 380px; touch-action: pan-y;
+    position: relative; border-radius: 18px; padding: 18px 18px 22px; min-height: 260px; touch-action: pan-y;
     background: linear-gradient(180deg, rgba(236, 72, 153, 0.11) 0%, rgba(236, 72, 153, 0.03) 22%, rgba(255, 255, 255, 0.015) 100%), #121013;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 30px 80px -40px rgba(236, 72, 153, 0.25), 0 20px 50px -30px rgba(0, 0, 0, 0.8);
@@ -199,6 +200,8 @@ const OPEN_DAYS = DAYS.slice(0, 6);
     color: #f3eee8; font-size: 12px; font-weight: 600; line-height: 1.2; white-space: nowrap;
   }
   .sl-pill i { font-style: normal; font-weight: 500; color: var(--c); }
+  .sl-pill i::before { content: "·"; margin: 0 6px; color: rgba(255,255,255,.35); }
+  .sl-book { display: none; }
   .lv-kids { --c: var(--lv-kids); --cs: var(--lv-kids-soft); }
   .lv-all  { --c: var(--lv-all);  --cs: var(--lv-all-soft); }
   .lv-int  { --c: var(--lv-int);  --cs: var(--lv-int-soft); }
@@ -233,8 +236,10 @@ const OPEN_DAYS = DAYS.slice(0, 6);
 
   @media (min-width: 720px) {
     .sl-card { padding: 22px 24px 26px; }
-    .sl-row { grid-template-columns: 90px 1fr; padding: 11px 16px; }
+    .sl-row { grid-template-columns: 90px 1fr auto; padding: 11px 16px; }
     .sl-tabs { justify-content: center; }
+    .sl-book { display: inline-block; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.38); white-space: nowrap; padding: 4px 2px; transition: color .15s; }
+    .sl-row:hover .sl-book, .sl-book:focus-visible { color: var(--sl-accent); }
   }
 
   @keyframes sl-in-r { from { opacity: 0; transform: translateX(18px); } to { opacity: 1; transform: none; } }
