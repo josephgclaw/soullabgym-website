@@ -65,9 +65,9 @@ const JUNIOR_RULES = [
   <PageHero
     titleLines={['Battle at', 'the Lab 5']}
     eyebrow={`${EVENT.dateLong} · All gyms welcome`}
-    image="/photos/fight-high-kick-under-lights.jpg"
-    imageAlt="Muay Thai fighter throwing a high kick under the lights at Battle at the Lab"
-    imagePosition="center 35%"
+    image="/photos/batl-kick-crowd.jpg"
+    imageAlt="Fighter landing a kick in front of a packed crowd at Battle at the Lab 4"
+    imagePosition="center 40%"
   >
     <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
       {REGISTRATIONS_OPEN && <a href="#register" class="btn-dark">Register to Fight</a>}
@@ -107,7 +107,9 @@ const JUNIOR_RULES = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-        <div class="border border-white/15 bg-white/[0.03] p-8 sm:p-10" data-reveal>
+        <div class="border border-white/15 bg-white/[0.03]" data-reveal>
+          <img src="/photos/batl-respect-hug.jpg" alt="Two fighters embracing after their bout at Battle at the Lab" class="w-full aspect-[16/10] object-cover object-[center_30%]" loading="lazy" />
+          <div class="p-8 sm:p-10">
           <div class="flex items-baseline gap-4 mb-4">
             <span class="font-display text-7xl text-slg-pink leading-none">D</span>
             <div>
@@ -123,9 +125,12 @@ const JUNIOR_RULES = [
             <li class="flex gap-3"><span class="text-slg-pink">→</span>No winner, no loss: it's about the experience</li>
             <li class="flex gap-3"><span class="text-slg-pink">→</span>Matched by weight and experience</li>
           </ul>
+          </div>
         </div>
 
-        <div class="border-2 border-slg-pink bg-slg-pink/[0.07] p-8 sm:p-10" data-reveal style="transition-delay:90ms">
+        <div class="border-2 border-slg-pink bg-slg-pink/[0.07]" data-reveal style="transition-delay:90ms">
+          <img src="/photos/batl-winner-hand-raised.jpg" alt="Referee raising the winner's hand at Battle at the Lab" class="w-full aspect-[16/10] object-cover object-[center_25%]" loading="lazy" />
+          <div class="p-8 sm:p-10">
           <div class="flex items-baseline gap-4 mb-4">
             <span class="font-display text-7xl text-slg-pink leading-none">C</span>
             <div>
@@ -141,6 +146,7 @@ const JUNIOR_RULES = [
             <li class="flex gap-3"><span class="text-slg-pink">→</span>For fighters ready to compete</li>
             <li class="flex gap-3"><span class="text-slg-pink">→</span>Matched by weight and experience</li>
           </ul>
+          </div>
         </div>
       </div>
 
@@ -205,21 +211,41 @@ const JUNIOR_RULES = [
         </div>
 
         <div class="space-y-6" data-reveal style="transition-delay:90ms">
-          <video
-            src="/photos/kids-sparring-2.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            class="w-full h-[300px] object-cover"
-          ></video>
           <img
-            src="/photos/kids-junior-fighters.jpg"
-            alt="Junior fighters ready to compete at Soul Lab Gym"
-            class="w-full h-[300px] object-cover object-top"
+            src="/photos/batl-kids-hands-raised.jpg"
+            alt="Two young fighters in chest guards with both hands raised after their junior bout"
+            class="w-full aspect-[4/3] object-cover"
             loading="lazy"
           />
+          <img
+            src="/photos/batl-juniors-hands-raised.jpg"
+            alt="Junior fighters with hands raised by the referee at Battle at the Lab"
+            class="w-full aspect-[16/9] object-cover object-[center_30%]"
+            loading="lazy"
+          />
+          <p class="text-white/50 text-sm">Junior bouts at Battle at the Lab 4.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAST EVENT PHOTO STRIP -->
+  <section class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10" data-reveal>
+        <p class="eyebrow mb-3">Last time at the Lab</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none">Battle at the Lab 4</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {[
+          { src: '/photos/batl-teep-headgear.jpg', alt: 'Fighter throwing a teep in headgear at Battle at the Lab 4', pos: 'center 40%' },
+          { src: '/photos/batl-fighter-focus.jpg', alt: 'Soul Lab fighter focused in headgear before his bout', pos: 'center 30%' },
+          { src: '/photos/batl-teens-high-kick.jpg', alt: 'Teen fighters exchanging kicks in headgear', pos: 'center 35%' },
+        ].map((ph, i) => (
+          <div class="overflow-hidden" data-reveal style={`transition-delay:${i * 70}ms`}>
+            <img src={ph.src} alt={ph.alt} class="w-full aspect-[4/5] object-cover hover:scale-[1.03] transition-transform duration-500" style={`object-position:${ph.pos}`} loading="lazy" />
+          </div>
+        ))}
       </div>
     </div>
   </section>
