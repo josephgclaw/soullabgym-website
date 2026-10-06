@@ -1,0 +1,443 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+
+// ── Battle at the Lab 5 — event details. Edit here when anything changes. ──
+const EVENT = {
+  name: 'Battle at the Lab 5',
+  dateLong: 'Saturday 7 November 2026',
+  dateShort: 'Sat 7 Nov',
+  doors: '2:00 PM',
+  weighIn: '2:30 PM',
+  firstFight: '3:00 PM',
+  venue: 'Soul Lab Gym, Townsville',
+};
+
+// Registration form on/off switch. Set to false to close sign-ups (page stays up, form is replaced by a notice).
+const REGISTRATIONS_OPEN = true;
+
+const TICKETS = [
+  { label: 'Kids', price: '$5' },
+  { label: 'Adults', price: '$10', featured: true },
+  { label: 'Family (4+)', price: '$20' },
+];
+
+const JUNIOR_RULES = [
+  { age: '6–8 yrs', rules: 'Strikes above the waist and below the shoulders only. No elbows. No head contact.', rounds: '3 × 1 min' },
+  { age: '8–10 yrs', rules: 'Strikes below the shoulders only. No elbows. No head contact.', rounds: '3 × 1 min' },
+  { age: '10–12 yrs', rules: 'Strikes below the shoulders. Elbows allowed. No head contact.', rounds: '3 × 90 sec' },
+];
+---
+
+<Layout
+  title="Battle at the Lab 5 — Sat 7 November | Soul Lab Gym Townsville"
+  description="Battle at the Lab 5 — Muay Thai fight night open to all gyms. D-class exhibition and C-class amateur bouts plus junior bouts. Saturday 7 November, first fight 3pm at Soul Lab Gym, Townsville. Register now."
+  theme="dark"
+>
+  <!-- Meta Pixel: fight.soullabgym.com -->
+  <script is:inline>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2559980727754440');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2559980727754440&ev=PageView&noscript=1"
+  /></noscript>
+
+  <Nav />
+
+  <PageHero
+    titleLines={['Battle at', 'the Lab 5']}
+    eyebrow={`${EVENT.dateLong} · All gyms welcome`}
+    image="/photos/fight-high-kick-under-lights.jpg"
+    imageAlt="Muay Thai fighter throwing a high kick under the lights at Battle at the Lab"
+    imagePosition="center 35%"
+  >
+    <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+      {REGISTRATIONS_OPEN && <a href="#register" class="btn-dark">Register to Fight</a>}
+      <a href="#tickets" class="btn-light">Spectator Tickets</a>
+    </div>
+  </PageHero>
+
+  <!-- RUN SHEET STRIP -->
+  <section class="bg-slg-dark border-b border-white/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
+      {[
+        { k: 'Date', v: EVENT.dateShort },
+        { k: 'Doors open', v: EVENT.doors },
+        { k: 'Weigh-ins', v: EVENT.weighIn },
+        { k: 'First fight', v: EVENT.firstFight, hi: true },
+      ].map((i) => (
+        <div class="bg-slg-dark p-5 text-center">
+          <div class="text-white/50 text-[11px] uppercase tracking-[0.2em]">{i.k}</div>
+          <div class={`font-display text-2xl sm:text-3xl uppercase mt-1 ${i.hi ? 'text-slg-pink' : 'text-white'}`}>{i.v}</div>
+        </div>
+      ))}
+    </div>
+    </div>
+    <p class="text-center text-white/60 text-sm pb-8 px-4">{EVENT.venue} · Muay Thai only · Open to every club</p>
+  </section>
+
+  <!-- ADULT DIVISIONS -->
+  <section class="bg-stars bg-slg-dark py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <p class="eyebrow mb-3">Adult competition</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Two divisions</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
+          Real ring, real crowd, coached corners. Pick the division that fits where you're at. We match every bout by weight and experience.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div class="border border-white/15 bg-white/[0.03] p-8 sm:p-10" data-reveal>
+          <div class="flex items-baseline gap-4 mb-4">
+            <span class="font-display text-7xl text-slg-pink leading-none">D</span>
+            <div>
+              <div class="text-white/50 text-[11px] uppercase tracking-[0.2em]">D Class</div>
+              <h3 class="font-display text-3xl uppercase text-white leading-none">Exhibition</h3>
+            </div>
+          </div>
+          <p class="text-white/70 leading-relaxed mb-6">
+            Your first time under the lights, or a chance to get rounds in without the pressure of a result. Controlled, technical, refereed bouts with <span class="text-white font-semibold">no winner declared</span>.
+          </p>
+          <ul class="space-y-3 text-white/70 text-sm">
+            <li class="flex gap-3"><span class="text-slg-pink">→</span>Built for first-timers and developing fighters</li>
+            <li class="flex gap-3"><span class="text-slg-pink">→</span>No winner, no loss: it's about the experience</li>
+            <li class="flex gap-3"><span class="text-slg-pink">→</span>Matched by weight and experience</li>
+          </ul>
+        </div>
+
+        <div class="border-2 border-slg-pink bg-slg-pink/[0.07] p-8 sm:p-10" data-reveal style="transition-delay:90ms">
+          <div class="flex items-baseline gap-4 mb-4">
+            <span class="font-display text-7xl text-slg-pink leading-none">C</span>
+            <div>
+              <div class="text-white/50 text-[11px] uppercase tracking-[0.2em]">C Class</div>
+              <h3 class="font-display text-3xl uppercase text-white leading-none">Amateur Fight</h3>
+            </div>
+          </div>
+          <p class="text-white/70 leading-relaxed mb-6">
+            A proper amateur Muay Thai bout with a <span class="text-white font-semibold">winner declared</span>. For fighters with some ring time who want a real test of their skills.
+          </p>
+          <ul class="space-y-3 text-white/70 text-sm">
+            <li class="flex gap-3"><span class="text-slg-pink">→</span>Judged bout with a result</li>
+            <li class="flex gap-3"><span class="text-slg-pink">→</span>For fighters ready to compete</li>
+            <li class="flex gap-3"><span class="text-slg-pink">→</span>Matched by weight and experience</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-center text-white/50 text-sm mt-8 max-w-xl mx-auto">
+        Not sure which division you're ready for? Register anyway and tell us your experience. We'll help you pick.
+      </p>
+    </div>
+  </section>
+
+  <!-- JUNIORS -->
+  <section id="junior" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
+        <p class="eyebrow mb-3">Juniors</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Junior bouts</h2>
+        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
+          Kids from any gym are welcome. Points-sparring medal matches under age-appropriate rules, in full protective gear. <span class="text-white font-semibold">Kids under 13: no head contact.</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div data-reveal>
+          <div class="bg-slg-pink/10 border border-slg-pink/30 p-6 sm:p-8 mb-8 space-y-5">
+            <div>
+              <h3 class="text-white font-display text-xl uppercase">No head contact for under-13s</h3>
+              <p class="text-white/60 mt-1 text-sm">Every age group under 13 strikes the body only. Safe, controlled and refereed.</p>
+            </div>
+            <div>
+              <h3 class="text-white font-display text-xl uppercase">Full protective gear</h3>
+              <p class="text-white/60 mt-1 text-sm">Padding requirements apply by age group.</p>
+            </div>
+            <div>
+              <h3 class="text-white font-display text-xl uppercase">No combat sports registration needed</h3>
+              <p class="text-white/60 mt-1 text-sm">It's a supported development experience, not a sanctioned fight.</p>
+            </div>
+          </div>
+
+          <h3 class="text-slg-pink font-display text-xl uppercase mb-4">Rules by age group</h3>
+          <div class="overflow-x-auto mb-8">
+            <table class="w-full text-sm border-collapse">
+              <thead>
+                <tr class="border-b border-slg-pink/30">
+                  <th class="text-left text-white/50 text-xs uppercase tracking-widest font-semibold py-3 pr-4">Age</th>
+                  <th class="text-left text-white/50 text-xs uppercase tracking-widest font-semibold py-3 pr-4">Rules</th>
+                  <th class="text-left text-white/50 text-xs uppercase tracking-widest font-semibold py-3">Rounds</th>
+                </tr>
+              </thead>
+              <tbody>
+                {JUNIOR_RULES.map((row) => (
+                  <tr class="border-b border-white/5">
+                    <td class="text-slg-pink font-semibold py-4 pr-4 whitespace-nowrap align-top">{row.age}</td>
+                    <td class="text-white/70 py-4 pr-4 leading-relaxed">{row.rules}</td>
+                    <td class="text-white/60 py-4 whitespace-nowrap align-top">{row.rounds}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          {REGISTRATIONS_OPEN && <a href="#register" class="btn-pink">Sign My Kid Up →</a>}
+          <p class="text-white/40 text-sm mt-4">Questions? Speak to your coach.</p>
+        </div>
+
+        <div class="space-y-6" data-reveal style="transition-delay:90ms">
+          <video
+            src="/photos/kids-sparring-2.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="w-full h-[300px] object-cover"
+          ></video>
+          <img
+            src="/photos/kids-junior-fighters.jpg"
+            alt="Junior fighters ready to compete at Soul Lab Gym"
+            class="w-full h-[300px] object-cover object-top"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKETS -->
+  <section id="tickets" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-reveal>
+      <p class="eyebrow mb-3">Spectators welcome</p>
+      <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Entry &amp; tickets</h2>
+      <p class="text-white/60 text-lg mb-10">Pay on the door. No booking required.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto mb-10">
+        {TICKETS.map((t) => (
+          <div class={`p-8 text-center ${t.featured ? 'border-2 border-slg-pink' : 'border-2 border-slg-pink/40'}`}>
+            <div class="text-white/50 text-xs uppercase tracking-widest mb-3">{t.label}</div>
+            <div class="text-slg-pink font-display text-6xl leading-none">{t.price}</div>
+          </div>
+        ))}
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-8 justify-center text-white/70 text-sm">
+        <span>Doors open {EVENT.doors} · First fight {EVENT.firstFight}</span>
+        <span>Cash or card accepted</span>
+        <span>Food &amp; soft drinks on the night</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION -->
+  <section id="register" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="eyebrow mb-3">Fighters &amp; juniors</p>
+        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-3">Register to fight</h2>
+        <p class="text-white/60 text-base">
+          Adults and juniors from any gym. Parents, fill it in with your child's details.
+        </p>
+      </div>
+
+      {REGISTRATIONS_OPEN ? (
+        <>
+          <div id="success-msg" class="hidden bg-slg-pink/20 border border-slg-pink text-white p-6 mb-8 text-center">
+            <div class="text-3xl font-display uppercase mb-2">You're on the list!</div>
+            <p class="text-white/70">We'll be in touch with your matchup and fight night details. Get training.</p>
+          </div>
+
+          <div id="error-msg" class="hidden bg-red-900/30 border border-red-500 text-white p-6 mb-8 text-center">
+            <p class="font-bold mb-1">Something went wrong.</p>
+            <p class="text-white/70 text-sm">Please try again or contact us at <a href="mailto:soullabgym@gmail.com" class="text-slg-pink underline">soullabgym@gmail.com</a></p>
+          </div>
+
+          <form id="fight-form" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="f-name" class="fld-label">Full name *</label>
+                <input id="f-name" type="text" name="name" required placeholder="Fighter's full name" class="fld" />
+              </div>
+              <div>
+                <label for="f-email" class="fld-label">Email *</label>
+                <input id="f-email" type="email" name="email" required placeholder="your@email.com" class="fld" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="f-phone" class="fld-label">Phone number *</label>
+                <input id="f-phone" type="tel" name="phone" required placeholder="04xx xxx xxx" class="fld" />
+              </div>
+              <div>
+                <label for="f-age" class="fld-label">Age *</label>
+                <input id="f-age" type="number" name="age" required min="6" max="99" placeholder="e.g. 24" class="fld" />
+              </div>
+            </div>
+
+            <div>
+              <label for="f-weight" class="fld-label">Weight (kg) *</label>
+              <input id="f-weight" type="number" name="weight" required min="15" max="200" step="0.5" placeholder="e.g. 28 for kids, 75 for adults" class="fld" />
+            </div>
+
+            <div>
+              <label for="f-gym" class="fld-label">Current gym / club</label>
+              <input id="f-gym" type="text" name="gym" placeholder="e.g. Soul Lab Gym, Townsville" class="fld" />
+            </div>
+
+            <div>
+              <label for="f-exp" class="fld-label">Training experience *</label>
+              <select id="f-exp" name="trainingExperience" required class="fld appearance-none">
+                <option value="" disabled selected>How long have you been training?</option>
+                <option value="Under 6 months">Under 6 months</option>
+                <option value="6–12 months">6–12 months</option>
+                <option value="1–2 years">1–2 years</option>
+                <option value="2–4 years">2–4 years</option>
+                <option value="4+ years">4+ years</option>
+              </select>
+            </div>
+
+            <fieldset>
+              <legend class="fld-label mb-3">Fight experience *</legend>
+              <p class="text-white/40 text-sm mb-4">Select all that apply. First-timer? Tick "No fight experience yet".</p>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {['Muay Thai', 'Other', 'No fight experience yet'].map((d) => (
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="disciplines" value={d} class="w-4 h-4 accent-slg-pink" />
+                    <span class="text-white/70 text-sm">{d}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <div>
+              <label for="f-fights" class="fld-label">Approximate number of fights</label>
+              <select id="f-fights" name="numFights" class="fld appearance-none">
+                <option value="" selected>Select an option</option>
+                <option value="0 — First fight">0 — First fight</option>
+                <option value="1–5 fights">1–5 fights</option>
+                <option value="6–15 fights">6–15 fights</option>
+                <option value="16–30 fights">16–30 fights</option>
+                <option value="30+ fights">30+ fights</option>
+              </select>
+            </div>
+
+            <div class="pt-2">
+              <button type="submit" id="submit-btn" class="btn-pink w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+                Register My Interest
+              </button>
+            </div>
+
+            <p class="text-white/40 text-xs text-center">
+              No commitment yet. We'll reach out with your matchup and how to confirm your spot.
+            </p>
+          </form>
+        </>
+      ) : (
+        <div class="border border-white/15 p-8 text-center text-white/70">
+          Fighter registrations are closed. Spectators are still welcome. See you on the night.
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <section class="bg-slg-bone py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-display text-4xl sm:text-5xl uppercase text-slg-text-dark text-center leading-none mb-12">What happens next</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        {[
+          { step: '01', title: 'We review', desc: 'We look at your experience and weight and find you the right division and matchup.' },
+          { step: '02', title: 'We contact you', desc: "We'll reach out with your potential matchup, rules and what to bring." },
+          { step: '03', title: 'You prepare', desc: 'Train hard. Fight camp support is available at Soul Lab if you need it.' },
+          { step: '04', title: 'Fight night', desc: `Weigh in at ${EVENT.weighIn}, first fight at ${EVENT.firstFight}. Coached corners, refereed bouts.` },
+        ].map((item) => (
+          <div class="text-center" data-reveal>
+            <div class="font-display text-7xl text-slg-pink leading-none mb-4">{item.step}</div>
+            <h3 class="font-display text-xl uppercase text-slg-text-dark mb-3">{item.title}</h3>
+            <p class="text-slg-text-dark/70 leading-relaxed text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="relative bg-slg-pink overflow-hidden py-16 sm:py-20 text-center">
+    <div class="relative max-w-2xl mx-auto px-4" data-reveal>
+      <p class="text-white/85 text-xs font-bold uppercase tracking-[0.22em] mb-4">{EVENT.dateLong}</p>
+      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-[.92] mb-6">Ready to step up?</h2>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        {REGISTRATIONS_OPEN && <a href="#register" class="btn-dark">Register to Fight</a>}
+        <a href="/contact" class="btn-light">Ask a question</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .fld-label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.6); margin-bottom: 8px; }
+  .fld { width: 100%; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.2); color: #fff; padding: 12px 16px; transition: border-color .15s; }
+  .fld::placeholder { color: rgba(255,255,255,.3); }
+  .fld:focus { outline: none; border-color: #EC4899; }
+  select.fld { background-color: #0E0E0E; }
+</style>
+
+<script>
+  // Same Apps Script web app as the grading form; formType 'adult' routes to the Fight Night Registrations sheet.
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyzKHm1F7cR3KRADN38l9Aas3wAoe32suKGvAy_-H68bABCuxkyQ-pXMhDUoYbs_4EQ/exec';
+
+  const form = document.getElementById('fight-form') as HTMLFormElement | null;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+  const successMsg = document.getElementById('success-msg');
+  const errorMsg = document.getElementById('error-msg');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!submitBtn || !successMsg || !errorMsg) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+    errorMsg.classList.add('hidden');
+
+    const formData = new FormData(form);
+    const payload = {
+      formType: 'adult',
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      age: formData.get('age'),
+      weight: formData.get('weight'),
+      gym: formData.get('gym'),
+      trainingExperience: formData.get('trainingExperience'),
+      disciplines: formData.getAll('disciplines').join(', '),
+      numFights: formData.get('numFights'),
+      submittedAt: new Date().toLocaleString('en-AU', { timeZone: 'Australia/Brisbane' }),
+    };
+
+    try {
+      const res = await fetch(SCRIPT_URL, { method: 'POST', body: JSON.stringify(payload) });
+      if (!res.ok) throw new Error('Server error');
+      form.classList.add('hidden');
+      successMsg.classList.remove('hidden');
+      document.getElementById('register')?.scrollIntoView({ behavior: 'smooth' });
+      (window as any).fbq?.('track', 'Lead', { content_name: 'Fight Registration — BATL 5' });
+    } catch {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Register My Interest';
+      errorMsg.classList.remove('hidden');
+    }
+  });
+</script>

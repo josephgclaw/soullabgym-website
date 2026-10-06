@@ -16,9 +16,9 @@ export const WHATS_ON: WhatsOn[] = [
     label: 'Fight night',
     title: 'Battle at the Lab 5',
     when: 'Saturday 7 November',
-    blurb: 'Our in-house fight night. Kids, teens and adults from Soul Lab in the ring under lights.',
-    href: '/contact',
-    cta: 'Ask about tickets',
+    blurb: 'Muay Thai fight night, open to all gyms. D-class exhibition, C-class amateur bouts and junior bouts. First fight 3pm.',
+    href: '/fight',
+    cta: 'Register or get tickets',
     until: '2026-11-07',
   },
   {
