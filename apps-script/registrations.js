@@ -3,6 +3,11 @@
  * Google Apps Script Web App
  *
  * v4: fight night registrations record the division (D class / C class / Junior).
+ *
+ * DEPLOYED STATE (checked 6 Oct 2026): the live "Fight Night Form" project (deployment Version 4)
+ * is the older v2 code PLUS the v4 Division changes. The v3 features below (duplicate protection,
+ * doGet read endpoint with READ_KEY) were never deployed. Don't paste this whole file over the
+ * live project without deciding whether you want those v3 features live.
  * v3: adds duplicate protection (same name within 10 min ignored)
  *     and a read endpoint for automated paid/unpaid checks.
  *

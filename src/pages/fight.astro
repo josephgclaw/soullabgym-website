@@ -479,9 +479,7 @@ const JUNIOR_RULES = [
       weight: formData.get('weight'),
       gym: formData.get('gym'),
       trainingExperience: formData.get('trainingExperience'),
-      // TEMP: division is also prefixed here so it lands in the existing "Fight Disciplines" column
-      // until the Apps Script v4 (Division column) is deployed. Remove the prefix after that.
-      disciplines: `[${division}] ${disciplines}`,
+      disciplines,
       numFights: formData.get('numFights'),
       submittedAt: new Date().toLocaleString('en-AU', { timeZone: 'Australia/Brisbane' }),
     };
