@@ -2,17 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import PageHero from '../components/PageHero.astro';
 
 // ── Battle at the Lab 5 — event details. Edit here when anything changes. ──
 const EVENT = {
   name: 'Battle at the Lab 5',
+  day: 'Saturday',
+  dateNum: '7',
+  month: 'November',
   dateLong: 'Saturday 7 November 2026',
-  dateShort: 'Sat 7 Nov',
-  doors: '2:00 PM',
-  weighIn: '2:30 PM',
-  firstFight: '3:00 PM',
-  venue: 'Soul Lab Gym, Townsville',
+  doors: '2PM',
+  weighIn: '2:30PM',
+  firstFight: '3PM',
+  address: 'Soul Lab Gym · 2/70 Ingham Rd, West End',
 };
 
 // Registration form on/off switch. Set to false to close sign-ups (page stays up, form is replaced by a notice).
@@ -36,13 +37,24 @@ const JUNIOR_RULES = [
   { age: '8–10 yrs', rules: 'Strikes below the shoulders only. No elbows. No head contact.', rounds: '3 × 1 min' },
   { age: '10–12 yrs', rules: 'Strikes below the shoulders. Elbows allowed. No head contact.', rounds: '3 × 90 sec' },
 ];
+
+const STRIP = [
+  { src: '/photos/batl-teep-headgear.jpg', alt: 'Fighter throwing a teep in headgear at Battle at the Lab 4', pos: 'center 40%' },
+  { src: '/photos/batl-fighter-focus.jpg', alt: 'Soul Lab fighter focused in headgear before his bout', pos: 'center 30%' },
+  { src: '/photos/batl-teens-high-kick.jpg', alt: 'Teen fighters exchanging kicks in headgear', pos: 'center 35%' },
+];
 ---
 
 <Layout
-  title="Battle at the Lab 5 — Sat 7 November | Soul Lab Gym Townsville"
-  description="Battle at the Lab 5 — Muay Thai fight night open to all gyms. D-class exhibition and C-class amateur bouts plus junior bouts. Saturday 7 November, first fight 3pm at Soul Lab Gym, Townsville. Register now."
+  title="BATL 5 — Battle at the Lab · Sat 7 November | Soul Lab Gym Townsville"
+  description="BATL — Soul Lab Gym's Muay Thai fight series. Battle at the Lab 5: Saturday 7 November, doors 2pm, first fight 3pm. Open to all gyms. D-class exhibition, C-class amateur and junior bouts. Register to fight or grab tickets at the door."
+  ogImage="/photos/batl-5-poster.jpg"
   theme="dark"
 >
+  <Fragment slot="head">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,800;1,900&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  </Fragment>
+
   <!-- Meta Pixel: fight.soullabgym.com -->
   <script is:inline>
     !function(f,b,e,v,n,t,s)
@@ -62,237 +74,236 @@ const JUNIOR_RULES = [
 
   <Nav />
 
-  <PageHero
-    titleLines={['Battle at', 'the Lab 5']}
-    eyebrow={`${EVENT.dateLong} · All gyms welcome`}
-    image="/photos/batl-kick-crowd.jpg"
-    imageAlt="Fighter landing a kick in front of a packed crowd at Battle at the Lab 4"
-    imagePosition="center 40%"
-  >
-    <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
-      {REGISTRATIONS_OPEN && <a href="#register" class="btn-dark">Register to Fight</a>}
-      <a href="#tickets" class="btn-light">Spectator Tickets</a>
-    </div>
-  </PageHero>
+  <div class="batl">
 
-  <!-- RUN SHEET STRIP -->
-  <section class="bg-slg-dark border-b border-white/10">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10">
-      {[
-        { k: 'Date', v: EVENT.dateShort },
-        { k: 'Doors open', v: EVENT.doors },
-        { k: 'Weigh-ins', v: EVENT.weighIn },
-        { k: 'First fight', v: EVENT.firstFight, hi: true },
-      ].map((i) => (
-        <div class="bg-slg-dark p-5 text-center">
-          <div class="text-white/50 text-[11px] uppercase tracking-[0.2em]">{i.k}</div>
-          <div class={`font-display text-2xl sm:text-3xl uppercase mt-1 ${i.hi ? 'text-slg-pink' : 'text-white'}`}>{i.v}</div>
-        </div>
-      ))}
+  <!-- ═════════ HERO (poster) ═════════ -->
+  <section class="hero">
+    <div class="hero-photo duo" aria-hidden="true">
+      <img src="/photos/batl-kick-crowd.jpg" alt="" fetchpriority="high" />
     </div>
+    <div class="hero-fade" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <p class="track text-[11px] sm:text-sm text-batl-bone">Soul Lab Gym presents</p>
+
+      <h1 class="wordmark mt-3 sm:mt-5">
+        BATL<span class="sr-only"> — Battle at the Lab 5</span>
+      </h1>
+      <div class="rule mx-auto"></div>
+      <p class="track-wide cond text-lg sm:text-2xl lg:text-3xl text-batl-bone mt-3">Muay Thai Fight Series</p>
+
+      <div class="hero-date">
+        <p class="track cond text-2xl sm:text-4xl text-batl-bone">{EVENT.day}</p>
+        <p class="date-big cond"><span class="text-batl-blue">{EVENT.dateNum}</span> {EVENT.month}</p>
+        <p class="cond times">
+          <span>First fight {EVENT.firstFight}</span>
+          <span class="bar" aria-hidden="true"></span>
+          <span class="text-batl-blue">Doors {EVENT.doors}</span>
+        </p>
+        <p class="track text-[11px] sm:text-sm text-batl-bone/85 mt-5">Weigh-ins {EVENT.weighIn} · Tickets at the door</p>
+        <p class="track text-[11px] sm:text-sm text-batl-bone/85 mt-2">{EVENT.address}</p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-9">
+        {REGISTRATIONS_OPEN && <a href="#register" class="bbtn">Register to fight</a>}
+        <a href="#tickets" class="bbtn-ghost">Tickets &amp; info</a>
+      </div>
+      <p class="track text-[10px] sm:text-xs text-batl-blue mt-6">Open to all gyms · Muay Thai only</p>
     </div>
-    <p class="text-center text-white/60 text-sm pb-8 px-4">{EVENT.venue} · Muay Thai only · Open to every club</p>
   </section>
 
-  <!-- ADULT DIVISIONS -->
-  <section class="bg-stars bg-slg-dark py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
-        <p class="eyebrow mb-3">Adult competition</p>
-        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Two divisions</h2>
-        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
-          Real ring, real crowd, coached corners. Pick the division that fits where you're at. We match every bout by weight and experience.
-        </p>
-      </div>
+  <!-- ═════════ DIVISIONS ═════════ -->
+  <section class="sec">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="kicker">Adult competition</p>
+        <h2 class="h2">Two divisions</h2>
+        <div class="rule-sm"></div>
+        <p class="lede">Real ring, real crowd, coached corners. Pick the division that fits where you're at. We match every bout by weight and experience.</p>
+      </header>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-        <div class="border border-white/15 bg-white/[0.03]" data-reveal>
-          <img src="/photos/batl-respect-hug.jpg" alt="Two fighters embracing after their bout at Battle at the Lab" class="w-full aspect-[16/10] object-cover object-[center_30%]" loading="lazy" />
-          <div class="p-8 sm:p-10">
-          <div class="flex items-baseline gap-4 mb-4">
-            <span class="font-display text-7xl text-slg-pink leading-none">D</span>
-            <div>
-              <div class="text-white/50 text-[11px] uppercase tracking-[0.2em]">D Class</div>
-              <h3 class="font-display text-3xl uppercase text-white leading-none">Exhibition</h3>
+        <article class="card" data-reveal>
+          <div class="duo aspect-[16/10]">
+            <img src="/photos/batl-respect-hug.jpg" alt="Two fighters embracing after their bout at Battle at the Lab" style="object-position:center 30%" loading="lazy" />
+          </div>
+          <div class="p-7 sm:p-9">
+            <div class="flex items-end gap-4 mb-5">
+              <span class="letter">D</span>
+              <div class="pb-2">
+                <div class="track text-[10px] text-batl-blue">D Class</div>
+                <h3 class="cond text-4xl uppercase text-batl-bone leading-none">Exhibition</h3>
+              </div>
             </div>
+            <p class="body mb-6">Your first time under the lights, or a chance to get rounds in without the pressure of a result. Controlled, technical, refereed bouts with <strong>no winner declared</strong>.</p>
+            <ul class="ticks">
+              <li>Built for first-timers and developing fighters</li>
+              <li>No winner, no loss: it's about the experience</li>
+              <li>Matched by weight and experience</li>
+            </ul>
           </div>
-          <p class="text-white/70 leading-relaxed mb-6">
-            Your first time under the lights, or a chance to get rounds in without the pressure of a result. Controlled, technical, refereed bouts with <span class="text-white font-semibold">no winner declared</span>.
-          </p>
-          <ul class="space-y-3 text-white/70 text-sm">
-            <li class="flex gap-3"><span class="text-slg-pink">→</span>Built for first-timers and developing fighters</li>
-            <li class="flex gap-3"><span class="text-slg-pink">→</span>No winner, no loss: it's about the experience</li>
-            <li class="flex gap-3"><span class="text-slg-pink">→</span>Matched by weight and experience</li>
-          </ul>
-          </div>
-        </div>
+        </article>
 
-        <div class="border-2 border-slg-pink bg-slg-pink/[0.07]" data-reveal style="transition-delay:90ms">
-          <img src="/photos/batl-winner-hand-raised.jpg" alt="Referee raising the winner's hand at Battle at the Lab" class="w-full aspect-[16/10] object-cover object-[center_25%]" loading="lazy" />
-          <div class="p-8 sm:p-10">
-          <div class="flex items-baseline gap-4 mb-4">
-            <span class="font-display text-7xl text-slg-pink leading-none">C</span>
-            <div>
-              <div class="text-white/50 text-[11px] uppercase tracking-[0.2em]">C Class</div>
-              <h3 class="font-display text-3xl uppercase text-white leading-none">Amateur Fight</h3>
+        <article class="card card-hi" data-reveal style="transition-delay:90ms">
+          <div class="duo aspect-[16/10]">
+            <img src="/photos/batl-winner-hand-raised.jpg" alt="Referee raising the winner's hand at Battle at the Lab" style="object-position:center 25%" loading="lazy" />
+          </div>
+          <div class="p-7 sm:p-9">
+            <div class="flex items-end gap-4 mb-5">
+              <span class="letter">C</span>
+              <div class="pb-2">
+                <div class="track text-[10px] text-batl-blue">C Class</div>
+                <h3 class="cond text-4xl uppercase text-batl-bone leading-none">Amateur Fight</h3>
+              </div>
             </div>
+            <p class="body mb-6">A proper amateur Muay Thai bout with a <strong>winner declared</strong>. For fighters with some ring time who want a real test of their skills.</p>
+            <ul class="ticks">
+              <li>Judged bout with a result</li>
+              <li>For fighters ready to compete</li>
+              <li>Matched by weight and experience</li>
+            </ul>
           </div>
-          <p class="text-white/70 leading-relaxed mb-6">
-            A proper amateur Muay Thai bout with a <span class="text-white font-semibold">winner declared</span>. For fighters with some ring time who want a real test of their skills.
-          </p>
-          <ul class="space-y-3 text-white/70 text-sm">
-            <li class="flex gap-3"><span class="text-slg-pink">→</span>Judged bout with a result</li>
-            <li class="flex gap-3"><span class="text-slg-pink">→</span>For fighters ready to compete</li>
-            <li class="flex gap-3"><span class="text-slg-pink">→</span>Matched by weight and experience</li>
-          </ul>
-          </div>
-        </div>
+        </article>
       </div>
 
-      <p class="text-center text-white/50 text-sm mt-8 max-w-xl mx-auto">
-        Not sure which division you're ready for? Register anyway and tell us your experience. We'll help you pick.
-      </p>
+      <p class="text-center text-batl-bone/50 text-sm mt-8 max-w-xl mx-auto">Not sure which division you're ready for? Register anyway and tell us your experience. We'll help you pick.</p>
     </div>
   </section>
 
-  <!-- JUNIORS -->
-  <section id="junior" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12" data-reveal>
-        <p class="eyebrow mb-3">Juniors</p>
-        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Junior bouts</h2>
-        <p class="text-white/70 text-base sm:text-lg leading-relaxed">
-          Kids from any gym are welcome. Points-sparring medal matches under age-appropriate rules, in full protective gear. <span class="text-white font-semibold">Kids under 13: no head contact.</span>
-        </p>
-      </div>
+  <!-- ═════════ JUNIORS ═════════ -->
+  <section id="junior" class="sec sec-alt">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="kicker">Juniors</p>
+        <h2 class="h2">Junior bouts</h2>
+        <div class="rule-sm"></div>
+        <p class="lede">Kids from any gym are welcome. Points-sparring medal matches under age-appropriate rules, in full protective gear. <strong class="text-batl-bone">Kids under 13: no head contact.</strong></p>
+      </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div data-reveal>
-          <div class="bg-slg-pink/10 border border-slg-pink/30 p-6 sm:p-8 mb-8 space-y-5">
+          <div class="panel mb-8 space-y-5">
             <div>
-              <h3 class="text-white font-display text-xl uppercase">No head contact for under-13s</h3>
-              <p class="text-white/60 mt-1 text-sm">Every age group under 13 strikes the body only. Safe, controlled and refereed.</p>
+              <h3 class="cond text-2xl uppercase text-batl-bone">No head contact for under-13s</h3>
+              <p class="text-batl-bone/60 mt-1 text-sm">Every age group under 13 strikes the body only. Safe, controlled and refereed.</p>
             </div>
             <div>
-              <h3 class="text-white font-display text-xl uppercase">Full protective gear</h3>
-              <p class="text-white/60 mt-1 text-sm">Padding requirements apply by age group.</p>
+              <h3 class="cond text-2xl uppercase text-batl-bone">Full protective gear</h3>
+              <p class="text-batl-bone/60 mt-1 text-sm">Padding requirements apply by age group.</p>
             </div>
             <div>
-              <h3 class="text-white font-display text-xl uppercase">No combat sports registration needed</h3>
-              <p class="text-white/60 mt-1 text-sm">It's a supported development experience, not a sanctioned fight.</p>
+              <h3 class="cond text-2xl uppercase text-batl-bone">No combat sports registration needed</h3>
+              <p class="text-batl-bone/60 mt-1 text-sm">It's a supported development experience, not a sanctioned fight.</p>
             </div>
           </div>
 
-          <h3 class="text-slg-pink font-display text-xl uppercase mb-4">Rules by age group</h3>
+          <p class="kicker mb-3">Rules by age group</p>
           <div class="overflow-x-auto mb-8">
-            <table class="w-full text-sm border-collapse">
-              <thead>
-                <tr class="border-b border-slg-pink/30">
-                  <th class="text-left text-white/50 text-xs uppercase tracking-widest font-semibold py-3 pr-4">Age</th>
-                  <th class="text-left text-white/50 text-xs uppercase tracking-widest font-semibold py-3 pr-4">Rules</th>
-                  <th class="text-left text-white/50 text-xs uppercase tracking-widest font-semibold py-3">Rounds</th>
-                </tr>
-              </thead>
+            <table class="rules">
+              <thead><tr><th>Age</th><th>Rules</th><th>Rounds</th></tr></thead>
               <tbody>
                 {JUNIOR_RULES.map((row) => (
-                  <tr class="border-b border-white/5">
-                    <td class="text-slg-pink font-semibold py-4 pr-4 whitespace-nowrap align-top">{row.age}</td>
-                    <td class="text-white/70 py-4 pr-4 leading-relaxed">{row.rules}</td>
-                    <td class="text-white/60 py-4 whitespace-nowrap align-top">{row.rounds}</td>
+                  <tr>
+                    <td class="cond text-xl text-batl-blue whitespace-nowrap">{row.age}</td>
+                    <td>{row.rules}</td>
+                    <td class="whitespace-nowrap">{row.rounds}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          {REGISTRATIONS_OPEN && <a href="#register" class="btn-pink">Sign My Kid Up →</a>}
-          <p class="text-white/40 text-sm mt-4">Questions? Speak to your coach.</p>
+          {REGISTRATIONS_OPEN && <a href="#register" class="bbtn">Sign my kid up</a>}
+          <p class="text-batl-bone/40 text-sm mt-4">Questions? Speak to your coach.</p>
         </div>
 
-        <div class="space-y-6" data-reveal style="transition-delay:90ms">
-          <img
-            src="/photos/batl-kids-hands-raised.jpg"
-            alt="Two young fighters in chest guards with both hands raised after their junior bout"
-            class="w-full aspect-[4/3] object-cover"
-            loading="lazy"
-          />
-          <img
-            src="/photos/batl-juniors-hands-raised.jpg"
-            alt="Junior fighters with hands raised by the referee at Battle at the Lab"
-            class="w-full aspect-[16/9] object-cover object-[center_30%]"
-            loading="lazy"
-          />
-          <p class="text-white/50 text-sm">Junior bouts at Battle at the Lab 4.</p>
+        <div class="space-y-4" data-reveal style="transition-delay:90ms">
+          <div class="duo aspect-[4/3]">
+            <img src="/photos/batl-kids-hands-raised.jpg" alt="Two young fighters in chest guards with both hands raised after their junior bout" loading="lazy" />
+          </div>
+          <div class="duo aspect-[16/9]">
+            <img src="/photos/batl-juniors-hands-raised.jpg" alt="Junior fighters with hands raised by the referee at Battle at the Lab" style="object-position:center 30%" loading="lazy" />
+          </div>
+          <p class="track text-[10px] text-batl-bone/50">Junior bouts · Battle at the Lab 4</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LAST EVENT PHOTO STRIP -->
-  <section class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10" data-reveal>
-        <p class="eyebrow mb-3">Last time at the Lab</p>
-        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none">Battle at the Lab 4</h2>
-      </div>
+  <!-- ═════════ LAST EVENT STRIP ═════════ -->
+  <section class="sec">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="kicker">Last time at the Lab</p>
+        <h2 class="h2">BATL 4</h2>
+        <div class="rule-sm"></div>
+      </header>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        {[
-          { src: '/photos/batl-teep-headgear.jpg', alt: 'Fighter throwing a teep in headgear at Battle at the Lab 4', pos: 'center 40%' },
-          { src: '/photos/batl-fighter-focus.jpg', alt: 'Soul Lab fighter focused in headgear before his bout', pos: 'center 30%' },
-          { src: '/photos/batl-teens-high-kick.jpg', alt: 'Teen fighters exchanging kicks in headgear', pos: 'center 35%' },
-        ].map((ph, i) => (
-          <div class="overflow-hidden" data-reveal style={`transition-delay:${i * 70}ms`}>
-            <img src={ph.src} alt={ph.alt} class="w-full aspect-[4/5] object-cover hover:scale-[1.03] transition-transform duration-500" style={`object-position:${ph.pos}`} loading="lazy" />
+        {STRIP.map((ph, i) => (
+          <div class="duo aspect-[4/5] strip" data-reveal style={`transition-delay:${i * 70}ms`}>
+            <img src={ph.src} alt={ph.alt} style={`object-position:${ph.pos}`} loading="lazy" />
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- TICKETS -->
-  <section id="tickets" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-reveal>
-      <p class="eyebrow mb-3">Spectators welcome</p>
-      <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-4">Entry &amp; tickets</h2>
-      <p class="text-white/60 text-lg mb-10">Pay on the door. No booking required.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-2xl mx-auto mb-10">
-        {TICKETS.map((t) => (
-          <div class={`p-8 text-center ${t.featured ? 'border-2 border-slg-pink' : 'border-2 border-slg-pink/40'}`}>
-            <div class="text-white/50 text-xs uppercase tracking-widest mb-3">{t.label}</div>
-            <div class="text-slg-pink font-display text-6xl leading-none">{t.price}</div>
-          </div>
-        ))}
+  <!-- ═════════ TICKETS + POSTER ═════════ -->
+  <section id="tickets" class="sec sec-alt">
+    <div class="wrap grid grid-cols-1 lg:grid-cols-[1.1fr_.9fr] gap-12 items-center">
+      <div data-reveal>
+        <p class="kicker">Spectators welcome</p>
+        <h2 class="h2 text-left">Tickets at the door</h2>
+        <div class="rule-sm ml-0"></div>
+        <p class="lede text-left mx-0">No booking needed. Cash or card on the night, food and soft drinks available.</p>
+
+        <div class="grid grid-cols-3 gap-3 sm:gap-4 my-8 max-w-lg">
+          {TICKETS.map((t) => (
+            <div class={`ticket ${t.featured ? 'ticket-hi' : ''}`}>
+              <div class="track text-[10px] text-batl-bone/60 mb-2">{t.label}</div>
+              <div class="cond price">{t.price}</div>
+            </div>
+          ))}
+        </div>
+
+        <dl class="facts">
+          <div><dt>Doors</dt><dd>{EVENT.doors}</dd></div>
+          <div><dt>Weigh-ins</dt><dd>{EVENT.weighIn}</dd></div>
+          <div><dt>First fight</dt><dd class="text-batl-blue">{EVENT.firstFight}</dd></div>
+        </dl>
+        <p class="track text-[11px] text-batl-bone/70 mt-5">{EVENT.address}</p>
       </div>
-      <div class="flex flex-col sm:flex-row gap-3 sm:gap-8 justify-center text-white/70 text-sm">
-        <span>Doors open {EVENT.doors} · First fight {EVENT.firstFight}</span>
-        <span>Cash or card accepted</span>
-        <span>Food &amp; soft drinks on the night</span>
-      </div>
+
+      <figure class="poster" data-reveal style="transition-delay:90ms">
+        <img src="/photos/batl-5-poster.jpg" alt="BATL Muay Thai Fight Series poster: Saturday 7 November, first fight 3pm, doors 2pm, Soul Lab Gym, 2/70 Ingham Rd West End" loading="lazy" />
+        <figcaption class="mt-4 flex items-center justify-between gap-4">
+          <span class="track text-[10px] text-batl-bone/60">Share the poster</span>
+          <a href="/photos/batl-5-poster-full.jpg" download="BATL-5-poster.jpg" class="track text-[11px] text-batl-blue hover:text-batl-bone">Download ↓</a>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- REGISTRATION -->
-  <section id="register" class="bg-slg-dark border-t border-white/10 py-16 sm:py-20">
+  <!-- ═════════ REGISTRATION ═════════ -->
+  <section id="register" class="sec">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-10">
-        <p class="eyebrow mb-3">Fighters &amp; juniors</p>
-        <h2 class="font-display text-4xl sm:text-5xl uppercase text-white leading-none mb-3">Register to fight</h2>
-        <p class="text-white/60 text-base">
-          Adults and juniors from any gym. Parents, fill it in with your child's details.
-        </p>
-      </div>
+      <header class="sec-head">
+        <p class="kicker">Fighters &amp; juniors</p>
+        <h2 class="h2">Register to fight</h2>
+        <div class="rule-sm"></div>
+        <p class="lede">Adults and juniors from any gym. Parents, fill it in with your child's details.</p>
+      </header>
 
       {REGISTRATIONS_OPEN ? (
         <>
-          <div id="success-msg" class="hidden bg-slg-pink/20 border border-slg-pink text-white p-6 mb-8 text-center">
-            <div class="text-3xl font-display uppercase mb-2">You're on the list!</div>
-            <p class="text-white/70">We'll be in touch with your matchup and fight night details. Get training.</p>
+          <div id="success-msg" class="hidden panel text-center mb-8" style="border-color:var(--blue)">
+            <div class="cond text-4xl uppercase text-batl-bone mb-2">You're on the list!</div>
+            <p class="text-batl-bone/70">We'll be in touch with your matchup and fight night details. Get training.</p>
           </div>
 
-          <div id="error-msg" class="hidden bg-red-900/30 border border-red-500 text-white p-6 mb-8 text-center">
+          <div id="error-msg" class="hidden bg-red-900/30 border border-red-500 text-batl-bone p-6 mb-8 text-center">
             <p class="font-bold mb-1">Something went wrong.</p>
-            <p class="text-white/70 text-sm">Please try again or contact us at <a href="mailto:soullabgym@gmail.com" class="text-slg-pink underline">soullabgym@gmail.com</a></p>
+            <p class="text-batl-bone/70 text-sm">Please try again or contact us at <a href="mailto:soullabgym@gmail.com" class="text-batl-blue underline">soullabgym@gmail.com</a></p>
           </div>
 
           <form id="fight-form" class="space-y-6">
@@ -301,15 +312,15 @@ const JUNIOR_RULES = [
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {DIVISIONS.map((d, i) => (
                   <label class="div-opt">
-                    <input type="radio" name="division" value={d.value} required={i === 0} class="sr-only peer" />
+                    <input type="radio" name="division" value={d.value} required={i === 0} class="sr-only" />
                     <span class="div-card">
-                      <span class="font-display text-2xl uppercase text-white leading-none">{d.title}</span>
-                      <span class="text-white/60 text-xs mt-1">{d.desc}</span>
+                      <span class="cond text-3xl uppercase text-batl-bone leading-none">{d.title}</span>
+                      <span class="text-batl-bone/60 text-xs mt-1">{d.desc}</span>
                     </span>
                   </label>
                 ))}
               </div>
-              <p class="text-white/40 text-sm mt-3">Not sure? Pick the closest one and tell us your experience below. We'll help you choose.</p>
+              <p class="text-batl-bone/40 text-sm mt-3">Not sure? Pick the closest one and tell us your experience below. We'll help you choose.</p>
             </fieldset>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -358,12 +369,12 @@ const JUNIOR_RULES = [
 
             <fieldset>
               <legend class="fld-label mb-3">Fight experience *</legend>
-              <p class="text-white/40 text-sm mb-4">Select all that apply. First-timer? Tick "No fight experience yet".</p>
+              <p class="text-batl-bone/40 text-sm mb-4">Select all that apply. First-timer? Tick "No fight experience yet".</p>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {['Muay Thai', 'Other', 'No fight experience yet'].map((d) => (
                   <label class="flex items-center gap-3 cursor-pointer">
-                    <input type="checkbox" name="disciplines" value={d} class="w-4 h-4 accent-slg-pink" />
-                    <span class="text-white/70 text-sm">{d}</span>
+                    <input type="checkbox" name="disciplines" value={d} class="w-4 h-4" style="accent-color:#6CC6FF" />
+                    <span class="text-batl-bone/70 text-sm">{d}</span>
                   </label>
                 ))}
               </div>
@@ -382,28 +393,28 @@ const JUNIOR_RULES = [
             </div>
 
             <div class="pt-2">
-              <button type="submit" id="submit-btn" class="btn-pink w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+              <button type="submit" id="submit-btn" class="bbtn w-full disabled:opacity-50 disabled:cursor-not-allowed">
                 Register My Interest
               </button>
             </div>
 
-            <p class="text-white/40 text-xs text-center">
-              No commitment yet. We'll reach out with your matchup and how to confirm your spot.
-            </p>
+            <p class="text-batl-bone/40 text-xs text-center">No commitment yet. We'll reach out with your matchup and how to confirm your spot.</p>
           </form>
         </>
       ) : (
-        <div class="border border-white/15 p-8 text-center text-white/70">
-          Fighter registrations are closed. Spectators are still welcome. See you on the night.
-        </div>
+        <div class="panel text-center text-batl-bone/70">Fighter registrations are closed. Spectators are still welcome. See you on the night.</div>
       )}
     </div>
   </section>
 
-  <!-- WHAT HAPPENS NEXT -->
-  <section class="bg-slg-bone py-16 sm:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="font-display text-4xl sm:text-5xl uppercase text-slg-text-dark text-center leading-none mb-12">What happens next</h2>
+  <!-- ═════════ WHAT HAPPENS NEXT ═════════ -->
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <header class="sec-head" data-reveal>
+        <p class="kicker">After you register</p>
+        <h2 class="h2">What happens next</h2>
+        <div class="rule-sm"></div>
+      </header>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {[
           { step: '01', title: 'We review', desc: 'We look at your experience and weight and find you the right division and matchup.' },
@@ -412,41 +423,143 @@ const JUNIOR_RULES = [
           { step: '04', title: 'Fight night', desc: `Weigh in at ${EVENT.weighIn}, first fight at ${EVENT.firstFight}. Coached corners, refereed bouts.` },
         ].map((item) => (
           <div class="text-center" data-reveal>
-            <div class="font-display text-7xl text-slg-pink leading-none mb-4">{item.step}</div>
-            <h3 class="font-display text-xl uppercase text-slg-text-dark mb-3">{item.title}</h3>
-            <p class="text-slg-text-dark/70 leading-relaxed text-sm">{item.desc}</p>
+            <div class="step">{item.step}</div>
+            <h3 class="cond text-2xl uppercase text-batl-bone mb-2">{item.title}</h3>
+            <p class="text-batl-bone/60 leading-relaxed text-sm">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- BOTTOM CTA -->
-  <section class="relative bg-slg-pink overflow-hidden py-16 sm:py-20 text-center">
-    <div class="relative max-w-2xl mx-auto px-4" data-reveal>
-      <p class="text-white/85 text-xs font-bold uppercase tracking-[0.22em] mb-4">{EVENT.dateLong}</p>
-      <h2 class="font-display text-5xl sm:text-6xl uppercase text-white leading-[.92] mb-6">Ready to step up?</h2>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        {REGISTRATIONS_OPEN && <a href="#register" class="btn-dark">Register to Fight</a>}
-        <a href="/contact" class="btn-light">Ask a question</a>
+  <!-- ═════════ CLOSER ═════════ -->
+  <section class="closer">
+    <div class="duo closer-photo" aria-hidden="true">
+      <img src="/photos/batl-winner-hand-raised.jpg" alt="" loading="lazy" style="object-position:center 30%" />
+    </div>
+    <div class="closer-fade" aria-hidden="true"></div>
+    <div class="relative text-center px-4 py-24 sm:py-32" data-reveal>
+      <p class="track text-xs sm:text-sm text-batl-bone">{EVENT.day} {EVENT.dateNum} {EVENT.month}</p>
+      <p class="wordmark wordmark-sm mt-3">BATL</p>
+      <div class="rule mx-auto" style="width:min(420px,70vw)"></div>
+      <p class="track-wide cond text-lg sm:text-2xl text-batl-bone mt-3">See you at the Lab</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center mt-9">
+        {REGISTRATIONS_OPEN && <a href="#register" class="bbtn">Register to fight</a>}
+        <a href="/contact" class="bbtn-ghost">Ask a question</a>
       </div>
     </div>
   </section>
+
+  </div>
 
   <Footer />
 </Layout>
 
 <style>
-  .fld-label { display: block; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: rgba(255,255,255,.6); margin-bottom: 8px; }
-  .fld { width: 100%; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.2); color: #fff; padding: 12px 16px; transition: border-color .15s; }
-  .fld::placeholder { color: rgba(255,255,255,.3); }
-  .fld:focus { outline: none; border-color: #EC4899; }
-  select.fld { background-color: #0E0E0E; }
+  .batl {
+    --ink: #04070D;
+    --navy: #08111F;
+    --blue: #6CC6FF;
+    --bone: #ECE6DA;
+    background: var(--ink);
+    color: var(--bone);
+  }
+  .cond { font-family: 'Barlow Condensed', 'Bebas Neue', sans-serif; font-weight: 800; }
+  .track { font-family: 'Barlow Condensed', 'Inter', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .32em; }
+  .track-wide { text-transform: uppercase; letter-spacing: .28em; font-weight: 700; }
+
+  /* Wordmark: heavy italic, like the poster */
+  .wordmark {
+    font-family: 'Barlow', 'Inter', sans-serif; font-style: italic; font-weight: 900;
+    font-size: clamp(104px, 24vw, 300px); line-height: .82; letter-spacing: -.01em;
+    color: var(--bone); margin: 0; padding-right: .06em;
+  }
+  .wordmark-sm { font-size: clamp(80px, 16vw, 190px); }
+  .rule { height: 5px; background: var(--bone); width: min(760px, 80vw); margin-top: clamp(14px, 2vw, 26px); }
+
+  /* Blue duotone photos */
+  .duo { position: relative; overflow: hidden; background: #0a2240; }
+  .duo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.12) brightness(1.02); transition: transform .6s; }
+  .duo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #4aa8ff 0%, #1d63c2 100%); mix-blend-mode: color; opacity: .95; pointer-events: none; }
+  .duo::before { content: ''; position: absolute; inset: 0; background: #071a33; mix-blend-mode: multiply; opacity: .35; z-index: 1; pointer-events: none; }
+  .strip:hover img { transform: scale(1.04); }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; isolation: isolate; text-align: center; }
+  .hero-photo { position: absolute; inset: 0; z-index: -2; }
+  .hero-photo img { object-position: center 35%; }
+  .hero-fade { position: absolute; inset: 0; z-index: -1; background:
+      radial-gradient(ellipse at 50% 50%, rgba(4,7,13,0) 0%, rgba(4,7,13,.4) 70%, rgba(4,7,13,.85) 100%),
+      linear-gradient(180deg, var(--ink) 0%, rgba(4,7,13,.4) 30%, rgba(4,7,13,.15) 52%, rgba(4,7,13,.85) 82%, var(--ink) 100%); }
+  .hero-inner { position: relative; max-width: 1100px; margin: 0 auto; padding: clamp(56px, 9vw, 110px) 16px clamp(56px, 8vw, 96px); }
+  .hero-date { margin-top: clamp(56px, 12vw, 170px); }
+  .date-big { font-size: clamp(64px, 15vw, 200px); line-height: .86; text-transform: uppercase; margin: 4px 0 6px; }
+  .times { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .4em .55em; font-size: clamp(26px, 5.4vw, 72px); line-height: 1; text-transform: uppercase; }
+  .times .bar { width: 4px; height: .8em; background: var(--bone); display: inline-block; }
+
+  /* Sections */
+  .sec { padding: clamp(64px, 9vw, 112px) 0; background: var(--ink); border-top: 1px solid rgba(236,230,218,.08); }
+  .sec-alt { background: var(--navy); }
+  .wrap { max-width: 80rem; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 640px) { .wrap { padding: 0 24px; } }
+  .sec-head { text-align: center; max-width: 42rem; margin: 0 auto 48px; }
+  .kicker { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .32em; font-size: 12px; color: var(--blue); margin-bottom: 10px; }
+  .h2 { font-family: 'Barlow Condensed', 'Bebas Neue', sans-serif; font-weight: 800; text-transform: uppercase; font-size: clamp(44px, 7vw, 76px); line-height: .9; color: var(--bone); margin: 0; }
+  .rule-sm { width: 72px; height: 4px; background: var(--blue); margin: 18px auto 18px; }
+  .lede { color: rgba(236,230,218,.7); font-size: 1.05rem; line-height: 1.65; max-width: 40rem; margin: 0 auto; }
+  .body { color: rgba(236,230,218,.72); line-height: 1.65; }
+  .body strong, .lede strong { color: var(--bone); }
+
+  .card { border: 1px solid rgba(236,230,218,.14); background: rgba(236,230,218,.02); }
+  .card-hi { border: 2px solid var(--blue); background: rgba(108,198,255,.05); }
+  .letter { font-family: 'Barlow', sans-serif; font-style: italic; font-weight: 900; font-size: 92px; line-height: .8; color: var(--blue); }
+  .ticks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; font-size: .9rem; color: rgba(236,230,218,.72); }
+  .ticks li { display: flex; gap: 12px; }
+  .ticks li::before { content: ''; flex: none; width: 14px; height: 3px; background: var(--blue); margin-top: .6em; }
+
+  .panel { border: 1px solid rgba(108,198,255,.35); background: rgba(108,198,255,.06); padding: 28px; }
+  .rules { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .rules th { text-align: left; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; font-size: 11px; color: rgba(236,230,218,.5); padding: 10px 14px 10px 0; border-bottom: 2px solid var(--blue); }
+  .rules td { padding: 14px 14px 14px 0; border-bottom: 1px solid rgba(236,230,218,.08); color: rgba(236,230,218,.72); vertical-align: top; line-height: 1.5; }
+
+  .ticket { border: 1px solid rgba(236,230,218,.2); padding: 18px 10px; text-align: center; }
+  .ticket-hi { border: 2px solid var(--blue); }
+  .price { font-size: clamp(44px, 6vw, 64px); line-height: .9; color: var(--bone); }
+  .ticket-hi .price { color: var(--blue); }
+  .facts { display: flex; flex-wrap: wrap; gap: 28px; margin: 0; }
+  .facts dt { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; font-size: 11px; color: rgba(236,230,218,.5); }
+  .facts dd { margin: 2px 0 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 34px; line-height: 1; text-transform: uppercase; }
+  .poster img { width: 100%; max-width: 440px; display: block; margin: 0 auto; box-shadow: 0 30px 80px -20px rgba(0,0,0,.8), 0 0 0 1px rgba(236,230,218,.08); }
+  .poster figcaption { max-width: 440px; margin-left: auto; margin-right: auto; }
+
+  .step { font-family: 'Barlow', sans-serif; font-style: italic; font-weight: 900; font-size: 76px; line-height: 1; color: var(--blue); margin-bottom: 10px; }
+
+  .closer { position: relative; overflow: hidden; isolation: isolate; }
+  .closer-photo { position: absolute; inset: 0; z-index: -2; }
+  .closer-fade { position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, var(--navy) 0%, rgba(4,7,13,.55) 40%, rgba(4,7,13,.75) 100%); }
+
+  /* Buttons — squared, condensed, poster-style */
+  .bbtn, .bbtn-ghost {
+    display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: .16em; text-transform: uppercase;
+    padding: 15px 30px; transition: background .15s, color .15s, transform .15s, border-color .15s;
+  }
+  .bbtn { background: var(--blue); color: var(--ink); }
+  .bbtn:hover { background: var(--bone); transform: translateY(-1px); }
+  .bbtn-ghost { border: 2px solid rgba(236,230,218,.55); color: var(--bone); }
+  .bbtn-ghost:hover { border-color: var(--bone); background: rgba(236,230,218,.08); }
+
+  /* Form */
+  .fld-label { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .22em; color: rgba(236,230,218,.62); margin-bottom: 8px; }
+  .fld { width: 100%; background: rgba(236,230,218,.04); border: 1px solid rgba(236,230,218,.2); color: var(--bone); padding: 12px 16px; transition: border-color .15s; }
+  .fld::placeholder { color: rgba(236,230,218,.3); }
+  .fld:focus { outline: none; border-color: var(--blue); }
+  select.fld { background-color: var(--ink); }
   .div-opt { display: block; cursor: pointer; }
-  .div-card { display: flex; flex-direction: column; height: 100%; padding: 16px 18px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.04); transition: border-color .15s, background .15s; }
-  .div-opt:hover .div-card { border-color: rgba(236,72,153,.6); }
-  .div-opt input:checked + .div-card { border: 2px solid #EC4899; padding: 15px 17px; background: rgba(236,72,153,.12); }
-  .div-opt input:focus-visible + .div-card { outline: 2px solid #fff; outline-offset: 2px; }
+  .div-card { display: flex; flex-direction: column; height: 100%; padding: 16px 18px; border: 1px solid rgba(236,230,218,.2); background: rgba(236,230,218,.03); transition: border-color .15s, background .15s; }
+  .div-opt:hover .div-card { border-color: rgba(108,198,255,.6); }
+  .div-opt input:checked + .div-card { border: 2px solid var(--blue); padding: 15px 17px; background: rgba(108,198,255,.12); }
+  .div-opt input:focus-visible + .div-card { outline: 2px solid var(--bone); outline-offset: 2px; }
 </style>
 
 <script>

@@ -2,6 +2,10 @@
 
 /* Soul Lab Gym Design Tokens (Tailwind v4 @theme) */
 @theme {
+  /* BATL fight-night sub-brand (used on /fight only) */
+  --color-batl-blue: #6CC6FF;
+  --color-batl-bone: #ECE6DA;
+
   /* Brand colours */
   --color-slg-dark: #0E0E0E;
   --color-slg-bone: #F8F5F0;
