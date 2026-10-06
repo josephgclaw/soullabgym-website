@@ -24,6 +24,13 @@ const TICKETS = [
   { label: 'Family (4+)', price: '$20' },
 ];
 
+// Division options on the registration form. `value` is what lands in the sheet's Division column.
+const DIVISIONS = [
+  { value: 'D class — Exhibition', title: 'D Class', desc: 'Exhibition · no winner' },
+  { value: 'C class — Amateur fight', title: 'C Class', desc: 'Amateur fight · winner declared' },
+  { value: 'Junior bout (under 13)', title: 'Junior', desc: 'Under 13 · no head contact' },
+];
+
 const JUNIOR_RULES = [
   { age: '6–8 yrs', rules: 'Strikes above the waist and below the shoulders only. No elbows. No head contact.', rounds: '3 × 1 min' },
   { age: '8–10 yrs', rules: 'Strikes below the shoulders only. No elbows. No head contact.', rounds: '3 × 1 min' },
@@ -263,6 +270,22 @@ const JUNIOR_RULES = [
           </div>
 
           <form id="fight-form" class="space-y-6">
+            <fieldset>
+              <legend class="fld-label mb-3">Which division? *</legend>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {DIVISIONS.map((d, i) => (
+                  <label class="div-opt">
+                    <input type="radio" name="division" value={d.value} required={i === 0} class="sr-only peer" />
+                    <span class="div-card">
+                      <span class="font-display text-2xl uppercase text-white leading-none">{d.title}</span>
+                      <span class="text-white/60 text-xs mt-1">{d.desc}</span>
+                    </span>
+                  </label>
+                ))}
+              </div>
+              <p class="text-white/40 text-sm mt-3">Not sure? Pick the closest one and tell us your experience below. We'll help you choose.</p>
+            </fieldset>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
                 <label for="f-name" class="fld-label">Full name *</label>
@@ -393,6 +416,11 @@ const JUNIOR_RULES = [
   .fld::placeholder { color: rgba(255,255,255,.3); }
   .fld:focus { outline: none; border-color: #EC4899; }
   select.fld { background-color: #0E0E0E; }
+  .div-opt { display: block; cursor: pointer; }
+  .div-card { display: flex; flex-direction: column; height: 100%; padding: 16px 18px; border: 1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.04); transition: border-color .15s, background .15s; }
+  .div-opt:hover .div-card { border-color: rgba(236,72,153,.6); }
+  .div-opt input:checked + .div-card { border: 2px solid #EC4899; padding: 15px 17px; background: rgba(236,72,153,.12); }
+  .div-opt input:focus-visible + .div-card { outline: 2px solid #fff; outline-offset: 2px; }
 </style>
 
 <script>
@@ -413,8 +441,11 @@ const JUNIOR_RULES = [
     errorMsg.classList.add('hidden');
 
     const formData = new FormData(form);
+    const division = String(formData.get('division') || '');
+    const disciplines = formData.getAll('disciplines').join(', ');
     const payload = {
       formType: 'adult',
+      division,
       name: formData.get('name'),
       email: formData.get('email'),
       phone: formData.get('phone'),
@@ -422,7 +453,9 @@ const JUNIOR_RULES = [
       weight: formData.get('weight'),
       gym: formData.get('gym'),
       trainingExperience: formData.get('trainingExperience'),
-      disciplines: formData.getAll('disciplines').join(', '),
+      // TEMP: division is also prefixed here so it lands in the existing "Fight Disciplines" column
+      // until the Apps Script v4 (Division column) is deployed. Remove the prefix after that.
+      disciplines: `[${division}] ${disciplines}`,
       numFights: formData.get('numFights'),
       submittedAt: new Date().toLocaleString('en-AU', { timeZone: 'Australia/Brisbane' }),
     };

@@ -2,6 +2,7 @@
  * Soul Lab Gym — Registration Handler (Fight Night + Grading)
  * Google Apps Script Web App
  *
+ * v4: fight night registrations record the division (D class / C class / Junior).
  * v3: adds duplicate protection (same name within 10 min ignored)
  *     and a read endpoint for automated paid/unpaid checks.
  *
@@ -28,6 +29,7 @@ const FIGHT_HEADERS = [
   'Training Experience',
   'Fight Disciplines',
   'Number of Fights',
+  'Division',
 ];
 
 // Grading sheet config
@@ -143,6 +145,12 @@ function handleFightNight(data) {
     'fightSpreadsheetId'
   );
 
+  // v4: 'Division' column (D class / C class / Junior). Adds the header to an existing sheet if missing.
+  const divCol = FIGHT_HEADERS.indexOf('Division') + 1;
+  if (sheet.getRange(1, divCol).getValue() !== 'Division') {
+    sheet.getRange(1, divCol).setValue('Division').setFontWeight('bold');
+  }
+
   sheet.appendRow([
     data.submittedAt || new Date().toLocaleString('en-AU'),
     data.name || '',
@@ -154,13 +162,15 @@ function handleFightNight(data) {
     data.trainingExperience || '',
     data.disciplines || '',
     data.numFights || '',
+    data.division || '',
   ]);
 
   MailApp.sendEmail({
     to: NOTIFICATION_EMAIL,
-    subject: '🥊 New Fight Night Registration: ' + (data.name || 'Unknown'),
+    subject: '🥊 New Fight Night Registration: ' + (data.name || 'Unknown') + (data.division ? ' (' + data.division + ')' : ''),
     body:
       'New fight night registration:\n\n' +
+      'Division: ' + (data.division || '-') + '\n' +
       'Name: ' + (data.name || '-') + '\n' +
       'Email: ' + (data.email || '-') + '\n' +
       'Phone: ' + (data.phone || '-') + '\n' +
