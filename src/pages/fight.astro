@@ -20,9 +20,9 @@ const EVENT = {
 const REGISTRATIONS_OPEN = true;
 
 const TICKETS = [
-  { label: 'Kids', price: '$5' },
-  { label: 'Adults', price: '$10', featured: true },
-  { label: 'Family (4+)', price: '$20' },
+  { label: 'Kids', price: '$10' },
+  { label: 'Adults', price: '$20', featured: true },
+  { label: 'Family', price: '$40', note: '2 adults + 2 kids' },
 ];
 
 // Division options on the registration form. `value` is what lands in the sheet's Division column.
@@ -255,13 +255,14 @@ const STRIP = [
         <p class="kicker">Spectators welcome</p>
         <h2 class="h2 text-left">Tickets at the door</h2>
         <div class="rule-sm ml-0"></div>
-        <p class="lede text-left mx-0">No booking needed. Cash or card on the night, food and soft drinks available.</p>
+        <p class="lede text-left mx-0">No booking needed. Cash or card on the night, food and soft drinks available. Under 5s free.</p>
 
         <div class="grid grid-cols-3 gap-3 sm:gap-4 my-8 max-w-lg">
           {TICKETS.map((t) => (
             <div class={`ticket ${t.featured ? 'ticket-hi' : ''}`}>
               <div class="track text-[10px] text-batl-bone/60 mb-2">{t.label}</div>
               <div class="cond price">{t.price}</div>
+              {t.note && <div class="text-[11px] text-batl-bone/50 mt-2 leading-tight">{t.note}</div>}
             </div>
           ))}
         </div>
