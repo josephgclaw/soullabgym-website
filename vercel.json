@@ -2,8 +2,18 @@
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "fight.soullabgym.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "fight.soullabgym.com"
+        }
+      ],
       "destination": "https://soullabgym.com/fight",
+      "permanent": false
+    },
+    {
+      "source": "/private-training",
+      "destination": "https://pt.soullabgym.com/?utm_source=soullabgym.com&utm_medium=website&utm_campaign=old_page_redirect",
       "permanent": false
     }
   ]
