@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import PageHero from '../components/PageHero.astro';
 import TrialCta from '../components/TrialCta.astro';
 import { DAYS, SCHEDULE, formatTime } from '../data/schedule';
-import { GROUPS, FAMILY_DISCOUNT } from '../data/pricing';
+import { GROUPS, FAMILY_DISCOUNT_SUMMARY } from '../data/pricing';
 
 const OFFER = 'https://soullabgymoffer.com/offer';
 
@@ -143,7 +143,7 @@ const kids = GROUPS.find((g) => g.id === 'kids')!;
         ))}
       </div>
       <p class="text-white/55 text-sm mt-5" data-reveal>
-        Family discount: {FAMILY_DISCOUNT.map((f) => `${f.who.toLowerCase()} ${f.deal.toLowerCase()}`).join(', ')}. No lock-in contracts. Loaner gloves and wraps for trial classes.
+        Family discount: {FAMILY_DISCOUNT_SUMMARY}. <a href="/prices#family" class="text-slg-pink font-semibold underline underline-offset-2">See all prices</a>. Loaner gloves and wraps for trial classes.
       </p>
     </div>
   </section>

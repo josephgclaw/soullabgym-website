@@ -2,7 +2,7 @@
 //
 // PLACEHOLDER: set to true while prices are still being confirmed. It shows a
 // "being updated" notice on the page. Flip to false once the numbers are final.
-export const PRICES_ARE_PLACEHOLDER = true;
+export const PRICES_ARE_PLACEHOLDER = false;
 
 export interface Plan {
   name: string;
@@ -26,7 +26,7 @@ export const GROUPS: PlanGroup[] = [
     blurb: 'Muay Thai, boxing, pads, sparring and fighters sessions. 16+.',
     plans: [
       { name: '2 classes a week', price: '$45', per: 'per week' },
-      { name: '4 classes a week', price: '$55', per: 'per week' },
+      { name: '4 classes a week', price: '$52.50', per: 'per week' },
       { name: 'Unlimited', price: '$60', per: 'per week', note: 'Every class, every day', featured: true },
     ],
   },
@@ -51,14 +51,22 @@ export const GROUPS: PlanGroup[] = [
 ];
 
 export const CASUAL: Plan[] = [
-  { name: 'Casual visit', price: '$35', per: 'per class' },
-  { name: '10 class pass', price: '$300', per: 'one-off' },
+  { name: 'Casual visit', price: '$30', per: 'per class' },
+  { name: '10 class pass', price: '$250', per: 'one-off', note: 'No lock-in, use at your own pace' },
 ];
 
+// Matches the family discount sign at the gym (confirmed 12 Oct 2026).
 export const FAMILY_DISCOUNT = [
-  { who: '1st family member', deal: 'Full price' },
-  { who: 'Each additional member', deal: '10% off' },
+  { who: '1st member', deal: 'Full price' },
+  { who: '2nd member', deal: '10% off' },
+  { who: '3rd member', deal: '50% off' },
+  { who: '4th member', deal: '50% off' },
+  { who: '5th member +', deal: 'Free' },
 ];
+
+// One-line version for running text (e.g. the /kids page).
+export const FAMILY_DISCOUNT_SUMMARY =
+  '10% off the 2nd family member, 50% off the 3rd and 4th, and the 5th onwards train free';
 
 export const TERMS = [
   '4 week minimum term on all memberships.',
