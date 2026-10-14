@@ -65,6 +65,9 @@ const STRIP = [
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
+    // Shared with the PT funnel pixel: keep PageView (BATL ad counts landing
+    // page views) but stop automatic events so /fight doesn't feed PT data.
+    fbq('set', 'autoConfig', false, '2559980727754440');
     fbq('init', '2559980727754440');
     fbq('track', 'PageView');
   </script>
