@@ -17,7 +17,7 @@ const EVENT = {
 };
 
 // Registration form on/off switch. Set to false to close sign-ups (page stays up, form is replaced by a notice).
-const REGISTRATIONS_OPEN = true;
+const REGISTRATIONS_OPEN = false;
 
 const TICKETS = [
   { label: 'Kids', price: '$10' },
@@ -47,7 +47,7 @@ const STRIP = [
 
 <Layout
   title="BATL 5 — Battle at the Lab · Sat 7 November | Soul Lab Gym Townsville"
-  description="BATL — Soul Lab Gym's Muay Thai fight series. Battle at the Lab 5: Saturday 7 November, doors 2pm, first fight 3pm. Open to all gyms. D-class exhibition, C-class amateur and junior bouts. Register to fight or grab tickets at the door."
+  description={`BATL — Soul Lab Gym's Muay Thai fight series. Battle at the Lab 5: Saturday 7 November, doors 2pm, first fight 3pm. Open to all gyms. D-class exhibition, C-class amateur and junior bouts. ${REGISTRATIONS_OPEN ? 'Register to fight or grab tickets at the door.' : 'Fighter registrations are closed. Tickets at the door.'}`}
   ogImage="/photos/batl-5-poster.jpg"
   theme="dark"
 >
@@ -166,7 +166,7 @@ const STRIP = [
         </article>
       </div>
 
-      <p class="text-center text-batl-bone/50 text-sm mt-8 max-w-xl mx-auto">Not sure which division you're ready for? Register anyway and tell us your experience. We'll help you pick.</p>
+      {REGISTRATIONS_OPEN && <p class="text-center text-batl-bone/50 text-sm mt-8 max-w-xl mx-auto">Not sure which division you're ready for? Register anyway and tell us your experience. We'll help you pick.</p>}
     </div>
   </section>
 
@@ -290,9 +290,9 @@ const STRIP = [
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <header class="sec-head">
         <p class="kicker">Fighters &amp; juniors</p>
-        <h2 class="h2">Register to fight</h2>
+        <h2 class="h2">{REGISTRATIONS_OPEN ? 'Register to fight' : 'Registrations closed'}</h2>
         <div class="rule-sm"></div>
-        <p class="lede">Adults and juniors from any gym. Parents, fill it in with your child's details.</p>
+        {REGISTRATIONS_OPEN && <p class="lede">Adults and juniors from any gym. Parents, fill it in with your child's details.</p>}
       </header>
 
       {REGISTRATIONS_OPEN ? (
@@ -408,7 +408,8 @@ const STRIP = [
     </div>
   </section>
 
-  <!-- ═════════ WHAT HAPPENS NEXT ═════════ -->
+  <!-- ═════════ WHAT HAPPENS NEXT (only while registrations are open) ═════════ -->
+  {REGISTRATIONS_OPEN && (
   <section class="sec sec-alt">
     <div class="wrap">
       <header class="sec-head" data-reveal>
@@ -432,6 +433,7 @@ const STRIP = [
       </div>
     </div>
   </section>
+  )}
 
   <!-- ═════════ CLOSER ═════════ -->
   <section class="closer">

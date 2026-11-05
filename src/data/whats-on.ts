@@ -18,7 +18,7 @@ export const WHATS_ON: WhatsOn[] = [
     when: 'Saturday 7 November',
     blurb: 'Muay Thai fight night, open to all gyms. D-class exhibition, C-class amateur bouts and junior bouts. First fight 3pm.',
     href: '/fight',
-    cta: 'Register or get tickets',
+    cta: 'Event details & tickets',
     until: '2026-11-07',
   },
   {
